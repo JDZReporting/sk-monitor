@@ -1,0 +1,32 @@
+{
+  "temy": {
+    "Financie/dane": ["dan", "dani z prijmov", "financnej sprav", "narodnej banke", "rozpocet", "dph", "poisten"],
+    "Hospodárstvo/ekonomika": ["hospodar", "energetik", "stavebn", "podnikan", "spotrebitel", "doprav", "vozidl", "investic", "nelegalnej praci", "zivnost", "javys", "jadrov"],
+    "Spravodlivosť/právo": ["trestny zakon", "trestn", "obciansky", "sudn", "prokurat", "rokovacom poriadku", "volebneho prava", "ustav", "pravnych predpisov"],
+    "Vnútro/bezpečnosť": ["policajn", "sukromnej bezpecnosti", "vazensk", "informacnej sluzby", "bezpecnos", "azyl", "cudzin", "hranicn", "prednost"]
+  },
+  "koalicia_strany": ["Smer-SD", "Hlas-SD", "SNS"],
+  "opozicia_strany": ["PS", "SaS", "KDH", "Demokrati", "Hnutie Slovensko"],
+  "poslanec_strana": {
+    "Viskupič": "SaS", "Dostál": "SaS", "Kolíková": "Demokrati", "Bajo Holečková": "Demokrati",
+    "Marcinková": "Demokrati", "Ledecký": "Demokrati", "Hlina": "KDH",
+    "Turčanová": "KDH", "Čaučík": "KDH", "Janckulík": "KDH", "Horecký": "KDH", "Majerský": "KDH",
+    "Matovič": "Hnutie Slovensko", "Mikulec": "Hnutie Slovensko", "Grendel": "Hnutie Slovensko",
+    "Krajčí": "Hnutie Slovensko", "Šipoš": "Hnutie Slovensko", "Pollák": "Hnutie Slovensko",
+    "Jurík": "PS", "Petrík": "PS", "Kišš": "PS", "Plaváková": "PS", "Bihariová": "PS", "Dvořák": "PS",
+    "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS"
+  },
+  "uvo_rezorty": {
+    "Vnútro/bezpečnosť": ["ministerstvo vnutra", "policajn", "hranicnej a cudzineckej", "hasicsk", "informacna sluzba"],
+    "Spravodlivosť/právo": ["ministerstvo spravodlivosti", "prokurat", "okresny sud", "krajsky sud", "najvyssi sud", "ustav na vykon"],
+    "Financie/dane": ["ministerstvo financii", "financna sprava", "coln"],
+    "Hospodárstvo/ekonomika": ["ministerstvo hospodarstva", "mh invest", "sario", "statne hmotne rezervy"],
+    "Infraštruktúra": ["narodna dialnicna", "slovenska sprava ciest", "zeleznice"]
+  },
+  "vlada_rezort_tema": {
+    "ministerstvo vnutra": "Vnútro/bezpečnosť", "narodny bezpecnostny": "Vnútro/bezpečnosť",
+    "ministerstvo spravodlivosti": "Spravodlivosť/právo",
+    "ministerstvo financii": "Financie/dane",
+    "ministerstvo hospodarstva": "Hospodárstvo/ekonomika"
+  }
+}
