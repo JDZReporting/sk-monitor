@@ -1,0 +1,595 @@
+{
+  "datum": "2026-07-03",
+  "parlament": [
+    {
+      "id": "nrsr-1415",
+      "cpt": "1415",
+      "nazov": "Vládny návrh zákona, ktorým sa mení zákon č. 442/2004 Z. z. o súkromných veterinárnych lekároch, o Komore veterinárnych lekárov Slovenskej republiky a o zmene a doplnení zákona č. 488/2002 Z. z. o veterinárnej starostlivosti a o zmene niektorých zákonov v znení neskorších predpisov v znení neskorších predpisov",
+      "datum": "16. 6. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10880"
+    },
+    {
+      "id": "nrsr-1413",
+      "cpt": "1413",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky  na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 440/2015 Z. z. o športe a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "9. 6. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10875"
+    },
+    {
+      "id": "nrsr-1405",
+      "cpt": "1405",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Beáty JURÍK, Jaroslava SPIŠIAKA a Tomáša VALÁŠKA na vydanie zákona, ktorým sa mení zákon č. 328/2002 Z. z. o sociálnom zabezpečení policajtov a vojakov a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "2. 6. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10869"
+    },
+    {
+      "id": "nrsr-1402",
+      "cpt": "1402",
+      "nazov": "Návrh poslanca Národnej rady Slovenskej republiky Mariána VISKUPIČA na vydanie zákona, ktorým sa mení zákon č. 82/2005 Z. z. o nelegálnej práci a nelegálnom zamestnávaní a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "28. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10867"
+    },
+    {
+      "id": "nrsr-1377",
+      "cpt": "1377",
+      "nazov": "Zákon z 23. apríla 2026, ktorým sa dopĺňa zákon Národnej rady Slovenskej republiky č. 152/1995 Z. z. o potravinách v znení neskorších predpisov a ktorým sa mení a dopĺňa zákon č. 467/2002 Z. z. o výrobe a uvádzaní liehu na trh v znení neskorších predpisov, vrátený prezidentom Slovenskej republiky na opätovné prerokovanie Národnou radou Slovenskej republiky",
+      "datum": "12. 5. 2026",
+      "tema": null,
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10843"
+    },
+    {
+      "id": "nrsr-1376",
+      "cpt": "1376",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Andrey TURČANOVEJ, Mariána ČAUČÍKA, Igora JANCKULÍKA, Jána HORECKÉHO a Františka MAJERSKÉHO na vydanie zákona, ktorým sa mení zákon č. 73/1998 Z. z. o štátnej službe príslušníkov Policajného zboru, Slovenskej informačnej služby, Zboru väzenskej a justičnej stráže Slovenskej republiky a Železničnej polície v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10831"
+    },
+    {
+      "id": "nrsr-1375",
+      "cpt": "1375",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Ondreja DOSTÁLA, Márie KOLÍKOVEJ, Martiny BAJO HOLEČKOVEJ a Mariána VISKUPIČA na vydanie zákona, ktorým sa mení zákon č. 300/2005 Z. z. Trestný zákon v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10833"
+    },
+    {
+      "id": "nrsr-1374",
+      "cpt": "1374",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Petra STACHURU, Františka MAJERSKÉHO a Richarda VAŠEČKU na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 576/2004 Z. z. o zdravotnej starostlivosti, službách súvisiacich s poskytovaním zdravotnej starostlivosti a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10832"
+    },
+    {
+      "id": "nrsr-1373",
+      "cpt": "1373",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Ondreja DOSTÁLA, Martiny BAJO HOLEČKOVEJ a Márie KOLÍKOVEJ na vydanie zákona, ktorým sa mení zákon č. 180/2014 Z. z. o podmienkach výkonu volebného práva a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré ďalšie zákony",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10835"
+    },
+    {
+      "id": "nrsr-1372",
+      "cpt": "1372",
+      "nazov": "Návrh poslankýň Národnej rady Slovenskej republiky Andrey TURČANOVEJ a Moniky KOLEJÁKOVEJ na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 376/2024 Z. z. o integrovanej posudkovej činnosti a o zmene a doplnení niektorých zákonov v znení zákona č. 406/2025 Z. z.",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10834"
+    },
+    {
+      "id": "nrsr-1371",
+      "cpt": "1371",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Andrey TURČANOVEJ, Milana MAJERSKÉHO, Rastislava KRÁTKEHO a Moniky KOLEJÁKOVEJ na vydanie zákona o rodinnej karte",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10838"
+    },
+    {
+      "id": "nrsr-1370",
+      "cpt": "1370",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Ondreja DOSTÁLA, Vladimíry MARCINKOVEJ a Martiny BAJO HOLEČKOVEJ na vydanie zákona, ktorým sa mení a dopĺňa zákon Národnej rady Slovenskej republiky č. 350/1996 Z. z. o rokovacom poriadku Národnej rady Slovenskej republiky v znení neskorších predpisov a ktorým sa mení a dopĺňa zákon č. 400/2015 Z. z. o tvorbe právnych predpisov a o Zbierke zákonov Slovenskej republiky a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10836"
+    },
+    {
+      "id": "nrsr-1369",
+      "cpt": "1369",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Romana MICHELKA, Adama LUČANSKÉHO, Andreja DANKA a Milana GARAJA na vydanie zákona, ktorým sa mení a dopĺňa zákon Národnej rady Slovenskej republiky č. 350/1996 Z. z. o rokovacom poriadku Národnej rady Slovenskej republiky v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10840"
+    },
+    {
+      "id": "nrsr-1368",
+      "cpt": "1368",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Romana MICHELKA, Adama LUČANSKÉHO, Andreja DANKA a Milana GARAJA na vydanie ústavného zákona, ktorým sa mení a dopĺňa ústavný zákon č. 397/2004 Z. z. o spolupráci Národnej rady Slovenskej republiky a vlády Slovenskej republiky v záležitostiach Európskej únie (Navrhovatelia vzali listom z 12. júna 2026 svoj návrh ústavného zákona späť.)",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10837"
+    },
+    {
+      "id": "nrsr-1367",
+      "cpt": "1367",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Jána HORECKÉHO, Petra STACHURU a Moniky KOLEJÁKOVEJ na vydanie zákona o ochrane maloletých osôb v digitálnom priestore a o povinnostiach poskytovateľov platforiem sociálnych sietí a o zmene a doplnení niektorých zákonov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10842"
+    },
+    {
+      "id": "nrsr-1366",
+      "cpt": "1366",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Andreja DANKA, Romana MICHELKA, Karola FARKAŠOVSKÉHO a Adama LUČANSKÉHO na vydanie zákona, ktorým sa dopĺňa zákon Národnej rady Slovenskej republiky č. 241/1993 Z. z. o štátnych sviatkoch, dňoch pracovného pokoja a pamätných dňoch v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10839"
+    },
+    {
+      "id": "nrsr-1365",
+      "cpt": "1365",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Karola FARKAŠOVSKÉHO, Romanan MICHELKA, Andreja DANKA a Milana GARAJA na vydanie zákona, ktorým sa mení zákon č. 385/2008 Z. z. o Tlačovej agentúre Slovenskej republiky a o zmene niektorých zákonov v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10841"
+    },
+    {
+      "id": "nrsr-1362",
+      "cpt": "1362",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Vladimíry MARCINKOVEJ, Vladimíra LEDECKÉHO a Alojza HLINU na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 35/2019 Z. z. o finančnej správe a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10828"
+    },
+    {
+      "id": "nrsr-1361",
+      "cpt": "1361",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Petra STACHURU a Jána HORECKÉHO na vydanie zákona, ktorým sa dopĺňa zákon č. 577/2004 Z. z. o rozsahu zdravotnej starostlivosti uhrádzanej na základe verejného zdravotného poistenia a o úhradách za služby súvisiace s poskytovaním zdravotnej starostlivosti v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10827"
+    },
+    {
+      "id": "nrsr-1360",
+      "cpt": "1360",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Moniky KOLEJÁKOVEJ a Mariána ČAUČÍKA na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 216/2018 Z. z. o rybárstve a o doplnení zákona č. 455/1991 Zb. o živnostenskom podnikaní (živnostenský zákon) v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10826"
+    },
+    {
+      "id": "nrsr-1359",
+      "cpt": "1359",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Vladimíra LEDECKÉHO, Vladimíry MARCINKOVEJ a Mariána VISKUPIČA na vydanie zákona, ktorým sa dopĺňa zákon č. 180/2014 Z. z. o podmienkach výkonu volebného práva a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10825"
+    },
+    {
+      "id": "nrsr-1357",
+      "cpt": "1357",
+      "nazov": "Návrh poslankýň Národnej rady Slovenskej republiky Lucie PLAVÁKOVEJ, Zuzany ŠTEVULOVEJ, Zuzany MESTEROVEJ a Beáty JURÍK na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 350/1996 Z. z. o rokovacom poriadku Národnej rady Slovenskej republiky v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10824"
+    },
+    {
+      "id": "nrsr-1356",
+      "cpt": "1356",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie zákona, ktorým sa mení a dopĺňa zákon Národnej rady Slovenskej republiky č. 566/1992 Zb. o Národnej banke Slovenska v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10822"
+    },
+    {
+      "id": "nrsr-1355",
+      "cpt": "1355",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Beáty JURÍK, Simony PETRÍK, Štefana KIŠŠA, Dariny LUŠČÍKOVEJ a Lucie PLAVÁKOVEJ na vydanie zákona, ktorým sa dopĺňa zákon č. 595/2003 Z. z. o dani z príjmov v znení neskorších predpisov",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10821"
+    },
+    {
+      "id": "nrsr-1354",
+      "cpt": "1354",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Beáty JURÍK, Zuzany ŠTEVULOVEJ, Lucie PLAVÁKOVEJ a Ondreja PROSTREDNÍKA na vydanie zákona, ktorým sa menia a dopĺňajú niektoré zákony v súvislosti s poskytovaním pomoci osobám zažívajúcim násilie",
+      "datum": "8. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10820"
+    },
+    {
+      "id": "nrsr-1352",
+      "cpt": "1352",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 73/1998 Z. z. o štátnej službe príslušníkov Policajného zboru, Slovenskej informačnej služby, Zboru väzenskej a justičnej stráže Slovenskej republiky a Železničnej polície v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10817"
+    },
+    {
+      "id": "nrsr-1351",
+      "cpt": "1351",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie ústavného zákona, ktorým sa dopĺňa Ústava Slovenskej republiky č. 460/1992 Zb. v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10818"
+    },
+    {
+      "id": "nrsr-1350",
+      "cpt": "1350",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 595/2003 Z. z. o dani z príjmov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10819"
+    },
+    {
+      "id": "nrsr-1349",
+      "cpt": "1349",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Ireny BIHARIOVEJ, Lucie PLAVÁKOVEJ a Oskara DVOŘÁKA na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 300/2005 Z. z. Trestný zákon v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Opozícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10812"
+    },
+    {
+      "id": "nrsr-1348",
+      "cpt": "1348",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 108/2024 Z. z. o ochrane spotrebiteľa a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10816"
+    },
+    {
+      "id": "nrsr-1347",
+      "cpt": "1347",
+      "nazov": "Návrh skupiny poslancov Národnej rady Slovenskej republiky na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 280/2017 Z. z. o poskytovaní podpory a dotácie v pôdohospodárstve a rozvoji vidieka a o zmene zákona č. 292/2014 Z. z. o príspevku poskytovanom z európskych štrukturálnych a investičných fondov a o zmene a doplnení niektorých zákonov v znení neskorších predpisov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10815"
+    },
+    {
+      "id": "nrsr-1346",
+      "cpt": "1346",
+      "nazov": "Návrh poslanca Národnej rady Slovenskej republiky Tibora GAŠPARA na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 473/2005 Z. z. o poskytovaní služieb  v oblasti súkromnej bezpečnosti a o zmene a doplnení niektorých zákonov (zákon o súkromnej bezpečnosti)",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10814"
+    },
+    {
+      "id": "nrsr-1344",
+      "cpt": "1344",
+      "nazov": "Návrh poslanca Národnej rady Slovenskej  republiky Richarda VAŠEČKU na vydanie zákona o Rodinašekoch - kompenzácii daňového bonusu na dieťa a o zmene a doplnení niektorých zákonov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10810"
+    },
+    {
+      "id": "nrsr-1343",
+      "cpt": "1343",
+      "nazov": "Návrh poslanca Národnej rady Slovenskej republiky Richarda VAŠEČKU na vydanie zákona, ktorým sa dopĺňa zákon č. 355/2007 Z. z. o ochrane, podpore a rozvoji verejného zdravia a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10809"
+    },
+    {
+      "id": "nrsr-1342",
+      "cpt": "1342",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Erika VLČEKA a Dušana TITTELA na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 440/2015 Z. z. o športe a o zmene doplnení niektorých zákonov v znení neskorších predpisov (Navrhovatelia vzali listom z 27. mája 2026 svoj návrh zákona späť.)",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10808"
+    },
+    {
+      "id": "nrsr-1341",
+      "cpt": "1341",
+      "nazov": "Návrh poslankyne Národnej rady Slovenskej republiky Veroniky VESLÁROVEJ na vydanie zákona, ktorým sa dopĺňa zákon č. 447/2008 Z. z. o peňažných príspevkoch na kompenzáciu ťažkého zdravotného postihnutia a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Neurčené",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10806"
+    },
+    {
+      "id": "nrsr-1340",
+      "cpt": "1340",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Vladimíry MARCINKOVEJ, Vladimíra LEDECKÉHO a Alojza HLINU na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 595/2003 Z. z. o dani z príjmov v znení neskorších predpisov",
+      "datum": "6. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10785"
+    },
+    {
+      "id": "nrsr-1339",
+      "cpt": "1339",
+      "nazov": "Návrh poslancov Národnej rady Slovenskej republiky Vladimíra LEDECKÉHO, Vladimíry MARCINKOVEJ a Mariána VISKUPIČA na vydanie zákona, ktorým sa mení a dopĺňa zákon č. 600/2003 Z. z. o prídavku na dieťa a o zmene a doplnení zákona č. 461/2003 Z. z. o sociálnom poistení v znení neskorších predpisov",
+      "datum": "6. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10784"
+    },
+    {
+      "id": "nrsr-1335",
+      "cpt": "1335",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 363/2011 Z. z. o rozsahu a podmienkach úhrady liekov, zdravotníckych pomôcok a dietetických potravín na základe verejného zdravotného poistenia a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": "Financie/dane",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10805"
+    },
+    {
+      "id": "nrsr-1334",
+      "cpt": "1334",
+      "nazov": "Vládny návrh zákona, ktorým sa dopĺňa zákon č. 139/1998 Z. z. o omamných látkach, psychotropných látkach a prípravkoch v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10804"
+    },
+    {
+      "id": "nrsr-1333",
+      "cpt": "1333",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 448/2008 Z. z. o sociálnych službách a o zmene a doplnení zákona č. 455/1991 Zb. o živnostenskom podnikaní (živnostenský zákon) v znení neskorších predpisov v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": "Hospodárstvo/ekonomika",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10787"
+    },
+    {
+      "id": "nrsr-1332",
+      "cpt": "1332",
+      "nazov": "Vládny návrh zákona o práci vykonávanej prostredníctvom digitálnej pracovnej platformy a o zmene a doplnení niektorých zákonov",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10789"
+    },
+    {
+      "id": "nrsr-1331",
+      "cpt": "1331",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 39/2007 Z. z. o veterinárnej starostlivosti v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10795"
+    },
+    {
+      "id": "nrsr-1330",
+      "cpt": "1330",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon Národnej rady Slovenskej republiky č. 152/1995 Z. z. o potravinách v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10793"
+    },
+    {
+      "id": "nrsr-1329",
+      "cpt": "1329",
+      "nazov": "Vládny návrh zákona, ktorým sa menia a dopĺňajú niektoré zákony v súvislosti s rozšírením rámca zavádzania a využívania automatizovaných vozidiel v Slovenskej republike",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10794"
+    },
+    {
+      "id": "nrsr-1328",
+      "cpt": "1328",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 332/2023 Z. z. o verejnej osobnej doprave a o zmene a doplnení niektorých zákonov v znení zákona č. 335/2025 Z. z. a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": "Hospodárstvo/ekonomika",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10800"
+    },
+    {
+      "id": "nrsr-1327",
+      "cpt": "1327",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 338/2000 Z. z. o vnútrozemskej plavbe a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10801"
+    },
+    {
+      "id": "nrsr-1326",
+      "cpt": "1326",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 106/2018 Z. z. o prevádzke vozidiel v cestnej premávke a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": null,
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10799"
+    },
+    {
+      "id": "nrsr-1325",
+      "cpt": "1325",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 555/2005 Z. z. o energetickej hospodárnosti budov a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa mení a dopĺňa zákon č. 246/2015 Z. z. o správcoch bytových domov a o zmene a doplnení zákona Národnej rady Slovenskej republiky č. 182/1993 Z. z. o vlastníctve bytov a nebytových priestorov v znení neskorších predpisov v znení zákona č. 177/2018 Z. z.",
+      "datum": "7. 5. 2026",
+      "tema": "Hospodárstvo/ekonomika",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10792"
+    },
+    {
+      "id": "nrsr-1324",
+      "cpt": "1324",
+      "nazov": "Vládny návrh zákona, ktorým sa mení a dopĺňa zákon č. 25/2025 Z. z. Stavebný zákon a o zmene a doplnení niektorých zákonov (Stavebný zákon) v znení neskorších predpisov a ktorým sa menia a dopĺňajú niektoré zákony",
+      "datum": "7. 5. 2026",
+      "tema": "Hospodárstvo/ekonomika",
+      "blok": "Koalícia (vláda)",
+      "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10791"
+    }
+  ],
+  "vlada": [
+    {
+      "id": "vlada-UV-17989/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh na určenie národného koordinačného orgánu pre Fond solidarity Európskej únie a nástroj EU Facility na programové obdobie 2028 – 2034",
+      "cislo": "UV-17989/2026",
+      "rezort": "Ministerstvo vnútra Slovenskej republiky",
+      "predkladatel": "minister vnútra",
+      "datum": "29. 06. 2026",
+      "tema": "Vnútro/bezpečnosť"
+    },
+    {
+      "id": "vlada-UV-16859/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh na odvolanie prednostu Okresného úradu Prievidza a na vymenovanie prednostky Okresného úradu Prievidza",
+      "cislo": "UV-16859/2026",
+      "rezort": "Ministerstvo vnútra Slovenskej republiky",
+      "predkladatel": "minister vnútra",
+      "datum": "16. 06. 2026",
+      "tema": "Vnútro/bezpečnosť"
+    },
+    {
+      "id": "vlada-UV-16421/2026",
+      "charakter": "Riadny",
+      "nazov": "Akčný plán Iniciatívy pre otvorené vládnutie v Slovenskej republike na roky 2026 – 2028",
+      "cislo": "UV-16421/2026",
+      "rezort": "Ministerstvo vnútra Slovenskej republiky",
+      "predkladatel": "minister vnútra",
+      "datum": "11. 06. 2026",
+      "tema": "Vnútro/bezpečnosť"
+    },
+    {
+      "id": "vlada-UV-13554/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh na prevod správy majetkového podielu štátu v spoločnosti Jadrová a vyraďovacia spoločnosť, a.s. z Ministerstva hospodárstva Slovenskej republiky na Úrad vlády Slovenskej republiky",
+      "cislo": "UV-13554/2026",
+      "rezort": "Úrad vlády Slovenskej republiky",
+      "predkladatel": "predseda vlády",
+      "datum": "12. 05. 2026",
+      "tema": "Hospodárstvo/ekonomika"
+    },
+    {
+      "id": "vlada-UV-12391/2026",
+      "charakter": "Riadny",
+      "nazov": "Expertízna správa",
+      "cislo": "UV-12391/2026",
+      "rezort": "Národný bezpečnostný úrad",
+      "predkladatel": "riaditeľ Národného bezpečnostného úradu; riaditeľ Slovenskej informačnej služby; riaditeľ Vojenského spravodajstva",
+      "datum": "30. 04. 2026",
+      "tema": "Vnútro/bezpečnosť"
+    },
+    {
+      "id": "vlada-UV-11524/2026",
+      "charakter": "Riadny",
+      "nazov": "Zámer Ministerstva investícií, regionálneho rozvoja a informatizácie SR usporiadať GPAI summit v Bratislave v roku 2026",
+      "cislo": "UV-11524/2026",
+      "rezort": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
+      "predkladatel": "minister investícií, regionálneho rozvoja a informatizácie",
+      "datum": "21. 04. 2026",
+      "tema": "Hospodárstvo/ekonomika"
+    },
+    {
+      "id": "vlada-UV-10820/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh na určenie rozpočtovej organizácie DataCentrum ako priamo určeného prijímateľa v rámci mechanizmu na podporu obnovy a odolnosti",
+      "cislo": "UV-10820/2026",
+      "rezort": "Ministerstvo vnútra Slovenskej republiky",
+      "predkladatel": "minister vnútra",
+      "datum": "14. 04. 2026",
+      "tema": "Vnútro/bezpečnosť"
+    },
+    {
+      "id": "vlada-UV-8739/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh zákona, ktorým sa mení a dopĺňa zákon č. 355/2007 Z. z. o ochrane, podpore a rozvoji verejného zdravia a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa  menia a dopĺňajú niektoré zákony",
+      "cislo": "UV-8739/2026",
+      "rezort": "Ministerstvo zdravotníctva Slovenskej republiky",
+      "predkladatel": "minister zdravotníctva",
+      "datum": "23. 03. 2026",
+      "tema": null
+    },
+    {
+      "id": "vlada-UV-2469/2026",
+      "charakter": "Riadny",
+      "nazov": "Návrh na skrátené legislatívne konanie o vládnom návrhu zákona, ktorým sa mení a dopĺňa zákon č. 57/2018 Z. z. o regionálnej investičnej pomoci a o zmene a doplnení niektorých zákonov v znení neskorších predpisov a ktorým sa mení a dopĺňa zákon č. 5/2004 Z. z. o službách zamestnanosti a o zmene a doplnení niektorých zákonov v znení neskorších predpisov",
+      "cislo": "UV-2469/2026",
+      "rezort": "Ministerstvo hospodárstva Slovenskej republiky",
+      "predkladatel": "podpredsedníčka vlády a ministerka hospodárstva",
+      "datum": "28. 01. 2026",
+      "tema": "Hospodárstvo/ekonomika"
+    },
+    {
+      "id": "vlada-UV-65/2026",
+      "charakter": "Informatívny",
+      "nazov": "Organizačná štruktúra obchodnej spoločnosti DÔVERA zdravotná poisťovňa, a. s.",
+      "cislo": "UV-65/2026",
+      "rezort": "DÔVERA zdravotná poisťovňa, a. s.",
+      "predkladatel": "predseda predstavenstva a člen predstavenstva DÔVERA zdravotná poisťovňa, a. s.",
+      "datum": "05. 01. 2026",
+      "tema": null
+    }
+  ],
+  "uvo": [
+    {
+      "id": "uvo-dodanie nabytku pre potreby okresneho su",
+      "nazov": "Dodanie nábytku pre potreby Okresného súdu Banská Bystrica",
+      "obstaravatel": "Okresný súd Banská Bystrica",
+      "cpv": "Nábytok",
+      "nuts": "Banskobystrický kraj",
+      "datum": "EVO",
+      "tema": "Spravodlivosť/právo"
+    },
+    {
+      "id": "uvo-potraviny",
+      "nazov": "Potraviny",
+      "obstaravatel": "Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody",
+      "cpv": "Potraviny, nápoje, tabak a príbuzné produkty",
+      "nuts": "Žilinský kraj",
+      "datum": "EVO",
+      "tema": "Spravodlivosť/právo"
+    },
+    {
+      "id": "uvo-potraviny",
+      "nazov": "Potraviny",
+      "obstaravatel": "Ústav na výkon trestu odňatia slobody pre mladistvých Sučany",
+      "cpv": "Potraviny, nápoje, tabak a príbuzné produkty",
+      "nuts": "Žilinský kraj",
+      "datum": "EVO",
+      "tema": "Spravodlivosť/právo"
+    },
+    {
+      "id": "uvo-potraviny",
+      "nazov": "Potraviny",
+      "obstaravatel": "Ústav na výkon trestu odňatia slobody a ústav na výkon väzby",
+      "cpv": "Potraviny, nápoje, tabak a príbuzné produkty",
+      "nuts": "Trenčiansky kraj",
+      "datum": "EVO",
+      "tema": "Spravodlivosť/právo"
+    }
+  ]
+}
