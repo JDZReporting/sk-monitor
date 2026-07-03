@@ -1,0 +1,27 @@
+{
+  "_poznamka": "Aktuality inštitúcií cez Google News RSS (uniformné, s dátumami). 'q' je vyhľadávací dotaz; kód z neho poskladá RSS URL. Ak má inštitúcia oficiálne RSS, do 'rss' daj priamu adresu a použije sa namiesto Google News.",
+  "institucie": [
+    {"nazov": "Ministerstvo vnútra SR", "q": "\"Ministerstvo vnútra\" Slovensko"},
+    {"nazov": "Ministerstvo financií SR", "q": "\"Ministerstvo financií\" Slovensko"},
+    {"nazov": "Ministerstvo spravodlivosti SR", "q": "\"Ministerstvo spravodlivosti\" Slovensko"},
+    {"nazov": "Ministerstvo hospodárstva SR", "q": "\"Ministerstvo hospodárstva\" Slovensko"},
+    {"nazov": "Ministerstvo zdravotníctva SR", "q": "\"Ministerstvo zdravotníctva\" Slovensko"},
+    {"nazov": "Ministerstvo školstva SR", "q": "\"Ministerstvo školstva\" Slovensko"},
+    {"nazov": "Ministerstvo práce, soc. vecí a rodiny SR", "q": "\"Ministerstvo práce\" Slovensko"},
+    {"nazov": "Ministerstvo dopravy SR", "q": "\"Ministerstvo dopravy\" Slovensko"},
+    {"nazov": "Ministerstvo obrany SR", "q": "\"Ministerstvo obrany\" Slovensko"},
+    {"nazov": "Ministerstvo zahraničných vecí SR", "q": "\"Ministerstvo zahraničných vecí\" Slovensko"},
+    {"nazov": "Ministerstvo životného prostredia SR", "q": "\"Ministerstvo životného prostredia\" Slovensko"},
+    {"nazov": "Ministerstvo pôdohospodárstva SR", "q": "\"Ministerstvo pôdohospodárstva\" Slovensko"},
+    {"nazov": "Ministerstvo kultúry SR", "q": "\"Ministerstvo kultúry\" Slovensko"},
+    {"nazov": "MIRRI SR (investície a informatizácia)", "q": "\"Ministerstvo investícií\" Slovensko"},
+    {"nazov": "Ministerstvo cestovného ruchu a športu SR", "q": "\"Ministerstvo cestovného ruchu a športu\""},
+    {"nazov": "Úrad vlády SR", "q": "\"Úrad vlády\" Slovenskej republiky"},
+    {"nazov": "Najvyšší kontrolný úrad (NKÚ)", "q": "\"Najvyšší kontrolný úrad\""},
+    {"nazov": "Generálna prokuratúra SR", "q": "\"Generálna prokuratúra\" Slovenskej"},
+    {"nazov": "Protimonopolný úrad SR", "q": "\"Protimonopolný úrad\""},
+    {"nazov": "Úrad pre verejné obstarávanie (ÚVO)", "q": "\"Úrad pre verejné obstarávanie\""},
+    {"nazov": "Národná banka Slovenska (NBS)", "q": "\"Národná banka Slovenska\""},
+    {"nazov": "Prezident SR", "q": "prezident Slovenskej republiky Kancelária"}
+  ]
+}

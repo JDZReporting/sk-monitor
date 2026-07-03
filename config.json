@@ -1,12 +1,24 @@
 {
-  "temy": {
-    "Financie/dane": ["dani z prijmov", "dan z prijmov", "danov", "spotrebnej dane", "financnej sprav", "narodnej banke", "rozpocet verejnej", "statny rozpocet", "dph", "socialnom poisten", "zdravotnom poisten"],
-    "Hospodárstvo/ekonomika": ["hospodar", "energetik", "stavebn", "podnikan", "spotrebitel", "doprav", "vozidl", "investic", "nelegalnej praci", "zivnost", "javys", "jadrov"],
-    "Spravodlivosť/právo": ["trestny zakon", "trestn", "obciansky", "sudn", "prokurat", "rokovacom poriadku", "volebneho prava", "ustav", "pravnych predpisov"],
-    "Vnútro/bezpečnosť": ["policajn", "sukromnej bezpecnosti", "vazensk", "informacnej sluzby", "bezpecnos", "azyl", "cudzin", "hranicn", "prednost"]
+  "_poznamka": "Kategórie sa hľadajú v normalizovanom (bez diakritiky) texte ako podreťazce; poradie rozhoduje (prvá zhoda vyhráva). Ak nič nesadne -> 'Ostatné'.",
+  "kategorie": {
+    "Financie a dane": ["dani z prijmov", "dan z prijmov", "danov", "dph", "spotrebnej dane", "rozpocet verejnej", "statny rozpocet", "financnej sprav", "narodnej banke", "socialnom poisten", "zdravotnom poisten", "colnom", "hazard"],
+    "Hospodárstvo a podnikanie": ["hospodarstv", "podnikan", "zivnost", "spotrebitel", "investicnej pomoci", "investic", "hospodarskej sutaz", "statnej pomoci", "obchodnom registri", "cestovnom ruch", "regionalnej investicnej"],
+    "Spravodlivosť a právo": ["trestny zakon", "trestn cin", "trestneho", "obciansky zakonnik", "obcianskom", "sudoch", "sudcov", "prokurat", "exekuc", "konkurz", "advokac", "rokovacom poriadku", "tvorbe pravnych predpisov", "ustava slovenskej", "ustavny zakon", "volebneho prava", "volbach"],
+    "Vnútro a bezpečnosť": ["policajn", "hasicsk", "integrovaneho zachranneho", "sukromnej bezpecnosti", "informacnej sluzby", "azyl", "cudzin", "statnom obcianstve", "hlasenia pobytu", "hranicn", "prednost okresneho"],
+    "Obrana": ["ozbrojen", "o obrane", "vojak", "vojensk", "brannej", "obranneho"],
+    "Zahraničie a EÚ": ["zahranicn", "europsk uni", "medzinarodn zmluv", "rozvojovej spoluprac", "zastupitelsk"],
+    "Zdravotníctvo": ["zdravotn", "liek", "pacient", "verejneho zdravia", "zdravotnickych pomocok", "omamn"],
+    "Sociálne veci a rodina": ["socialn", "rodin", "dochodk", "prispevk", "zdravotne postihnut", "nemocensk", "prídavk", "pridavk na dieta", "hmotnej nudzi"],
+    "Školstvo, veda a šport": ["skolstv", "skolach", "vysokych skol", "ziak", "ucitel", "vychove a vzdelavan", "veda", "vyskum", "sporte", "sportov"],
+    "Doprava a výstavba": ["doprav", "cestnej premavk", "dialnic", "zeleznic", "vnutrozemskej plavb", "letisk", "stavebny zakon", "vystavb", "uzemnom planovani", "energetickej hospodarnosti budov", "vozidiel"],
+    "Energetika a životné prostredie": ["energetik", "jadrov", "plynarenstv", "elektrizacn", "obnovitelnych zdroj", "emisi", "odpadoch", "ochrane prirody", "ovzdusi", "vodach", "klim"],
+    "Pôdohospodárstvo a potraviny": ["podohospodar", "polnohospodar", "potravin", "veterinar", "rybarstv", "lesoch", "uvadzani liehu"],
+    "Kultúra a médiá": ["kulture", "kulturn", "tlacovej agentur", "rozhlas", "televiz", "autorsk", "mediach", "periodickej tlac"],
+    "Verejná správa a samospráva": ["samospr", "obecnom zriaden", "vyssich uzemnych celk", "statnej sluzbe", "statnych zamestnanc", "e-governmen", "informatizac", "verejnom obstaravan"]
   },
-  "koalicia_strany": ["Smer-SD", "Hlas-SD", "SNS"],
-  "opozicia_strany": ["PS", "SaS", "KDH", "Demokrati", "Hnutie Slovensko"],
+  "_kluby_poznamka": "Klub -> blok. Zloženie vlády uprav tu (podreťazce názvu klubu, bez diakritiky). Členov klubov si skript stiahne z NR SR automaticky.",
+  "koalicia_kluby": ["smer", "hlas", "slovenska narodna strana"],
+  "opozicia_kluby": ["sloboda a solidarita", "kdh", "progresivne slovensko", "slovensko - za ludi", "slovensko – za ludi", "slovensko za ludi"],
   "poslanec_strana": {
     "Viskupič": "SaS", "Dostál": "SaS", "Kolíkov": "Demokrati", "Bajo Holečkov": "Demokrati",
     "Marcinkov": "Demokrati", "Ledeck": "Demokrati", "Hlina": "KDH",
@@ -14,19 +26,8 @@
     "Matovič": "Hnutie Slovensko", "Mikulec": "Hnutie Slovensko", "Grendel": "Hnutie Slovensko",
     "Krajčí": "Hnutie Slovensko", "Šipoš": "Hnutie Slovensko", "Pollák": "Hnutie Slovensko",
     "Jurík": "PS", "Petrík": "PS", "Kišš": "PS", "Plavákov": "PS", "Bihariov": "PS", "Dvořák": "PS",
-    "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS"
+    "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS", "Farkašovsk": "SNS", "Lučansk": "SNS"
   },
-  "uvo_rezorty": {
-    "Vnútro/bezpečnosť": ["ministerstvo vnutra", "policajn", "hranicnej a cudzineckej", "hasicsk", "informacna sluzba"],
-    "Spravodlivosť/právo": ["ministerstvo spravodlivosti", "prokurat", "okresny sud", "krajsky sud", "najvyssi sud", "ustav na vykon"],
-    "Financie/dane": ["ministerstvo financii", "financna sprava", "coln"],
-    "Hospodárstvo/ekonomika": ["ministerstvo hospodarstva", "mh invest", "sario", "statne hmotne rezervy"],
-    "Infraštruktúra": ["narodna dialnicna", "slovenska sprava ciest", "zeleznice"]
-  },
-  "vlada_rezort_tema": {
-    "ministerstvo vnutra": "Vnútro/bezpečnosť", "narodny bezpecnostny": "Vnútro/bezpečnosť",
-    "ministerstvo spravodlivosti": "Spravodlivosť/právo",
-    "ministerstvo financii": "Financie/dane",
-    "ministerstvo hospodarstva": "Hospodárstvo/ekonomika"
-  }
+  "uvo_dni_panel": 7,
+  "uvo_dni_archiv": 30
 }
