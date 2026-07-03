@@ -1,6 +1,6 @@
 {
   "temy": {
-    "Financie/dane": ["dan", "dani z prijmov", "financnej sprav", "narodnej banke", "rozpocet", "dph", "poisten"],
+    "Financie/dane": ["dani z prijmov", "dan z prijmov", "danov", "spotrebnej dane", "financnej sprav", "narodnej banke", "rozpocet verejnej", "statny rozpocet", "dph", "socialnom poisten", "zdravotnom poisten"],
     "Hospodárstvo/ekonomika": ["hospodar", "energetik", "stavebn", "podnikan", "spotrebitel", "doprav", "vozidl", "investic", "nelegalnej praci", "zivnost", "javys", "jadrov"],
     "Spravodlivosť/právo": ["trestny zakon", "trestn", "obciansky", "sudn", "prokurat", "rokovacom poriadku", "volebneho prava", "ustav", "pravnych predpisov"],
     "Vnútro/bezpečnosť": ["policajn", "sukromnej bezpecnosti", "vazensk", "informacnej sluzby", "bezpecnos", "azyl", "cudzin", "hranicn", "prednost"]
@@ -8,12 +8,12 @@
   "koalicia_strany": ["Smer-SD", "Hlas-SD", "SNS"],
   "opozicia_strany": ["PS", "SaS", "KDH", "Demokrati", "Hnutie Slovensko"],
   "poslanec_strana": {
-    "Viskupič": "SaS", "Dostál": "SaS", "Kolíková": "Demokrati", "Bajo Holečková": "Demokrati",
-    "Marcinková": "Demokrati", "Ledecký": "Demokrati", "Hlina": "KDH",
-    "Turčanová": "KDH", "Čaučík": "KDH", "Janckulík": "KDH", "Horecký": "KDH", "Majerský": "KDH",
+    "Viskupič": "SaS", "Dostál": "SaS", "Kolíkov": "Demokrati", "Bajo Holečkov": "Demokrati",
+    "Marcinkov": "Demokrati", "Ledeck": "Demokrati", "Hlina": "KDH",
+    "Turčanov": "KDH", "Čaučík": "KDH", "Janckulík": "KDH", "Horeck": "KDH", "Majersk": "KDH",
     "Matovič": "Hnutie Slovensko", "Mikulec": "Hnutie Slovensko", "Grendel": "Hnutie Slovensko",
     "Krajčí": "Hnutie Slovensko", "Šipoš": "Hnutie Slovensko", "Pollák": "Hnutie Slovensko",
-    "Jurík": "PS", "Petrík": "PS", "Kišš": "PS", "Plaváková": "PS", "Bihariová": "PS", "Dvořák": "PS",
+    "Jurík": "PS", "Petrík": "PS", "Kišš": "PS", "Plavákov": "PS", "Bihariov": "PS", "Dvořák": "PS",
     "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS"
   },
   "uvo_rezorty": {

@@ -39,7 +39,7 @@ def tema_of(text):
 
 def blok_of(navrhovatel):
     nav = norm(navrhovatel)
-    if "vlad" in nav or "ministerstvo" in nav:
+    if "vladny navrh" in nav or "vlada slovenskej republiky" in nav:
         return "Koalícia (vláda)"
     k = o = False
     for pr, strana in CFG["poslanec_strana"].items():
