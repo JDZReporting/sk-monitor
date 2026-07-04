@@ -10,7 +10,8 @@
    "stav": "",
    "meta": "ČPT 1415 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10880",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1413",
@@ -22,7 +23,8 @@
    "stav": "",
    "meta": "ČPT 1413 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10875",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1405",
@@ -34,7 +36,8 @@
    "stav": "Výber poradcov k NZ (Výber právneho poradcu)",
    "meta": "ČPT 1405 · Poslanecký · predkladateľ: Beáty JURÍK, Jaroslava SPIŠIAKA a Tomáša VALÁŠKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10869",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1402",
@@ -46,7 +49,8 @@
    "stav": "Výber poradcov k NZ (Výber právneho poradcu)",
    "meta": "ČPT 1402 · Poslanecký · predkladateľ: Mariána VISKUPIČA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10867",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1377",
@@ -58,7 +62,8 @@
    "stav": "II. čítanie (NZ postúpil do II. čítania)",
    "meta": "ČPT 1377 · Iné · predkladateľ: Prezident SR (vrátený zákon)",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10843",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1376",
@@ -67,10 +72,11 @@
    "date": "2026-05-08",
    "category": "Vnútro a bezpečnosť",
    "blok": "Opozícia",
-   "stav": "",
+   "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1376 · Poslanecký · predkladateľ: Andrey TURČANOVEJ, Mariána ČAUČÍKA, Igora JANCKULÍKA, Jána HORECKÉHO a Františka MAJERSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10831",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1375",
@@ -82,7 +88,8 @@
    "stav": "",
    "meta": "ČPT 1375 · Poslanecký · predkladateľ: Ondreja DOSTÁLA, Márie KOLÍKOVEJ, Martiny BAJO HOLEČKOVEJ a Mariána VISKUPIČA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10833",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1374",
@@ -94,7 +101,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1374 · Poslanecký · predkladateľ: Petra STACHURU, Františka MAJERSKÉHO a Richarda VAŠEČKU",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10832",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1373",
@@ -106,7 +114,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1373 · Poslanecký · predkladateľ: Ondreja DOSTÁLA, Martiny BAJO HOLEČKOVEJ a Márie KOLÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10835",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1372",
@@ -118,7 +127,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1372 · Poslanecký · predkladateľ: Andrey TURČANOVEJ a Moniky KOLEJÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10834",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1371",
@@ -130,7 +140,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1371 · Poslanecký · predkladateľ: Andrey TURČANOVEJ, Milana MAJERSKÉHO, Rastislava KRÁTKEHO a Moniky KOLEJÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10838",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1370",
@@ -142,7 +153,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1370 · Poslanecký · predkladateľ: Ondreja DOSTÁLA, Vladimíry MARCINKOVEJ a Martiny BAJO HOLEČKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10836",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1369",
@@ -154,7 +166,8 @@
    "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1369 · Poslanecký · predkladateľ: Romana MICHELKA, Adama LUČANSKÉHO, Andreja DANKA a Milana GARAJA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10840",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1368",
@@ -166,7 +179,8 @@
    "stav": "Uzavretá úloha (NZ vzal navrhovateľ späť)",
    "meta": "ČPT 1368 · Poslanecký · predkladateľ: Romana MICHELKA, Adama LUČANSKÉHO, Andreja DANKA a Milana GARAJA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10837",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1367",
@@ -178,7 +192,8 @@
    "stav": "",
    "meta": "ČPT 1367 · Poslanecký · predkladateľ: Jána HORECKÉHO, Petra STACHURU a Moniky KOLEJÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10842",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1366",
@@ -190,7 +205,8 @@
    "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1366 · Poslanecký · predkladateľ: Andreja DANKA, Romana MICHELKA, Karola FARKAŠOVSKÉHO a Adama LUČANSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10839",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1365",
@@ -202,7 +218,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1365 · Poslanecký · predkladateľ: Karola FARKAŠOVSKÉHO, Romanan MICHELKA, Andreja DANKA a Milana GARAJA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10841",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1362",
@@ -214,7 +231,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1362 · Poslanecký · predkladateľ: Vladimíry MARCINKOVEJ, Vladimíra LEDECKÉHO a Alojza HLINU",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10828",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1361",
@@ -226,7 +244,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1361 · Poslanecký · predkladateľ: Petra STACHURU a Jána HORECKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10827",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1360",
@@ -238,7 +257,8 @@
    "stav": "",
    "meta": "ČPT 1360 · Poslanecký · predkladateľ: Moniky KOLEJÁKOVEJ a Mariána ČAUČÍKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10826",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1359",
@@ -250,7 +270,8 @@
    "stav": "",
    "meta": "ČPT 1359 · Poslanecký · predkladateľ: Vladimíra LEDECKÉHO, Vladimíry MARCINKOVEJ a Mariána VISKUPIČA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10825",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1357",
@@ -262,7 +283,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1357 · Poslanecký · predkladateľ: Lucie PLAVÁKOVEJ, Zuzany ŠTEVULOVEJ, Zuzany MESTEROVEJ a Beáty JURÍK",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10824",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1356",
@@ -274,7 +296,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1356 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10822",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1355",
@@ -286,7 +309,8 @@
    "stav": "",
    "meta": "ČPT 1355 · Poslanecký · predkladateľ: Beáty JURÍK, Simony PETRÍK, Štefana KIŠŠA, Dariny LUŠČÍKOVEJ a Lucie PLAVÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10821",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1354",
@@ -298,7 +322,8 @@
    "stav": "",
    "meta": "ČPT 1354 · Poslanecký · predkladateľ: Beáty JURÍK, Zuzany ŠTEVULOVEJ, Lucie PLAVÁKOVEJ a Ondreja PROSTREDNÍKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10820",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1352",
@@ -310,7 +335,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1352 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10817",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1351",
@@ -319,10 +345,11 @@
    "date": "2026-05-07",
    "category": "Spravodlivosť a právo",
    "blok": "Neurčené",
-   "stav": "",
+   "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1351 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10818",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1350",
@@ -331,10 +358,11 @@
    "date": "2026-05-07",
    "category": "Financie a dane",
    "blok": "Neurčené",
-   "stav": "",
+   "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1350 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10819",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1349",
@@ -346,7 +374,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1349 · Poslanecký · predkladateľ: Ireny BIHARIOVEJ, Lucie PLAVÁKOVEJ a Oskara DVOŘÁKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10812",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1348",
@@ -358,7 +387,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1348 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10816",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1347",
@@ -370,7 +400,8 @@
    "stav": "",
    "meta": "ČPT 1347 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10815",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1346",
@@ -382,7 +413,8 @@
    "stav": "",
    "meta": "ČPT 1346 · Poslanecký · predkladateľ: Tibora GAŠPARA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10814",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1344",
@@ -394,7 +426,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1344 · Poslanecký · predkladateľ: Richarda VAŠEČKU",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10810",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1343",
@@ -406,7 +439,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1343 · Poslanecký · predkladateľ: Richarda VAŠEČKU",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10809",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1342",
@@ -418,7 +452,8 @@
    "stav": "",
    "meta": "ČPT 1342 · Poslanecký · predkladateľ: Erika VLČEKA a Dušana TITTELA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10808",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1341",
@@ -430,7 +465,8 @@
    "stav": "",
    "meta": "ČPT 1341 · Poslanecký · predkladateľ: Veroniky VESLÁROVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10806",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1340",
@@ -442,7 +478,8 @@
    "stav": "",
    "meta": "ČPT 1340 · Poslanecký · predkladateľ: Vladimíry MARCINKOVEJ, Vladimíra LEDECKÉHO a Alojza HLINU",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10785",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1339",
@@ -454,7 +491,8 @@
    "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1339 · Poslanecký · predkladateľ: Vladimíra LEDECKÉHO, Vladimíry MARCINKOVEJ a Mariána VISKUPIČA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10784",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1335",
@@ -466,7 +504,8 @@
    "stav": "",
    "meta": "ČPT 1335 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10805",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1334",
@@ -478,7 +517,8 @@
    "stav": "",
    "meta": "ČPT 1334 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10804",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1333",
@@ -490,7 +530,8 @@
    "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1333 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10787",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1332",
@@ -502,7 +543,8 @@
    "stav": "",
    "meta": "ČPT 1332 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10789",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1331",
@@ -514,7 +556,8 @@
    "stav": "",
    "meta": "ČPT 1331 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10795",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1330",
@@ -526,7 +569,8 @@
    "stav": "",
    "meta": "ČPT 1330 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10793",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1329",
@@ -538,7 +582,8 @@
    "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1329 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10794",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1328",
@@ -550,7 +595,8 @@
    "stav": "",
    "meta": "ČPT 1328 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10800",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1327",
@@ -562,7 +608,8 @@
    "stav": "",
    "meta": "ČPT 1327 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10801",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1326",
@@ -574,7 +621,8 @@
    "stav": "",
    "meta": "ČPT 1326 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10799",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1325",
@@ -586,7 +634,8 @@
    "stav": "",
    "meta": "ČPT 1325 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10792",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "p-1324",
@@ -598,7 +647,8 @@
    "stav": "",
    "meta": "ČPT 1324 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10791",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-17989/2026",
@@ -609,7 +659,8 @@
    "blok": "",
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/32057/1",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-16859/2026",
@@ -620,7 +671,8 @@
    "blok": "",
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/31981/2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-16421/2026",
@@ -631,7 +683,8 @@
    "blok": "",
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/31966/2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-13554/2026",
@@ -642,7 +695,8 @@
    "blok": "",
    "meta": "Úrad vlády Slovenskej republiky · predseda vlády",
    "url": "https://rokovania.gov.sk/RVL/Material/31878/3",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-12391/2026",
@@ -653,7 +707,8 @@
    "blok": "",
    "meta": "Národný bezpečnostný úrad · riaditeľ Národného bezpečnostného úradu; riaditeľ Slovenskej informačnej služby; riaditeľ Vojenského spravodajstva",
    "url": "https://rokovania.gov.sk/RVL/Material/31819/2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-11524/2026",
@@ -664,7 +719,8 @@
    "blok": "",
    "meta": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky · minister investícií, regionálneho rozvoja a informatizácie",
    "url": "https://rokovania.gov.sk/RVL/Material/31757/2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-10820/2026",
@@ -675,7 +731,8 @@
    "blok": "",
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/31732/1",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-8739/2026",
@@ -686,7 +743,8 @@
    "blok": "",
    "meta": "Ministerstvo zdravotníctva Slovenskej republiky · minister zdravotníctva",
    "url": "https://rokovania.gov.sk/RVL/Material/31673/1",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-2469/2026",
@@ -697,7 +755,8 @@
    "blok": "",
    "meta": "Ministerstvo hospodárstva Slovenskej republiky · podpredsedníčka vlády a ministerka hospodárstva",
    "url": "https://rokovania.gov.sk/RVL/Material/31540/2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "v-UV-65/2026",
@@ -708,7 +767,8 @@
    "blok": "",
    "meta": "DÔVERA zdravotná poisťovňa, a. s. · predseda predstavenstva a člen predstavenstva DÔVERA zdravotná poisťovňa, a. s.",
    "url": "https://rokovania.gov.sk/RVL/Material/31492/1",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "_ai_tried": true
   },
   {
    "id": "u-znizovanie mnozstva zko v meste brezno – kont",
@@ -719,7 +779,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Brezno",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560399?cHash=2c157614eae928bb13fd9b62efdaf3a4",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-znizenie energetickej narocnosti kulturneho d",
@@ -730,7 +792,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Gabčíkovo",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560641?cHash=84820d5e6df37ea1ea40565ed2b56df1",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-zachranne, konzervacne a rekonstrukcne staveb",
@@ -741,7 +805,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Fiľakovo",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559527?cHash=9c6791345964273f98e7be2db24c800e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-potraviny",
@@ -752,7 +818,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ústav na výkon väzby a Ústav na výkon trestu odňatia slobody",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/454087?cHash=8ae2ec1e3ae50754d5455f2e445a4dae",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-echo pristroj",
@@ -763,7 +831,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzitná nemocnica Bratislava",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560666?cHash=a0b36bb0f538ec60d155525d3809d7c2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-zabezpecenie sluzieb projektanta pre oblast i",
@@ -774,7 +844,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Nitra",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/514220?cHash=ec8c2c69381633786ce2e3bdea63cb80",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-areal pre sport petrzalka/primarna infrastruk",
@@ -785,7 +857,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Bratislavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558800?cHash=a60f6c76edc036552d3fcf88e5aed38e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-specialne potravinove kombinovane davky",
@@ -796,7 +870,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558834?cHash=57296295cd6d746d4893d485d6a7017c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-topolcany – ul. m. razusa a pivovarnicka – ob",
@@ -807,7 +883,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Západoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549697?cHash=8e489e871d0594fbe6d6c2c7246d22bf",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-zlepsenie energetickej hospodarnosti ms topol",
@@ -818,7 +896,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Partizánske",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557082?cHash=1e5e25b9f2f10142de48ebca98c49205",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-antineoplasticke a imunomodulacne cinidla",
@@ -829,7 +909,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555027?cHash=fe7634c32dc2fe53f8766ec5b2465d77",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-zs dubova – smart skola 21. storocia – workou",
@@ -840,7 +922,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mestská časť Bratislava - Staré Mesto",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558624?cHash=289fe70e5d98552fb39d29bf11c2fc1c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-koncesia na poskytovanie sluzieb tepelneho ho",
@@ -851,7 +935,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mestská časť Bratislava - Staré Mesto",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553062?cHash=8ea25545fbd6bada6531d82ecec0fa93",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-vystavba a rekonstrukcia skolskych sportovisk",
@@ -862,7 +948,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558831?cHash=7e0611e830efa9d2110f672998acd98a",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-zabezpecenie terestrialnej distribucie televi",
@@ -873,7 +961,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555258?cHash=95400f2789283afa37c6c1674a848871",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-dostavba a rekonstrukcia cov i. spisske tomas",
@@ -884,7 +974,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Spišské Tomášovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560695?cHash=47ad39c3c5ec05e217ab92c5beac7a44",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-vykonanie projektu jednoduchych pozemkovych u",
@@ -895,7 +987,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Malý Slivník",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560595?cHash=5110f12517c2ea7adca663831498d11f",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-sanacia havarijneho stavu murov na podkolibsk",
@@ -906,7 +1000,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Hlavné mesto SR Bratislava",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557773?cHash=410443098818a086cb2f0f71a55e74ca",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-angiograficky system pre multifunkcne katetri",
@@ -917,7 +1013,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555968?cHash=e32b134a27321532f873adfa3fca113c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-nakup originalnych nahradnych dielov znacky s",
@@ -928,7 +1026,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Automobilové opravovne Ministerstva vnútra Slovenskej republiky, a. s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560892?cHash=29c43621f1918ba5f44814ae43955e42",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-kino lipa - lokalne kulturne centrum",
@@ -939,7 +1039,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Nitra",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558096?cHash=f78908e47631290d3cd939543c3d421b",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-vystavba a rekonstrukcia miestnych komunikaci",
@@ -950,7 +1052,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Trenčín",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/499590?cHash=7987dc49dda9448ab0ac877125a1d581",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-pristavba skoly lastovce, odstranenie dvojzme",
@@ -961,7 +1065,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Lastovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/541343?cHash=83a439b2e5a14aba470975512c90ac09",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-mesto lucenec - ulica novohradska – komplexna",
@@ -972,7 +1078,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Lučenec",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/550524?cHash=105fdc845804a41c52563ebb3f31644a",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-prevadzka a udrzba informacnych systemov od s",
@@ -983,7 +1091,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556465?cHash=a9971746ce99ec5c6c2a942dea612725",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-dodanie nabytku pre potreby okresneho sudu ba",
@@ -994,7 +1104,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Okresný súd Banská Bystrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557285?cHash=de8d9a6736d79af5497f667860e03f42",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-dns - vypoctova technika a komponenty na obdo",
@@ -1005,7 +1117,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzita Pavla Jozefa Šafárika v Košiciach, Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/534745?cHash=a8858589d06d436c6622960a86b4b91f",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-rekonstrukcia tatranskej ulice, 1. etapa – st",
@@ -1016,7 +1130,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Banská Bystrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559640?cHash=e8016b81b65b0fedcd40ea85b3f29dcd",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-moderna skola v obci velke ripnany",
@@ -1027,7 +1143,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Veľké Ripňany",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/537491?cHash=11cd3e1b08ab6d229847c8454d0b8fd6",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-inovacia a modernizacia uv hrinova",
@@ -1038,7 +1156,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Stredoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551571?cHash=2f44c709b729344e226dd48b175306af",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-nakup specialneho plavajuceho rypadla s prisl",
@@ -1049,7 +1169,9 @@
    "blok": "",
    "meta": "Obstarávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549736?cHash=d809d5fe94e71b8cc878b893bbc90ecc",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-podpora energetickej efektivnosti a vyuzivani",
@@ -1060,7 +1182,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Trebišov",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553884?cHash=4da249146923dc044eaa3f8a6e229f86",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-pranie bielizne, dezinfekcia, bielenie, zehle",
@@ -1071,7 +1195,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzitná nemocnica Martin",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549588?cHash=469df51bfb3c9ed1fb2c3498571fe22e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-tlaciarenske sluzby – dns",
@@ -1082,7 +1208,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/524581?cHash=d1b8581543f7c6f24bbd52986ca4346e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-graficke, tlaciarenske a kniharske sluzby pre",
@@ -1093,7 +1221,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzita Pavla Jozefa Šafárika v Košiciach, Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/436933?cHash=a385c8a8ccbd1800a3e1ddaa9d31ad92",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-revitalizacia centra s ohladom na zmenu klimy",
@@ -1104,7 +1234,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Kostolná pri Dunaji",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551881?cHash=55f26aa5c2e475cc1892afb7dc2d9b7e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-16/26 modernizacia zariadenia zimneho stadion",
@@ -1115,7 +1247,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Nové Mesto nad Váhom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560882?cHash=a861c0e5560c807432c317223863417a",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-projektova dokumentacia na prestavbu mosta ev",
@@ -1126,7 +1260,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Banskobystrický samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557061?cHash=d1d3ff528c37550f8954f50e3f0ff83b",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-revitalizacia ul. jilemnickeho v obci velka l",
@@ -1137,7 +1273,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Veľká Lomnica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557564?cHash=90fcfc81f2ae6721e24a12d843b83510",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-obnova a zvysenie energetickej efektivnosti b",
@@ -1148,7 +1286,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Púchov",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560592?cHash=3ff4e4d88b3f143d3d276439821f8af6",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-centralne obstaravanie vypoctovej techniky",
@@ -1159,7 +1299,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/430249?cHash=7d7fe77e24df76660a3821eb305e9d38",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-prevadzkovanie nabijacej infrastruktury mesta",
@@ -1170,7 +1312,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559113?cHash=226b7d4ea6cf69d4c385ad49f08c2a6c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-orezy krov v meste zilina",
@@ -1181,7 +1325,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560886?cHash=dc03e54759dbd55f9d7312584e0dd742",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-priprava projektovych dokumentacii pre prefin",
@@ -1192,7 +1338,9 @@
    "blok": "",
    "meta": "Obstarávateľ: LESY Slovenskej republiky, štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558999?cHash=6af7dcd398f2ab301cd5fdde0e71ae32",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-oprava a udrzba vyhradenych technickych zaria",
@@ -1203,7 +1351,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558675?cHash=1f2ae4bc874ac8b6805dcb71f9dac1d3",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-oprava krizovatiek v podoli",
@@ -1214,7 +1364,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Podolie",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/486521?cHash=ec74fb299a2a6de8e775aab6fc62b6cb",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-havarijna situacia vykurovacieho system v zs ",
@@ -1225,7 +1377,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Podolie",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/534683?cHash=953fa728fb5a6c5af8f5fc83a81bb879",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-projektove prace a inziniering - ii.",
@@ -1236,7 +1390,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Západoslovenská distribučná, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/424586?cHash=66a3e50ed9aea1bb594ac97cf2cd8938",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-poskytovanie sluzieb systemovej a aplikacnej ",
@@ -1247,7 +1403,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo financií Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556584?cHash=774fea0e6b43ffd3035c0b90c4e4d761",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-potraviny na zabezpecenie stravovania – dns",
@@ -1258,7 +1416,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/444972?cHash=1191edf7988e2e08474350a67016a568",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-univerzalne vozidlo na cistenie a udrzbu komu",
@@ -1269,7 +1429,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Technické služby mesta Prešov, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559374?cHash=6fbd3c24b5d254ac1cad05a8f4a50681",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-stavebne prace",
@@ -1280,7 +1442,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ústav na výkon trestu odňatia slobody",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557232?cHash=46c00de2fdb98987e6f433e9282f4fed",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-komplexna oprava straznej veze c. 1",
@@ -1291,7 +1455,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Ústav na výkon trestu odňatia slobody",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557808?cHash=591ed6dbaf9bdded283ac784063dede0",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-rekonstrukcia vykurovacieho systemu v objekte",
@@ -1302,7 +1468,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Základná škola, Ulica energetikov 242/39, Prievidza",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559619?cHash=adc96ebd152fa97ccc876e019dc25601",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-poskytnutie sluzieb zarucneho a pozarucneho s",
@@ -1313,7 +1481,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Finančné riaditeľstvo Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559136?cHash=12f08053352b0f258fffcef3b3024dde",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-oprava vybranych casti interieru auly beliana",
@@ -1324,7 +1494,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzita Mateja Bela v Banskej Bystrici",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559807?cHash=6964bc4620e720667c2d7e7fdfc253ca",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-dns - chemikalie a spotrebny laboratorny mate",
@@ -1335,7 +1507,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Univerzita Pavla Jozefa Šafárika v Košiciach, Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/514021?cHash=1a4952cff1fddd065e9372553e20955a",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-otcova i matkina rola, moje dedicstvo",
@@ -1346,7 +1520,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Breza",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558323?cHash=921258b4956c2e9bbe6d683bdf9d86fa",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-sluzby technika poziarnej ochrany a preventiv",
@@ -1357,7 +1533,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Nemocnica s poliklinikou Považská Bystrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557728?cHash=c8ece3b409847f2df8e70114bc570bc5",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-livinglab revuca – nabytok a interierove vyba",
@@ -1368,7 +1546,9 @@
    "blok": "",
    "meta": "Obstarávateľ: Banskobystrický samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560661?cHash=d897ee4feea6a7733de4ee6def15b844",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": "",
+   "_ai_tried": true
   },
   {
    "id": "u-nakup ikt, audiovizualnej techniky, prislusen",
@@ -1379,7 +1559,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Prešovská univerzita v Prešove - Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/446446?cHash=0274a5a9b84c0a345d4602b3e726dda6",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-rekonstrukcia objektu esterhazyovskej kurie v",
@@ -1390,7 +1571,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558869?cHash=273fcce5f159fe075ab2fdba92eac42c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zabezpecenie upratovania v objektoch sp, a.s.",
@@ -1401,7 +1583,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Slovenská pošta, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/554596?cHash=c7028151d59db78bfe566e3b0a37a23f",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zabezpecenie realizacie verejneho obstaravani",
@@ -1412,7 +1595,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Košice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559520?cHash=9d4fe27e08eefdaff41c491ed44d1eb2",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zmluvna preprava osob pre potreby vyroby a vy",
@@ -1423,7 +1607,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559416?cHash=a0f9e0fc21ba62b45cb1b956b74e9a02",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-stahovacie sluzby",
@@ -1434,7 +1619,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Okresný súd Banská Bystrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560780?cHash=ebdfea5f480ee5c40fa033efb740fd0d",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zabezpecenie licencneho maintenance, poskytov",
@@ -1445,7 +1631,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Štatistický úrad Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560774?cHash=89e13235b1d60228fd2464fad6a7ebd9",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-dodavkovy automobil",
@@ -1456,7 +1643,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou J. A. Reimana v Prešove",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556563?cHash=580d65f022800459babdc4f86dadce05",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zvysenie energetickej efektivnosti zakladnej ",
@@ -1467,7 +1655,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Vysoká pri Morave",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560560?cHash=27fba78c9f4d907f272de71cd318ac30",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-nahradny zdroj",
@@ -1478,7 +1667,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Ústav na výkon trestu odňatia slobody",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559551?cHash=b7b755cd3941e5485e7e854d2bdc4d84",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-znizenie energetickej narocnosti objektu mate",
@@ -1489,7 +1679,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Vojkovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558767?cHash=6e18171b68f78a83aaeb4aad192660fa",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-naradie",
@@ -1500,7 +1691,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Dopravný podnik Bratislava, akciová spoločnosť",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/441747?cHash=8c4ed97d3c2b65a180263acffe81d01e",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-zlepsovanie energetickej hospodarnosti a obno",
@@ -1511,7 +1703,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551919?cHash=e15cb94e93a5f81fcb635bc5d508cfd7",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-css meta martin - zateplenie, stavebne upravy",
@@ -1522,7 +1715,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Žilinský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560536?cHash=c15db525392bfc146d5f69bc6619bfdf",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-dodanie komunalnej techniky - traktor, celny ",
@@ -1533,7 +1727,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Markušovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558417?cHash=364b0cf280f80d0e7a0060511ea6776d",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-odstranenie havarijneho stavu elektroinstalac",
@@ -1544,7 +1739,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Štrba",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560400?cHash=3f85af76c3e4caa2128d5c35c515744c",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-technicka podpora systemu helios nephrite na ",
@@ -1555,7 +1751,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560218?cHash=7ddd8bf33cfd2f4aeab9cbacad4a2ad3",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-malovanie interierovych priestorov",
@@ -1566,7 +1763,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Stredná športová škola",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558754?cHash=f5c898180057e95afe311330c9db2ff3",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-dodavka plynu na rok 2027",
@@ -1577,7 +1775,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Mesto Nové Mesto nad Váhom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560733?cHash=69c9f03b898875435141e034a4ef6447",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-obstaranie 40 najomnych bytov v obci stankova",
@@ -1588,7 +1787,8 @@
    "blok": "",
    "meta": "Obstarávateľ: Obec Stankovany",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560872?cHash=dad4aac2f8102c1ccaa45d92bb81519d",
-   "first_seen": "2026-07-03"
+   "first_seen": "2026-07-03",
+   "suma": ""
   },
   {
    "id": "u-dom kultury namestovo - znizenie energetickej",
@@ -3100,7 +3300,7 @@
   {
    "id": "a-57f7ad22a46e",
    "source": "aktuality",
-   "title": "Najkontroverznejší plot na Slovensku. Rezort obrany dáva za takmer milión eur namaľovať falošný tehlový múr - tnlive",
+   "title": "Najkontroverznejší plot na Slovensku. Rezort obrany dáva za takmer milión eur namaľovať falošný tehlový múr - TNLIVE.sk",
    "date": "2026-07-02",
    "category": "Ostatné",
    "blok": "",
@@ -3112,7 +3312,7 @@
    "id": "a-b65be1bef0c4",
    "source": "aktuality",
    "title": "Ostrá diskusia na východe Slovenska. Vzniknúť tam má zóna pre veterné parky, v hre sú dva varianty - HNonline",
-   "date": "2026-07-03",
+   "date": "2026-07-04",
    "category": "Ostatné",
    "blok": "",
    "meta": "Ministerstvo životného prostredia SR",
@@ -3183,6 +3383,28 @@
    "blok": "",
    "meta": "Úrad pre verejné obstarávanie (ÚVO)",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQWEZ1Vm1EQVJPRVl4c204ODRDb1ZZdklXUHFZSHdlZUFIVm5QN3hHUHBFTTZzbjYwM1poczV6VWI4emE3NVo2RG5rT01XckcxLXZlZGVndk5adTJjenZGUi1LY0U5N1ZWWExnS1NkWmJLTVI5QXhreDdJUkN4MkplaXZHamZRVFd6WmgtTHFxcWxqWmRBdWROMVl4SXJyaVFtY2wwTU9QSGdPcnZpZEVRT19yQTJtTVlPREE?oc=5",
+   "first_seen": "2026-07-04"
+  },
+  {
+   "id": "a-9976cb433842",
+   "source": "aktuality",
+   "title": "Ministerstvo zahraničných vecí a európskych záležitostí Slovenskej republiky | Plus JEDEN DEŇ - Plus JEDEN DEŇ",
+   "date": "2026-07-03",
+   "category": "Vnútro a bezpečnosť",
+   "blok": "",
+   "meta": "Ministerstvo cestovného ruchu a športu SR",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOSnBrZlljRjI5NGJFcUlBNXliSmVxaHc0eDB1S3ZhSDFqTkJqQlpvMHJBUGpTcng3VEFuT251N0ZGVVhlWFFuM1NDZHFTRUE4YkdaeW5ia3JkVkhNTk9vbzI1aTdEMlR4b1lpdENZdkUtT054N2NRUUtYUGk5dUk5a29EZWpiOEJGWWlIRnh1MFJDZWk1ZDRWZG43c1VEOW5kYm9MdjRUOEc?oc=5",
+   "first_seen": "2026-07-04"
+  },
+  {
+   "id": "a-8caf9a829a7f",
+   "source": "aktuality",
+   "title": "Fico o Putinovi, Zelenskom a vojne: Tvrdá rana pre Brusel! - Plus JEDEN DEŇ",
+   "date": "2026-07-04",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad vlády SR",
+   "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOVG9FR09NMWRDSFJhbzMxN0hmenBYRE92b2pUQmlteml5bTRhSzEtUW1JQU9GWnM0ellEYnkwQkhPUkhycUwyZDFzeXJmRmxYSFhRYXFrcFp6MFV1dEN2dDVrS3U2WmxJZTI5cjVpZTYwVnBOUTh0YkcySEVCOEFqRVU4ZWdxbzJKbFVyaWNHTjN2VklaZnZGNkNuZzZjSHFxMWN1dG5QWHVTLTJzbGUzTWZ6amNjN1hZSmw3N3NVM1Y0ZWFJZkt3MHZvSUZrZFJ2VFVLLVVsSUwxTW51TzdhbU1jWDdZcVNLcTctS3JLeWVFZ0hmOGFESnU4OFFrX1E0b2tPU0lMbXdmcU0?oc=5",
    "first_seen": "2026-07-04"
   }
  ],
