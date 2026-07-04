@@ -319,7 +319,7 @@
    "date": "2026-05-08",
    "category": "Ostatné",
    "blok": "Neurčené",
-   "stav": "",
+   "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1354 · Poslanecký · predkladateľ: Beáty JURÍK, Zuzany ŠTEVULOVEJ, Lucie PLAVÁKOVEJ a Ondreja PROSTREDNÍKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10820",
    "first_seen": "2026-07-03",
@@ -397,7 +397,7 @@
    "date": "2026-05-07",
    "category": "Hospodárstvo a podnikanie",
    "blok": "Neurčené",
-   "stav": "",
+   "stav": "I. čítanie (Zápis uznesenia NR SR)",
    "meta": "ČPT 1347 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10815",
    "first_seen": "2026-07-03",
@@ -410,7 +410,7 @@
    "date": "2026-05-07",
    "category": "Vnútro a bezpečnosť",
    "blok": "Koalícia",
-   "stav": "",
+   "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1346 · Poslanecký · predkladateľ: Tibora GAŠPARA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10814",
    "first_seen": "2026-07-03",
@@ -592,7 +592,7 @@
    "date": "2026-05-07",
    "category": "Doprava a výstavba",
    "blok": "Koalícia (vláda)",
-   "stav": "",
+   "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1328 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10800",
    "first_seen": "2026-07-03",
@@ -605,7 +605,7 @@
    "date": "2026-05-07",
    "category": "Doprava a výstavba",
    "blok": "Koalícia (vláda)",
-   "stav": "",
+   "stav": "Stanovisko k NZ (Pripravená informácia k NZ)",
    "meta": "ČPT 1327 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10801",
    "first_seen": "2026-07-03",
@@ -781,7 +781,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560399?cHash=2c157614eae928bb13fd9b62efdaf3a4",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbách zariadení na spracovanie odpadu",
+   "fondy": "Áno"
   },
   {
    "id": "u-znizenie energetickej narocnosti kulturneho d",
@@ -794,7 +799,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560641?cHash=84820d5e6df37ea1ea40565ed2b56df1",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce",
+   "fondy": "Áno"
   },
   {
    "id": "u-zachranne, konzervacne a rekonstrukcne staveb",
@@ -807,7 +817,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559527?cHash=9c6791345964273f98e7be2db24c800e",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na objektoch hradov 45443000-4 Fasádne práce 45454100-5",
+   "fondy": "Áno"
   },
   {
    "id": "u-potraviny",
@@ -820,7 +835,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/454087?cHash=8ae2ec1e3ae50754d5455f2e445a4dae",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Potraviny, nápoje, tabak a príbuzné produkty",
+   "fondy": "Nie"
   },
   {
    "id": "u-echo pristroj",
@@ -833,7 +853,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560666?cHash=a0b36bb0f538ec60d155525d3809d7c2",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Echokardiografy",
+   "fondy": "Nie"
   },
   {
    "id": "u-zabezpecenie sluzieb projektanta pre oblast i",
@@ -846,7 +871,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/514220?cHash=ec8c2c69381633786ce2e3bdea63cb80",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Inžinierske projektovanie 71242000-6 Príprava projektov a návrhov, odh",
+   "fondy": "Áno"
   },
   {
    "id": "u-areal pre sport petrzalka/primarna infrastruk",
@@ -859,7 +889,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558800?cHash=a60f6c76edc036552d3fcf88e5aed38e",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe diaľkových potrubných vedení, komunikačných a",
+   "fondy": "Nie"
   },
   {
    "id": "u-specialne potravinove kombinovane davky",
@@ -872,7 +907,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558834?cHash=57296295cd6d746d4893d485d6a7017c",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Poľné dávky potravín",
+   "fondy": "Nie"
   },
   {
    "id": "u-topolcany – ul. m. razusa a pivovarnicka – ob",
@@ -885,7 +925,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549697?cHash=8e489e871d0594fbe6d6c2c7246d22bf",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45232151-5 Stavebné práce na celkovej údržbe vodovodov",
+   "fondy": "Áno"
   },
   {
    "id": "u-zlepsenie energetickej hospodarnosti ms topol",
@@ -898,7 +943,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557082?cHash=1e5e25b9f2f10142de48ebca98c49205",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe budov materských škôl",
+   "fondy": "Áno"
   },
   {
    "id": "u-antineoplasticke a imunomodulacne cinidla",
@@ -911,7 +961,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555027?cHash=fe7634c32dc2fe53f8766ec5b2465d77",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Antineoplastické a imunomodulačné činidlá",
+   "fondy": "Nie"
   },
   {
    "id": "u-zs dubova – smart skola 21. storocia – workou",
@@ -924,7 +979,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558624?cHash=289fe70e5d98552fb39d29bf11c2fc1c",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-koncesia na poskytovanie sluzieb tepelneho ho",
@@ -937,7 +996,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553062?cHash=8ea25545fbd6bada6531d82ecec0fa93",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Prevádzka vykurovacích zariadení",
+   "fondy": "Nie"
   },
   {
    "id": "u-vystavba a rekonstrukcia skolskych sportovisk",
@@ -950,7 +1014,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558831?cHash=7e0611e830efa9d2110f672998acd98a",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45212221-1 Stavebné práce súvisiace so stavbami na špor",
+   "fondy": "Áno"
   },
   {
    "id": "u-zabezpecenie terestrialnej distribucie televi",
@@ -963,7 +1032,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555258?cHash=95400f2789283afa37c6c1674a848871",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Služby prenosu televízneho a rozhlasového vysielania",
+   "fondy": "Nie"
   },
   {
    "id": "u-dostavba a rekonstrukcia cov i. spisske tomas",
@@ -976,7 +1050,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560695?cHash=47ad39c3c5ec05e217ab92c5beac7a44",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45252127-4 Stavebné práce na čističkách odpadových vôd",
+   "fondy": "Áno"
   },
   {
    "id": "u-vykonanie projektu jednoduchych pozemkovych u",
@@ -989,7 +1068,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560595?cHash=5110f12517c2ea7adca663831498d11f",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Služby spojené so správou pozemkov 71351810-4 Topografické služby 7135",
+   "fondy": "Áno"
   },
   {
    "id": "u-sanacia havarijneho stavu murov na podkolibsk",
@@ -1002,7 +1086,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557773?cHash=410443098818a086cb2f0f71a55e74ca",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Práce na údržbe ciest 45262310-7 Železobetonárske práce 45111230-9 Prá",
+   "fondy": "Áno"
   },
   {
    "id": "u-angiograficky system pre multifunkcne katetri",
@@ -1015,7 +1104,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555968?cHash=e32b134a27321532f873adfa3fca113c",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Digitálne angiografické prístroje",
+   "fondy": "Nie"
   },
   {
    "id": "u-nakup originalnych nahradnych dielov znacky s",
@@ -1028,7 +1122,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560892?cHash=29c43621f1918ba5f44814ae43955e42",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Rôzne náhradné diely 50112000-3 Oprava a údržba osobných motorových vo",
+   "fondy": "Nie"
   },
   {
    "id": "u-kino lipa - lokalne kulturne centrum",
@@ -1041,7 +1140,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558096?cHash=f78908e47631290d3cd939543c3d421b",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe budov pre voľný čas, šport, kultúru, ubytovan",
+   "fondy": "Áno"
   },
   {
    "id": "u-vystavba a rekonstrukcia miestnych komunikaci",
@@ -1054,7 +1158,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/499590?cHash=7987dc49dda9448ab0ac877125a1d581",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Práce na kompletnej alebo čiastočnej stavbe a práce inžinierskych stav",
+   "fondy": "Nie"
   },
   {
    "id": "u-pristavba skoly lastovce, odstranenie dvojzme",
@@ -1067,7 +1176,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/541343?cHash=83a439b2e5a14aba470975512c90ac09",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45112000-5 Výkopové zemné práce a presun zemín 45262500",
+   "fondy": "Áno"
   },
   {
    "id": "u-mesto lucenec - ulica novohradska – komplexna",
@@ -1080,7 +1194,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/550524?cHash=105fdc845804a41c52563ebb3f31644a",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Práce na oprave ciest 45232400-6 Stavebné práce na stavbe kanalizácie ",
+   "fondy": "Áno"
   },
   {
    "id": "u-prevadzka a udrzba informacnych systemov od s",
@@ -1093,7 +1212,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556465?cHash=a9971746ce99ec5c6c2a942dea612725",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Služby týkajúce sa podpory systému 72267100-0 Údržba programového vyba",
+   "fondy": "Nie"
   },
   {
    "id": "u-dodanie nabytku pre potreby okresneho sudu ba",
@@ -1106,7 +1230,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557285?cHash=de8d9a6736d79af5497f667860e03f42",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Nábytok",
+   "fondy": "Nie"
   },
   {
    "id": "u-dns - vypoctova technika a komponenty na obdo",
@@ -1119,7 +1248,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/534745?cHash=a8858589d06d436c6622960a86b4b91f",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Počítačové zariadenia a spotrebný materiál 30212100-9 Základné jednotk",
+   "fondy": "Nie"
   },
   {
    "id": "u-rekonstrukcia tatranskej ulice, 1. etapa – st",
@@ -1132,7 +1266,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559640?cHash=e8016b81b65b0fedcd40ea85b3f29dcd",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Práce na oprave ciest",
+   "fondy": "Nie"
   },
   {
    "id": "u-moderna skola v obci velke ripnany",
@@ -1145,7 +1284,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/537491?cHash=11cd3e1b08ab6d229847c8454d0b8fd6",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na objektoch základných škôl 34951000-8 Prístupové ploš",
+   "fondy": "Áno"
   },
   {
    "id": "u-inovacia a modernizacia uv hrinova",
@@ -1158,7 +1302,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551571?cHash=2f44c709b729344e226dd48b175306af",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 51514110-2 Inštalácia strojov a prístrojov na filtrovan",
+   "fondy": "Áno"
   },
   {
    "id": "u-nakup specialneho plavajuceho rypadla s prisl",
@@ -1171,7 +1320,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549736?cHash=d809d5fe94e71b8cc878b893bbc90ecc",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Obojživelné plavidlá a lode 60000000-8 Dopravné služby (bez prepravy o",
+   "fondy": "Áno"
   },
   {
    "id": "u-podpora energetickej efektivnosti a vyuzivani",
@@ -1184,7 +1338,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553884?cHash=4da249146923dc044eaa3f8a6e229f86",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45321000-3 Tepelnoizolačné práce 45212300-9 Stavebné pr",
+   "fondy": "Nie"
   },
   {
    "id": "u-pranie bielizne, dezinfekcia, bielenie, zehle",
@@ -1197,7 +1356,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549588?cHash=469df51bfb3c9ed1fb2c3498571fe22e",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Pranie a chemické čistenie 98312000-3 Čistenie textilu 60000000-8 Dopr",
+   "fondy": "Nie"
   },
   {
    "id": "u-tlaciarenske sluzby – dns",
@@ -1210,7 +1374,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/524581?cHash=d1b8581543f7c6f24bbd52986ca4346e",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Tlačiarenské a príbuzné služby 79821000-5 Konečná úprava tlače 6000000",
+   "fondy": "Nie"
   },
   {
    "id": "u-graficke, tlaciarenske a kniharske sluzby pre",
@@ -1223,7 +1392,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/436933?cHash=a385c8a8ccbd1800a3e1ddaa9d31ad92",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Tlačiarenské a príbuzné služby",
+   "fondy": "Nie"
   },
   {
    "id": "u-revitalizacia centra s ohladom na zmenu klimy",
@@ -1236,7 +1410,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551881?cHash=55f26aa5c2e475cc1892afb7dc2d9b7e",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe zariadení pre voľný čas 45236250-7 Stavebné p",
+   "fondy": "Áno"
   },
   {
    "id": "u-16/26 modernizacia zariadenia zimneho stadion",
@@ -1249,7 +1428,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560882?cHash=a861c0e5560c807432c317223863417a",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe športových zariadení",
+   "fondy": "Nie"
   },
   {
    "id": "u-projektova dokumentacia na prestavbu mosta ev",
@@ -1262,7 +1446,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557061?cHash=d1d3ff528c37550f8954f50e3f0ff83b",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Inžinierske projektovanie 71300000-1 Inžinierske služby 71242000-6 Prí",
+   "fondy": "Nie"
   },
   {
    "id": "u-revitalizacia ul. jilemnickeho v obci velka l",
@@ -1275,7 +1464,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557564?cHash=90fcfc81f2ae6721e24a12d843b83510",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe chodníkov 45316100-6 Inštalovanie vonkajších ",
+   "fondy": "Áno"
   },
   {
    "id": "u-obnova a zvysenie energetickej efektivnosti b",
@@ -1288,7 +1482,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560592?cHash=3ff4e4d88b3f143d3d276439821f8af6",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe budov škôl 45262700-8 Práce na zmene (úprave)",
+   "fondy": "Nie"
   },
   {
    "id": "u-centralne obstaravanie vypoctovej techniky",
@@ -1301,7 +1500,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/430249?cHash=7d7fe77e24df76660a3821eb305e9d38",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Počítačové zariadenia a spotrebný materiál",
+   "fondy": "Áno"
   },
   {
    "id": "u-prevadzkovanie nabijacej infrastruktury mesta",
@@ -1314,7 +1518,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559113?cHash=226b7d4ea6cf69d4c385ad49f08c2a6c",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Prevádzka elektrických inštalácií",
+   "fondy": "Nie"
   },
   {
    "id": "u-orezy krov v meste zilina",
@@ -1327,7 +1536,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560886?cHash=dc03e54759dbd55f9d7312584e0dd742",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Záhradnícke služby 77211500-7 Údržba stromov 77341000-2 Prerezávanie s",
+   "fondy": "Nie"
   },
   {
    "id": "u-priprava projektovych dokumentacii pre prefin",
@@ -1340,7 +1554,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558999?cHash=6af7dcd398f2ab301cd5fdde0e71ae32",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-oprava a udrzba vyhradenych technickych zaria",
@@ -1353,7 +1571,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558675?cHash=1f2ae4bc874ac8b6805dcb71f9dac1d3",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-oprava krizovatiek v podoli",
@@ -1366,7 +1588,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/486521?cHash=ec74fb299a2a6de8e775aab6fc62b6cb",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-havarijna situacia vykurovacieho system v zs ",
@@ -1379,7 +1605,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/534683?cHash=953fa728fb5a6c5af8f5fc83a81bb879",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-projektove prace a inziniering - ii.",
@@ -1392,7 +1622,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/424586?cHash=66a3e50ed9aea1bb594ac97cf2cd8938",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Inžinierske projektovanie",
+   "fondy": "Nie"
   },
   {
    "id": "u-poskytovanie sluzieb systemovej a aplikacnej ",
@@ -1405,7 +1640,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556584?cHash=774fea0e6b43ffd3035c0b90c4e4d761",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Služby súvisiace so softvérom 72261000-2 Softvérové podporné služby 72",
+   "fondy": "Nie"
   },
   {
    "id": "u-potraviny na zabezpecenie stravovania – dns",
@@ -1418,7 +1658,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/444972?cHash=1191edf7988e2e08474350a67016a568",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Potraviny, nápoje, tabak a príbuzné produkty 15300000-1 Ovocie, zeleni",
+   "fondy": "Nie"
   },
   {
    "id": "u-univerzalne vozidlo na cistenie a udrzbu komu",
@@ -1431,7 +1676,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559374?cHash=6fbd3c24b5d254ac1cad05a8f4a50681",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-stavebne prace",
@@ -1444,7 +1693,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557232?cHash=46c00de2fdb98987e6f433e9282f4fed",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-komplexna oprava straznej veze c. 1",
@@ -1457,7 +1710,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557808?cHash=591ed6dbaf9bdded283ac784063dede0",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-rekonstrukcia vykurovacieho systemu v objekte",
@@ -1470,7 +1727,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559619?cHash=adc96ebd152fa97ccc876e019dc25601",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-poskytnutie sluzieb zarucneho a pozarucneho s",
@@ -1483,7 +1744,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559136?cHash=12f08053352b0f258fffcef3b3024dde",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Opravy, údržba a súvisiace služby pre vozidlá a príbuzné vybavenie 501",
+   "fondy": "Nie"
   },
   {
    "id": "u-oprava vybranych casti interieru auly beliana",
@@ -1496,7 +1762,11 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559807?cHash=6964bc4620e720667c2d7e7fdfc253ca",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-dns - chemikalie a spotrebny laboratorny mate",
@@ -1509,7 +1779,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/514021?cHash=1a4952cff1fddd065e9372553e20955a",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Zdravotnícky spotrebný materiál 24000000-4 Chemické výrobky 24300000-7",
+   "fondy": "Áno"
   },
   {
    "id": "u-otcova i matkina rola, moje dedicstvo",
@@ -1522,7 +1797,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558323?cHash=921258b4956c2e9bbe6d683bdf9d86fa",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Generálne opravy a renovačné práce",
+   "fondy": "Áno"
   },
   {
    "id": "u-sluzby technika poziarnej ochrany a preventiv",
@@ -1535,7 +1815,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557728?cHash=c8ece3b409847f2df8e70114bc570bc5",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Poradenské služby pre oblasť ochrany a kontroly pred požiarom a výbuch",
+   "fondy": "Nie"
   },
   {
    "id": "u-livinglab revuca – nabytok a interierove vyba",
@@ -1548,7 +1833,12 @@
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560661?cHash=d897ee4feea6a7733de4ee6def15b844",
    "first_seen": "2026-07-03",
    "suma": "",
-   "_ai_tried": true
+   "_ai_tried": true,
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Nábytok 39150000-8 Rôzny nábytok a vybavenie 39110000-6 Sedadlá, stoli",
+   "fondy": "Áno"
   },
   {
    "id": "u-nakup ikt, audiovizualnej techniky, prislusen",
@@ -1560,7 +1850,12 @@
    "meta": "Obstarávateľ: Prešovská univerzita v Prešove - Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/446446?cHash=0274a5a9b84c0a345d4602b3e726dda6",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Počítačové zariadenia a spotrebný materiál",
+   "fondy": "Nie"
   },
   {
    "id": "u-rekonstrukcia objektu esterhazyovskej kurie v",
@@ -1572,7 +1867,12 @@
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558869?cHash=273fcce5f159fe075ab2fdba92eac42c",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45210000-2 Stavebné práce na stavbe budov",
+   "fondy": "Áno"
   },
   {
    "id": "u-zabezpecenie upratovania v objektoch sp, a.s.",
@@ -1584,7 +1884,12 @@
    "meta": "Obstarávateľ: Slovenská pošta, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/554596?cHash=c7028151d59db78bfe566e3b0a37a23f",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Upratovacie služby 90919200-4 Čistenie (upratovanie) kancelárií 337119",
+   "fondy": "Nie"
   },
   {
    "id": "u-zabezpecenie realizacie verejneho obstaravani",
@@ -1596,7 +1901,11 @@
    "meta": "Obstarávateľ: Mesto Košice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559520?cHash=9d4fe27e08eefdaff41c491ed44d1eb2",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-zmluvna preprava osob pre potreby vyroby a vy",
@@ -1608,7 +1917,12 @@
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559416?cHash=a0f9e0fc21ba62b45cb1b956b74e9a02",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Taxislužba",
+   "fondy": "Nie"
   },
   {
    "id": "u-stahovacie sluzby",
@@ -1620,7 +1934,12 @@
    "meta": "Obstarávateľ: Okresný súd Banská Bystrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560780?cHash=ebdfea5f480ee5c40fa033efb740fd0d",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Balenie a súvisiace služby 63110000-3 Manipulácia s nákladom",
+   "fondy": "Áno"
   },
   {
    "id": "u-zabezpecenie licencneho maintenance, poskytov",
@@ -1632,7 +1951,12 @@
    "meta": "Obstarávateľ: Štatistický úrad Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560774?cHash=89e13235b1d60228fd2464fad6a7ebd9",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Softvérové podporné služby 48000000-8 Softvérové balíky a informačné s",
+   "fondy": "Nie"
   },
   {
    "id": "u-dodavkovy automobil",
@@ -1644,7 +1968,11 @@
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou J. A. Reimana v Prešove",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556563?cHash=580d65f022800459babdc4f86dadce05",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-zvysenie energetickej efektivnosti zakladnej ",
@@ -1656,7 +1984,12 @@
    "meta": "Obstarávateľ: Obec Vysoká pri Morave",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560560?cHash=27fba78c9f4d907f272de71cd318ac30",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe budov škôl 45000000-7 Stavebné práce 45321000",
+   "fondy": "Áno"
   },
   {
    "id": "u-nahradny zdroj",
@@ -1668,7 +2001,11 @@
    "meta": "Obstarávateľ: Ústav na výkon trestu odňatia slobody",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559551?cHash=b7b755cd3941e5485e7e854d2bdc4d84",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-znizenie energetickej narocnosti objektu mate",
@@ -1680,7 +2017,11 @@
    "meta": "Obstarávateľ: Obec Vojkovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558767?cHash=6e18171b68f78a83aaeb4aad192660fa",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-naradie",
@@ -1692,7 +2033,12 @@
    "meta": "Obstarávateľ: Dopravný podnik Bratislava, akciová spoločnosť",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/441747?cHash=8c4ed97d3c2b65a180263acffe81d01e",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Náradie, zámky, kľúče, pánty, upínadlá, reťaz a pružiny 44511300-8 Čak",
+   "fondy": "Nie"
   },
   {
    "id": "u-zlepsovanie energetickej hospodarnosti a obno",
@@ -1704,7 +2050,12 @@
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551919?cHash=e15cb94e93a5f81fcb635bc5d508cfd7",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 09331200-0 Slnečné fotoelektrické moduly 31530000-0 Čas",
+   "fondy": "Áno"
   },
   {
    "id": "u-css meta martin - zateplenie, stavebne upravy",
@@ -1716,7 +2067,12 @@
    "meta": "Obstarávateľ: Žilinský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560536?cHash=c15db525392bfc146d5f69bc6619bfdf",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce",
+   "fondy": "Nie"
   },
   {
    "id": "u-dodanie komunalnej techniky - traktor, celny ",
@@ -1728,7 +2084,11 @@
    "meta": "Obstarávateľ: Obec Markušovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558417?cHash=364b0cf280f80d0e7a0060511ea6776d",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-odstranenie havarijneho stavu elektroinstalac",
@@ -1740,7 +2100,11 @@
    "meta": "Obstarávateľ: Obec Štrba",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560400?cHash=3f85af76c3e4caa2128d5c35c515744c",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-technicka podpora systemu helios nephrite na ",
@@ -1752,7 +2116,11 @@
    "meta": "Obstarávateľ: Slovenská televízia a rozhlas",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560218?cHash=7ddd8bf33cfd2f4aeab9cbacad4a2ad3",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Druh",
+   "fondy": "Nie"
   },
   {
    "id": "u-malovanie interierovych priestorov",
@@ -1764,7 +2132,12 @@
    "meta": "Obstarávateľ: Stredná športová škola",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558754?cHash=f5c898180057e95afe311330c9db2ff3",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce",
+   "fondy": "Nie"
   },
   {
    "id": "u-dodavka plynu na rok 2027",
@@ -1776,7 +2149,12 @@
    "meta": "Obstarávateľ: Mesto Nové Mesto nad Váhom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560733?cHash=69c9f03b898875435141e034a4ef6447",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Zemný plyn",
+   "fondy": "Nie"
   },
   {
    "id": "u-obstaranie 40 najomnych bytov v obci stankova",
@@ -1788,7 +2166,12 @@
    "meta": "Obstarávateľ: Obec Stankovany",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560872?cHash=dad4aac2f8102c1ccaa45d92bb81519d",
    "first_seen": "2026-07-03",
-   "suma": ""
+   "suma": "",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na stavbe budov 45211341-1 Stavebné práce na bytoch 452",
+   "fondy": "Nie"
   },
   {
    "id": "u-dom kultury namestovo - znizenie energetickej",
@@ -3406,6 +3789,603 @@
    "meta": "Úrad vlády SR",
    "url": "https://news.google.com/rss/articles/CBMiiwJBVV95cUxOVG9FR09NMWRDSFJhbzMxN0hmenBYRE92b2pUQmlteml5bTRhSzEtUW1JQU9GWnM0ellEYnkwQkhPUkhycUwyZDFzeXJmRmxYSFhRYXFrcFp6MFV1dEN2dDVrS3U2WmxJZTI5cjVpZTYwVnBOUTh0YkcySEVCOEFqRVU4ZWdxbzJKbFVyaWNHTjN2VklaZnZGNkNuZzZjSHFxMWN1dG5QWHVTLTJzbGUzTWZ6amNjN1hZSmw3N3NVM1Y0ZWFJZkt3MHZvSUZrZFJ2VFVLLVVsSUwxTW51TzdhbU1jWDdZcVNLcTctS3JLeWVFZ0hmOGFESnU4OFFrX1E0b2tPU0lMbXdmcU0?oc=5",
    "first_seen": "2026-07-04"
+  },
+  {
+   "id": "k-e0fa7cbe3468",
+   "source": "kontrolne",
+   "title": "NKÚ: Roztrieštené dáta bránia štátu efektívne spravovať svoj majetok - TERAZ.sk",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMihgFBVV95cUxQSkVFaTFaRl9LYVJqRXhCd3c5QjF0X0hUcmZDRWc3Z3czS3cyRU9xaWdCa25nQVVQSVJqTFp4VUo1UGZHeWdWZTRiSDlIamwyYTVaRENlaklHWUFUbTkxV0VnWjc5UTFyX0hfbWREak1wYnVxN2lHMzdUQ3pNUzZJNGNLaTdjZw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-1620aedcc9af",
+   "source": "kontrolne",
+   "title": "SaS podáva podnet na Najvyšší kontrolný úrad pre cyrilo-metodské oslavy na Devíne - SME.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQSDJ6X1d1X3ZUMWRma0xCaVdDYV90VjhSTTY1TV9YRnlvRG5jMXlXTXNtSlRyTk9ISW9mYkwzQUlDaW0zbk9ub0I1NzVZeFQzT1pMWUxjYjZTdUtLdWcyLUI5RjVfTXAxZkZSX3VZWUwxdWgwLVVJT0dKdWpielFaeUNURGE5MU1xN2ZleGtDNHRlN0d3Nk1NOV9UZFNfV0xnSUQ1NlBaY2kwM1Zl?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-192a70089aa8",
+   "source": "kontrolne",
+   "title": "Cyrilometodské oslavy za 240-tisíc eur budú bez verejnosti. SaS podáva podnet na NKÚ - Noviny.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZFROc3dxRlFkSzBkYmt2WkpsMXJ4OVNDdHljaXExalZYbEFjZ0FpOXNLdHZYTHBDRkxNMnUzVVQ2bEl2eFBLUmczSXUxU2lJaEE5LTNXczhrZEc3cnloMkJoZHlnM3hJX3hQZkI3U1ZrRGtlWWdRR3JBMklBUzl4MUs0LXN3WEY4VnVFaUpGZmFiQXdtVFQzV3lrNWlLQVlDQXFTV3pwY2dQOWlHX015OUVYOTlhYU9GTXhUcHEybDc?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-cca0d721ac40",
+   "source": "kontrolne",
+   "title": "SaS sa obracia na NKÚ. Hovorí o papalášskych manieroch pred cyrilo-metodskými oslavami na Devíne - Aktuality",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxQMmNqUjgtX3ZCMTlrN3UtWnZ4TGQ0OXhKZndMNm5qY3ItRHZrMDlFWmJMWGpsSGhnY3R4dUdyVUNwd29rT2RiclREZDRnSlNDSmFuanNtRWRIUDZiQUFMTXpQSWpDZG5IRi1nak56VWF5VEEtb2F6N1VIZ05qQTJLaHlFT19Pb0F5WUF0S3JIbDVYNlJuSlQ2YVJveExSVXNkWlFCaUg2UzdkRHhsRWdZdjZyWGFqV0xmSW1kR1oySlhUYUdFX0FnczUyVkNBRE5uU2c?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-2ebf0a76850d",
+   "source": "kontrolne",
+   "title": "Štát nepozná skutočný stav svojich nehnuteľností, chýba prepojenie systémov aj dáta - HNonline",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPVDFRMmhTalJuQVpFd2RBdllvajlWNUFwSDRPaGY2NE13SUlyOUtQNm95aUswZnRVZlBTaHNtM1puS3Q3VlptNll6N1FLaEVZaEpoSUtnYjdKSUc1bWJKN0RBOFlVRmcweXpDRXN6UjdKUUkyem5HdWtGT1lVUC1hUXFIRURjVW9NMHJWektEM00wYUNJcWd5Y28xODl1cVM0aFlqcnd6ZmJmSzEwR0hIOG5zTi1CNjEtOW1MczRMMXEwNTVvNzY0?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-25b149b5c03f",
+   "source": "kontrolne",
+   "title": "Cyrila a Metoda má preveriť NKÚ. Vláda hovorí o hospodárnosti - Plus JEDEN DEŇ",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMilAFBVV95cUxPUEJSX1U1dG5ORUN5TTkxTVdzYnBMOGI2a0pXbHJkdDR2anNodjhkM29LdWVSaGFHUDRaSzN5RE9kQk1zTVUtRE5EODZEczlkb0ZadVlPZkRKM1JJbWw3aE5ob0VfMmczTlk5VW9kNVRBZ1VlVTJEMHNUbjB0LUlEZEJtdzZIVmRDLVRUNU90RVF6T3RO?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-8193e8d5e260",
+   "source": "kontrolne",
+   "title": "NKÚ: Štát nemá ucelený prehľad o zaistenom a prepadnutom majetku, systém treba zjednodušiť - Obecné noviny",
+   "date": "2026-06-29",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxPcWxGNmEwbW5CNzVtV2pHZ05pdkZaemhTUzVnV2h6VVBfYloxSGM4UnJyUDF0djE1RUJYZEpVc0xPUXpmYUgwWUZDaEIyTU44NXAzM3BkRlFLZUpSa1RCdUZmRjJXMENlQndreEI1RjVZN1c1ZDd5M1VFUmgtSFhvN0p2WUVGUWJVaEU4dEpxYUJ3U2xNcDZicVJ5dGpLdW8yUlpkT05oSkttaHk2RW5fTl9DaVhLakxFOWFNRkdBODhpenM?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-bf2a40d07c21",
+   "source": "kontrolne",
+   "title": "Liberáli podali podnet na NKÚ, žiadajú preveriť cyrilo-metodské oslavy na Devíne za vyše 320-tisíc eur - VIDEO - SITA.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNTFhyUWJ5dVE5Zy0yZnk0VXVxMVpROGJSdXR2VEVmUkg0VndzaUtaUXRSc0NhVlhEY25Wd01RRkVGSnRvWFlYUTlrLWJKTTVMd3hyLUdOU0pIWEdka29Jdnd1TUZBMURtYVhvWElhUHBSSXcyeEZENzY5SDYydWhIRlVhTFRuZ0tVYjJBNTFJNG1ROXNRbUE0U01hclF2NUhfMUM5VW56ZmZ3eDVpczZGTmxQbFlUYUVXM0wwRXNGN1BaUQ?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-02358c55d61b",
+   "source": "kontrolne",
+   "title": "Vláda na oslavy sviatku Cyrila a Metoda utratila mastnú sumu. Verejnosť bude mať vstup zakázaný - Refresher News",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQaVhpWW9TYWNuUG54VG8tWmhTSVZIdWtNdzJhcXBpZjEybFlhdFo1U3Jxc05wbEc3RU9JN3dyc0czNVRvYVRjaTFvQmJ5UmI4N0RKUnhkMnBVX3dWSGNqZGFLeEZRSHM5emE4d0x5aVo4NUZpU3k1MUxvOGNXR2xnQnhQZ1hiMmt1QUZlZTc0OXg0WTVHaDFjR2IzMVhVZFM1Y0xucHlITF81aGhGMi1YY2kwTmlMLUo2QzM4NHFrTkpRaUNXazNHd3hELU1iZ2ZaRFBTVV9Ndw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-5e347e7645a6",
+   "source": "kontrolne",
+   "title": "Úrad vlády reagoval na liberálov a prezradil sumu cyrilometodských slávností. Aká bude jej výška? - Parlamentné Listy",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMi2gFBVV95cUxQX25FMWFkZkEtUFJuV2pteXRQTkdGbTBJcnB6QTBsYl95dUFDSkFSMDNlNWdmdHZyWHVQamVfVmR0c2lnNG5kYlU1N251ZkhYcF8yeWZCcllNbTNkb21hQUpqWkI3V0R1dXhvMnlXQkx1cUVoNlRMN0JiMktCOWxnNmttTTdiTnFrOGpZTGtfYm8ydTRJTHA5MGM0NVJNNHJ2YlRETTI4Tlp5dzRaM2ZyTGRrQWV5eTI5RnRBc190M0dTaFZLYXJ2Q3V2RlhaTVpzMW1RNkNodUtzUQ?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-b53485f980de",
+   "source": "kontrolne",
+   "title": "Kontrolóri upozornili na neefektívnu správu štátnych nehnuteľností, poukázali na hlavné problémy - SITA.sk",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Najvyšší kontrolný úrad (NKÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxPZlU0N2xJbWUzbUJfRWtWcFQ1c1N3cTcyQTBFaXVPaEVobmVlejN5UjZlQ3ZMNlJaaHJFQjZFM2psZlh6bXcwNVVqMXZoQWM1NWxHWEVXR1VBc3FSX09VRVp5LWJpbWNzU0l1MlQzSENNVFkwdGk5M19VQjdMZHVtNjNPMDM2a0drd1JXdlRoS2lMeDhDZWhZRWJhUTVwUkRKbE0zY3pZMDF6WXdiX3lsS0ZONm9vSExtOHlRSXZYQUY?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-a285dcd1ce95",
+   "source": "kontrolne",
+   "title": "V referende sa rozhodne aj o obnove NAKA a ÚŠP. Vyšetrovali viaceré kauzy spojené so Smerom - Spravodajský portál RTVS",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad špeciálnej prokuratúry",
+   "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPb2xGakhhS0xjMVlOZzZza29PRWNncFgzZW1OZnREamVURVhkVjY1YWVVMDJ2UnFZcG5DbjlIY3NOalgxczdqbWx4U1NKSHhWVW96eWNWQUhLekhJTDUzUE9VXy00S29BcDlpOXNMaWtPT3AtZjNsbjlHQlhRWkRETUVDVWRQZWNVd01lMVJ4aGZudVFnUHVDbW9VWm96eEFQcUZpSFZ2QlpxRTVlSGJtd0RFdV9tQWJvVDRzY3RR?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-a68b9800ce7d",
+   "source": "kontrolne",
+   "title": "Referendum 2026 Hlasoval aj Pellegrini. Tvrdí, že má na dnešné referendum vlastný názor, ale musí si ctiť inštitút referenda - Postoj",
+   "date": "2026-07-04",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad špeciálnej prokuratúry",
+   "url": "https://news.google.com/rss/articles/CBMiWkFVX3lxTFBsMUg3V3RtLWlJSTVBSlRVbkJwWC1KWXhsMlFxazd2enZsV25ZLUFGVXZWeDZGcWs0RUNKUFFSQkJmRC04dkJlQlY0QkNBZWl0dnhURGhNa2xPZw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-1810e295fe2c",
+   "source": "kontrolne",
+   "title": "Účasť v referende je od rána nízka aj tam, kde sa stretáva množstvo ľudí. Prezident Pellegrini už odhlasoval - TA3",
+   "date": "2026-07-04",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad špeciálnej prokuratúry",
+   "url": "https://news.google.com/rss/articles/CBMi3AFBVV95cUxPZXFYbUdvWHJvVS05enYteVhseFRMbGxJSzZqanNma2hVRERYVkZ0Zmdra1FNVzJkUnVhVG44Qzg0amlIaDF4ODVwUFlIZXA0VTk0NUNwR0FsUV9uSC1weC16eGQ2QnFQb0ZLLXB2cVBlMzM2SjZLUkNIQngyUUlKN0MxM3RreExMUXc4Wm5iR2NrX2pDc1ZEemN2THhRMGNGSF9nVFA3QU1tVUFZeDZFOV9kazA5VnN4N0Y4RTUxR3dDcXQxMTRHbmM4S1BZR1hJeFVWVWRVMGVHdGd3?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-52601f773fd2",
+   "source": "kontrolne",
+   "title": "Ako hlasovať v júlovom referende? Ministerstvo vnútra pripomína podmienky aj postup pri voľbe mimo trvalého pobytu - TA3",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad špeciálnej prokuratúry",
+   "url": "https://news.google.com/rss/articles/CBMi4gFBVV95cUxPWTktdGcwZERLLXI3YmRmWDNfQkVmMndzOEhvSUdsTUphWmg1YXFWVVl2TFU1Tnd6T2l2VUQ3d25aZWxzMnEwVnRNa2R2RFRmZnJCbG1qaUVzelBSaU5MMi1iMTRlVnU2LWM5OU5tVllFYnUxSk0waEI2M2JNNmJJTlNqUURHdFpWTWNSRTBYMldmT1ZsT1RSUXhhWUc4c3JsX0ozLV92WmdyZmI2NEZSVnFTN25PSTRjN1d5VGVxMm9IZWQ5UmlycXlySTJwTmpQN3dzRHhFMXF6cEpsZ2JhSHJB?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-95b99acfd0ba",
+   "source": "kontrolne",
+   "title": "NBÚ odhalil súvislosti s ruskou kybernetickou kampaňou - Štandard",
+   "date": "2026-07-04",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxPTENIV0YxYmtHTXFLVjRRS1RTaDcxZUotNmh5TXlveWw2anVXUlBlRUdlMFNNV19ZSlBlYjJLdi02UDVJOExlbkx0c0hrWFBKNHh6bFpZcmRpV25RTjhWcHVZYVpGbGNZLVM0QW95dWJzeDc4NjlCTFlVbEFJZmU4dXBsNV9faW5Wa2Nyb3N4VU5GVzRfX1pvbmZzcw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-729d44c67902",
+   "source": "kontrolne",
+   "title": "Kyberútoky v roku 2025 zasiahli štát aj priemysel, najzávažnejším bol útok na kataster - HNonline",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiywFBVV95cUxQQ0x0T09meS01c2l5cHZOd245OWRYNWYyMmVVeUVmOGFPVkw4NlNGc3BBSUJpMFBYYVFOTTlGTUo1RlJkc2p0SXZNd0lpZV9XUk5EQ3UzWFQzemh4RTQ3U09EOS1oVUY1NjdNc0VVRHBQNnhJYlMtcWdfY2tfVVpuSHpBZnJzSWwzbWNxeGJqWlA5X1NpbUNYa2J6UVZYYmFzVlQ4bkp3OHR2SmNySHQzQ3NjWE9JMTNnSWtsSFVMZHlPU1lGZEpjYVUwOA?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-70c067ed6b06",
+   "source": "kontrolne",
+   "title": "Fatálny začiatok prázdnin, prišiel trest za kosák s kladivom - Plus 7 Dní",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOVENiVEd1VDRQQjg0azRvdld3V25XR1lBUk5aMm9vbmI3R1JLVlFsb0ZuTERxTE1Ra2dhcXM3cEpZQzV6ZVo0MFloVVRmTmlzUGVNcDVXUGFYSk9HVlU1ZzdMUFZZaUFRMGZlb0JtRWhPaE8tT0FkRWdGX1o0UEVtRjlqSDE5a2NFYmlKWEUwcEJvMUxQLWxxTEsyUV9PM04t?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-717db3800b2f",
+   "source": "kontrolne",
+   "title": "Letné prázdniny prinášajú nové riziká: NBÚ varuje rodičov pred online predátormi, podvodmi aj kyberšikanou - Netky.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPbVlPWWVjRmdKejdPMl8zZ1B0VFRidGg2NGpmOGpFNjdURTYxM2xUX2NHMFl4cUt4cUh2ZlI0NVRYRXJhd0N1aG94dE1hbmc3SW54VlI4V1lrbDQyM3lNS2QzX3dCMVV1aFBnazBiYTJYd1JUVFgzYnV5X3o4UmN3WnBhSl9Wa1dHeFdIYkFtaTJTRmpWVFY4VFlab3o4ejJISzVvTlRVY21Sc0ZCX3V4ajQxeThKT2kwSE9RNzU2WHB1WkhSNGcyd3ZKMnk?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-ee641fde91e3",
+   "source": "kontrolne",
+   "title": "Ruská kybernetická kampaň zasiahla aj Slovensko: NBÚ odhalil detaily utajovanej operácie - Živé.sk",
+   "date": "2026-07-04",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxOS1lDbHgxa0pkc2g0eWsxb2M5UktKTWtBelMxaHEyU0pwaFQwQVN0aUVZYWNrb3NYWDBFMWRvaGdoSHpuY1dzRkdZQmx2Nm11WkxySFoyNmR4LVQzUVY5Y08zZW1ZRmtwUnVfQTQ4OC1RU29zVmxyY0hBUlppM1hkdm5mdmtiZVltRTFqaDBRQmo3VFJFeXlOMXJZOWFxM2hzNUdQbTYtdDFwS3dfWVdnNWNQNDZtNmFoTGMzVE05UWdyZ1UzSUcwXw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-2930c9ec5cc6",
+   "source": "kontrolne",
+   "title": "Ako ochrániť deti na internete počas letných prázdnin? NBÚ radí rodičom - Finančný kompas",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOUTYzdUZYSDhoS1JPMmFONHdIakoyNHJIZ1dvbzBKeURLMXRpc2s5VnFtUUZGZkRjTExra0lmc21TRTlrUnRES3FiNlgwbFh1U2tqY25OSW1PbldwLWJtSEE2b0xJeC1fMzB1R085WGFMcTFaUDQwWHFQdXpla3c4XzYybzU4Nnc5ZHJYVU1HdlFGdjBEZnYyOFFsZlEwNkFJVmxwZk5nVUlWMjg?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-119b5670b580",
+   "source": "kontrolne",
+   "title": "NBÚ: Útok na kataster bol významným incidentom roka - Štandard",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Národný bezpečnostný úrad (NBÚ)",
+   "url": "https://news.google.com/rss/articles/CBMihAFBVV95cUxNSHZ5WVdrSWpKWlkxcF81NzcyNGc2N1hJcG0yMmM0TmY1aVNURl91eVlhMVh1M2FXMGhLMi04SXNzbDNvYTMtX1kzRE5Vb25ENVRzTWdVWlFRcjRCYTJBZlVqcTczRVFndF9PazFUYkRkNVRQd3ZxWnlGUW1DNGZQS1ptemU?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-5328a4999658",
+   "source": "kontrolne",
+   "title": "PROFIL VEREJNÉHO OBSTARÁVATEĽA - Ministerstvo vnútra Slovenskej republiky",
+   "date": "2026-06-29",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMiU0FVX3lxTFBGTEw4UXBPajZhUnU3UnVNNFhZWEJLTUMzQWNqQ1psTmRHdDNYZnNTei1lbC11SDNxaDIxWEQtbUpZR2lhdk1rTEZTYzFEV1AxejRJ?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-e70cba2eb89f",
+   "source": "kontrolne",
+   "title": "Ľudia nevedia, prečo ich lustruje jeden z úradov. Pýtal si údaje o platení odvodov - Živé.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxNS0MwQm9UREI0YXd0bFIxdkUwTUxoUmdTRmo0NFkzUU83aUJrWDVwWlVCS2ZoWkZ0WVkzTWh2WkZ1eVpiRXM5bG5TTnFsWFprTzlCUXlxaG00eExWZURJNF9vbUpSMG84N0tGZ21BSTA4bnNhTGVVM0U0X0hUMnNoTFlhaGM2S3JpQ0xsYW5qMDVINU9PNkZKS25SQmJZOUZmeFhUeGJtcTdYcUxBMUhpZHM5X3V2N29nY2NPVzdXdw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-fec667134e7c",
+   "source": "kontrolne",
+   "title": "ÚVO prevzal od Štatistického úradu SR budovu pracoviska v Trnave - TERAZ.sk",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPZ2l1aW1MLTlyWnFRazdVTWFPU21iSnhZQUxZd1lMUC1LZDZFYWVJcW84VHUxOWFRb1Nta3o0cWl1NUV1eWpXUkZldFhtcmZkVk9wZTN6YzRrM2NqeDdNNVQ5RFdPRjVTSlcwN2duRmRYX1pEUmJwTjMyZzJfakppSXlNRHZuQ2J3NVhB?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-3d7d6c9a5f6a",
+   "source": "kontrolne",
+   "title": "Predaj nevyšiel, no je tu nečakaný zvrat. Namiesto štatistikov prídu do Trnavy pracovníci iného úradu - MY Regióny",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxQbDNTTk54X2FBVmtOT083RXg4dlJ3NW5kOXFYWGtNd0MxRkRRbGdDSklNRmstX1piWFRwT002TEhScU5lejNfWHZqQVBmMFd3SGVyREN6TnE1eGU5NnZNMUx2ODZnYklpb2VHRGNJbkw5MVJVZFNXRUQ3ZTR3Y285RHZ1TURpOWM3ekZXVGRPQjZhaS1iUU1DeUxVVk53UmN2TEhkaVd0NGJoZ0tvYmh5RWF4c2NaZGRaNzZFckxERUI0R0otOUtZ?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-d3fc0220cffb",
+   "source": "kontrolne",
+   "title": "Budovu po Štatistickom úrade nepredali, bude mať nové využitie - Trnavský Hlas",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNYWRadHdzOHNDTlVBWHJsZTNhcmMxR3VsaHpkc096UUZSLXEwY09mdW43YjEwdEphV2w3NElhRVA1YmFuRjlRRHJOajMwTHl1M1ZFZl9fS3dwOUZCOXVsRHlGalVyWHRody1PYUo1dVk1UXRocVRqWXAwVXU0Tll3amhPREpuRlJhd3RxV3o1YVdNYVJtUld3STNIeEgtY25u?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-2139542001a3",
+   "source": "kontrolne",
+   "title": "Pre falošný múr na Kukurici podávame podnet na Generálnu prokuratúru - progresivne.sk",
+   "date": "2026-07-01",
+   "category": "Spravodlivosť a právo",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMilwFBVV95cUxNeS1HX3JoZUNOV2NFR1ZYTkc0cEM4TWxFVmpHQmt6dkJUWnJBSDE0QWl6WERoVE1INUloYUlVUkpWbEZSSTM5TXVEVEhvQlEyWC16RVZWbkE2ZmxBMUx5QTkxUnp2M1ltS2JSVGlQWFROYTcteGNKaGxxNEUxbW9zUmpHLUg4U1VhVHQyRmtpZHIwUmpQcW1V?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-09229e568400",
+   "source": "kontrolne",
+   "title": "PS pre „falošný“ múr podáva podnety. Kaliňák tvrdí, že má odradiť sprejerov - Noviny.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxPX2ZDRTJaaHZ5QTNnV1pLU1duTkNhTVE5bDVRclcwV1h3TEU0d2wyZjBRNmYtSGNDOEhTcDZGeFRDeW9pdEowSDZnVWFpME50eUI3UnNqU1JHcVpuMkJHanczTVhiUlYzZ29fcjhELUVMWFZ3Z2FSN0NFdEotdXlvZ0hLV3dITG9FemRYZ0RFTkJLVldFNVFGMWxmOW13YVdRZF9DcE9ETUFvdmR1UnJ4Vw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-e5e6df20a152",
+   "source": "kontrolne",
+   "title": "Tehly otlačené do omietky. Šimečka ukázal fušerinu na ministerstve obrany a žiada vyšetrovanie - Info.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxOSGhxLVl3TVZadkRGTlRlSm1ZallhN1l2d28xZDNHWExvMGF4ZWFXNDBxVkQ0YmhsYkF1azdLdktyNTdCNVlaUGpRbjZxNmY5VjJaSGJOVElBYWRIN0Jyc281dnByUWR5OG5TTlk1LWNXQXg5cFloNnNsb2xtRjA3SlFxYW1JMV9MbExjQjR6THVoQy10a3V3a3Itb2w0VlYwaWx5bDc1OTNZVTFGbTRMa1lkQjJ3SE9TMHlqWFUzVW9fN1VXTWhB?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-3a4fc0df6fc6",
+   "source": "kontrolne",
+   "title": "Opozícia kritizuje múr pri Kukurici, PS avizuje podnet na ÚVO - Bratislavak.sk",
+   "date": "2026-07-01",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxNMFhDN01jMXlXTGZ5QUR1QnMtLWNfNVhSY210WUNVT3dGczk1THExLWZ4cGowMHVaby1pLUt0MHZpTU1GbTlsQno2bUJuNGt2UjlsSmlqeUd4ZFhHWUNjYV9DbF9XT3pKa1l4dUhuQzRCR2pIX3c2TnRjeVhBZGJ6b3JINXd0VDhhd0cwV2V0VGhIdGxMOHVxQlI1TzdEMkUwMlNWVER5Yi1INnB0REdhVHVscXRZeVlpZVdNaFBHb0V1ZW9iTV9lZk9PMURvclE?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-66be8881672a",
+   "source": "kontrolne",
+   "title": "Skúmajú tender ŽSR na modernizáciu úseku Liptovský Hrádok - Paludza - TERAZ.sk",
+   "date": "2026-06-28",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre verejné obstarávanie (ÚVO)",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxOaEFEX0szc0dWb0p1amZsek5wVXVZZEFLTGFodnRHVllEZFF1WGlVSGhvZHllTk1kMDBfRW5BN2ZoeUM1SDdyYVI5a0FlYXZGbVY3am50aS1jd3N6eXczbWlwd1AzY25uQ2JZcFR4MzFCVjFPdXFaY1RLRWh0U3JjYzk2Nl81ZmlmejBr?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-d80e6656a444",
+   "source": "kontrolne",
+   "title": "Jadro je pre SR nevyhnutné, nie voliteľné - urso.gov.sk",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMic0FVX3lxTFA2UHdDNXdCaEdfYTdLOE9tZ2RaX0ttWTlLLTFXZXlNdFNzSVFPRm9TU1pNdTNyWXdHWnJuVVZmMlZnX2h6b0h2R1pmRjZydUg1cEY0SkYwLW5QdVZXS3ExblpKOHhKNFU1Z0NzWjNiemVTX0U?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-bd3768ac662c",
+   "source": "kontrolne",
+   "title": "ÚRSO od júla mení tarify, pripájanie zdrojov aj ochranu odberateľov - - SITA.sk",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNbnlqdzBWSFZmZFFjbVJBUmNWRlNwWnpfY1RmWlNubmE3RjgzSnI0eURYcHo1dzRFWnh6eXBWaklKRHR0V1JCN1dhMXJGX2lkZWdnZ3otWEwtblREZzZuaUF2dEpFMnU2OVBfQXBPOEJMZW9NYktpd2xSSWxpbHBaUERrREZMTllQbmh5QmxGcTZRSGpjNVQ0d0paYw?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-ba29231de3ed",
+   "source": "kontrolne",
+   "title": "Miloš Bikár sa stal predsedom Regulačnej rady ÚRSO - ENERGOKLUB",
+   "date": "2026-06-29",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQbjRKcndpbmtQVGZRSk1WYzh4d1dUSjVnN3NHbVJqTWtrbnppSlFsdXZZV3o1U052dTFNbEp2SHE4MFVXWDQ3eVdCZVR0bTR1RzB6eWVydVRGTEgwdUlzYllWQTNjMlAwQjhoQ19nSERURC1fMmZLRnYxaDJ5bWtTZUU4eVE0cDhWb2VF?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-025aa772e016",
+   "source": "kontrolne",
+   "title": "ÚRSO: Jadro je pre Slovensko nevyhnutnosť, nie voľba - nocomment.sk",
+   "date": "2026-06-30",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxPMHQ2VTlObjVVTlFYTThuVXBRbXB3R2J2Nnc5Snp2R0lMMlZ2c1BxajRYWHVLSVhMakhvbjdNdkxGVkZzTWFXblFiNmZMTnpTTEYtb0VGMFB1WDRDcGhTUEk4RE51d0dIaDN6NnREVlRRZnVMbkxXLWJIXzNTV1phTWpWejZBaU1pSGt3?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-1787923ec162",
+   "source": "kontrolne",
+   "title": "Ceny elektriny zostali podľa ÚRSO aj naďalej vysoké, silný výkon fotovoltiky automaticky neznamená lacnejšiu energiu - SITA.sk",
+   "date": "2026-07-02",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQT1h0RGVNZVQ4YWNrZ19XYXFLTTBLVG1PM0tDNUtWNkt1OVJJR0ktYWplLV9rT0ZwU281WjFOTXhGRGtvdjlVTlYyanY3OGNkYXR2X2RhNFgxaGFlYzI3eXlBb3RVRHN2d1liQ2dibUtQLVBLOGpld0U2RUs4U3pGMW5Kb0JZbjFpS2VZaXUxOEE0LXNLNUNDaHk0bTJFeFlZMkE?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-fe5ebb077f7e",
+   "source": "kontrolne",
+   "title": "Vysoký výkon fotovoltiky nezaručuje lacnejšiu elektrinu - trend.sk",
+   "date": "2026-07-02",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQV01rMV9FNWpvOWJqeGZybVdXbmNDcjBQdjh2YlRHWHR2TFdsbUprZGJ5RHFkNVpUVlRFWjlKNXdobHU3dWNwUVB5WWxOTVRIWXNQcDZndzh2OXFuOVQyNTlUSDVNYTBNMUdWODk0eW5ZYzN3Ynd2ZGM5MWVSYkIzMnpnUWpuSnRZdmc0?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "k-f8f27f0b03d4",
+   "source": "kontrolne",
+   "title": "Veľké zmeny v cenách energií: Vláda nanovo určí, kto bude mať nárok na regulované ceny elektriny a plynu - Netky.sk",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Úrad pre reguláciu sieťových odvetví (ÚRSO)",
+   "url": "https://news.google.com/rss/articles/CBMiygFBVV95cUxNRnQzSXA3S1N5SU13ZXJ3VGVCd01qc1Rad0lPQzBtUmdnMVBCOWdONlA2RzJWWnJseHg4MDcwblhQZ3NDejJkeEp2VEpGMHk1OFZ0WEpIeU9XNTM2TTcyWVc0WVUyVV9rZzZ6d0F6MDRlUGxuRjV1cU9UUDVCUF9tN2Q2a0VWRDFCaHhjTFRwOWJ0dnRFUDFjTGFuQ1lSMDhua2dJLWEza1FVZVFURk5wSFgwbUQ5d1RKTGJmQzlzM1lJczkxRWlwS3Nn?oc=5",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12546713",
+   "source": "zmluvy",
+   "title": "Zmluva o dielo",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "248 467,52 €",
+   "meta": "Dodávateľ: TRENAB EU, s.r.o. → Objednávateľ: Slovenská záručná a rozvojová banka, a.s. · č. 1959",
+   "url": "https://www.crz.gov.sk/zmluva/12546713/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12544725",
+   "source": "zmluvy",
+   "title": "Rámcová dohoda na bezhotovostný nákup pohonných hmôt prostredníctvom palivových kariet",
+   "date": "2026-07-03",
+   "category": "Sociálne veci a rodina",
+   "blok": "",
+   "suma": "916 123,68 €",
+   "meta": "Dodávateľ: SLOVNAFT, a.s. → Objednávateľ: Sociálna poisťovňa, ústredie · č. 19181-7/2026-BA",
+   "url": "https://www.crz.gov.sk/zmluva/12544725/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12546815",
+   "source": "zmluvy",
+   "title": "Zmluva o dielo",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "351 427,83 €",
+   "meta": "Dodávateľ: RICHWALL s. r. o. → Objednávateľ: Obec Malý Horeš · č. 18/6/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12546815/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12546188",
+   "source": "zmluvy",
+   "title": "Navýšenie finančného príspevku na opatrovateľskú službu z ÚPSVaR",
+   "date": "2026-07-03",
+   "category": "Sociálne veci a rodina",
+   "blok": "",
+   "suma": "790 763,74 €",
+   "meta": "Dodávateľ: Úrad práce sociálnych vecí a rodiny → Objednávateľ: Mestská časť Bratislava-Karlova Ves · č. 177/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12546188/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12545232",
+   "source": "zmluvy",
+   "title": "Zmluva o poskytovaní služieb k prevydaniu certifikátov a knižníc pre komponenty systému E-Kolok",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "311 396,00 €",
+   "meta": "Dodávateľ: Disig, a.s. → Objednávateľ: Slovenská pošta, a. s. · č. 176/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12545232/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12547889",
+   "source": "zmluvy",
+   "title": "Zmluva o nájme nebytového priestoru (Janotova 12)",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "399 420,00 €",
+   "meta": "Dodávateľ: LUPY s.r.o. → Objednávateľ: Mestská časť Bratislava-Karlova Ves · č. 176/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12547889/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12545674",
+   "source": "zmluvy",
+   "title": "Zmluva o dielo č. 3/2026",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "156 164,37 €",
+   "meta": "Dodávateľ: DABAelektro → Objednávateľ: Mesto Turzovka · č. 167/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12545674/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12548802",
+   "source": "zmluvy",
+   "title": "Dodatok k zmluve",
+   "date": "2026-07-03",
+   "category": "Doprava a výstavba",
+   "blok": "",
+   "suma": "1 713 154,50 €",
+   "meta": "Dodávateľ: DOPRAVA A SLUŽBY K&T spol. s.r.o. → Objednávateľ: Obec Skalité · č. 15062026_D2",
+   "url": "https://www.crz.gov.sk/zmluva/12548802/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12546671",
+   "source": "zmluvy",
+   "title": "Zmluva o príspevku na projekt podpory športu č. Z-2025/001-330",
+   "date": "2026-07-03",
+   "category": "Sociálne veci a rodina",
+   "blok": "",
+   "suma": "165 677,66 €",
+   "meta": "Dodávateľ: Fond na podporu športu Príkopova 3255/6, 831 03 Bratislava → Objednávateľ: Obec Preseľany, 956 12 Preseľany č. 77 · č. 15/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12546671/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12544313",
+   "source": "zmluvy",
+   "title": "Zmluva o dielo",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "131 717,82 €",
+   "meta": "Dodávateľ: ARPROG, akciová spoločnosť Poprad → Objednávateľ: Podtatranská vodárenská spoločnosť, a.s. · č. 140/26/ZoD",
+   "url": "https://www.crz.gov.sk/zmluva/12544313/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12545179",
+   "source": "zmluvy",
+   "title": "ZMLUVA O POSKYTNUTÍ NENÁVRATNÉHO FINANČNÉHO PRÍSPEVKU kód projektu: 401501I218",
+   "date": "2026-07-03",
+   "category": "Hospodárstvo a podnikanie",
+   "blok": "",
+   "suma": "440 059,34 €",
+   "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie → Objednávateľ: Obec Sučany · č. 127/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12545179/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12545950",
+   "source": "zmluvy",
+   "title": "Zmluva o dielo",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "976 201,75 €",
+   "meta": "Dodávateľ: PVD Stav, s. r. o. → Objednávateľ: Obec Veľké Kozmálovce · č. 12/2026/o",
+   "url": "https://www.crz.gov.sk/zmluva/12545950/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12545095",
+   "source": "zmluvy",
+   "title": "Rámcová dohoda č. 1/2026",
+   "date": "2026-07-03",
+   "category": "Sociálne veci a rodina",
+   "blok": "",
+   "suma": "196 721,28 €",
+   "meta": "Dodávateľ: S.I.F. security s.r.o. → Objednávateľ: Domov sociálnych služieb a Zariadenie pre seniorov Kaštieľ · č. 10/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12545095/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
+  },
+  {
+   "id": "z-12546398",
+   "source": "zmluvy",
+   "title": "Rámcová dohoda - motorová nafta",
+   "date": "2026-07-03",
+   "category": "Ostatné",
+   "blok": "",
+   "suma": "122 664,28 €",
+   "meta": "Dodávateľ: SLOVNAFT,a.s. → Objednávateľ: Služby mesta Piešťany · č. 1-28-330/2026",
+   "url": "https://www.crz.gov.sk/zmluva/12546398/",
+   "first_seen": "2026-07-04T18:04:58.835141+00:00"
   }
  ],
  "updated": "2026-07-04"
