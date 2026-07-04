@@ -1,0 +1,29 @@
+name: SK monitor daily
+
+on:
+  schedule:
+    - cron: "0 4 * * *"   # 06:00 SK v lete (CEST = UTC+2); v zime 05:00 SK. Uprav podľa potreby.
+  workflow_dispatch: {}    # umožní spustiť ručne tlačidlom "Run workflow"
+
+permissions:
+  contents: write          # aby mohol commitnúť data/ a docs/
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - run: python collect.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Commit výstupy
+        run: |
+          git config user.name "sk-monitor-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data docs
+          git commit -m "SK monitor ${{ github.run_id }}" || echo "Nič nové na commit."
+          git push

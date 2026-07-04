@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-SK monitor v2 — denný zber (bez AI) s kategóriami a filtrovateľným panelom.
-Parlament (NR SR) + Vláda (rokovania.gov.sk) = kompletne, kategorizované.
-Zákazky (ÚVO) = posuvné okno: panel ukazuje posledných 7 dní, archív drží 30 dní (staršie sa mažú).
-Rolujúci store (data/store.json) — panel ukazuje aktuálny stav, nielen "nové od behu".
-Určené pre GitHub Actions (cron). Statický panel docs/index.html s filtrami (kategória/zdroj/blok/hľadanie).
+SK monitor v3 — denný/priebežný zber (bez AI pri scrapovaní) so záložkami.
+Zdroje: Parlament (NR SR) · Vláda (rokovania.gov.sk) · Zákazky (ÚVO) · Kontrolné inštitúcie (ÚHP, NKÚ, PMÚ, GP, NBÚ, NKÚ… cez Google News RSS).
+Rolujúci store (data/store.json) drží 30 dní; panel (docs/index.html) ukazuje udalosti za posledných 7 dní.
+Panel: Novinky (24 h) · Parlament · Vláda · Zákazky · Kontrolné inštitúcie · Všetko (podľa dátumu). Témy sa vyberajú centrálne.
+Určené pre GitHub Actions (cron).
 """
 import os, re, json, datetime, unicodedata, html, hashlib, urllib.parse, email.utils
 import xml.etree.ElementTree as ET
@@ -22,6 +22,9 @@ CFG = json.load(open(os.path.join(ROOT, "config.json"), encoding="utf-8"))
 UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36", "Accept-Language": "sk"}
 TODAY = datetime.date.today()
 ISO = TODAY.isoformat()
+NOW_TS = datetime.datetime.now(datetime.timezone.utc).isoformat()
+PANEL_DNI = int(CFG.get("panel_dni", 7))
+ARCHIV_DNI = int(CFG.get("uvo_dni_archiv", 30))
 
 def norm(s):
     s = unicodedata.normalize("NFKD", (s or "").lower())
@@ -146,6 +149,8 @@ def ai_popis(it):
         return _haiku("Napíš po SLOVENSKY 2 až 3 vety, o čom je tento vládny materiál, čo rieši a aký má dopad. Vecne, bez úvodných fráz.", "Názov: " + title + "\n" + meta)
     if s == "uvo":
         return _haiku("Napíš po SLOVENSKY 2 až 3 vety, čo sa v tejto verejnej zákazke obstaráva, pre koho a načo slúži. Vecne, bez úvodných fráz.", "Zákazka: " + title + "\n" + meta)
+    if s == "zmluvy":
+        return _haiku("Napíš po SLOVENSKY 2 až 3 vety, o čom je táto zmluva, čo je jej predmetom a kto komu čo dodáva. Vecne, bez úvodných fráz.", "Zmluva: " + title + "\n" + meta)
     return ""
 
 def headline(it):
@@ -163,19 +168,28 @@ def headline(it):
         if m:
             return ("Novela zákona o " if je_novela else "Zákon o ") + m.group(1).strip()
         return t[:110]
-    if s == "aktuality":
+    if s in ("aktuality", "kontrolne"):
         t = re.sub(r"\s+[-–]\s+[^-–]{2,45}$", "", t)
     return (t[:118] + "…") if len(t) > 120 else t
 
-def fetch_uvo_value(url):
+def fetch_uvo_detail(url):
+    """Z detailu zákazky ÚVO (server-rendered TYPO3) vytiahne stav, druh, CPV, EÚ fondy a príp. hodnotu.
+    Pozn.: predpokladaná/zmluvná hodnota a uchádzači väčšinou NIE sú na prehľade zákazky — bývajú až v dokumentoch Vestníka."""
+    out = {}
     try:
         txt = re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", get(url)))
-        m = re.search(r"[Pp]redpokladan[áa] hodnota[^0-9]{0,25}([0-9][0-9\s .,]{2,})\s*(?:EUR|€|Eur)", txt)
-        if m:
-            return re.sub(r"\s+", " ", m.group(1)).strip() + " €"
     except Exception:
-        pass
-    return ""
+        return out
+    def g(p):
+        m = re.search(p, txt); return m.group(1).strip() if m else ""
+    out["stav"] = g(r"Stav zákazky:\s*(\S+)")
+    out["druh"] = g(r"Druh zákazky:\s*(\S+)")
+    out["fondy"] = g(r"fondov E[ÚU]:\s*(\S+)")
+    m = re.search(r"CPV zákazky:\s*[0-9-]+\s+(.+?)\s+NUTS", txt)
+    if m: out["cpv"] = m.group(1).strip()[:70]
+    m = re.search(r"[Pp]redpokladan[áa] hodnota[^0-9]{0,25}([0-9][0-9\s .,]{2,})\s*(?:EUR|€|Eur)", txt)
+    if m: out["suma"] = re.sub(r"\s+", " ", m.group(1)).strip() + " €"
+    return {k: v for k, v in out.items() if v}
 
 def fetch_stav(url):
     try:
@@ -193,8 +207,20 @@ def parse_date(s):
         except ValueError: return ""
     return ""
 
+SK_MES = {"januar": 1, "februar": 2, "marec": 3, "april": 4, "maj": 5, "jun": 6,
+          "jul": 7, "august": 8, "september": 9, "oktober": 10, "november": 11, "december": 12}
+def parse_sk_date(s):
+    """Dátum typu '3. Júl 2026' (slovný mesiac) -> ISO."""
+    m = re.search(r"(\d{1,2})\.?\s*([A-Za-zÁ-Žá-ž]+)\s*(\d{4})", s or "")
+    if m:
+        mes = SK_MES.get(norm(m.group(2)))
+        if mes:
+            try: return datetime.date(int(m.group(3)), mes, int(m.group(1))).isoformat()
+            except ValueError: return ""
+    return parse_date(s)
+
 def days_old(iso):
-    try: return (TODAY - datetime.date.fromisoformat(iso)).days
+    try: return (TODAY - datetime.date.fromisoformat((iso or "")[:10])).days
     except Exception: return 99999
 
 # ---------------- ZBER ----------------
@@ -241,18 +267,20 @@ def collect_uvo(max_pages=6):
                 datum = parse_date(next((x for x in c if parse_date(x)), ""))
                 obst = c[1]
                 a = tr.find("a", href=re.compile("detail"))
-                url = urllib.parse.urljoin("https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek", a["href"]) if a else "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek"
+                url2 = urllib.parse.urljoin("https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek", a["href"]) if a else "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek"
                 out.append({"id": "u-" + norm(c[0])[:45], "source": "uvo", "title": c[0], "date": datum,
                             "category": kategoria(c[0] + " " + (c[2] if len(c) > 2 else "") + " " + obst),
-                            "blok": "", "meta": "Obstarávateľ: " + obst, "url": url})
+                            "blok": "", "meta": "Obstarávateľ: " + obst, "url": url2})
                 rows += 1
         if rows == 0: break
     return out
 
-def collect_aktuality(days=7):
+def collect_kontrolne(days=None):
+    """Aktuality kontrolných/dozorných inštitúcií (ÚHP, NKÚ, PMÚ, GP, NBÚ…) cez Google News RSS."""
+    days = PANEL_DNI if days is None else days
     out = []
     try:
-        feeds = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("institucie", [])
+        feeds = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
     except Exception:
         return out
     for f in feeds:
@@ -273,9 +301,37 @@ def collect_aktuality(days=7):
                 d = ""
             if not title or (d and days_old(d) > days):
                 continue
-            out.append({"id": "a-" + hashlib.md5(link.encode()).hexdigest()[:12], "source": "aktuality",
+            out.append({"id": "k-" + hashlib.md5(link.encode()).hexdigest()[:12], "source": "kontrolne",
                         "title": title, "date": d, "category": kategoria(title), "blok": "",
                         "meta": f["nazov"], "url": link})
+    return out
+
+def collect_crz():
+    """Centrálny register zmlúv — najnovšie VÝZNAMNÉ zmluvy (nad prahom sumy), zoradené podľa dátumu zostupne."""
+    out = []
+    thr = int(CFG.get("crz_suma_od", 100000))
+    url = "https://www.crz.gov.sk/?art_suma_spolu_od=%d&order=2&search=1" % thr
+    soup = BeautifulSoup(get(url), "html.parser")
+    for tr in soup.select("table tbody tr"):
+        tds = tr.find_all("td")
+        if len(tds) < 5:
+            continue
+        a = tds[1].find("a", href=re.compile(r"/zmluva/\d+"))
+        if not a:
+            continue
+        nazov = a.get_text(" ", strip=True)
+        cislo = tds[1].get_text(" ", strip=True).replace(nazov, "").strip()
+        cena = tds[2].get_text(" ", strip=True)
+        dod = tds[3].get_text(" ", strip=True)
+        obj = tds[4].get_text(" ", strip=True)
+        datum = parse_sk_date(tds[0].get_text(" ", strip=True))
+        mid = re.search(r"/zmluva/(\d+)", a["href"])
+        if not mid:
+            continue
+        out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
+                    "category": kategoria(nazov + " " + obj + " " + dod), "blok": "", "suma": cena,
+                    "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
+                    "url": "https://www.crz.gov.sk" + a["href"]})
     return out
 
 # ---------------- STORE (rolujúci archív) ----------------
@@ -291,7 +347,7 @@ def main():
     fetched = []
     try: fetched += collect_nrsr(mp)
     except Exception as e: print("WARN nrsr", e)
-    for fn in (collect_vlada, collect_uvo, collect_aktuality):
+    for fn in (collect_vlada, collect_uvo, collect_kontrolne, collect_crz):
         try: fetched += fn()
         except Exception as e: print("WARN", fn.__name__, e)
     new = 0
@@ -299,73 +355,86 @@ def main():
         if it["id"] in by_id:
             by_id[it["id"]].update({k: it[k] for k in ("title", "category", "blok", "meta", "url", "date", "stav", "suma", "popis") if it.get(k)})
         else:
-            it["first_seen"] = ISO
+            it["first_seen"] = NOW_TS
             by_id[it["id"]] = it; new += 1
     items = list(by_id.values())
-    # prune: ÚVO staršie ako archív (30 dní) zmazať; parlament+vláda ponechať
-    arch = CFG.get("uvo_dni_archiv", 30)
-    items = [it for it in items if not (it["source"] in ("uvo", "aktuality") and days_old(it.get("date") or it.get("first_seen", ISO)) > arch)]
+    # prune: ÚVO + kontrolné staršie ako archív (30 dní) zmazať; parlament+vláda ponechať
+    items = [it for it in items if not (it["source"] in ("uvo", "kontrolne", "zmluvy") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
 
-    # BACKFILL (capped per run, self-healing): stav (parlament), suma (ÚVO), AI popis (parlament/vláda/ÚVO)
+    # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
+    HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
     ai_cap, ai_done, uvo_done = int(CFG.get("ai_max_per_run", 120)), 0, 0
     for it in items:
         s = it.get("source")
         if s == "parlament" and it.get("url") and not it.get("stav"):
             it["stav"] = fetch_stav(it["url"])
-        if s == "uvo" and it.get("url") and "suma" not in it and uvo_done < 80:
-            it["suma"] = fetch_uvo_value(it["url"]); uvo_done += 1
-        if s in ("parlament", "vlada", "uvo") and not it.get("popis") and not it.get("_ai_tried") and ai_done < ai_cap:
+        if s == "uvo" and it.get("url") and not it.get("_uvo_done") and uvo_done < 80:
+            dd = fetch_uvo_detail(it["url"]); it["_uvo_done"] = True; uvo_done += 1
+            for k in ("stav", "druh", "cpv", "fondy", "suma"):
+                if dd.get(k):
+                    it[k] = dd[k]
+        # AI popis LEN ak je kľúč (inak nemarkujeme _ai_tried, nech sa po pridaní kľúča doplnia)
+        if HAS_KEY and s in ("parlament", "vlada", "uvo", "zmluvy") and not it.get("popis") and not it.get("_ai_tried") and ai_done < ai_cap:
             p = ai_popis(it); it["_ai_tried"] = True
             if p:
                 it["popis"] = p
             ai_done += 1
-    print("AI popisov (tento beh):", ai_done)
+    print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY)
     store = {"items": items, "updated": ISO}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    # panel: parlament+vláda všetko; ÚVO len posledných N dní
-    pan = CFG.get("uvo_dni_panel", 7)
-    panel = [it for it in items if it["source"] not in ("uvo", "aktuality") or days_old(it.get("date") or ISO) <= pan]
-    panel.sort(key=lambda x: (x.get("date") or "", x["id"]), reverse=True)
+    # panel: udalosti za posledných PANEL_DNI dní (naprieč všetkými zdrojmi)
+    panel = [it for it in items if days_old(it.get("date") or it.get("first_seen") or ISO) <= PANEL_DNI]
+    panel.sort(key=lambda x: (x.get("date") or x.get("first_seen") or "", x["id"]), reverse=True)
     build_dashboard(panel)
-    print(f"Store: {len(items)} položiek (+{new} nových). Panel: {len(panel)}.")
+    print(f"Store: {len(items)} položiek (+{new} nových). Panel (do {PANEL_DNI} dní): {len(panel)}.")
 
 # ---------------- PANEL ----------------
 def build_dashboard(items):
     cats = list(CFG["kategorie"].keys()) + ["Ostatné"]
+    def _info(it):
+        base = it.get("meta", "")
+        extra = []
+        if it.get("druh"): extra.append("Druh: " + it["druh"])
+        if it.get("cpv"): extra.append("CPV: " + it["cpv"])
+        if it.get("fondy") == "Áno": extra.append("EÚ fondy")
+        return base + ((" · " if base else "") + " · ".join(extra) if extra else "")
     view = [{"source": it["source"], "category": it.get("category", "Ostatné"), "blok": it.get("blok", ""),
-             "date": it.get("date", ""), "url": it.get("url", ""), "h": headline(it), "full": it.get("title", ""),
-             "info": it.get("meta", ""), "stav": it.get("stav", ""), "suma": it.get("suma", ""), "popis": it.get("popis", "")} for it in items]
+             "date": it.get("date", "") or (it.get("first_seen", "") or "")[:10], "url": it.get("url", ""), "h": headline(it),
+             "full": it.get("title", ""), "info": _info(it), "stav": it.get("stav", ""),
+             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", "")} for it in items]
     data_js = json.dumps(view, ensure_ascii=False)
     cats_js = json.dumps(cats, ensure_ascii=False)
-    cat_chips = "".join(f'<label class="chip"><input type="checkbox" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
-    tmpl = """<!DOCTYPE html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+    cat_chips = "".join(f'<label class="chip"><input type="checkbox" class="catcb" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
+    tmpl = r"""<!DOCTYPE html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SK monitor</title><style>
 :root{--bg:#f4f6f9;--card:#fff;--ink:#1a2230;--muted:#6b7688;--line:#e3e8ef;--brand:#1F3864}
 @media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#182230;--ink:#e6eaf0;--muted:#9aa7b8;--line:#2a3646;--brand:#8fb0ea}}
 *{box-sizing:border-box}
 body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
-header{background:var(--brand);color:#fff;padding:13px 20px;position:sticky;top:0;z-index:20}
+header{background:var(--brand);color:#fff;padding:12px 20px}
 h1{margin:0;font-size:17px}header p{margin:3px 0 0;opacity:.9;font-size:12px}
+.tabs{display:flex;gap:2px;background:var(--brand);padding:0 10px;position:sticky;top:0;z-index:30;overflow-x:auto}
+.tab{flex:0 0 auto;color:#dfe7f5;background:transparent;border:0;border-bottom:3px solid transparent;padding:11px 14px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.tab.active{color:#fff;border-bottom-color:#ffd54a;font-weight:700}
+.tcount{font-size:10px;background:rgba(255,255,255,.22);border-radius:9px;padding:0 6px;margin-left:5px}
 .wrap{max-width:1000px;margin:0 auto;padding:14px}
-.controls{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:14px;position:sticky;top:60px;z-index:10}
+.controls{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:12px;position:sticky;top:44px;z-index:20}
 input[type=text]{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font-size:14px;margin-bottom:9px;background:var(--bg);color:var(--ink)}
 .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:5px 0}
 .chip{font-size:12px;background:transparent;border-radius:14px;padding:3px 10px;cursor:pointer;user-select:none;border:1px solid var(--line);color:var(--ink)}
 .chip input{margin-right:4px;vertical-align:middle}
 .small{color:var(--muted);font-size:12px}
 button.mini{font-size:11px;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:6px;padding:2px 8px;cursor:pointer}
+details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;color:var(--brand)}
 .seg{font-size:12px;margin:2px 0 10px;color:var(--muted)}.seg b{color:var(--brand)}
-.section{margin-bottom:8px}
-.sechead{cursor:pointer;font-size:15px;color:var(--brand);margin:16px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px;user-select:none}
-.caret{display:inline-block;width:14px}
-.cnt{background:var(--brand);color:#fff;border-radius:10px;padding:0 8px;font-size:11px;font-weight:700}
+.daydiv{font-size:13px;font-weight:700;color:var(--brand);margin:16px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px;text-transform:capitalize}
 .secbody{display:flex;flex-direction:column;gap:8px}
 .card{background:var(--card);border:1px solid var(--line);border-left:4px solid #99a;border-radius:10px;padding:10px 12px}
-.card.parlament{border-left-color:#3b6fd4}.card.vlada{border-left-color:#8a5cd0}.card.uvo{border-left-color:#22a35a}.card.aktuality{border-left-color:#d38a1a}
+.card.parlament{border-left-color:#3b6fd4}.card.vlada{border-left-color:#8a5cd0}.card.uvo{border-left-color:#22a35a}.card.zmluvy{border-left-color:#0f9d8f}.card.kontrolne{border-left-color:#e08a1e}
 .chead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:3px}
 .srcpill{font-size:10px;font-weight:700;color:#fff;border-radius:10px;padding:1px 8px;text-transform:uppercase;letter-spacing:.3px}
-.srcpill.parlament{background:#3b6fd4}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.aktuality{background:#d38a1a}
+.srcpill.parlament{background:#3b6fd4}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.zmluvy{background:#0f9d8f}.srcpill.kontrolne{background:#e08a1e}
 .badge{font-size:10px;font-weight:700;border-radius:10px;padding:1px 8px}
 .b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}
 .cdate{margin-left:auto;color:var(--muted);font-size:11px}
@@ -373,82 +442,116 @@ button.mini{font-size:11px;border:1px solid var(--line);background:var(--card);c
 .title[href]:hover{color:var(--brand);text-decoration:underline}
 .desc{opacity:.92;font-size:13px;line-height:1.45;margin:3px 0}
 .facts{color:var(--muted);font-size:11.5px;margin-top:3px}
-@media(max-width:600px){.controls{top:56px}.wrap{padding:10px}}
+.loadmore{display:block;width:100%;margin:14px 0;padding:11px;border:1px dashed var(--line);background:var(--card);color:var(--brand);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
+.endnote{text-align:center;color:var(--muted);font-size:12px;margin:16px 0}
+@media(max-width:600px){.controls{top:42px}.wrap{padding:10px}}
 </style></head><body>
-<header><h1>🇸🇰 SK monitor — parlament · vláda · zákazky · aktuality</h1>
-<p>Aktualizované __UPDATED__ · verejné zdroje (NR SR, rokovania vlády, ÚVO, novinky inštitúcií). Zákazky a aktuality: posledných 7 dní. Klikni na nadpis kategórie na zbalenie/rozbalenie.</p></header>
+<header><h1>🇸🇰 SK monitor</h1>
+<p>Aktualizované __UPDATED__ · verejné zdroje: NR SR, rokovania vlády, ÚVO, register zmlúv (CRZ), kontrolné inštitúcie · prehľad udalostí za posledných 7 dní.</p></header>
+<div class="tabs" id="tabs"></div>
 <div class="wrap">
  <div class="controls">
   <input type="text" id="q" placeholder="🔎 hľadať v názve / metadátach..." oninput="render()">
-  <div class="row"><span class="small">Zdroj:</span>
+  <div class="row" id="subrow"><span class="small">Zobraziť:</span>
     <label class="chip"><input type="checkbox" class="src" value="parlament" checked onchange="render()"> Parlament</label>
     <label class="chip"><input type="checkbox" class="src" value="vlada" checked onchange="render()"> Vláda</label>
     <label class="chip"><input type="checkbox" class="src" value="uvo" checked onchange="render()"> Zákazky</label>
-    <label class="chip"><input type="checkbox" class="src" value="aktuality" checked onchange="render()"> Aktuality</label>
-    <span class="small" style="margin-left:12px">Blok (parlament):</span>
+    <label class="chip"><input type="checkbox" class="src" value="zmluvy" checked onchange="render()"> Zmluvy (CRZ)</label>
+    <label class="chip"><input type="checkbox" class="src" value="kontrolne" checked onchange="render()"> Kontrolné inštitúcie</label>
+  </div>
+  <div class="row"><span class="small">Blok (parlament):</span>
     <label class="chip"><input type="checkbox" class="blok" value="Koalícia" checked onchange="render()"> Koalícia</label>
     <label class="chip"><input type="checkbox" class="blok" value="Opozícia" checked onchange="render()"> Opozícia</label>
     <label class="chip"><input type="checkbox" class="blok" value="ine" checked onchange="render()"> neurčené</label>
   </div>
-  <div class="row"><span class="small">Kategórie:</span> <button class="mini" onclick="allCats(true)">všetky</button> <button class="mini" onclick="allCats(false)">žiadne</button></div>
-  <div class="row" id="cats">__CATS__</div>
+  <details class="cats"><summary>Témy (centrálny filter — platí pre všetky záložky)</summary>
+   <div class="row" style="margin-top:6px"><button class="mini" onclick="allCats(true)">všetky</button> <button class="mini" onclick="allCats(false)">žiadne</button></div>
+   <div class="row" id="cats">__CATS__</div>
+  </details>
  </div>
  <div id="stat" class="seg"></div>
  <div id="list"></div>
 </div>
 <script>
-const DATA = __DATA__;
-const CATS = __CATSORDER__;
+const DATA=__DATA__, CATS=__CATSORDER__;
+const TABS=[['novinky','Novinky (24 h)'],['parlament','Parlament'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
+const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
+let TAB='novinky';
+const LOAD={};  // tab -> počet dní zobrazeného okna
 function sel(cls){return [...document.querySelectorAll('.'+cls+':checked')].map(e=>e.value)}
 function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checked=v);render()}
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
-const COL={};
-const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',aktuality:'Aktuality'};
-function toggle(c){COL[c]=!COL[c];render();}
-function relDate(d){if(!d)return'';const dd=Math.round((new Date()-new Date(d))/86400000);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
-function isNew(d){if(!d)return false;return Math.round((new Date()-new Date(d))/86400000)<=2;}
-function render(){
+function ageDays(d){if(!d)return 99999;return Math.floor((new Date(new Date().toDateString())-new Date(d))/86400000);}
+function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))return 1e9;return (Date.now()-t.getTime())/3600000;}
+function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
+function isNew(it){return hoursSince(it.fs)<=12;}
+function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
+function card(it){
+ const bl=(it.blok&&it.blok.indexOf('Koal')===0)?'Koalícia':(it.blok==='Opozícia'?'Opozícia':'ine');
+ const blokHtml=(it.source==='parlament'&&it.blok)?`<span class="badge ${bl==='Opozícia'?'b-o':'b-k'}">${it.blok}</span>`:'';
+ const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
+ const newHtml=isNew(it)?`<span class="badge b-new">NOVÉ</span>`:'';
+ const stavHtml=it.stav?` · stav: ${it.stav}`:'';
+ const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
+ const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
+ return `<div class="card ${it.source}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${blokHtml} ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
+}
+function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
- const srcs=sel('src'), csel=sel('catcb'), bloks=sel('blok');
- const groups={}; let n=0;
- for(const it of DATA){
-  if(!srcs.includes(it.source))continue;
-  if(!csel.includes(it.category))continue;
+ const csel=sel('catcb'), bloks=sel('blok');
+ return DATA.filter(it=>{
+  if(!csel.includes(it.category))return false;
   const bl=(it.blok&&it.blok.indexOf('Koal')===0)?'Koalícia':(it.blok==='Opozícia'?'Opozícia':'ine');
-  if(it.source==='parlament' && !bloks.includes(bl))continue;
-  const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();
-  if(q && !txt.includes(q))continue;
-  (groups[it.category]=groups[it.category]||[]).push(it); n++;
+  if(it.source==='parlament'&&!bloks.includes(bl))return false;
+  if(q){const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();if(!txt.includes(q))return false;}
+  return true;
+ });
+}
+function setTab(t){TAB=t;window.scrollTo(0,0);render();}
+function more(){LOAD[TAB]=Math.min((LOAD[TAB]||2)+2,7);render();}
+function renderTabs(base){
+ const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
+ const nov=base.filter(it=>hoursSince(it.fs)<=24).length;
+ document.getElementById('tabs').innerHTML=TABS.map(function(t){
+  const id=t[0], lbl=t[1];
+  const c = id==='novinky'?nov : id==='vsetko'?base.length : (cnt[id]||0);
+  return `<button class="tab ${TAB===id?'active':''}" onclick="setTab('${id}')">${lbl}<span class="tcount">${c}</span></button>`;
+ }).join('');
+}
+function render(){
+ const base=baseFilter();
+ renderTabs(base);
+ document.getElementById('subrow').style.display = TAB==='novinky' ? 'flex':'none';
+ let list, out='', note='';
+ if(TAB==='novinky'){
+  const srcs=sel('src');
+  list=base.filter(it=>hoursSince(it.fs)<=24 && srcs.includes(it.source));
+  list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Za posledných 24 h nič nové.</p>';
+  document.getElementById('stat').innerHTML=`Najnovšie za 24 h: <b>${list.length}</b>`;
+  document.getElementById('list').innerHTML=out; return;
  }
- let out='';
- for(const cat of CATS){
-  const arr=groups[cat]; if(!arr||!arr.length)continue;
-  arr.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  const op=!COL[cat];
-  out+=`<div class="section"><h2 class="sechead" onclick="toggle('${cat.replace(/'/g,'')}')"><span class="caret">${op?'▾':'▸'}</span> ${cat} <span class="cnt">${arr.length}</span></h2>`;
-  if(op){out+='<div class="secbody">';
-   for(const it of arr){
-    const bl=(it.blok&&it.blok.indexOf('Koal')===0)?'Koalícia':(it.blok==='Opozícia'?'Opozícia':'ine');
-    const blokHtml=(it.source==='parlament'&&it.blok)?`<span class="badge ${bl==='Opozícia'?'b-o':'b-k'}">${it.blok}</span>`:'';
-    const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
-    const newHtml=isNew(it.date)?`<span class="badge b-new">NOVÉ</span>`:'';
-    const stavHtml=it.stav?` · stav: ${it.stav}`:'';
-    const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
-    const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
-    out+=`<div class="card ${it.source}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${blokHtml} ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
-   }
-   out+='</div>';}
-  out+='</div>';
+ const win=LOAD[TAB]||2;
+ list = (TAB==='vsetko') ? base.slice() : base.filter(it=>it.source===TAB);
+ list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+ const shown=list.filter(it=>ageDays(it.date)<=win);
+ const total=list.length;
+ if(TAB==='vsetko'){
+  let lastDay=null;
+  for(const it of shown){const dl=dayLabel(it.date);if(dl!==lastDay){out+=`<div class="daydiv">${dl}</div>`;lastDay=dl;}out+=card(it);}
+  if(!out)out='<p class="small">Nič nezodpovedá filtru.</p>';
+ } else {
+  out = shown.length?('<div class="secbody">'+shown.map(card).join('')+'</div>'):'<p class="small">Nič nezodpovedá filtru.</p>';
  }
- document.getElementById('stat').innerHTML=`Zobrazené: <b>${n}</b> z ${DATA.length}`;
- document.getElementById('list').innerHTML=out||'<p class="small">Nič nezodpovedá filtru.</p>';
+ if(win<7 && shown.length<total){ note=`<button class="loadmore" onclick="more()">▾ Načítať staršie (+2 dni)</button>`; }
+ else { note=`<div class="endnote">— Stránka ponúka prehľad udalostí len za posledných 7 dní. —</div>`; }
+ document.getElementById('stat').innerHTML=`Zobrazené: <b>${shown.length}</b> z ${total} (za posledné ${Math.min(win,7)} dni)`;
+ document.getElementById('list').innerHTML=out+note;
 }
 render();
 </script>
 </body></html>"""
     tmpl = tmpl.replace("__CATS__", cat_chips).replace("__DATA__", data_js).replace("__CATSORDER__", cats_js).replace("__UPDATED__", ISO)
-    # oprava: category checkboxy potrebujú triedu catcb
-    tmpl = tmpl.replace('class="chip"><input type="checkbox" value="', 'class="chip"><input type="checkbox" class="catcb" value="')
     open(os.path.join(DOCS, "index.html"), "w", encoding="utf-8").write(tmpl)
 
 if __name__ == "__main__":

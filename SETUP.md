@@ -22,6 +22,13 @@ Cieľ: každé ráno sa v GitHube automaticky spustí zber (Parlament + Vláda +
 
 Hotovo. Panel sa každé ráno sám obnoví; história dní je v priečinku `data/`.
 
+## 4. AI popisy „čo sa mení" (voliteľné, lacné)
+Aby mal každý nový zákon 1–2 vetový popis obsahu (z dôvodovej správy cez model Haiku):
+1. Získaj API kľúč na **console.anthropic.com** (účet + platba; beh stojí rádovo centy — sumarizujú sa len nové položky).
+2. V repozitári: **Settings → Secrets and variables → Actions → New repository secret**.
+3. Name: `ANTHROPIC_API_KEY`, Secret: vlož svoj kľúč → Add secret.
+4. Ak kľúč nepridáš, všetko ostatné funguje ďalej — len bez AI popisov (zadarmo).
+
 ## Ako to používať
 - **Denne:** otvoríš si URL panela — vidíš nové zákony (koalícia/opozícia), vládne materiály a sledované zákazky. Filter hore.
 - **On-demand (keď chceš rozbor):** otvor Claude a povedz napr. „rozober ČPT 1356 z dôvodovej správy" alebo „preveri firmu X — vlastníci (RPVS) + médiá". AI platíš len vtedy.

@@ -28,6 +28,10 @@
     "Jurík": "PS", "Petrík": "PS", "Kišš": "PS", "Plavákov": "PS", "Bihariov": "PS", "Dvořák": "PS",
     "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS", "Farkašovsk": "SNS", "Lučansk": "SNS"
   },
+  "panel_dni": 7,
   "uvo_dni_panel": 7,
-  "uvo_dni_archiv": 30
+  "uvo_dni_archiv": 30,
+  "crz_suma_od": 100000,
+  "_crz_poznamka": "CRZ = len významné zmluvy nad touto sumou v € (inak by tisíce malých zmlúv zahltili panel). Znížením prahu pribudne viac zmlúv.",
+  "ai_max_per_run": 40
 }
