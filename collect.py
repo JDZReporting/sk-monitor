@@ -238,7 +238,7 @@ def collect_nrsr(mp=None):
         pk, typ = predkladatel(title)
         meta = "ČPT " + cpt + " · " + typ + (" · predkladateľ: " + pk if pk else "")
         out.append({"id": "p-" + (cpt or norm(title)[:20]), "source": "parlament", "title": title, "date": datum,
-                    "category": kategoria(title), "blok": blok_from(pk, typ, mp), "stav": "", "meta": meta,
+                    "category": kategoria(title), "blok": "", "stav": "", "meta": meta,
                     "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=" + mid.group(1) if mid else ""})
     return out
 
@@ -342,10 +342,8 @@ def load_store():
 def main():
     store = load_store()
     by_id = {it["id"]: it for it in store.get("items", [])}
-    mp = load_poslanci()
-    print("Poslancov v klubovej mape:", len(mp))
     fetched = []
-    try: fetched += collect_nrsr(mp)
+    try: fetched += collect_nrsr()
     except Exception as e: print("WARN nrsr", e)
     for fn in (collect_vlada, collect_uvo, collect_kontrolne, collect_crz):
         try: fetched += fn()
@@ -358,7 +356,10 @@ def main():
             it["first_seen"] = NOW_TS
             by_id[it["id"]] = it; new += 1
     items = list(by_id.values())
-    # prune: ÚVO + kontrolné staršie ako archív (30 dní) zmazať; parlament+vláda ponechať
+    # auto-čistenie: zahoď staré/neznáme zdroje (napr. legacy 'aktuality')
+    ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "kontrolne")
+    items = [it for it in items if it["source"] in ZNAME]
+    # prune: ÚVO + zmluvy + kontrolné staršie ako archív (30 dní) zmazať; parlament+vláda ponechať
     items = [it for it in items if not (it["source"] in ("uvo", "kontrolne", "zmluvy") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
@@ -383,8 +384,10 @@ def main():
     store = {"items": items, "updated": ISO}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    # panel: udalosti za posledných PANEL_DNI dní (naprieč všetkými zdrojmi)
-    panel = [it for it in items if days_old(it.get("date") or it.get("first_seen") or ISO) <= PANEL_DNI]
+    # panel: pomalé zdroje (parlament/vláda) širšie okno (recess), rýchle (uvo/zmluvy/kontrolne) 7 dní
+    slow_dni = int(CFG.get("panel_dni_slow", 30))
+    def _age(it): return days_old(it.get("date") or it.get("first_seen") or ISO)
+    panel = [it for it in items if _age(it) <= (slow_dni if it["source"] in ("parlament", "vlada") else PANEL_DNI)]
     panel.sort(key=lambda x: (x.get("date") or x.get("first_seen") or "", x["id"]), reverse=True)
     build_dashboard(panel)
     print(f"Store: {len(items)} položiek (+{new} nových). Panel (do {PANEL_DNI} dní): {len(panel)}.")
@@ -409,17 +412,18 @@ def build_dashboard(items):
     tmpl = r"""<!DOCTYPE html><html lang="sk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SK monitor</title><style>
 :root{--bg:#f4f6f9;--card:#fff;--ink:#1a2230;--muted:#6b7688;--line:#e3e8ef;--brand:#1F3864}
-@media (prefers-color-scheme:dark){:root{--bg:#0f141b;--card:#182230;--ink:#e6eaf0;--muted:#9aa7b8;--line:#2a3646;--brand:#8fb0ea}}
 *{box-sizing:border-box}
 body{font-family:-apple-system,Segoe UI,Roboto,Arial,sans-serif;margin:0;background:var(--bg);color:var(--ink)}
 header{background:var(--brand);color:#fff;padding:12px 20px}
 h1{margin:0;font-size:17px}header p{margin:3px 0 0;opacity:.9;font-size:12px}
-.tabs{display:flex;gap:2px;background:var(--brand);padding:0 10px;position:sticky;top:0;z-index:30;overflow-x:auto}
-.tab{flex:0 0 auto;color:#dfe7f5;background:transparent;border:0;border-bottom:3px solid transparent;padding:11px 14px;font-size:13.5px;cursor:pointer;white-space:nowrap}
-.tab.active{color:#fff;border-bottom-color:#ffd54a;font-weight:700}
-.tcount{font-size:10px;background:rgba(255,255,255,.22);border-radius:9px;padding:0 6px;margin-left:5px}
+.tabs{display:flex;gap:7px;background:var(--card);padding:9px 12px;border-bottom:1px solid var(--line);box-shadow:0 2px 6px rgba(0,0,0,.06);position:sticky;top:0;z-index:30;overflow-x:auto}
+.tab{flex:0 0 auto;color:#33415a;background:var(--bg);border:1.5px solid var(--line);border-radius:9px;padding:8px 15px;font-size:13.5px;font-weight:600;cursor:pointer;white-space:nowrap;transition:all .12s}
+.tab:hover{border-color:var(--brand);color:var(--brand)}
+.tab.active{color:#fff;background:var(--brand);border-color:var(--brand);box-shadow:0 2px 5px rgba(31,56,100,.3)}
+.tcount{font-size:10px;background:var(--line);color:var(--muted);border-radius:9px;padding:0 6px;margin-left:6px;font-weight:700}
+.tab.active .tcount{background:rgba(255,255,255,.28);color:#fff}
 .wrap{max-width:1000px;margin:0 auto;padding:14px}
-.controls{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:12px;position:sticky;top:44px;z-index:20}
+.controls{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:11px 13px;margin-bottom:12px;position:sticky;top:56px;z-index:20}
 input[type=text]{width:100%;padding:10px;border:1px solid var(--line);border-radius:9px;font-size:14px;margin-bottom:9px;background:var(--bg);color:var(--ink)}
 .row{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:5px 0}
 .chip{font-size:12px;background:transparent;border-radius:14px;padding:3px 10px;cursor:pointer;user-select:none;border:1px solid var(--line);color:var(--ink)}
@@ -444,7 +448,7 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 .facts{color:var(--muted);font-size:11.5px;margin-top:3px}
 .loadmore{display:block;width:100%;margin:14px 0;padding:11px;border:1px dashed var(--line);background:var(--card);color:var(--brand);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
 .endnote{text-align:center;color:var(--muted);font-size:12px;margin:16px 0}
-@media(max-width:600px){.controls{top:42px}.wrap{padding:10px}}
+@media(max-width:600px){.controls{top:54px}.wrap{padding:10px}}
 </style></head><body>
 <header><h1>🇸🇰 SK monitor</h1>
 <p>Aktualizované __UPDATED__ · verejné zdroje: NR SR, rokovania vlády, ÚVO, register zmlúv (CRZ), kontrolné inštitúcie · prehľad udalostí za posledných 7 dní.</p></header>
@@ -458,11 +462,6 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
     <label class="chip"><input type="checkbox" class="src" value="uvo" checked onchange="render()"> Zákazky</label>
     <label class="chip"><input type="checkbox" class="src" value="zmluvy" checked onchange="render()"> Zmluvy (CRZ)</label>
     <label class="chip"><input type="checkbox" class="src" value="kontrolne" checked onchange="render()"> Kontrolné inštitúcie</label>
-  </div>
-  <div class="row"><span class="small">Blok (parlament):</span>
-    <label class="chip"><input type="checkbox" class="blok" value="Koalícia" checked onchange="render()"> Koalícia</label>
-    <label class="chip"><input type="checkbox" class="blok" value="Opozícia" checked onchange="render()"> Opozícia</label>
-    <label class="chip"><input type="checkbox" class="blok" value="ine" checked onchange="render()"> neurčené</label>
   </div>
   <details class="cats"><summary>Témy (centrálny filter — platí pre všetky záložky)</summary>
    <div class="row" style="margin-top:6px"><button class="mini" onclick="allCats(true)">všetky</button> <button class="mini" onclick="allCats(false)">žiadne</button></div>
@@ -478,6 +477,8 @@ const TABS=[['novinky','Novinky (24 h)'],['parlament','Parlament'],['vlada','Vl�
 const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
 let TAB='novinky';
 const LOAD={};  // tab -> počet dní zobrazeného okna
+const MAXW={parlament:30,vlada:30,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
+function defWin(t){return (t==='parlament'||t==='vlada')?30:2;}
 function sel(cls){return [...document.querySelectorAll('.'+cls+':checked')].map(e=>e.value)}
 function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checked=v);render()}
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
@@ -487,28 +488,24 @@ function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'v
 function isNew(it){return hoursSince(it.fs)<=12;}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
- const bl=(it.blok&&it.blok.indexOf('Koal')===0)?'Koalícia':(it.blok==='Opozícia'?'Opozícia':'ine');
- const blokHtml=(it.source==='parlament'&&it.blok)?`<span class="badge ${bl==='Opozícia'?'b-o':'b-k'}">${it.blok}</span>`:'';
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
  const newHtml=isNew(it)?`<span class="badge b-new">NOVÉ</span>`:'';
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
- return `<div class="card ${it.source}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${blokHtml} ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
+ return `<div class="card ${it.source}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
 }
 function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
- const csel=sel('catcb'), bloks=sel('blok');
+ const csel=sel('catcb');
  return DATA.filter(it=>{
   if(!csel.includes(it.category))return false;
-  const bl=(it.blok&&it.blok.indexOf('Koal')===0)?'Koalícia':(it.blok==='Opozícia'?'Opozícia':'ine');
-  if(it.source==='parlament'&&!bloks.includes(bl))return false;
   if(q){const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();if(!txt.includes(q))return false;}
   return true;
  });
 }
 function setTab(t){TAB=t;window.scrollTo(0,0);render();}
-function more(){LOAD[TAB]=Math.min((LOAD[TAB]||2)+2,7);render();}
+function more(){LOAD[TAB]=Math.min((LOAD[TAB]||defWin(TAB))+2,MAXW[TAB]||7);render();}
 function renderTabs(base){
  const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
  const nov=base.filter(it=>hoursSince(it.fs)<=24).length;
@@ -531,7 +528,8 @@ function render(){
   document.getElementById('stat').innerHTML=`Najnovšie za 24 h: <b>${list.length}</b>`;
   document.getElementById('list').innerHTML=out; return;
  }
- const win=LOAD[TAB]||2;
+ const maxw=MAXW[TAB]||7;
+ const win=LOAD[TAB]||defWin(TAB);
  list = (TAB==='vsetko') ? base.slice() : base.filter(it=>it.source===TAB);
  list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
  const shown=list.filter(it=>ageDays(it.date)<=win);
@@ -543,9 +541,9 @@ function render(){
  } else {
   out = shown.length?('<div class="secbody">'+shown.map(card).join('')+'</div>'):'<p class="small">Nič nezodpovedá filtru.</p>';
  }
- if(win<7 && shown.length<total){ note=`<button class="loadmore" onclick="more()">▾ Načítať staršie (+2 dni)</button>`; }
- else { note=`<div class="endnote">— Stránka ponúka prehľad udalostí len za posledných 7 dní. —</div>`; }
- document.getElementById('stat').innerHTML=`Zobrazené: <b>${shown.length}</b> z ${total} (za posledné ${Math.min(win,7)} dni)`;
+ if(win<maxw && shown.length<total){ note=`<button class="loadmore" onclick="more()">▾ Načítať staršie (+2 dni)</button>`; }
+ else { note=`<div class="endnote">— Prehľad udalostí za posledných ${maxw} dní. —</div>`; }
+ document.getElementById('stat').innerHTML=`Zobrazené: <b>${shown.length}</b> z ${total} (za posledných ${Math.min(win,maxw)} dní)`;
  document.getElementById('list').innerHTML=out+note;
 }
 render();

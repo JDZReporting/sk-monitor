@@ -29,6 +29,8 @@
     "Gašpar": "Smer-SD", "Danko": "SNS", "Michelko": "SNS", "Farkašovsk": "SNS", "Lučansk": "SNS"
   },
   "panel_dni": 7,
+  "panel_dni_slow": 30,
+  "_panel_poznamka": "panel_dni = okno pre rýchle zdroje (ÚVO, zmluvy, kontrolné). panel_dni_slow = širšie okno pre parlament a vládu (počas prázdnin bývajú návrhy staršie).",
   "uvo_dni_panel": 7,
   "uvo_dni_archiv": 30,
   "crz_suma_od": 100000,
