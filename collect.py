@@ -473,7 +473,7 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 </div>
 <script>
 const DATA=__DATA__, CATS=__CATSORDER__;
-const TABS=[['novinky','Novinky (24 h)'],['parlament','Parlament'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
+const TABS=[['novinky','Novinky'],['parlament','Parlament'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
 const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
 let TAB='novinky';
 const LOAD={};  // tab -> počet dní zobrazeného okna
@@ -485,7 +485,7 @@ function esc(s){return (s||'').replace(/"/g,'&quot;')}
 function ageDays(d){if(!d)return 99999;return Math.floor((new Date(new Date().toDateString())-new Date(d))/86400000);}
 function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))return 1e9;return (Date.now()-t.getTime())/3600000;}
 function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
-function isNew(it){return hoursSince(it.fs)<=12;}
+function isNew(it){return ageDays(it.date)<=0;}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
@@ -508,7 +508,7 @@ function setTab(t){TAB=t;window.scrollTo(0,0);render();}
 function more(){LOAD[TAB]=Math.min((LOAD[TAB]||defWin(TAB))+2,MAXW[TAB]||7);render();}
 function renderTabs(base){
  const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
- const nov=base.filter(it=>hoursSince(it.fs)<=24).length;
+ const nov=base.filter(it=>ageDays(it.date)<=1).length;
  document.getElementById('tabs').innerHTML=TABS.map(function(t){
   const id=t[0], lbl=t[1];
   const c = id==='novinky'?nov : id==='vsetko'?base.length : (cnt[id]||0);
@@ -522,10 +522,10 @@ function render(){
  let list, out='', note='';
  if(TAB==='novinky'){
   const srcs=sel('src');
-  list=base.filter(it=>hoursSince(it.fs)<=24 && srcs.includes(it.source));
+  list=base.filter(it=>ageDays(it.date)<=1 && srcs.includes(it.source));
   list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Za posledných 24 h nič nové.</p>';
-  document.getElementById('stat').innerHTML=`Najnovšie za 24 h: <b>${list.length}</b>`;
+  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Dnes ani včera zatiaľ nič nové.</p>';
+  document.getElementById('stat').innerHTML=`Najnovšie (dnes a včera): <b>${list.length}</b>`;
   document.getElementById('list').innerHTML=out; return;
  }
  const maxw=MAXW[TAB]||7;
