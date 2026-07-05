@@ -301,8 +301,11 @@ def collect_kontrolne(days=None):
                 d = ""
             if not title or (d and days_old(d) > days):
                 continue
+            cat = kategoria(title)
+            if cat == "Ostatné":
+                cat = f.get("kat", "Ostatné")  # predvolená téma inštitúcie
             out.append({"id": "k-" + hashlib.md5(link.encode()).hexdigest()[:12], "source": "kontrolne",
-                        "title": title, "date": d, "category": kategoria(title), "blok": "",
+                        "title": title, "date": d, "category": cat, "blok": "",
                         "meta": f["nazov"], "url": link})
     return out
 
@@ -355,12 +358,16 @@ def main():
         else:
             it["first_seen"] = NOW_TS
             by_id[it["id"]] = it; new += 1
+        by_id[it["id"]]["last_seen"] = ISO  # naposledy videné v zdroji (pre agendu parlament/vláda)
     items = list(by_id.values())
     # auto-čistenie: zahoď staré/neznáme zdroje (napr. legacy 'aktuality')
     ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "kontrolne")
     items = [it for it in items if it["source"] in ZNAME]
-    # prune: ÚVO + zmluvy + kontrolné staršie ako archív (30 dní) zmazať; parlament+vláda ponechať
+    # prune: ÚVO + zmluvy + kontrolné staršie ako archív (30 dní) zmazať
     items = [it for it in items if not (it["source"] in ("uvo", "kontrolne", "zmluvy") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
+    # prune: parlament/vláda, ktoré už vypadli z aktuálneho zoznamu (naposledy videné pred >slow_keep dňami)
+    slow_keep = int(CFG.get("slow_keep_dni", 21))
+    items = [it for it in items if not (it["source"] in ("parlament", "vlada") and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
@@ -384,10 +391,9 @@ def main():
     store = {"items": items, "updated": ISO}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    # panel: pomalé zdroje (parlament/vláda) širšie okno (recess), rýchle (uvo/zmluvy/kontrolne) 7 dní
-    slow_dni = int(CFG.get("panel_dni_slow", 30))
+    # panel: všetky zdroje jednotne za posledných PANEL_DNI dní (7)
     def _age(it): return days_old(it.get("date") or it.get("first_seen") or ISO)
-    panel = [it for it in items if _age(it) <= (slow_dni if it["source"] in ("parlament", "vlada") else PANEL_DNI)]
+    panel = [it for it in items if _age(it) <= PANEL_DNI]
     panel.sort(key=lambda x: (x.get("date") or x.get("first_seen") or "", x["id"]), reverse=True)
     build_dashboard(panel)
     print(f"Store: {len(items)} položiek (+{new} nových). Panel (do {PANEL_DNI} dní): {len(panel)}.")
@@ -477,15 +483,15 @@ const TABS=[['novinky','Novinky'],['parlament','Parlament'],['vlada','Vláda'],[
 const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
 let TAB='novinky';
 const LOAD={};  // tab -> počet dní zobrazeného okna
-const MAXW={parlament:30,vlada:30,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
-function defWin(t){return (t==='parlament'||t==='vlada')?30:2;}
+const MAXW={parlament:7,vlada:7,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
+function defWin(t){return 2;}
 function sel(cls){return [...document.querySelectorAll('.'+cls+':checked')].map(e=>e.value)}
 function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checked=v);render()}
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
 function ageDays(d){if(!d)return 99999;return Math.floor((new Date(new Date().toDateString())-new Date(d))/86400000);}
 function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))return 1e9;return (Date.now()-t.getTime())/3600000;}
 function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
-function isNew(it){return ageDays(it.date)<=0;}
+function isNew(it){return hoursSince(it.fs)<=12;}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
@@ -508,7 +514,7 @@ function setTab(t){TAB=t;window.scrollTo(0,0);render();}
 function more(){LOAD[TAB]=Math.min((LOAD[TAB]||defWin(TAB))+2,MAXW[TAB]||7);render();}
 function renderTabs(base){
  const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
- const nov=base.filter(it=>ageDays(it.date)<=1).length;
+ const nov=base.filter(it=>hoursSince(it.fs)<=24).length;
  document.getElementById('tabs').innerHTML=TABS.map(function(t){
   const id=t[0], lbl=t[1];
   const c = id==='novinky'?nov : id==='vsetko'?base.length : (cnt[id]||0);
@@ -522,24 +528,24 @@ function render(){
  let list, out='', note='';
  if(TAB==='novinky'){
   const srcs=sel('src');
-  list=base.filter(it=>ageDays(it.date)<=1 && srcs.includes(it.source));
-  list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
-  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Dnes ani včera zatiaľ nič nové.</p>';
-  document.getElementById('stat').innerHTML=`Najnovšie (dnes a včera): <b>${list.length}</b>`;
+  list=base.filter(it=>hoursSince(it.fs)<=24 && srcs.includes(it.source));
+  list.sort((a,b)=>(b.fs||b.date||'').localeCompare(a.fs||a.date||''));
+  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Za posledných 24 h nič nové.</p>';
+  document.getElementById('stat').innerHTML=`Novinky za 24 h: <b>${list.length}</b>`;
   document.getElementById('list').innerHTML=out; return;
  }
  const maxw=MAXW[TAB]||7;
  const win=LOAD[TAB]||defWin(TAB);
  list = (TAB==='vsetko') ? base.slice() : base.filter(it=>it.source===TAB);
  list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
- const shown=list.filter(it=>ageDays(it.date)<=win);
  const total=list.length;
+ const shown=list.filter(it=>ageDays(it.date)<=win);
  if(TAB==='vsetko'){
   let lastDay=null;
   for(const it of shown){const dl=dayLabel(it.date);if(dl!==lastDay){out+=`<div class="daydiv">${dl}</div>`;lastDay=dl;}out+=card(it);}
   if(!out)out='<p class="small">Nič nezodpovedá filtru.</p>';
  } else {
-  out = shown.length?('<div class="secbody">'+shown.map(card).join('')+'</div>'):'<p class="small">Nič nezodpovedá filtru.</p>';
+  out = shown.length?('<div class="secbody">'+shown.map(card).join('')+'</div>'):'<p class="small">Za posledných 7 dní nič — pozri záložku Všetko alebo zmeň filter.</p>';
  }
  if(win<maxw && shown.length<total){ note=`<button class="loadmore" onclick="more()">▾ Načítať staršie (+2 dni)</button>`; }
  else { note=`<div class="endnote">— Prehľad udalostí za posledných ${maxw} dní. —</div>`; }
