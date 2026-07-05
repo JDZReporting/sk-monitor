@@ -41,6 +41,14 @@ def kategoria(text):
             return kat
     return "Ostatné"
 
+def _is_muni(text):
+    """Je objednávateľ samospráva? Obec/mesto/mestská časť/VÚC alebo ich podnik (napr. 'Služby mesta ...')."""
+    ob = norm(text or "")
+    obp = " " + ob + " "
+    return (ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("mestsk") or ob.startswith("obecn")
+            or "mestska cast" in ob or "samospravny kraj" in ob
+            or " mesta " in obp or " obce " in obp)
+
 def predkladatel(title):
     """Vytiahne predkladateľov z názvu návrhu (bez potreby zoznamu poslancov)."""
     low = title.lower()
@@ -331,12 +339,7 @@ def collect_crz():
         mid = re.search(r"/zmluva/(\d+)", a["href"])
         if not mid:
             continue
-        cat = kategoria(nazov + " " + obj + " " + dod)
-        ob = norm(obj)
-        is_muni = ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("obecny urad") \
-                  or ob.startswith("mestsky urad") or "mestska cast" in ob or "samospravny kraj" in ob
-        if cat == "Ostatné" and is_muni:
-            cat = "Samospráva"
+        cat = "Samospráva" if _is_muni(obj) else kategoria(nazov + " " + obj + " " + dod)
         out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
                     "category": cat, "blok": "", "suma": cena,
                     "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
@@ -378,13 +381,11 @@ def main():
     for it in items:
         if it.get("category") == "Verejná správa a samospráva":
             it["category"] = kategoria(it.get("title", ""))
-    # CRZ: zmluvy s obecným/mestským/VÚC objednávateľom -> Samospráva (dotriedi aj staré položky v store)
+    # CRZ: zmluvy so samosprávnym objednávateľom -> vždy Samospráva (prebije predmet; dotriedi aj staré položky)
     for it in items:
-        if it.get("source") == "zmluvy" and it.get("category") == "Ostatné":
+        if it.get("source") == "zmluvy":
             m = re.search(r"Objednávate[ľl]:\s*([^·]+)", it.get("meta", ""))
-            ob = norm(m.group(1)) if m else ""
-            if ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("obecny urad") \
-               or ob.startswith("mestsky urad") or "mestska cast" in ob or "samospravny kraj" in ob:
+            if m and _is_muni(m.group(1)):
                 it["category"] = "Samospráva"
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
