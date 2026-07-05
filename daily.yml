@@ -2,7 +2,7 @@ name: SK monitor daily
 
 on:
   schedule:
-    - cron: "0 4 * * *"   # 06:00 SK v lete (CEST = UTC+2); v zime 05:00 SK. Uprav podľa potreby.
+    - cron: "0 */3 * * *"  # 06:00 SK v lete (CEST = UTC+2); v zime 05:00 SK. Uprav podľa potreby.
   workflow_dispatch: {}    # umožní spustiť ručne tlačidlom "Run workflow"
 
 permissions:
