@@ -276,9 +276,9 @@ def collect_uvo(max_pages=6):
                 obst = c[1]
                 a = tr.find("a", href=re.compile("detail"))
                 url2 = urllib.parse.urljoin("https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek", a["href"]) if a else "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek"
+                cat = "Samospráva" if _is_muni(obst) else kategoria(c[0] + " " + (c[2] if len(c) > 2 else "") + " " + obst)
                 out.append({"id": "u-" + norm(c[0])[:45], "source": "uvo", "title": c[0], "date": datum,
-                            "category": kategoria(c[0] + " " + (c[2] if len(c) > 2 else "") + " " + obst),
-                            "blok": "", "meta": "Obstarávateľ: " + obst, "url": url2})
+                            "category": cat, "blok": "", "meta": "Obstarávateľ: " + obst, "url": url2})
                 rows += 1
         if rows == 0: break
     return out
@@ -381,10 +381,10 @@ def main():
     for it in items:
         if it.get("category") == "Verejná správa a samospráva":
             it["category"] = kategoria(it.get("title", ""))
-    # CRZ: zmluvy so samosprávnym objednávateľom -> vždy Samospráva (prebije predmet; dotriedi aj staré položky)
+    # Zmluvy (CRZ) + Zákazky (ÚVO) so samosprávnym objednávateľom/obstarávateľom -> vždy Samospráva (dotriedi aj staré)
     for it in items:
-        if it.get("source") == "zmluvy":
-            m = re.search(r"Objednávate[ľl]:\s*([^·]+)", it.get("meta", ""))
+        if it.get("source") in ("zmluvy", "uvo"):
+            m = re.search(r"(?:Objednávate[ľl]|Obstarávate[ľl]):\s*([^·]+)", it.get("meta", ""))
             if m and _is_muni(m.group(1)):
                 it["category"] = "Samospráva"
 
