@@ -378,6 +378,14 @@ def main():
     for it in items:
         if it.get("category") == "Verejná správa a samospráva":
             it["category"] = kategoria(it.get("title", ""))
+    # CRZ: zmluvy s obecným/mestským/VÚC objednávateľom -> Samospráva (dotriedi aj staré položky v store)
+    for it in items:
+        if it.get("source") == "zmluvy" and it.get("category") == "Ostatné":
+            m = re.search(r"Objednávate[ľl]:\s*([^·]+)", it.get("meta", ""))
+            ob = norm(m.group(1)) if m else ""
+            if ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("obecny urad") \
+               or ob.startswith("mestsky urad") or "mestska cast" in ob or "samospravny kraj" in ob:
+                it["category"] = "Samospráva"
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
