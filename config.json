@@ -14,7 +14,8 @@
     "Energetika a životné prostredie": ["energetik", "jadrov", "plynarenstv", "elektrizacn", "obnovitelnych zdroj", "emisi", "odpadoch", "ochrane prirody", "ovzdusi", "vodach", "klim"],
     "Pôdohospodárstvo a potraviny": ["podohospodar", "polnohospodar", "potravin", "veterinar", "rybarstv", "lesoch", "uvadzani liehu"],
     "Kultúra a médiá": ["kulture", "kulturn", "tlacovej agentur", "rozhlas", "televiz", "autorsk", "mediach", "periodickej tlac"],
-    "Verejná správa a samospráva": ["samospr", "obecnom zriaden", "vyssich uzemnych celk", "statnej sluzbe", "statnych zamestnanc", "e-governmen", "informatizac", "verejnom obstaravan"]
+    "Samospráva": ["samospr", "obecnom zriaden", "vyssich uzemnych celk", "hlavnom meste slovenskej", "mestskej policajn", "obecnej policajn", "mestskych castiach"],
+    "Verejná správa": ["statnej sluzbe", "statnych zamestnanc", "e-governmen", "informatizac", "verejnom obstaravan", "verejnej sprave", "spravnom konani", "statnej správ"]
   },
   "_kluby_poznamka": "Klub -> blok. Zloženie vlády uprav tu (podreťazce názvu klubu, bez diakritiky). Členov klubov si skript stiahne z NR SR automaticky.",
   "koalicia_kluby": ["smer", "hlas", "slovenska narodna strana"],

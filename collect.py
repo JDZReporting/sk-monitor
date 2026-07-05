@@ -4,7 +4,7 @@
 SK monitor v3 — denný/priebežný zber (bez AI pri scrapovaní) so záložkami.
 Zdroje: Parlament (NR SR) · Vláda (rokovania.gov.sk) · Zákazky (ÚVO) · Kontrolné inštitúcie (ÚHP, NKÚ, PMÚ, GP, NBÚ, NKÚ… cez Google News RSS).
 Rolujúci store (data/store.json) drží 30 dní; panel (docs/index.html) ukazuje udalosti za posledných 7 dní.
-Panel: Novinky (24 h) · Parlament · Vláda · Zákazky · Kontrolné inštitúcie · Všetko (podľa dátumu). Témy sa vyberajú centrálne.
+Panel: Novinky (posledné 2 dni) · Parlament · Vláda · Zákazky · Zmluvy · Kontrolné inštitúcie · Všetko (podľa dátumu). Témy sa vyberajú centrálne.
 Určené pre GitHub Actions (cron).
 """
 import os, re, json, datetime, unicodedata, html, hashlib, urllib.parse, email.utils
@@ -331,8 +331,14 @@ def collect_crz():
         mid = re.search(r"/zmluva/(\d+)", a["href"])
         if not mid:
             continue
+        cat = kategoria(nazov + " " + obj + " " + dod)
+        ob = norm(obj)
+        is_muni = ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("obecny urad") \
+                  or ob.startswith("mestsky urad") or "mestska cast" in ob or "samospravny kraj" in ob
+        if cat == "Ostatné" and is_muni:
+            cat = "Samospráva"
         out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
-                    "category": kategoria(nazov + " " + obj + " " + dod), "blok": "", "suma": cena,
+                    "category": cat, "blok": "", "suma": cena,
                     "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
                     "url": "https://www.crz.gov.sk" + a["href"]})
     return out
@@ -368,6 +374,10 @@ def main():
     # prune: parlament/vláda, ktoré už vypadli z aktuálneho zoznamu (naposledy videné pred >slow_keep dňami)
     slow_keep = int(CFG.get("slow_keep_dni", 21))
     items = [it for it in items if not (it["source"] in ("parlament", "vlada") and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
+    # migrácia: starý názov kategórie -> nové (Samospráva / Verejná správa) podľa titulku
+    for it in items:
+        if it.get("category") == "Verejná správa a samospráva":
+            it["category"] = kategoria(it.get("title", ""))
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
@@ -514,7 +524,7 @@ function setTab(t){TAB=t;window.scrollTo(0,0);render();}
 function more(){LOAD[TAB]=Math.min((LOAD[TAB]||defWin(TAB))+2,MAXW[TAB]||7);render();}
 function renderTabs(base){
  const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
- const nov=base.filter(it=>hoursSince(it.fs)<=24).length;
+ const nov=base.filter(it=>ageDays(it.date)<=1).length;
  document.getElementById('tabs').innerHTML=TABS.map(function(t){
   const id=t[0], lbl=t[1];
   const c = id==='novinky'?nov : id==='vsetko'?base.length : (cnt[id]||0);
@@ -528,10 +538,10 @@ function render(){
  let list, out='', note='';
  if(TAB==='novinky'){
   const srcs=sel('src');
-  list=base.filter(it=>hoursSince(it.fs)<=24 && srcs.includes(it.source));
-  list.sort((a,b)=>(b.fs||b.date||'').localeCompare(a.fs||a.date||''));
-  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Za posledných 24 h nič nové.</p>';
-  document.getElementById('stat').innerHTML=`Novinky za 24 h: <b>${list.length}</b>`;
+  list=base.filter(it=>ageDays(it.date)<=1 && srcs.includes(it.source));
+  list.sort((a,b)=>(b.date||'').localeCompare(a.date||''));
+  out = list.length?('<div class="secbody">'+list.map(card).join('')+'</div>'):'<p class="small">Za posledné 2 dni zatiaľ nič nové.</p>';
+  document.getElementById('stat').innerHTML=`Novinky (za posledné 2 dni): <b>${list.length}</b>`;
   document.getElementById('list').innerHTML=out; return;
  }
  const maxw=MAXW[TAB]||7;

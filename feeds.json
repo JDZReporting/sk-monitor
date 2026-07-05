@@ -1,17 +1,17 @@
 {
-  "_poznamka": "Aktuality kontrolných/dozorných inštitúcií cez Google News RSS. 'q' je vyhľadávací dotaz; kód z neho poskladá RSS URL. Ak má inštitúcia oficiálne RSS, do 'rss' daj priamu adresu a použije sa namiesto Google News.",
+  "_poznamka": "Aktuality kontrolných/dozorných inštitúcií cez Google News RSS. 'q' = vyhľadávací dotaz; 'kat' = predvolená téma inštitúcie (použije sa, ak sa z titulku téma nerozpozná, aby veci nepadali do 'Ostatné'). Voliteľne 'rss' = priama RSS adresa.",
   "kontrolne": [
-    {"nazov": "Útvar hodnoty za peniaze (ÚHP, MF SR)", "q": "\"Útvar hodnoty za peniaze\" OR \"hodnota za peniaze\" Slovensko"},
-    {"nazov": "Najvyšší kontrolný úrad (NKÚ)", "q": "\"Najvyšší kontrolný úrad\""},
-    {"nazov": "Protimonopolný úrad SR (PMÚ)", "q": "\"Protimonopolný úrad\""},
-    {"nazov": "Generálna prokuratúra SR", "q": "\"Generálna prokuratúra\" Slovenskej"},
-    {"nazov": "Úrad špeciálnej prokuratúry", "q": "\"Úrad špeciálnej prokuratúry\""},
-    {"nazov": "Národný bezpečnostný úrad (NBÚ)", "q": "\"Národný bezpečnostný úrad\""},
-    {"nazov": "Úrad pre verejné obstarávanie (ÚVO)", "q": "\"Úrad pre verejné obstarávanie\""},
-    {"nazov": "Úrad na ochranu oznamovateľov", "q": "\"Úrad na ochranu oznamovateľov\""},
-    {"nazov": "Úrad pre reguláciu sieťových odvetví (ÚRSO)", "q": "\"Úrad pre reguláciu sieťových odvetví\""},
-    {"nazov": "Úrad na ochranu osobných údajov", "q": "\"Úrad na ochranu osobných údajov\" Slovensko"},
-    {"nazov": "Verejný ochranca práv (ombudsman)", "q": "\"Verejný ochranca práv\" Slovensko"},
-    {"nazov": "Národná banka Slovenska (NBS)", "q": "\"Národná banka Slovenska\" dohľad"}
+    {"nazov": "Útvar hodnoty za peniaze (ÚHP, MF SR)", "q": "\"Útvar hodnoty za peniaze\" OR \"hodnota za peniaze\" Slovensko", "kat": "Financie a dane"},
+    {"nazov": "Najvyšší kontrolný úrad (NKÚ)", "q": "\"Najvyšší kontrolný úrad\"", "kat": "Verejná správa"},
+    {"nazov": "Protimonopolný úrad SR (PMÚ)", "q": "\"Protimonopolný úrad\"", "kat": "Hospodárstvo a podnikanie"},
+    {"nazov": "Generálna prokuratúra SR", "q": "\"Generálna prokuratúra\" Slovenskej", "kat": "Spravodlivosť a právo"},
+    {"nazov": "Úrad špeciálnej prokuratúry", "q": "\"Úrad špeciálnej prokuratúry\"", "kat": "Spravodlivosť a právo"},
+    {"nazov": "Národný bezpečnostný úrad (NBÚ)", "q": "\"Národný bezpečnostný úrad\"", "kat": "Vnútro a bezpečnosť"},
+    {"nazov": "Úrad pre verejné obstarávanie (ÚVO)", "q": "\"Úrad pre verejné obstarávanie\"", "kat": "Verejná správa"},
+    {"nazov": "Úrad na ochranu oznamovateľov", "q": "\"Úrad na ochranu oznamovateľov\"", "kat": "Spravodlivosť a právo"},
+    {"nazov": "Úrad pre reguláciu sieťových odvetví (ÚRSO)", "q": "\"Úrad pre reguláciu sieťových odvetví\"", "kat": "Energetika a životné prostredie"},
+    {"nazov": "Úrad na ochranu osobných údajov", "q": "\"Úrad na ochranu osobných údajov\" Slovensko", "kat": "Spravodlivosť a právo"},
+    {"nazov": "Verejný ochranca práv (ombudsman)", "q": "\"Verejný ochranca práv\" Slovensko", "kat": "Spravodlivosť a právo"},
+    {"nazov": "Národná banka Slovenska (NBS)", "q": "\"Národná banka Slovenska\" dohľad", "kat": "Financie a dane"}
   ]
 }
