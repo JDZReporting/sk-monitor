@@ -46,8 +46,8 @@ def _is_muni(text):
     ob = norm(text or "")
     obp = " " + ob + " "
     return (ob.startswith("obec ") or ob.startswith("mesto ") or ob.startswith("mestsk") or ob.startswith("obecn")
-            or "mestska cast" in ob or "samospravny kraj" in ob
-            or " mesta " in obp or " obce " in obp)
+            or "mestska cast" in ob or "samospravn" in ob
+            or " mesta " in obp or " mesto " in obp or " obce " in obp or " obec " in obp)
 
 def predkladatel(title):
     """Vytiahne predkladateľov z názvu návrhu (bez potreby zoznamu poslancov)."""
@@ -159,12 +159,14 @@ def ai_popis(it):
         return _haiku("Napíš po SLOVENSKY 2 až 3 vety, čo sa v tejto verejnej zákazke obstaráva, pre koho a načo slúži. Vecne, bez úvodných fráz.", "Zákazka: " + title + "\n" + meta)
     if s == "zmluvy":
         return _haiku("Napíš po SLOVENSKY 2 až 3 vety, o čom je táto zmluva, čo je jej predmetom a kto komu čo dodáva. Vecne, bez úvodných fráz.", "Zmluva: " + title + "\n" + meta)
+    if s == "mpk":
+        return _haiku("Napíš po SLOVENSKY 2 až 3 vety, čo tento návrh v medzirezortnom pripomienkovom konaní rieši a čo mení. Vecne, bez úvodných fráz.", "Návrh: " + title + "\n" + meta)
     return ""
 
 def headline(it):
     """Krátky zrozumiteľný nadpis 'o čo ide' z názvu (bez AI)."""
     t = it.get("title", ""); s = it.get("source")
-    if s == "parlament":
+    if s in ("parlament", "mpk"):
         low = t.lower()
         je_novela = ("ktorým sa mení" in low or "ktorým sa dopĺňa" in low or "ktorou sa mení" in low or "ktorou sa dopĺňa" in low)
         if "460/1992" in t:
@@ -283,17 +285,48 @@ def collect_uvo(max_pages=6):
         if rows == 0: break
     return out
 
+def collect_mpk():
+    """Medzirezortné pripomienkové konanie (MPK) — oficiálny RSS Slov-Lexu (Min. spravodlivosti SR).
+    Najnovšie legislatívne procesy v pripomienkovom konaní: názov, číslo (LP/PI), rezort, dátum."""
+    out = []
+    xml = get("https://vyhladavanie.slov-lex.sk/rss/legislativnyMaterial")
+    if not xml:
+        return out
+    try:
+        root = ET.fromstring(xml)
+    except Exception:
+        return out
+    DC_CREATOR = "{http://purl.org/dc/elements/1.1/}creator"
+    for item in root.iter("item"):
+        title = (item.findtext("title") or "").strip()
+        link = (item.findtext("link") or "").strip()
+        cislo = (item.findtext("description") or "").strip()
+        rezort = (item.findtext(DC_CREATOR) or "").strip()
+        try:
+            d = email.utils.parsedate_to_datetime(item.findtext("pubDate") or "").date().isoformat()
+        except Exception:
+            d = ""
+        if not title:
+            continue
+        out.append({"id": "m-" + (cislo or hashlib.md5(link.encode()).hexdigest()[:10]),
+                    "source": "mpk", "title": title, "date": d, "category": kategoria(title), "blok": "",
+                    "meta": (cislo + " · " if cislo else "") + ("predkladateľ: " + rezort if rezort else ""),
+                    "url": link})
+    return out
+
 def collect_kontrolne(days=None):
-    """Aktuality kontrolných/dozorných inštitúcií (ÚHP, NKÚ, PMÚ, GP, NBÚ…) cez Google News RSS."""
-    days = PANEL_DNI if days is None else days
+    """Kontrolné/dozorné úrady — OFICIÁLNE RSS feedy (NKÚ, PMÚ…) z ich webov. Žiadne médiá."""
+    days = ARCHIV_DNI if days is None else days
     out = []
     try:
         feeds = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
     except Exception:
         return out
     for f in feeds:
-        url = f.get("rss") or ("https://news.google.com/rss/search?q=" + urllib.parse.quote(f["q"]) + "&hl=sk&gl=SK&ceid=SK:sk")
-        xml = get(url)
+        rss = f.get("rss")
+        if not rss:
+            continue
+        xml = get(rss)
         if not xml:
             continue
         try:
@@ -311,8 +344,8 @@ def collect_kontrolne(days=None):
                 continue
             cat = kategoria(title)
             if cat == "Ostatné":
-                cat = f.get("kat", "Ostatné")  # predvolená téma inštitúcie
-            out.append({"id": "k-" + hashlib.md5(link.encode()).hexdigest()[:12], "source": "kontrolne",
+                cat = f.get("kat", "Ostatné")
+            out.append({"id": "k-" + hashlib.md5((link or title).encode()).hexdigest()[:12], "source": "kontrolne",
                         "title": title, "date": d, "category": cat, "blok": "",
                         "meta": f["nazov"], "url": link})
     return out
@@ -357,7 +390,7 @@ def main():
     fetched = []
     try: fetched += collect_nrsr()
     except Exception as e: print("WARN nrsr", e)
-    for fn in (collect_vlada, collect_uvo, collect_kontrolne, collect_crz):
+    for fn in (collect_vlada, collect_uvo, collect_mpk, collect_crz, collect_kontrolne):
         try: fetched += fn()
         except Exception as e: print("WARN", fn.__name__, e)
     new = 0
@@ -370,10 +403,10 @@ def main():
         by_id[it["id"]]["last_seen"] = ISO  # naposledy videné v zdroji (pre agendu parlament/vláda)
     items = list(by_id.values())
     # auto-čistenie: zahoď staré/neznáme zdroje (napr. legacy 'aktuality')
-    ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "kontrolne")
+    ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "mpk", "kontrolne")
     items = [it for it in items if it["source"] in ZNAME]
-    # prune: ÚVO + zmluvy + kontrolné staršie ako archív (30 dní) zmazať
-    items = [it for it in items if not (it["source"] in ("uvo", "kontrolne", "zmluvy") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
+    # prune: ÚVO + zmluvy + MPK + kontrolné staršie ako archív (30 dní) zmazať
+    items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy", "kontrolne") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
     # prune: parlament/vláda, ktoré už vypadli z aktuálneho zoznamu (naposledy videné pred >slow_keep dňami)
     slow_keep = int(CFG.get("slow_keep_dni", 21))
     items = [it for it in items if not (it["source"] in ("parlament", "vlada") and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
@@ -401,7 +434,7 @@ def main():
                 if dd.get(k):
                     it[k] = dd[k]
         # AI popis LEN ak je kľúč (inak nemarkujeme _ai_tried, nech sa po pridaní kľúča doplnia)
-        if HAS_KEY and s in ("parlament", "vlada", "uvo", "zmluvy") and not it.get("popis") and not it.get("_ai_tried") and ai_done < ai_cap:
+        if HAS_KEY and s in ("parlament", "vlada", "uvo", "zmluvy", "mpk") and not it.get("popis") and not it.get("_ai_tried") and ai_done < ai_cap:
             p = ai_popis(it); it["_ai_tried"] = True
             if p:
                 it["popis"] = p
@@ -460,12 +493,13 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 .daydiv{font-size:13px;font-weight:700;color:var(--brand);margin:16px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px;text-transform:capitalize}
 .secbody{display:flex;flex-direction:column;gap:8px}
 .card{background:var(--card);border:1px solid var(--line);border-left:4px solid #99a;border-radius:10px;padding:10px 12px}
-.card.parlament{border-left-color:#3b6fd4}.card.vlada{border-left-color:#8a5cd0}.card.uvo{border-left-color:#22a35a}.card.zmluvy{border-left-color:#0f9d8f}.card.kontrolne{border-left-color:#e08a1e}
+.card.parlament{border-left-color:#3b6fd4}.card.mpk{border-left-color:#e08a1e}.card.vlada{border-left-color:#8a5cd0}.card.uvo{border-left-color:#22a35a}.card.zmluvy{border-left-color:#0f9d8f}.card.kontrolne{border-left-color:#64748b}
 .chead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:3px}
 .srcpill{font-size:10px;font-weight:700;color:#fff;border-radius:10px;padding:1px 8px;text-transform:uppercase;letter-spacing:.3px}
-.srcpill.parlament{background:#3b6fd4}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.zmluvy{background:#0f9d8f}.srcpill.kontrolne{background:#e08a1e}
+.srcpill.parlament{background:#3b6fd4}.srcpill.mpk{background:#e08a1e}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.zmluvy{background:#0f9d8f}.srcpill.kontrolne{background:#64748b}
 .badge{font-size:10px;font-weight:700;border-radius:10px;padding:1px 8px}
-.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}
+.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}.b-watch{background:#7c3aed;color:#fff}
+.card.watched{box-shadow:0 0 0 2px #7c3aed inset}
 .cdate{margin-left:auto;color:var(--muted);font-size:11px}
 .title{display:block;font-weight:700;color:var(--ink);text-decoration:none;font-size:15px;margin:2px 0}
 .title[href]:hover{color:var(--brand);text-decoration:underline}
@@ -476,17 +510,22 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 @media(max-width:600px){.controls{top:54px}.wrap{padding:10px}}
 </style></head><body>
 <header><h1>🇸🇰 SK monitor</h1>
-<p>Aktualizované __UPDATED__ · verejné zdroje: NR SR, rokovania vlády, ÚVO, register zmlúv (CRZ), kontrolné inštitúcie · prehľad udalostí za posledných 7 dní.</p></header>
+<p>Aktualizované __UPDATED__ · oficiálne zdroje: NR SR, MPK (Slov-Lex), rokovania vlády, ÚVO, register zmlúv (CRZ), kontrolné úrady (NKÚ, PMÚ) · prehľad udalostí za posledných 7 dní.</p></header>
 <div class="tabs" id="tabs"></div>
 <div class="wrap">
  <div class="controls">
   <input type="text" id="q" placeholder="🔎 hľadať v názve / metadátach..." oninput="render()">
+  <div class="row" style="gap:8px">
+    <input type="text" id="watch" placeholder="⭐ sledované mená / firmy (oddeľ čiarkou)…" style="flex:1;margin:0;width:auto" oninput="saveState();render()">
+    <label class="chip"><input type="checkbox" id="onlywatch" onchange="saveState();render()"> len sledované</label>
+  </div>
   <div class="row" id="subrow"><span class="small">Zobraziť:</span>
     <label class="chip"><input type="checkbox" class="src" value="parlament" checked onchange="render()"> Parlament</label>
     <label class="chip"><input type="checkbox" class="src" value="vlada" checked onchange="render()"> Vláda</label>
     <label class="chip"><input type="checkbox" class="src" value="uvo" checked onchange="render()"> Zákazky</label>
     <label class="chip"><input type="checkbox" class="src" value="zmluvy" checked onchange="render()"> Zmluvy (CRZ)</label>
-    <label class="chip"><input type="checkbox" class="src" value="kontrolne" checked onchange="render()"> Kontrolné inštitúcie</label>
+    <label class="chip"><input type="checkbox" class="src" value="mpk" checked onchange="render()"> MPK</label>
+    <label class="chip"><input type="checkbox" class="src" value="kontrolne" checked onchange="render()"> Kontrolné úrady</label>
   </div>
   <details class="cats"><summary>Témy (centrálny filter — platí pre všetky záložky)</summary>
    <div class="row" style="margin-top:6px"><button class="mini" onclick="allCats(true)">všetky</button> <button class="mini" onclick="allCats(false)">žiadne</button></div>
@@ -498,38 +537,45 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 </div>
 <script>
 const DATA=__DATA__, CATS=__CATSORDER__;
-const TABS=[['novinky','Novinky'],['parlament','Parlament'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
-const SRCL={parlament:'Parlament',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
+const TABS=[['novinky','Novinky'],['parlament','Parlament'],['mpk','MPK'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
+const SRCL={parlament:'Parlament',mpk:'MPK',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
 let TAB='novinky';
 const LOAD={};  // tab -> počet dní zobrazeného okna
-const MAXW={parlament:7,vlada:7,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
+const MAXW={parlament:7,mpk:7,vlada:7,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
 function defWin(t){return 2;}
 function sel(cls){return [...document.querySelectorAll('.'+cls+':checked')].map(e=>e.value)}
 function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checked=v);render()}
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
+function parseWatch(){return (document.getElementById('watch').value||'').toLowerCase().split(',').map(s=>s.trim()).filter(Boolean);}
+function isWatched(it){const w=parseWatch();if(!w.length)return false;const t=((it.full||'')+' '+(it.info||'')+' '+(it.h||'')).toLowerCase();return w.some(x=>t.includes(x));}
+function saveState(){try{localStorage.setItem('skmon',JSON.stringify({w:document.getElementById('watch').value,o:document.getElementById('onlywatch').checked,t:TAB}));}catch(e){}}
 function ageDays(d){if(!d)return 99999;return Math.floor((new Date(new Date().toDateString())-new Date(d))/86400000);}
 function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))return 1e9;return (Date.now()-t.getTime())/3600000;}
 function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
 function isNew(it){return hoursSince(it.fs)<=12;}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
+ const w=isWatched(it);
+ const watchHtml=w?`<span class="badge b-watch">⭐ sledované</span>`:'';
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
  const newHtml=isNew(it)?`<span class="badge b-new">NOVÉ</span>`:'';
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
- return `<div class="card ${it.source}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
+ return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
 }
 function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
  const csel=sel('catcb');
+ const only=document.getElementById('onlywatch').checked;
  return DATA.filter(it=>{
   if(!csel.includes(it.category))return false;
+  if(only && !isWatched(it))return false;
   if(q){const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();if(!txt.includes(q))return false;}
   return true;
  });
 }
-function setTab(t){TAB=t;window.scrollTo(0,0);render();}
+function setTab(t){TAB=t;saveState();window.scrollTo(0,0);render();}
 function more(){LOAD[TAB]=Math.min((LOAD[TAB]||defWin(TAB))+2,MAXW[TAB]||7);render();}
 function renderTabs(base){
  const cnt={};for(const it of base)cnt[it.source]=(cnt[it.source]||0)+1;
@@ -571,6 +617,7 @@ function render(){
  document.getElementById('stat').innerHTML=`Zobrazené: <b>${shown.length}</b> z ${total} (za posledných ${Math.min(win,maxw)} dní)`;
  document.getElementById('list').innerHTML=out+note;
 }
+(function initState(){try{const s=JSON.parse(localStorage.getItem('skmon')||'{}');if(s.w)document.getElementById('watch').value=s.w;if(s.o)document.getElementById('onlywatch').checked=true;if(s.t&&TABS.some(t=>t[0]===s.t))TAB=s.t;}catch(e){}})();
 render();
 </script>
 </body></html>"""
