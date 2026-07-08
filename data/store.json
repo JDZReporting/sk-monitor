@@ -9938,6 +9938,23 @@
    "druh": "Práce",
    "cpv": "Stavebné práce",
    "fondy": "Áno"
+  },
+  {
+   "id": "u-dom kultury - znizenie spotreby energie v obj",
+   "source": "uvo",
+   "title": "Dom kultúry - zníženie spotreby energie v objekte",
+   "date": "2026-07-08",
+   "category": "Samospráva",
+   "blok": "",
+   "meta": "Obstarávateľ: Mesto Gbely",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560106?cHash=dc3a8b25e68ce3c63417d274cc0fd6af",
+   "first_seen": "2026-07-08T20:05:03.905888+00:00",
+   "last_seen": "2026-07-08",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce",
+   "fondy": "Nie"
   }
  ],
  "updated": "2026-07-08"
