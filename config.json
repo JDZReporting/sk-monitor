@@ -14,6 +14,7 @@
     "Energetika a životné prostredie": ["energetik", "jadrov", "plynarenstv", "elektrizacn", "obnovitelnych zdroj", "emisi", "odpadoch", "ochrane prirody", "ovzdusi", "vodach", "klim"],
     "Pôdohospodárstvo a potraviny": ["podohospodar", "polnohospodar", "potravin", "veterinar", "rybarstv", "lesoch", "uvadzani liehu"],
     "Kultúra a médiá": ["kulture", "kulturn", "tlacovej agentur", "rozhlas", "televiz", "autorsk", "mediach", "periodickej tlac"],
+    "Štát a štátne podniky": [],
     "Samospráva": ["samospr", "obecnom zriaden", "vyssich uzemnych celk", "hlavnom meste slovenskej", "mestskej policajn", "obecnej policajn", "mestskych castiach"],
     "Verejná správa": ["statnej sluzbe", "statnych zamestnanc", "e-governmen", "informatizac", "verejnom obstaravan", "verejnej sprave", "spravnom konani", "statnej správ"]
   },

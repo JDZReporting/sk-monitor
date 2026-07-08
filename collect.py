@@ -49,6 +49,23 @@ def _is_muni(text):
             or "mestska cast" in ob or "samospravn" in ob
             or " mesta " in obp or " mesto " in obp or " obce " in obp or " obec " in obp)
 
+_STAT_KW = ("ministerstvo", "narodna dialnicna", "slovenska posta", "zeleznice slovenskej",
+            "zeleznicna spolocnost", "zssk", "socialna poistovna", "vseobecna zdravotna",
+            "vodohospodarsky podnik", "lesy slovenskej", "lesy sr", "slovenska sprava ciest",
+            "financne riaditelstvo", "financna sprava", "statna pokladnica", "urad vlady",
+            "slovenska konsolidacna", "narodna banka slovenska", "slovensky pozemkovy fond",
+            "environmentalny fond", "mh manazment", "transpetrol", "letove prevadzkove",
+            "vojenske", "slovensky vodohospodarsky", "narodny bezpecnostny", "sprava statnych hmotnych rezerv")
+def _is_stat(text):
+    """Je obstarávateľ/objednávateľ štát? Ministerstvo, štátny podnik (š. p.) alebo veľká štátna firma/inštitúcia."""
+    ob = norm(text or "")
+    if "s.p." in ob.replace(" ", "") or "statny podnik" in ob:
+        return True
+    if any(k in ob for k in _STAT_KW):
+        return True
+    obp = " " + ob + " "
+    return any(a in obp for a in (" nds ", " zsr ", " svp ", " ssc "))
+
 def predkladatel(title):
     """Vytiahne predkladateľov z názvu návrhu (bez potreby zoznamu poslancov)."""
     low = title.lower()
@@ -278,7 +295,7 @@ def collect_uvo(max_pages=6):
                 obst = c[1]
                 a = tr.find("a", href=re.compile("detail"))
                 url2 = urllib.parse.urljoin("https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek", a["href"]) if a else "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek"
-                cat = "Samospráva" if _is_muni(obst) else kategoria(c[0] + " " + (c[2] if len(c) > 2 else "") + " " + obst)
+                cat = "Samospráva" if _is_muni(obst) else ("Štát a štátne podniky" if _is_stat(obst) else kategoria(c[0] + " " + (c[2] if len(c) > 2 else "") + " " + obst))
                 out.append({"id": "u-" + norm(c[0])[:45], "source": "uvo", "title": c[0], "date": datum,
                             "category": cat, "blok": "", "meta": "Obstarávateľ: " + obst, "url": url2})
                 rows += 1
@@ -372,7 +389,7 @@ def collect_crz():
         mid = re.search(r"/zmluva/(\d+)", a["href"])
         if not mid:
             continue
-        cat = "Samospráva" if _is_muni(obj) else kategoria(nazov + " " + obj + " " + dod)
+        cat = "Samospráva" if _is_muni(obj) else ("Štát a štátne podniky" if _is_stat(obj) else kategoria(nazov + " " + obj + " " + dod))
         out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
                     "category": cat, "blok": "", "suma": cena,
                     "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
@@ -407,6 +424,14 @@ def main():
     items = [it for it in items if it["source"] in ZNAME]
     # prune: ÚVO + zmluvy + MPK + kontrolné staršie ako archív (30 dní) zmazať
     items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy", "kontrolne") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
+    # kontrolné: ponechaj len položky z OFICIÁLNYCH domén (feeds.json) — vyčisti staré mediálne (Google News) zvyšky
+    try:
+        _kf = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
+        _kdoms = [urllib.parse.urlparse(f.get("rss", "")).netloc for f in _kf if f.get("rss")]
+    except Exception:
+        _kdoms = []
+    if _kdoms:
+        items = [it for it in items if it["source"] != "kontrolne" or any(d and d in it.get("url", "") for d in _kdoms)]
     # prune: parlament/vláda, ktoré už vypadli z aktuálneho zoznamu (naposledy videné pred >slow_keep dňami)
     slow_keep = int(CFG.get("slow_keep_dni", 21))
     items = [it for it in items if not (it["source"] in ("parlament", "vlada") and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
@@ -414,12 +439,15 @@ def main():
     for it in items:
         if it.get("category") == "Verejná správa a samospráva":
             it["category"] = kategoria(it.get("title", ""))
-    # Zmluvy (CRZ) + Zákazky (ÚVO) so samosprávnym objednávateľom/obstarávateľom -> vždy Samospráva (dotriedi aj staré)
+    # Zmluvy (CRZ) + Zákazky (ÚVO): podľa obstarávateľa/objednávateľa -> Samospráva alebo Štát a štátne podniky (dotriedi aj staré)
     for it in items:
         if it.get("source") in ("zmluvy", "uvo"):
             m = re.search(r"(?:Objednávate[ľl]|Obstarávate[ľl]):\s*([^·]+)", it.get("meta", ""))
-            if m and _is_muni(m.group(1)):
+            who = m.group(1) if m else ""
+            if _is_muni(who):
                 it["category"] = "Samospráva"
+            elif _is_stat(who):
+                it["category"] = "Štát a štátne podniky"
 
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
