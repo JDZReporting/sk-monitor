@@ -9955,6 +9955,23 @@
    "druh": "Práce",
    "cpv": "Stavebné práce",
    "fondy": "Nie"
+  },
+  {
+   "id": "u-rekonstrukcia komunikacii - revitalizacia tok",
+   "source": "uvo",
+   "title": "Rekonštrukcia komunikácií - revitalizácia toku rieky Moravy od rkm 69 po rkm 52,01",
+   "date": "2026-07-08",
+   "category": "Štát a štátne podniky",
+   "blok": "",
+   "meta": "Obstarávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556533?cHash=31c43463ceb94565b972b2baaedaf7d4",
+   "first_seen": "2026-07-08T20:12:40.015055+00:00",
+   "last_seen": "2026-07-08",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce na výstavbe ciest 45233142-6 Práce na oprave ciest",
+   "fondy": "Áno"
   }
  ],
  "updated": "2026-07-08"
