@@ -9904,6 +9904,40 @@
    "url": "https://www.crz.gov.sk/zmluva/12562681/",
    "first_seen": "2026-07-08T18:56:10.884268+00:00",
    "last_seen": "2026-07-08"
+  },
+  {
+   "id": "u-obnova technologie cisticiek odpadovych vod v",
+   "source": "uvo",
+   "title": "OBNOVA TECHNOLÓGIE ČISTIČIEK ODPADOVÝCH VÔD V OBCI NÁLEPKOVO",
+   "date": "2026-07-08",
+   "category": "Samospráva",
+   "blok": "",
+   "meta": "Obstarávateľ: Obec Nálepkovo",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559354?cHash=92fd9e79bdc43c33f775e31c5e132e16",
+   "first_seen": "2026-07-08T19:21:10.968999+00:00",
+   "last_seen": "2026-07-08",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce 45252127-4 Stavebné práce na čističkách odpadových vôd",
+   "fondy": "Áno"
+  },
+  {
+   "id": "u-znizenie energetickej narocnosti nsp prievidz",
+   "source": "uvo",
+   "title": "Zníženie energetickej náročnosti NsP Prievidza so sídlom v Bojniciach\" - stavebné práce",
+   "date": "2026-07-08",
+   "category": "Samospráva",
+   "blok": "",
+   "meta": "Obstarávateľ: Trenčiansky samosprávny kraj",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551192?cHash=3eb692d1657927096a9c26e1624b8d2a",
+   "first_seen": "2026-07-08T19:21:10.968999+00:00",
+   "last_seen": "2026-07-08",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Práce",
+   "cpv": "Stavebné práce",
+   "fondy": "Áno"
   }
  ],
  "updated": "2026-07-08"
