@@ -532,7 +532,7 @@ def build_dashboard(items):
     view = [{"source": it["source"], "category": it.get("category", "Ostatné"), "blok": it.get("blok", ""),
              "date": it.get("date", "") or (it.get("first_seen", "") or "")[:10], "url": it.get("url", ""), "h": headline(it),
              "full": it.get("title", ""), "info": _info(it), "stav": it.get("stav", ""),
-             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", "")} for it in items]
+             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", ""), "dod": it.get("dod", "")} for it in items]
     data_js = json.dumps(view, ensure_ascii=False)
     cats_js = json.dumps(cats, ensure_ascii=False)
     cat_chips = "".join(f'<label class="chip"><input type="checkbox" class="catcb" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
@@ -577,6 +577,7 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 .title[href]:hover{color:var(--brand);text-decoration:underline}
 .desc{opacity:.92;font-size:12.5px;line-height:1.4;margin:3px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 .facts{color:var(--muted);font-size:11px;margin-top:2px}
+.regl{font-size:10.5px;margin-top:4px;color:var(--muted)}.regl a{color:var(--brand);text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:2px}.regl a:hover{text-decoration:underline}
 .loadmore{display:block;width:100%;margin:14px 0;padding:11px;border:1px dashed var(--line);background:var(--card);color:var(--brand);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
 .endnote{text-align:center;color:var(--muted);font-size:12px;margin:16px 0}
 #toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--brand);color:#fff;padding:9px 15px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .3s;z-index:100;pointer-events:none;box-shadow:0 3px 10px rgba(0,0,0,.25)}
@@ -645,9 +646,7 @@ function watchSummary(){
   for(const it of items){bySrc[it.source]=(bySrc[it.source]||0)+1; sum+=sumaNum(it.suma);}
   const parts=Object.keys(bySrc).map(s=>bySrc[s]+'× '+(SRCL[s]||s));
   const sumStr = sum>0 ? ' · spolu <b>'+sum.toLocaleString('sk-SK')+' €</b>' : '';
-  const enc=encodeURIComponent(term);
-  const reg=`<a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${enc}&PF=0&SID=0&S=on&R=on" target="_blank" title="Obchodný register">ORSR</a><a href="https://rpvs.gov.sk/rpvs" target="_blank" title="Register partnerov verejného sektora – vyhľadaj meno">RPVS</a><a href="https://finstat.sk/hladaj?q=${enc}" target="_blank" title="Vlastníci a väzby">FinStat</a>`;
-  rows+=`<div class="wsum"><b>⭐ ${term}</b> — ${items.length} záznamov (${parts.join(', ')})${sumStr} ${reg}</div>`;
+  rows+=`<div class="wsum"><b>⭐ ${term}</b> — ${items.length} záznamov (${parts.join(', ')})${sumStr}</div>`;
  }
  return rows?`<div class="wbox"><div class="wsum-h">Prepojenia sledovaných (za posledných 7 dní):</div>${rows}</div>`:'';
 }
@@ -715,7 +714,9 @@ function card(it){
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
- return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
+ const de=encodeURIComponent(it.dod||'');
+ const regHtml=(it.source==='zmluvy'&&it.dod)?`<div class="regl">preveriť dodávateľa: <a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${de}&PF=0&SID=0&S=on&R=on" target="_blank">ORSR</a> · <a href="https://finstat.sk/hladaj?q=${de}" target="_blank">FinStat</a> · <a href="https://rpvs.gov.sk/rpvs" target="_blank">RPVS</a></div>`:'';
+ return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div>${regHtml}</div>`;
 }
 function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
