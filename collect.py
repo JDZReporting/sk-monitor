@@ -66,6 +66,32 @@ def _is_stat(text):
     obp = " " + ob + " "
     return any(a in obp for a in (" nds ", " zsr ", " svp ", " ssc "))
 
+def _cn(s):
+    """Normalizovaný názov firmy na porovnanie: bez diakritiky, bodky/čiarky -> medzera, zjednotené medzery."""
+    return re.sub(r"\s+", " ", re.sub(r"[.,]", " ", norm(s or ""))).strip()
+
+def _je_firma(name):
+    """Je to právnická osoba (firma), nie fyzická osoba? Podľa právnej formy v názve."""
+    ln = _cn(name)
+    return any(x in ln for x in (" s r o", " a s", "spol", "druzstv", " k s", " v o s", "nadacia", "obcianske zdruz", " n o"))
+
+def rpo_vznik(name):
+    """Dátum vzniku firmy z RPO (Štatistický úrad SR) podľa názvu. '' ak niet jednoznačnej AKTÍVNej firmy."""
+    try:
+        r = requests.get("https://api.statistics.sk/rpo/v1/search", params={"fullName": name}, headers=UA, timeout=30)
+        data = r.json()
+    except Exception:
+        return ""
+    qn = _cn(name)
+    for e in data.get("results", []):
+        if e.get("termination"):
+            continue
+        names = e.get("fullNames", [])
+        cur = next((n for n in names if not n.get("validTo")), (names[-1] if names else None))
+        if cur and _cn(cur.get("value", "")) == qn:
+            return e.get("establishment", "") or ""
+    return ""
+
 def predkladatel(title):
     """Vytiahne predkladateľov z názvu návrhu (bez potreby zoznamu poslancov)."""
     low = title.lower()
@@ -391,7 +417,7 @@ def collect_crz():
             continue
         cat = "Samospráva" if _is_muni(obj) else ("Štát a štátne podniky" if _is_stat(obj) else kategoria(nazov + " " + obj + " " + dod))
         out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
-                    "category": cat, "blok": "", "suma": cena,
+                    "category": cat, "blok": "", "suma": cena, "dod": dod,
                     "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
                     "url": "https://www.crz.gov.sk" + a["href"]})
     return out
@@ -404,6 +430,7 @@ def load_store():
 def main():
     store = load_store()
     by_id = {it["id"]: it for it in store.get("items", [])}
+    firmy = store.get("firmy", {})   # cache: normalizovaný názov firmy -> {'vznik': dátum}
     fetched = []
     try: fetched += collect_nrsr()
     except Exception as e: print("WARN nrsr", e)
@@ -413,7 +440,7 @@ def main():
     new = 0
     for it in fetched:
         if it["id"] in by_id:
-            by_id[it["id"]].update({k: it[k] for k in ("title", "category", "blok", "meta", "url", "date", "stav", "suma", "popis") if it.get(k)})
+            by_id[it["id"]].update({k: it[k] for k in ("title", "category", "blok", "meta", "url", "date", "stav", "suma", "popis", "dod") if it.get(k)})
         else:
             it["first_seen"] = NOW_TS
             by_id[it["id"]] = it; new += 1
@@ -452,10 +479,24 @@ def main():
     # BACKFILL (capped per run, self-healing): stav (parlament), detail zákazky (ÚVO), AI popis
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
     ai_cap, ai_done, uvo_done = int(CFG.get("ai_max_per_run", 120)), 0, 0
+    rpo_cap, rpo_done = int(CFG.get("rpo_max_per_run", 40)), 0
     for it in items:
         s = it.get("source")
-        if s == "parlament" and it.get("url") and not it.get("stav"):
-            it["stav"] = fetch_stav(it["url"])
+        if s == "zmluvy" and not it.get("_dod_checked") and it.get("dod") and _je_firma(it["dod"]) and rpo_done < rpo_cap:
+            key = _cn(it["dod"])
+            if key in firmy:
+                info = firmy[key]
+            else:
+                info = {"vznik": rpo_vznik(it["dod"])}; firmy[key] = info; rpo_done += 1
+            it["_dod_checked"] = True
+            if info.get("vznik"):
+                it["dod_vznik"] = info["vznik"]
+        if s == "parlament" and it.get("url"):
+            ns = fetch_stav(it["url"])
+            if ns and ns != it.get("stav"):
+                if it.get("stav"):
+                    it["_changed"] = ISO  # stav sa zmenil (napr. I. -> II. čítanie)
+                it["stav"] = ns
         if s == "uvo" and it.get("url") and not it.get("_uvo_done") and uvo_done < 80:
             dd = fetch_uvo_detail(it["url"]); it["_uvo_done"] = True; uvo_done += 1
             for k in ("stav", "druh", "cpv", "fondy", "suma"):
@@ -467,8 +508,8 @@ def main():
             if p:
                 it["popis"] = p
             ai_done += 1
-    print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY)
-    store = {"items": items, "updated": ISO}
+    print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY, "| RPO firiem overených:", rpo_done)
+    store = {"items": items, "updated": ISO, "firmy": firmy}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
     # panel: všetky zdroje jednotne za posledných PANEL_DNI dní (7)
@@ -491,7 +532,7 @@ def build_dashboard(items):
     view = [{"source": it["source"], "category": it.get("category", "Ostatné"), "blok": it.get("blok", ""),
              "date": it.get("date", "") or (it.get("first_seen", "") or "")[:10], "url": it.get("url", ""), "h": headline(it),
              "full": it.get("title", ""), "info": _info(it), "stav": it.get("stav", ""),
-             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", "")} for it in items]
+             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", "")} for it in items]
     data_js = json.dumps(view, ensure_ascii=False)
     cats_js = json.dumps(cats, ensure_ascii=False)
     cat_chips = "".join(f'<label class="chip"><input type="checkbox" class="catcb" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
@@ -519,22 +560,27 @@ button.mini{font-size:11px;border:1px solid var(--line);background:var(--card);c
 details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;color:var(--brand)}
 .seg{font-size:12px;margin:2px 0 10px;color:var(--muted)}.seg b{color:var(--brand)}
 .daydiv{font-size:13px;font-weight:700;color:var(--brand);margin:16px 0 8px;border-bottom:2px solid var(--line);padding-bottom:5px;text-transform:capitalize}
-.secbody{display:flex;flex-direction:column;gap:8px}
-.card{background:var(--card);border:1px solid var(--line);border-left:4px solid #99a;border-radius:10px;padding:10px 12px}
+.secbody{display:flex;flex-direction:column;gap:6px}
+.card{background:var(--card);border:1px solid var(--line);border-left:4px solid #99a;border-radius:9px;padding:8px 11px}
 .card.parlament{border-left-color:#3b6fd4}.card.mpk{border-left-color:#e08a1e}.card.vlada{border-left-color:#8a5cd0}.card.uvo{border-left-color:#22a35a}.card.zmluvy{border-left-color:#0f9d8f}.card.kontrolne{border-left-color:#64748b}
-.chead{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-bottom:3px}
+.chead{display:flex;flex-wrap:wrap;gap:5px;align-items:center;margin-bottom:2px}
 .srcpill{font-size:10px;font-weight:700;color:#fff;border-radius:10px;padding:1px 8px;text-transform:uppercase;letter-spacing:.3px}
 .srcpill.parlament{background:#3b6fd4}.srcpill.mpk{background:#e08a1e}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.zmluvy{background:#0f9d8f}.srcpill.kontrolne{background:#64748b}
 .badge{font-size:10px;font-weight:700;border-radius:10px;padding:1px 8px}
-.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}.b-watch{background:#7c3aed;color:#fff}
+.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}.b-watch{background:#7c3aed;color:#fff}.b-chg{background:#0ea5e9;color:#fff}.b-nova{background:#dc2626;color:#fff}
 .card.watched{box-shadow:0 0 0 2px #7c3aed inset}
+.wbox{background:var(--card);border:1px solid var(--line);border-left:4px solid #7c3aed;border-radius:10px;padding:10px 12px;margin-bottom:12px}
+.wsum-h{font-weight:700;color:#7c3aed;font-size:13px;margin-bottom:5px}
+.wsum{font-size:13px;margin:2px 0}.wsum b{color:var(--ink)}
 .cdate{margin-left:auto;color:var(--muted);font-size:11px}
-.title{display:block;font-weight:700;color:var(--ink);text-decoration:none;font-size:15px;margin:2px 0}
+.title{display:block;font-weight:700;color:var(--ink);text-decoration:none;font-size:14px;line-height:1.3;margin:1px 0}
 .title[href]:hover{color:var(--brand);text-decoration:underline}
-.desc{opacity:.92;font-size:13px;line-height:1.45;margin:3px 0}
-.facts{color:var(--muted);font-size:11.5px;margin-top:3px}
+.desc{opacity:.92;font-size:12.5px;line-height:1.4;margin:3px 0;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.facts{color:var(--muted);font-size:11px;margin-top:2px}
 .loadmore{display:block;width:100%;margin:14px 0;padding:11px;border:1px dashed var(--line);background:var(--card);color:var(--brand);border-radius:10px;font-size:13px;font-weight:700;cursor:pointer}
 .endnote{text-align:center;color:var(--muted);font-size:12px;margin:16px 0}
+#toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--brand);color:#fff;padding:9px 15px;border-radius:8px;font-size:13px;opacity:0;transition:opacity .3s;z-index:100;pointer-events:none;box-shadow:0 3px 10px rgba(0,0,0,.25)}
+.wsum a{color:#7c3aed;font-size:11px;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:0 5px;margin-left:3px}.wsum a:hover{text-decoration:underline}
 @media(max-width:600px){.controls{top:54px}.wrap{padding:10px}}
 </style></head><body>
 <header><h1>🇸🇰 SK monitor</h1>
@@ -546,6 +592,17 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
   <div class="row" style="gap:8px">
     <input type="text" id="watch" placeholder="⭐ sledované mená / firmy (oddeľ čiarkou)…" style="flex:1;margin:0;width:auto" oninput="saveState();render()">
     <label class="chip"><input type="checkbox" id="onlywatch" onchange="saveState();render()"> len sledované</label>
+  </div>
+  <div class="row"><span class="small">Rýchly filter:</span>
+    <button class="mini" onclick="preset('stat')">🏛️ Štát a š. p.</button>
+    <button class="mini" onclick="preset('samo')">🏘️ Samospráva</button>
+    <button class="mini" onclick="preset('hival')">💶 Nad 1 mil. €</button>
+    <button class="mini" onclick="preset('dnes')">📅 Dnes</button>
+    <button class="mini" onclick="preset('reset')">↺ Zrušiť filtre</button>
+  </div>
+  <div class="row"><span class="small">Pohľad:</span>
+    <button class="mini" onclick="shareView()">🔗 Zdieľať / uložiť</button>
+    <button class="mini" onclick="exportCsv()">⬇️ Export CSV</button>
   </div>
   <div class="row" id="subrow"><span class="small">Zobraziť:</span>
     <label class="chip"><input type="checkbox" class="src" value="parlament" checked onchange="render()"> Parlament</label>
@@ -561,8 +618,10 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
   </details>
  </div>
  <div id="stat" class="seg"></div>
+ <div id="wprep"></div>
  <div id="list"></div>
 </div>
+<div id="toast"></div>
 <script>
 const DATA=__DATA__, CATS=__CATSORDER__;
 const TABS=[['novinky','Novinky'],['parlament','Parlament'],['mpk','MPK'],['vlada','Vláda'],['uvo','Zákazky'],['zmluvy','Zmluvy'],['kontrolne','Kontrolné inštitúcie'],['vsetko','Všetko']];
@@ -576,21 +635,87 @@ function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checke
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
 function parseWatch(){return (document.getElementById('watch').value||'').toLowerCase().split(',').map(s=>s.trim()).filter(Boolean);}
 function isWatched(it){const w=parseWatch();if(!w.length)return false;const t=((it.full||'')+' '+(it.info||'')+' '+(it.h||'')).toLowerCase();return w.some(x=>t.includes(x));}
+function watchSummary(){
+ const w=parseWatch(); if(!w.length) return '';
+ let rows='';
+ for(const term of w){
+  const items=DATA.filter(it=>((it.full||'')+' '+(it.info||'')+' '+(it.h||'')).toLowerCase().includes(term));
+  if(!items.length) continue;
+  const bySrc={}; let sum=0;
+  for(const it of items){bySrc[it.source]=(bySrc[it.source]||0)+1; sum+=sumaNum(it.suma);}
+  const parts=Object.keys(bySrc).map(s=>bySrc[s]+'× '+(SRCL[s]||s));
+  const sumStr = sum>0 ? ' · spolu <b>'+sum.toLocaleString('sk-SK')+' €</b>' : '';
+  const enc=encodeURIComponent(term);
+  const reg=`<a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${enc}&PF=0&SID=0&S=on&R=on" target="_blank" title="Obchodný register">ORSR</a><a href="https://rpvs.gov.sk/rpvs" target="_blank" title="Register partnerov verejného sektora – vyhľadaj meno">RPVS</a><a href="https://finstat.sk/hladaj?q=${enc}" target="_blank" title="Vlastníci a väzby">FinStat</a>`;
+  rows+=`<div class="wsum"><b>⭐ ${term}</b> — ${items.length} záznamov (${parts.join(', ')})${sumStr} ${reg}</div>`;
+ }
+ return rows?`<div class="wbox"><div class="wsum-h">Prepojenia sledovaných (za posledných 7 dní):</div>${rows}</div>`:'';
+}
 function saveState(){try{localStorage.setItem('skmon',JSON.stringify({w:document.getElementById('watch').value,o:document.getElementById('onlywatch').checked,t:TAB}));}catch(e){}}
+let HIVAL=false, DNES=false;
+function sumaNum(s){const m=(s||'').replace(/\s/g,'').match(/([0-9]+(?:[.,][0-9]+)?)/);return m?parseFloat(m[1].replace(',','.')):0;}
+function preset(p){
+ const cb=[...document.querySelectorAll('#cats input')];
+ if(p==='stat'){cb.forEach(e=>e.checked=(e.value==='Štát a štátne podniky'));}
+ else if(p==='samo'){cb.forEach(e=>e.checked=(e.value==='Samospráva'));}
+ else if(p==='hival'){HIVAL=!HIVAL;}
+ else if(p==='dnes'){DNES=!DNES;}
+ else if(p==='reset'){cb.forEach(e=>e.checked=true);HIVAL=false;DNES=false;document.getElementById('onlywatch').checked=false;document.getElementById('q').value='';}
+ saveState();render();
+}
+function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.opacity='1';clearTimeout(el._t);el._t=setTimeout(()=>{el.style.opacity='0';},2600);}
+function shareView(){
+ const off=[...document.querySelectorAll('#cats input')].filter(e=>!e.checked).map(e=>e.value);
+ const p=new URLSearchParams();
+ const w=document.getElementById('watch').value.trim(); if(w)p.set('w',w);
+ if(document.getElementById('onlywatch').checked)p.set('o','1');
+ const q=document.getElementById('q').value.trim(); if(q)p.set('q',q);
+ if(TAB&&TAB!=='novinky')p.set('tab',TAB);
+ if(HIVAL)p.set('hv','1'); if(DNES)p.set('dn','1');
+ if(off.length)p.set('off',off.join('~'));
+ location.hash=p.toString();
+ const url=location.href;
+ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(url).then(()=>toast('Odkaz na tvoj pohľad skopírovaný do schránky'),()=>toast('Odkaz máš v adresnom riadku (skopíruj ho)'));}
+ else toast('Odkaz máš v adresnom riadku (skopíruj ho)');
+}
+function exportCsv(){
+ const rows=baseFilter();
+ const q=s=>'"'+String(s==null?'':s).replace(/"/g,'""')+'"';
+ const head=['Zdroj','Dátum','Kategória','Nadpis','Suma','Stav','Info','Odkaz'];
+ const lines=[head.join(';')];
+ for(const it of rows){lines.push([SRCL[it.source]||it.source,it.date,it.category,it.full||it.h,it.suma,it.stav,it.info,it.url].map(q).join(';'));}
+ const blob=new Blob(['﻿'+lines.join('\r\n')],{type:'text/csv;charset=utf-8'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='sk-monitor.csv';document.body.appendChild(a);a.click();a.remove();
+ toast(rows.length+' záznamov exportovaných do CSV');
+}
+function applyHash(){
+ if(!location.hash||location.hash.length<2)return false;
+ const p=new URLSearchParams(location.hash.slice(1));
+ if(p.has('w'))document.getElementById('watch').value=p.get('w');
+ document.getElementById('onlywatch').checked=(p.get('o')==='1');
+ if(p.has('q'))document.getElementById('q').value=p.get('q');
+ if(p.has('tab'))TAB=p.get('tab');
+ HIVAL=(p.get('hv')==='1'); DNES=(p.get('dn')==='1');
+ if(p.has('off')){const off=p.get('off').split('~');[...document.querySelectorAll('#cats input')].forEach(e=>{e.checked=!off.includes(e.value);});}
+ return true;
+}
 function ageDays(d){if(!d)return 99999;return Math.floor((new Date(new Date().toDateString())-new Date(d))/86400000);}
 function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))return 1e9;return (Date.now()-t.getTime())/3600000;}
 function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
 function isNew(it){return hoursSince(it.fs)<=12;}
+function isNova(it){if(!it.vznik)return false;const d=(Date.now()-new Date(it.vznik).getTime())/86400000;return d>=0 && d<365;}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
  const w=isWatched(it);
  const watchHtml=w?`<span class="badge b-watch">⭐ sledované</span>`:'';
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
  const newHtml=isNew(it)?`<span class="badge b-new">NOVÉ</span>`:'';
+ const chgHtml=(it.chg && ageDays(it.chg)<=3)?`<span class="badge b-chg">🔄 zmena stavu</span>`:'';
+ const novaHtml=isNova(it)?`<span class="badge b-nova" title="Dodávateľ vznikol ${it.vznik}">⚠️ nová firma</span>`:'';
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
- return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${newHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
+ return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div></div>`;
 }
 function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
@@ -599,6 +724,8 @@ function baseFilter(){
  return DATA.filter(it=>{
   if(!csel.includes(it.category))return false;
   if(only && !isWatched(it))return false;
+  if(HIVAL && sumaNum(it.suma) < 1000000)return false;
+  if(DNES && ageDays(it.date) > 0)return false;
   if(q){const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();if(!txt.includes(q))return false;}
   return true;
  });
@@ -617,6 +744,7 @@ function renderTabs(base){
 function render(){
  const base=baseFilter();
  renderTabs(base);
+ document.getElementById('wprep').innerHTML=watchSummary();
  document.getElementById('subrow').style.display = TAB==='novinky' ? 'flex':'none';
  let list, out='', note='';
  if(TAB==='novinky'){
@@ -645,7 +773,7 @@ function render(){
  document.getElementById('stat').innerHTML=`Zobrazené: <b>${shown.length}</b> z ${total} (za posledných ${Math.min(win,maxw)} dní)`;
  document.getElementById('list').innerHTML=out+note;
 }
-(function initState(){try{const s=JSON.parse(localStorage.getItem('skmon')||'{}');if(s.w)document.getElementById('watch').value=s.w;if(s.o)document.getElementById('onlywatch').checked=true;if(s.t&&TABS.some(t=>t[0]===s.t))TAB=s.t;}catch(e){}})();
+(function initState(){let fromHash=false;try{fromHash=applyHash();}catch(e){}if(!fromHash){try{const s=JSON.parse(localStorage.getItem('skmon')||'{}');if(s.w)document.getElementById('watch').value=s.w;if(s.o)document.getElementById('onlywatch').checked=true;if(s.t&&TABS.some(t=>t[0]===s.t))TAB=s.t;}catch(e){}}})();
 render();
 </script>
 </body></html>"""
