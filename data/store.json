@@ -12833,7 +12833,9 @@
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
    "last_seen": "2026-07-11",
    "_dod_checked": true,
-   "dod_vznik": "2019-01-03"
+   "dod_vznik": "2019-01-03",
+   "overit": "Rozvojové služby BBSK, s.r.o. registrovaný sociálny podnik",
+   "_overit_checked": true
   },
   {
    "id": "z-12571459",
@@ -12848,7 +12850,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12571459/",
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "NORMA - stavebno obchodná spoločnosť, s.r.o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12571512",
@@ -12863,7 +12867,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12571512/",
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "Metrostav DS a.s.",
+   "_overit_checked": true
   },
   {
    "id": "z-12573086",
@@ -12879,7 +12885,9 @@
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
    "last_seen": "2026-07-11",
    "_dod_checked": true,
-   "dod_vznik": "2022-11-09"
+   "dod_vznik": "2022-11-09",
+   "overit": "Skymat s. r. o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12572197",
@@ -12893,7 +12901,8 @@
    "meta": "Dodávateľ: Slovenská inovačná a energetická agentúra → Objednávateľ: Nitriansky samosprávny kraj · č. 1638/2026",
    "url": "https://www.crz.gov.sk/zmluva/12572197/",
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
-   "last_seen": "2026-07-11"
+   "last_seen": "2026-07-11",
+   "overit": "Slovenská inovačná a energetická agentúra"
   },
   {
    "id": "z-12572994",
@@ -12922,7 +12931,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12571290/",
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "REMONTA, spol. s r.o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12566235",
@@ -13409,7 +13420,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12572024/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "PLEX s.r.o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12572020",
@@ -13424,7 +13437,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12572020/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "Súkromná bezpečnostná služba SHIELD, spol. s r.o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12571984",
@@ -13439,7 +13454,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12571984/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "TEMAX, spol. s r.o.",
+   "_overit_checked": true
   },
   {
    "id": "z-12572102",
@@ -13482,7 +13499,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12573094/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "Jakub Malota a spol.",
+   "_overit_checked": true
   },
   {
    "id": "z-12573056",
@@ -13497,7 +13516,9 @@
    "url": "https://www.crz.gov.sk/zmluva/12573056/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
    "last_seen": "2026-07-11",
-   "_dod_checked": true
+   "_dod_checked": true,
+   "overit": "Matúš Vlček a spol.",
+   "_overit_checked": true
   },
   {
    "id": "z-12573667",
@@ -13511,7 +13532,8 @@
    "meta": "Dodávateľ: Úrad geodézie, kartografie a katastra SR → Objednávateľ: Ministerstvo vnútra Slovenskej republiky · č. 1-100-0032-2026",
    "url": "https://www.crz.gov.sk/zmluva/12573667/",
    "first_seen": "2026-07-11T09:11:03.172103+00:00",
-   "last_seen": "2026-07-11"
+   "last_seen": "2026-07-11",
+   "overit": "Úrad geodézie, kartografie a katastra SR"
   },
   {
    "id": "u-prestupovy terminal slanec",
