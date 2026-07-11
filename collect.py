@@ -416,8 +416,10 @@ def collect_crz():
         if not mid:
             continue
         cat = "Samospráva" if _is_muni(obj) else ("Štát a štátne podniky" if _is_stat(obj) else kategoria(nazov + " " + obj + " " + dod))
+        # strana na preverenie = tá, čo nie je štát ani samospráva (súkromná firma/osoba)
+        overit = next((c for c in (dod, obj) if c and not _is_stat(c) and not _is_muni(c)), "")
         out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
-                    "category": cat, "blok": "", "suma": cena, "dod": dod,
+                    "category": cat, "blok": "", "suma": cena, "dod": dod, "overit": overit,
                     "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
                     "url": "https://www.crz.gov.sk" + a["href"]})
     return out
@@ -440,7 +442,7 @@ def main():
     new = 0
     for it in fetched:
         if it["id"] in by_id:
-            by_id[it["id"]].update({k: it[k] for k in ("title", "category", "blok", "meta", "url", "date", "stav", "suma", "popis", "dod") if it.get(k)})
+            by_id[it["id"]].update({k: it[k] for k in ("title", "category", "blok", "meta", "url", "date", "stav", "suma", "popis", "dod", "overit") if it.get(k)})
         else:
             it["first_seen"] = NOW_TS
             by_id[it["id"]] = it; new += 1
@@ -482,13 +484,13 @@ def main():
     rpo_cap, rpo_done = int(CFG.get("rpo_max_per_run", 40)), 0
     for it in items:
         s = it.get("source")
-        if s == "zmluvy" and not it.get("_dod_checked") and it.get("dod") and _je_firma(it["dod"]) and rpo_done < rpo_cap:
-            key = _cn(it["dod"])
+        if s == "zmluvy" and not it.get("_overit_checked") and it.get("overit") and _je_firma(it["overit"]) and rpo_done < rpo_cap:
+            key = _cn(it["overit"])
             if key in firmy:
                 info = firmy[key]
             else:
-                info = {"vznik": rpo_vznik(it["dod"])}; firmy[key] = info; rpo_done += 1
-            it["_dod_checked"] = True
+                info = {"vznik": rpo_vznik(it["overit"])}; firmy[key] = info; rpo_done += 1
+            it["_overit_checked"] = True
             if info.get("vznik"):
                 it["dod_vznik"] = info["vznik"]
         if s == "parlament" and it.get("url"):
@@ -532,7 +534,7 @@ def build_dashboard(items):
     view = [{"source": it["source"], "category": it.get("category", "Ostatné"), "blok": it.get("blok", ""),
              "date": it.get("date", "") or (it.get("first_seen", "") or "")[:10], "url": it.get("url", ""), "h": headline(it),
              "full": it.get("title", ""), "info": _info(it), "stav": it.get("stav", ""),
-             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", ""), "dod": it.get("dod", "")} for it in items]
+             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", ""), "overit": it.get("overit", "")} for it in items]
     data_js = json.dumps(view, ensure_ascii=False)
     cats_js = json.dumps(cats, ensure_ascii=False)
     cat_chips = "".join(f'<label class="chip"><input type="checkbox" class="catcb" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
@@ -714,8 +716,8 @@ function card(it){
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
- const de=encodeURIComponent(it.dod||'');
- const regHtml=(it.source==='zmluvy'&&it.dod)?`<div class="regl">preveriť dodávateľa: <a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${de}&PF=0&SID=0&S=on&R=on" target="_blank">ORSR</a> · <a href="https://finstat.sk/hladaj?q=${de}" target="_blank">FinStat</a> · <a href="https://rpvs.gov.sk/rpvs" target="_blank">RPVS</a></div>`:'';
+ const de=encodeURIComponent(it.overit||'');
+ const regHtml=(it.source==='zmluvy'&&it.overit)?`<div class="regl">preveriť ${it.overit}: <a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${de}&PF=0&SID=0&S=on&R=on" target="_blank">ORSR</a> · <a href="https://finstat.sk/hladaj?q=${de}" target="_blank">FinStat</a> · <a href="https://rpvs.gov.sk/rpvs" target="_blank">RPVS</a></div>`:'';
  return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div>${regHtml}</div>`;
 }
 function baseFilter(){
