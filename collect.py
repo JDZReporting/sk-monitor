@@ -75,13 +75,13 @@ def _je_firma(name):
     ln = _cn(name)
     return any(x in ln for x in (" s r o", " a s", "spol", "druzstv", " k s", " v o s", "nadacia", "obcianske zdruz", " n o"))
 
-def rpo_vznik(name):
-    """Dátum vzniku firmy z RPO (Štatistický úrad SR) podľa názvu. '' ak niet jednoznačnej AKTÍVNej firmy."""
+def rpo_info(name):
+    """Z RPO (Štatistický úrad SR): {'vznik': dátum, 'krajina': krajina sídla} pre jednoznačnú AKTÍVNu firmu; {} inak."""
     try:
         r = requests.get("https://api.statistics.sk/rpo/v1/search", params={"fullName": name}, headers=UA, timeout=30)
         data = r.json()
     except Exception:
-        return ""
+        return {}
     qn = _cn(name)
     for e in data.get("results", []):
         if e.get("termination"):
@@ -89,8 +89,13 @@ def rpo_vznik(name):
         names = e.get("fullNames", [])
         cur = next((n for n in names if not n.get("validTo")), (names[-1] if names else None))
         if cur and _cn(cur.get("value", "")) == qn:
-            return e.get("establishment", "") or ""
-    return ""
+            out = {"vznik": e.get("establishment", "") or ""}
+            addrs = e.get("addresses", [])
+            addr = next((a for a in addrs if not a.get("validTo")), (addrs[0] if addrs else None))
+            if addr and isinstance(addr.get("country"), dict):
+                out["krajina"] = addr["country"].get("value", "")
+            return out
+    return {}
 
 def predkladatel(title):
     """Vytiahne predkladateľov z názvu návrhu (bez potreby zoznamu poslancov)."""
@@ -489,10 +494,12 @@ def main():
             if key in firmy:
                 info = firmy[key]
             else:
-                info = {"vznik": rpo_vznik(it["overit"])}; firmy[key] = info; rpo_done += 1
+                info = rpo_info(it["overit"]); firmy[key] = info; rpo_done += 1
             it["_overit_checked"] = True
             if info.get("vznik"):
                 it["dod_vznik"] = info["vznik"]
+            if info.get("krajina"):
+                it["dod_krajina"] = info["krajina"]
         if s == "parlament" and it.get("url"):
             ns = fetch_stav(it["url"])
             if ns and ns != it.get("stav"):
@@ -534,7 +541,7 @@ def build_dashboard(items):
     view = [{"source": it["source"], "category": it.get("category", "Ostatné"), "blok": it.get("blok", ""),
              "date": it.get("date", "") or (it.get("first_seen", "") or "")[:10], "url": it.get("url", ""), "h": headline(it),
              "full": it.get("title", ""), "info": _info(it), "stav": it.get("stav", ""),
-             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", ""), "overit": it.get("overit", "")} for it in items]
+             "suma": it.get("suma", ""), "popis": it.get("popis", ""), "fs": it.get("first_seen", ""), "chg": it.get("_changed", ""), "vznik": it.get("dod_vznik", ""), "overit": it.get("overit", ""), "krajina": it.get("dod_krajina", "")} for it in items]
     data_js = json.dumps(view, ensure_ascii=False)
     cats_js = json.dumps(cats, ensure_ascii=False)
     cat_chips = "".join(f'<label class="chip"><input type="checkbox" class="catcb" value="{html.escape(c)}" checked onchange="render()"> {html.escape(c)}</label>' for c in cats)
@@ -569,7 +576,7 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
 .srcpill{font-size:10px;font-weight:700;color:#fff;border-radius:10px;padding:1px 8px;text-transform:uppercase;letter-spacing:.3px}
 .srcpill.parlament{background:#3b6fd4}.srcpill.mpk{background:#e08a1e}.srcpill.vlada{background:#8a5cd0}.srcpill.uvo{background:#22a35a}.srcpill.zmluvy{background:#0f9d8f}.srcpill.kontrolne{background:#64748b}
 .badge{font-size:10px;font-weight:700;border-radius:10px;padding:1px 8px}
-.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}.b-watch{background:#7c3aed;color:#fff}.b-chg{background:#0ea5e9;color:#fff}.b-nova{background:#dc2626;color:#fff}
+.b-o{background:#fde2e0;color:#C0392B}.b-k{background:#e2ecff;color:#1F3864}.b-suma{background:#1E8449;color:#fff}.b-new{background:#ffd54a;color:#5a4600}.b-watch{background:#7c3aed;color:#fff}.b-chg{background:#0ea5e9;color:#fff}.b-nova{background:#dc2626;color:#fff}.b-zahr{background:#b45309;color:#fff}
 .card.watched{box-shadow:0 0 0 2px #7c3aed inset}
 .wbox{background:var(--card);border:1px solid var(--line);border-left:4px solid #7c3aed;border-radius:10px;padding:10px 12px;margin-bottom:12px}
 .wsum-h{font-weight:700;color:#7c3aed;font-size:13px;margin-bottom:5px}
@@ -712,13 +719,14 @@ function card(it){
  const sumaHtml=it.suma?`<span class="badge b-suma">💶 ${it.suma}</span>`:'';
  const newHtml=isNew(it)?`<span class="badge b-new">NOVÉ</span>`:'';
  const chgHtml=(it.chg && ageDays(it.chg)<=3)?`<span class="badge b-chg">🔄 zmena stavu</span>`:'';
- const novaHtml=isNova(it)?`<span class="badge b-nova" title="Dodávateľ vznikol ${it.vznik}">⚠️ nová firma</span>`:'';
+ const novaHtml=isNova(it)?`<span class="badge b-nova" title="Firma vznikla ${it.vznik}">⚠️ nová firma</span>`:'';
+ const zahrHtml=(it.krajina && it.krajina!=='Slovenská republika')?`<span class="badge b-zahr" title="Sídlo: ${it.krajina}">🌍 sídlo mimo SR</span>`:'';
  const stavHtml=it.stav?` · stav: ${it.stav}`:'';
  const hh=it.url?`<a class="title" href="${it.url}" target="_blank" title="${esc(it.full)}">${it.h||it.full}</a>`:`<span class="title">${it.h||it.full}</span>`;
  const popisHtml=it.popis?`<div class="desc">${it.popis}</div>`:'';
  const de=encodeURIComponent(it.overit||'');
  const regHtml=(it.source==='zmluvy'&&it.overit)?`<div class="regl">preveriť ${it.overit}: <a href="https://www.orsr.sk/hladaj_subjekt.asp?OBMENO=${de}&PF=0&SID=0&S=on&R=on" target="_blank">ORSR</a> · <a href="https://finstat.sk/hladaj?q=${de}" target="_blank">FinStat</a> · <a href="https://rpvs.gov.sk/rpvs" target="_blank">RPVS</a></div>`:'';
- return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div>${regHtml}</div>`;
+ return `<div class="card ${it.source}${w?' watched':''}"><div class="chead"><span class="srcpill ${it.source}">${SRCL[it.source]||it.source}</span> ${watchHtml} ${sumaHtml} ${novaHtml} ${zahrHtml} ${newHtml} ${chgHtml} <span class="cdate">${relDate(it.date)}</span></div>${hh}${popisHtml}<div class="facts">${it.info||''}${stavHtml}</div>${regHtml}</div>`;
 }
 function baseFilter(){
  const q=document.getElementById('q').value.toLowerCase();
