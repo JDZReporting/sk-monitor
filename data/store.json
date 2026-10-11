@@ -10,7 +10,7 @@
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/32057/1",
    "first_seen": "2026-07-04T18:38:32.370648+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-16859/2026",
@@ -22,7 +22,7 @@
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/31981/2",
    "first_seen": "2026-07-04T18:38:32.370648+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-16421/2026",
@@ -34,7 +34,7 @@
    "meta": "Ministerstvo vnútra Slovenskej republiky · minister vnútra",
    "url": "https://rokovania.gov.sk/RVL/Material/31966/2",
    "first_seen": "2026-07-04T18:38:32.370648+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-13554/2026",
@@ -46,7 +46,7 @@
    "meta": "Úrad vlády Slovenskej republiky · predseda vlády",
    "url": "https://rokovania.gov.sk/RVL/Material/31878/3",
    "first_seen": "2026-07-04T18:38:32.370648+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-12391/2026",
@@ -58,7 +58,7 @@
    "meta": "Národný bezpečnostný úrad · riaditeľ Národného bezpečnostného úradu; riaditeľ Slovenskej informačnej služby; riaditeľ Vojenského spravodajstva",
    "url": "https://rokovania.gov.sk/RVL/Material/31819/2",
    "first_seen": "2026-07-04T18:38:32.370648+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-11524/2026",
@@ -99,7 +99,7 @@
    "druh": "Tovary",
    "cpv": "Potraviny, nápoje, tabak a príbuzné produkty",
    "fondy": "Nie",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-znizenie energetickej narocnosti kulturneho d",
@@ -461,13 +461,13 @@
    "id": "u-ke, modernizacia elektrickovych trati met v m",
    "source": "uvo",
    "title": "KE, Modernizácia električkových tratí MET v meste Košice, 2. etapa, UČS 16",
-   "date": "2026-10-09",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Mesto Košice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560370?cHash=fb9be69a51b550d2d47f9c7220c21ba1",
    "first_seen": "2026-07-08T18:56:10.884268+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -535,7 +535,7 @@
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/527628?cHash=c1c518adec3c1b27c363cc30d215689e",
    "first_seen": "2026-07-09T13:28:00.168077+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -613,53 +613,19 @@
   {
    "id": "u-pristroje a zariadenia pre vedu a vyskum bmc ",
    "source": "uvo",
-   "title": "Prístroje a zariadenia pre vedu a výskum BMC SAV_DNS_2",
-   "date": "2026-09-22",
+   "title": "Prístroje a zariadenia pre vedu a výskum BMC SAV_DNS",
+   "date": "2026-10-10",
    "category": "Školstvo, veda a šport",
    "blok": "",
    "meta": "Obstarávateľ: Biomedicínske centrum SAV",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/511313?cHash=edb4ce604791d82a6e205c657fa07121",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/432855?cHash=8e172e4cb7e939af997508178fff1bc2",
    "first_seen": "2026-07-10T12:38:59.173780+00:00",
-   "last_seen": "2026-09-23",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
    "cpv": "Laboratórne, optické a presné prístroje a vybavenie (s výnimkou skiel)",
    "fondy": "Nie"
-  },
-  {
-   "id": "u-obnova obecneho domu v senkviciach",
-   "source": "uvo",
-   "title": "OBNOVA OBECNÉHO DOMU V ŠENKVICIACH",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Obec Šenkvice",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560929?cHash=3537f9f098e7d371231a64c9770c27b7",
-   "first_seen": "2026-07-11T09:11:03.172103+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce na stavbe budov 45321000-3 Tepelnoizolačné práce 452123",
-   "fondy": "Áno"
-  },
-  {
-   "id": "u-technicke prace pre potreby projektov",
-   "source": "uvo",
-   "title": "Technické práce pre potreby projektov",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Štátny geologický ústav Dionýza Štúra",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556500?cHash=3b111fd76b848469b95f8e1af5b8b186",
-   "first_seen": "2026-07-11T09:11:03.172103+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Služby",
-   "cpv": "Geologický prieskum 76470000-8 Skúšanie vrtov 71351913-6 Služby týkajú",
-   "fondy": "Áno"
   },
   {
    "id": "u-rekonstrukcia komunikacie majerska cesta 0,00",
@@ -733,13 +699,13 @@
    "id": "u-rekonstrukcie a vystavba inzinierskych stavie",
    "source": "uvo",
    "title": "Rekonštrukcie a výstavba inžinierskych stavieb",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Mesto Nitra",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/494671?cHash=16cc4217ca896cadf8b4e705ac2f3472",
    "first_seen": "2026-07-14T10:24:55.949891+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -815,23 +781,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-vystavba zariadenia socialnych sluzieb - „vys",
-   "source": "uvo",
-   "title": "Výstavba Zariadenia sociálnych služieb - „Výstavba nového útulku“",
-   "date": "2026-09-10",
-   "category": "Sociálne veci a rodina",
-   "blok": "",
-   "meta": "Obstarávateľ: Gréckokatolícka charita Prešov",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/543831?cHash=224774aa913d8a701a745939471c6bb6",
-   "first_seen": "2026-07-15T10:30:04.365652+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce na stavbe budov určených pre sociálne služby",
-   "fondy": "Áno"
-  },
-  {
    "id": "u-stavebne prace – dostavba a modernizacia zs s",
    "source": "uvo",
    "title": "Stavebné práce – Dostavba a modernizácia ZŠ s MŠ Nálepkovo",
@@ -892,7 +841,7 @@
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559600?cHash=9a425ac8f5f67fb0e016debb1cd18f68",
    "first_seen": "2026-07-16T11:14:19.287099+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -1646,23 +1595,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-rekonstrukcia kulturneho domu v obci janovik",
-   "source": "uvo",
-   "title": "Rekonštrukcia kultúrneho domu v obci Janovík",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Obec Janovík",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562782?cHash=0acc8b24512c7634afb12a598339a35e",
-   "first_seen": "2026-08-05T06:32:02.509947+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-inteligentny system analyz a riadenia (isar)",
    "source": "uvo",
    "title": "INTELIGENTNÝ SYSTÉM ANALÝZ A RIADENIA (ISAR)",
@@ -1677,23 +1609,6 @@
    "stav": "Aktívna",
    "druh": "Služby",
    "cpv": "Programovanie softvéru a poradenstvo",
-   "fondy": "Áno"
-  },
-  {
-   "id": "u-triedeny zber komunalneho odpadu v obci kveto",
-   "source": "uvo",
-   "title": "Triedený zber komunálneho odpadu v obci Kvetoslavov- stavba",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Obec Kvetoslavov",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/543626?cHash=57dbd106e895c9d95c6c75e2619320ac",
-   "first_seen": "2026-08-05T06:32:02.509947+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Poľnohospodárske stroje 34221000-2 Špeciálne mobilné kontajnery 341000",
    "fondy": "Áno"
   },
   {
@@ -1978,7 +1893,7 @@
    "meta": "Obstarávateľ: Východoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561132?cHash=4ff8ecb4752c72db448bb81348900d51",
    "first_seen": "2026-08-08T05:01:46.474833+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -2114,7 +2029,7 @@
    "meta": "Obstarávateľ: Mesto Sereď",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563470?cHash=5c2e99e16090c67828eb81b28bbd0b15",
    "first_seen": "2026-08-13T05:43:13.994818+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -2224,23 +2139,6 @@
    "fondy": "Áno"
   },
   {
-   "id": "u-poskytovanie sluzieb podpory prevadzky, udrzb",
-   "source": "uvo",
-   "title": "Poskytovanie služieb podpory prevádzky, údržby a rozvoja Informačných systémov Úradu pre územné plánovanie a výstavbu",
-   "date": "2026-09-10",
-   "category": "Doprava a výstavba",
-   "blok": "",
-   "meta": "Obstarávateľ: Úrad pre územné plánovanie a výstavbu Slovenskej republiky",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557007?cHash=5a339a8abc606cf25f5ed3cdb580b2bf",
-   "first_seen": "2026-08-14T05:40:29.010159+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Služby",
-   "cpv": "Služby týkajúce sa podpory systému",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-znizenie energetickej narocnosti pri prevadzk",
    "source": "uvo",
    "title": "Zníženie energetickej náročnosti pri prevádzke MŠ Zádielska 4, Košice",
@@ -2311,13 +2209,13 @@
    "id": "u-zdravotnicky kampus – stavebne prace",
    "source": "uvo",
    "title": "Zdravotnícky kampus – stavebné práce",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563335?cHash=77c3e6907eaff3ffeee73cdabecd15ae",
    "first_seen": "2026-08-17T04:47:58.161893+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -2436,7 +2334,7 @@
    "meta": "Obstarávateľ: Žilinský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561423?cHash=eba4e891ca1ffd3a717dc85aaff39d7d",
    "first_seen": "2026-08-18T04:39:44.222332+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -2509,23 +2407,6 @@
    "stav": "Aktívna",
    "druh": "Služby",
    "cpv": "Pripravovanie dopravných dokumentov",
-   "fondy": "Áno"
-  },
-  {
-   "id": "u-laboratorne pristroje, zariadenia, suvisiace ",
-   "source": "uvo",
-   "title": "Laboratórne prístroje, zariadenia, súvisiace HW a SW",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Slovenská technická univerzita v Bratislave",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/552914?cHash=120a6e5abff30780e44fec7d00a81aa1",
-   "first_seen": "2026-08-19T04:40:49.424683+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Rôzne špeciálne strojové zariadenia 38000000-5 Laboratórne, optické a ",
    "fondy": "Áno"
   },
   {
@@ -2786,13 +2667,13 @@
    "id": "u-novostavba smart zakladnej skoly v zaujme ink",
    "source": "uvo",
    "title": "Novostavba SMART základnej školy v záujme inkluzívneho vzdelávania v Plaveckom Štvrtku",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Obec Plavecký Štvrtok",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555113?cHash=beee47bae292443026945bfe5ccdaaf9",
    "first_seen": "2026-08-21T04:42:06.145146+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -2922,13 +2803,13 @@
    "id": "u-kamen 2024-2027",
    "source": "uvo",
    "title": "Kameň 2024-2027",
-   "date": "2026-09-26",
+   "date": "2026-10-10",
    "category": "Štát a štátne podniky",
    "blok": "",
    "meta": "Obstarávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/462035?cHash=7991cac9008550da9a4172f3b816af8b",
    "first_seen": "2026-08-22T04:37:00.060150+00:00",
-   "last_seen": "2026-09-27",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -2939,13 +2820,13 @@
    "id": "u-obstaranie traktoru na separovany zber 3",
    "source": "uvo",
    "title": "Obstaranie traktoru na separovaný zber 3",
-   "date": "2026-09-21",
+   "date": "2026-10-10",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Obec Šoporňa",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557784?cHash=4fa7868349092d9014ed3ca612f9bb69",
    "first_seen": "2026-08-22T04:37:00.060150+00:00",
-   "last_seen": "2026-09-21",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -3115,7 +2996,7 @@
    "meta": "Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky · minister pôdohospodárstva a rozvoja vidieka",
    "url": "https://rokovania.gov.sk/RVL/Material/32143/1",
    "first_seen": "2026-08-25T04:42:57.148423+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-tlaciarenske sluzby – dns",
@@ -3205,13 +3086,13 @@
    "id": "u-inovacie verejnych sluzieb smart city",
    "source": "uvo",
    "title": "Inovácie verejných služieb SMART CITY",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Mesto Trenčín",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564106?cHash=9d3c455d17bfc77790f1473e83c77669",
    "first_seen": "2026-08-25T04:42:57.148423+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -3463,7 +3344,7 @@
    "meta": "Ministerstvo školstva, výskumu, vývoja a mládeže Slovenskej republiky · minister školstva, výskumu, vývoja a mládeže",
    "url": "https://rokovania.gov.sk/RVL/Material/32162/1",
    "first_seen": "2026-08-27T15:04:12.238969+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-zabezpecenie dodavky elektrickej energie",
@@ -3645,7 +3526,7 @@
    "meta": "ČPT 1538 · Poslanecký · predkladateľ: Romana MICHELKA a Dagmar KRAMPLOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10983",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -3659,7 +3540,7 @@
    "meta": "ČPT 1536 · Poslanecký · predkladateľ: Karola FARKAŠOVSKÉHO, Romana MICHELKA, Dagmar KRAMPLOVEJ a Adama LUČANSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10978",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "p-1535",
@@ -3672,7 +3553,7 @@
    "meta": "ČPT 1535 · Poslanecký · predkladateľ: Dagmar KRAMPLOVEJ, Romana MICHELKA a Adama LUČANSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10970",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -3686,7 +3567,7 @@
    "meta": "ČPT 1534 · Poslanecký · predkladateľ: Romana MICHELKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10967",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-18"
   },
   {
@@ -3700,7 +3581,7 @@
    "meta": "ČPT 1533 · Poslanecký · predkladateľ: Dagmar KRAMPLOVEJ a Mariána KÉRYHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10968",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -3714,7 +3595,7 @@
    "meta": "ČPT 1532 · Poslanecký · predkladateľ: Adama LUČANSKÉHO a Karola FARKAŠOVSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10965",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "p-1531",
@@ -3727,7 +3608,7 @@
    "meta": "ČPT 1531 · Poslanecký · predkladateľ: Adama LUČANSKÉHO, Romana MICHELKA a Karola FARKAŠOVSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10966",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-19"
   },
   {
@@ -3741,7 +3622,7 @@
    "meta": "ČPT 1530 · Poslanecký · predkladateľ: Karola FARKAŠOVSKÉHO, Romana MICHELKA a Dagmar KRAMPLOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10961",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-27"
   },
   {
@@ -3755,7 +3636,7 @@
    "meta": "ČPT 1529 · Poslanecký · predkladateľ: Tomáša SZALAYA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10984",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-19"
   },
   {
@@ -3769,7 +3650,7 @@
    "meta": "ČPT 1528 · Poslanecký · predkladateľ: Beáty JURÍK, Zuzany ŠTEVULOVEJ, Lucie PLAVÁKOVEJ a Ondreja PROSTREDNÍKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10975",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-18"
   },
   {
@@ -3783,7 +3664,7 @@
    "meta": "ČPT 1527 · Poslanecký · predkladateľ: Beáty JURÍK, Zuzany ŠTEVULOVEJ, Lucie PLAVÁKOVEJ a Jaroslava SPIŠIAKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10982",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -3797,7 +3678,7 @@
    "meta": "ČPT 1526 · Poslanecký · predkladateľ: Beáty JURÍK, Zuzany ŠTEVULOVEJ a Lucie PLAVÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10971",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -3811,7 +3692,7 @@
    "meta": "ČPT 1525 · Poslanecký · predkladateľ: Jána HARGAŠA, Michala TRUBANA, Ivana ŠTEFUNKA, Štefana KIŠŠA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10976",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -3825,7 +3706,7 @@
    "meta": "ČPT 1524 · Poslanecký · predkladateľ: Jána HARGAŠA, Michala TRUBANA, Ivana ŠTEFUNKA, Štefana KIŠŠA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10972",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -3839,7 +3720,7 @@
    "meta": "ČPT 1522 · Poslanecký · predkladateľ: Jána HARGAŠA, Michala TRUBANA, Ivana ŠTEFUNKA, Štefana KIŠŠA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10974",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-18"
   },
   {
@@ -3853,7 +3734,7 @@
    "meta": "ČPT 1521 · Poslanecký · predkladateľ: Štefana KIŠŠA, Ivana ŠTEFUNKA, Jána HARGAŠA, Michala TRUBANA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10977",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-19"
   },
   {
@@ -3867,7 +3748,7 @@
    "meta": "ČPT 1520 · Poslanecký · predkladateľ: Jána HARGAŠA, Michala TRUBANA, Ivana ŠTEFUNKA, Štefana KIŠŠA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10969",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-18"
   },
   {
@@ -3881,7 +3762,7 @@
    "meta": "ČPT 1519 · Poslanecký · predkladateľ: Jána HARGAŠA, Michala TRUBANA, Ivana ŠTEFUNKA, Štefana KIŠŠA a Dariny LUŠČÍKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10973",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-24"
   },
   {
@@ -3895,7 +3776,7 @@
    "meta": "ČPT 1518 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10981",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-20"
   },
   {
@@ -3909,7 +3790,7 @@
    "meta": "ČPT 1516 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10979",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-25"
   },
   {
@@ -3923,7 +3804,7 @@
    "meta": "ČPT 1510 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10958",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -3937,7 +3818,7 @@
    "meta": "ČPT 1508 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10955",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -3951,7 +3832,7 @@
    "meta": "ČPT 1507 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10963",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -3965,7 +3846,7 @@
    "meta": "ČPT 1505 · Poslanecký · predkladateľ: Vladimíry MARCINKOVEJ a Vladimíra LEDECKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10962",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-19"
   },
   {
@@ -3979,7 +3860,7 @@
    "meta": "ČPT 1503 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10960",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -3993,7 +3874,7 @@
    "meta": "ČPT 1502 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10954",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-20"
   },
   {
@@ -4007,7 +3888,7 @@
    "meta": "ČPT 1501 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10959",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -4021,7 +3902,7 @@
    "meta": "ČPT 1500 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10953",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -4035,7 +3916,7 @@
    "meta": "ČPT 1499 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10957",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-25"
   },
   {
@@ -4049,7 +3930,7 @@
    "meta": "ČPT 1498 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10952",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -4063,7 +3944,7 @@
    "meta": "ČPT 1496 · Poslanecký · predkladateľ: Tiny GAŽOVIČOVEJ, Ireny BIHARIOVEJ a Ingrid KOSOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10950",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -4077,7 +3958,7 @@
    "meta": "ČPT 1490 · Poslanecký · predkladateľ: Ľubice LAŠŠÁKOVEJ, Aleny NOVÁKOVEJ, Zdenky MAČICOVEJ a Jozefa CECHA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10935",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -4091,7 +3972,7 @@
    "meta": "ČPT 1489 · Poslanecký · predkladateľ: Aleny NOVÁKOVEJ, Zdenky MAČICOVEJ, Jozefa CECHA  a Ľubice LAŠŠÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10934",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-23"
   },
   {
@@ -4105,7 +3986,7 @@
    "meta": "ČPT 1488 · Iné",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10933",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -4119,7 +4000,7 @@
    "meta": "ČPT 1486 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10926",
    "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-27"
   },
   {
@@ -4317,22 +4198,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-pz 18/2026 kupa osobnych motorovych vozidiel",
-   "source": "uvo",
-   "title": "PZ 18/2026 Kúpa osobných motorových vozidiel",
-   "date": "2026-09-10",
-   "category": "Doprava a výstavba",
-   "blok": "",
-   "meta": "Obstarávateľ: Univerzita Konštantína Filozofa v Nitre",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563039?cHash=f825ac361581a9d240d264980405accf",
-   "first_seen": "2026-08-28T16:27:21.441627+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Druh",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-nakup clnov - dns",
    "source": "uvo",
    "title": "Nákup člnov - DNS",
@@ -4479,7 +4344,7 @@
    "meta": "ČPT 1542 · Poslanecký · predkladateľ: Andrey TURČANOVEJ a Moniky KOLEJÁKOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10985",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -4493,7 +4358,7 @@
    "meta": "ČPT 1541 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10992",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-22"
   },
   {
@@ -4507,7 +4372,7 @@
    "meta": "ČPT 1540 · Poslanecký · predkladateľ: Rastislava KRÁTKEHO, Mariána ČAUČÍKA a Branislava ŠKRIPEKA",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10987",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-10-04"
   },
   {
@@ -4521,7 +4386,7 @@
    "meta": "ČPT 1539 · Poslanecký · predkladateľ: Romana MICHELKA, Adama LUČANSKÉHO a Dagmar KRAMPLOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10991",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-10-02"
   },
   {
@@ -4535,7 +4400,7 @@
    "meta": "ČPT 1537 · Poslanecký · predkladateľ: Karola FARKAŠOVSKÉHO, Romana MICHELKA a Dagmar KRAMPLOVEJ",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10988",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-16"
   },
   {
@@ -4549,7 +4414,7 @@
    "meta": "ČPT 1517 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10986",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-17"
   },
   {
@@ -4563,7 +4428,7 @@
    "meta": "ČPT 1515 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10997",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-20"
   },
   {
@@ -4577,7 +4442,7 @@
    "meta": "ČPT 1514 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10990",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-19"
   },
   {
@@ -4591,7 +4456,7 @@
    "meta": "ČPT 1506 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10994",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-23"
   },
   {
@@ -4605,7 +4470,7 @@
    "meta": "ČPT 1504 · Poslanecký · predkladateľ: Skupina poslancov",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10996",
    "first_seen": "2026-08-29T10:56:05.535624+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-21"
   },
   {
@@ -4619,7 +4484,7 @@
    "meta": "ČPT 1494 · Poslanecký · predkladateľ: Moniky KOLEJÁKOVEJ, Andrey TURČANOVEJ, Petra STACHURU a Františka MAJERSKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10998",
    "first_seen": "2026-08-31T10:41:44.262246+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-10-05"
   },
   {
@@ -4633,7 +4498,7 @@
    "meta": "ČPT 1491 · Poslanecký · predkladateľ: Vladimíry MARCINKOVEJ a Vladimíra LEDECKÉHO",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=10999",
    "first_seen": "2026-08-31T10:41:44.262246+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_changed": "2026-09-22"
   },
   {
@@ -4707,13 +4572,13 @@
    "id": "u-sos pedagogicka turcianske teplice - rekonstr",
    "source": "uvo",
    "title": "SOŠ Pedagogická Turčianske Teplice - rekonštrukcia školy - I. etapa - stavebné úpravy strechy kuchyne s jedálňou",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Žilinský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563365?cHash=ab382b6a76b87956dbcdf0ab078f8af5",
    "first_seen": "2026-08-31T10:41:44.262246+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -4974,23 +4839,6 @@
    "fondy": "Áno"
   },
   {
-   "id": "u-3d tlaciaren na kov a 3d skener",
-   "source": "uvo",
-   "title": "3D tlačiareň na kov a 3D skener",
-   "date": "2026-09-10",
-   "category": "Školstvo, veda a šport",
-   "blok": "",
-   "meta": "Obstarávateľ: Stredná odborná škola strojnícka, Športovcov 341/2, Považská Bystrica",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564040?cHash=b04eea2d1edc2c9f9c469a32ba7bc973",
-   "first_seen": "2026-09-01T09:17:18.726823+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Špeciálne obrábacie stroje 38520000-6 Skenery",
-   "fondy": "Áno"
-  },
-  {
    "id": "u-dodanie a montaz fotovoltaickych zariadeni",
    "source": "uvo",
    "title": "Dodanie a montáž fotovoltaických zariadení",
@@ -5000,7 +4848,7 @@
    "meta": "Obstarávateľ: Východoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551154?cHash=254919dfa753df3fccccca05419294cd",
    "first_seen": "2026-09-01T09:17:18.726823+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -5495,23 +5343,6 @@
    "fondy": "Áno"
   },
   {
-   "id": "u-specialny zdravotnicky material pre koronarne",
-   "source": "uvo",
-   "title": "ŠPECIÁLNY ZDRAVOTNÍCKY MATERIÁL PRE KORONÁRNE INTERVENČNÉ VÝKONY",
-   "date": "2026-09-10",
-   "category": "Zdravotníctvo",
-   "blok": "",
-   "meta": "Obstarávateľ: Národný ústav srdcových a cievnych chorôb, a.s.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555036?cHash=5d444901a6d2c52e82a0760d085abb3f",
-   "first_seen": "2026-09-04T08:41:59.273148+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Katétre 33141210-5 Balónikové katétre",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-zdravotnicky nabytok 2",
    "source": "uvo",
    "title": "Zdravotnícky nábytok 2",
@@ -5623,7 +5454,7 @@
    "meta": "Obstarávateľ: THERMALPARK DS, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566053?cHash=b886f000e60610388e00e8f371639298",
    "first_seen": "2026-09-04T08:41:59.273148+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -6044,7 +5875,7 @@
    "meta": "Obstarávateľ: Obec Nitrica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564672?cHash=9547c4aec3ec1d8c8e88ab1d722ced4e",
    "first_seen": "2026-09-07T09:09:27.804987+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -6168,23 +5999,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-dostavba a rekonstrukcia cov i. spisske tomas",
-   "source": "uvo",
-   "title": "Dostavba a rekonštrukcia ČOV I. Spišské Tomášovce",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Obec Spišské Tomášovce",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560695?cHash=47ad39c3c5ec05e217ab92c5beac7a44",
-   "first_seen": "2026-09-08T08:45:07.094230+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce 45252127-4 Stavebné práce na čističkách odpadových vôd",
-   "fondy": "Áno"
-  },
-  {
    "id": "u-kvalitne a inkluzivne vzdelavanie v zs sacuro",
    "source": "uvo",
    "title": "Kvalitné a inkluzívne vzdelávanie v ZŠ Sačurov – vybavenie kuchyne",
@@ -6205,13 +6019,13 @@
    "id": "u-dodavka elektrickej energie a dodavka zemneho",
    "source": "uvo",
    "title": "Dodávka elektrickej energie a dodávka zemného plynu",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Ostatné",
    "blok": "",
    "meta": "Obstarávateľ: Vysoká škola výtvarných umení",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565025?cHash=97a1625a507557d688ef1b0ff7e1a870",
    "first_seen": "2026-09-08T08:45:07.094230+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -6222,13 +6036,13 @@
    "id": "u-nakup 7 ks kracajucich rypadiel",
    "source": "uvo",
    "title": "Nákup 7 ks kráčajúcich rýpadiel",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Štát a štátne podniky",
    "blok": "",
    "meta": "Obstarávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559968?cHash=dc258a5143f62f3901c415be6a8e13cd",
    "first_seen": "2026-09-09T08:51:03.721477+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -6304,23 +6118,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-rekonstrukcia priepustu c. p29800 na ceste ii",
-   "source": "uvo",
-   "title": "Rekonštrukcia priepustu č. P29800 na ceste III/1951 v Hornej Breznici_opakovaná",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Správa ciest Trenčianskeho samosprávneho kraja (SC TSK)",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565126?cHash=0eacd5db4f205bfa9f398ef97167d9cf",
-   "first_seen": "2026-09-09T08:51:03.721477+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce 45233140-2 Práce na ceste 45232450-1 Odvodňovacie stave",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-„stavebne upravy okien a dveri v budove odbor",
    "source": "uvo",
    "title": "„Stavebné úpravy okien a dverí v budove odborného výcviku SOŠ techniky, služieb a obchodu“ - Gymnázium-Gimnázium, Gymnázium J.A.Komenského-Comenius Gimnázium a SOŠ techniky, služieb a obchodu Štúrovo",
@@ -6335,23 +6132,6 @@
    "stav": "Aktívna",
    "druh": "Práce",
    "cpv": "Stavebné práce 45214220-8 Stavebné práce na objektoch stredných škôl",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-dodavka silovej elektriny na roky 2027-2028  ",
-   "source": "uvo",
-   "title": "Dodávka silovej elektriny na roky 2027-2028  priebehové, nepriebehové a nemerané merania",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "meta": "Obstarávateľ: VODOHOSPODÁRSKA VÝSTAVBA, ŠTÁTNY PODNIK",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565124?cHash=a4ed0c4ca139e34d3d42f888324a9bf4",
-   "first_seen": "2026-09-09T08:51:03.721477+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Elektrická energia 65300000-6 Rozvod elektriny a súvisiace služby",
    "fondy": "Nie"
   },
   {
@@ -6392,13 +6172,13 @@
    "id": "u-dodavka elektrickej energie pre vodarenske sp",
    "source": "uvo",
    "title": "Dodávka elektrickej energie pre vodárenské spoločnosti",
-   "date": "2026-09-10",
+   "date": "2026-10-10",
    "category": "Ostatné",
    "blok": "",
    "meta": "Obstarávateľ: Západoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564638?cHash=fc94e7110d6fde0312c36b6d826badfc",
    "first_seen": "2026-09-09T08:51:03.721477+00:00",
-   "last_seen": "2026-09-11",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -6415,7 +6195,7 @@
    "meta": "Obstarávateľ: Správa rezortných zariadení Ministerstva kultúry Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557968?cHash=3cd3a4223dcb0286821d0b257cbcf233",
    "first_seen": "2026-09-09T08:51:03.721477+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -6566,7 +6346,7 @@
    "meta": "Ministerstvo pôdohospodárstva a rozvoja vidieka Slovenskej republiky · minister pôdohospodárstva a rozvoja vidieka",
    "url": "https://rokovania.gov.sk/RVL/Material/32210/1",
    "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-zabezpecenie nakupu energii pre potreby rezor",
@@ -6586,56 +6366,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-rekonstrukcia mostov na ceste i/74 i/74-042 u",
-   "source": "uvo",
-   "title": "Rekonštrukcia mostov na ceste I/74 I/74-042 Ubľa most M5960  a   I/74-043 Ubľa most M 7607",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "meta": "Obstarávateľ: Slovenská správa ciest",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553986?cHash=268d44184215ee2a258778f4293e1eca",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce na cestných mostoch 45233120-6 Stavebné práce na výstav",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-rekonstrukcia komunikacii a oprava vytlkov v ",
-   "source": "uvo",
-   "title": "Rekonštrukcia komunikácií a oprava výtlkov v Meste Rajecké Teplice",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Mesto Rajecké Teplice",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558608?cHash=741e4f38002fbab44f3e458330f549e7",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Druh",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-nakup vozidiel do 3,5 tony",
-   "source": "uvo",
-   "title": "Nákup vozidiel do 3,5 tony",
-   "date": "2026-09-10",
-   "category": "Doprava a výstavba",
-   "blok": "",
-   "meta": "Obstarávateľ: Západoslovenská vodárenská spoločnosť, a.s.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559213?cHash=f7e92284430b04f67053611e95414c87",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Motorové vozidlá 34115200-8 Motorové vozidlá na prepravu menej než 10 ",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-cv-259/2026 - oprava bleskozvodov po revizii ",
    "source": "uvo",
    "title": "CV-259/2026 - Oprava bleskozvodov po revízii na stavebných objektoch CV Lešť",
@@ -6651,23 +6381,6 @@
    "druh": "Práce",
    "cpv": "Práce na ochrane pred bleskom",
    "fondy": "Nie"
-  },
-  {
-   "id": "u-rekonstrukcia cesty a mostov ii/571 hr. okres",
-   "source": "uvo",
-   "title": "Rekonštrukcia cesty a mostov II/571 hr. okresov LC/RS – Pavlovce (križovatka s cestou II/531); kumulatívne staničenie km 12,008 – 31,900; I. etapa – (I. úsek)  a Most cez rieku Rimava v obci Jesenské, IDM M2219-571-032",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Banskobystrický samosprávny kraj",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/557425?cHash=38dccaf9cb267960a20203c6f749d798",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Práce vrchnej stavby ciest 45221220-0 Priepusty 45100000-8 Príprava st",
-   "fondy": "Áno"
   },
   {
    "id": "u-osobne ochranne pracovne prostriedky",
@@ -6703,40 +6416,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-znizenie energetickej narocnosti zimneho stad",
-   "source": "uvo",
-   "title": "ZNÍŽENIE ENERGETICKEJ NÁROČNOSTI ZIMNÉHO ŠTADIÓNA – STAVBENÉ ÚPRAVY 2026",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: TECHNICKÉ SLUŽBY Žiar nad Hronom, spol. s r.o.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/553853?cHash=c1be792108fd49eed1cc7feba8b2af52",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-komplexne poistenie majetku",
-   "source": "uvo",
-   "title": "KOMPLEXNÉ POISTENIE MAJETKU",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Kancelária Národnej rady Slovenskej republiky",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/441795?cHash=71ff9c1c2f62d5e2c4467a4eeb40f223",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Služby",
-   "cpv": "Poisťovacie služby",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-nakup vypoctovej techniky 2026 - 2029",
    "source": "uvo",
    "title": "Nákup výpočtovej techniky 2026 - 2029",
@@ -6768,39 +6447,6 @@
    "stav": "Aktívna",
    "druh": "Tovary",
    "cpv": "Zariadenia na údržbu ciest 60000000-8 Dopravné služby (bez prepravy od",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-spracovanie projektovej dokumentacie: rekonst",
-   "source": "uvo",
-   "title": "Spracovanie projektovej dokumentácie: Rekonštrukcia zimného štadióna v Púchove",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Mesto Púchov",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562183?cHash=030a4640a99018d91aa559e03064d35d",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Druh",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-neurochirurgicke vybavenie",
-   "source": "uvo",
-   "title": "Neurochirurgické vybavenie",
-   "date": "2026-09-10",
-   "category": "Obrana",
-   "blok": "",
-   "meta": "Obstarávateľ: Ústredná vojenská nemocnica SNP Ružomberok - fakultná nemocnica",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565008?cHash=3ca68439351b64bbea5d9169d7c44371",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Zdravotnícke vybavenie",
    "fondy": "Nie"
   },
   {
@@ -6956,22 +6602,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-pz 20/2026 zabezpecenie pracovnej vecere pre ",
-   "source": "uvo",
-   "title": "PZ 20/2026 Zabezpečenie pracovnej večere pre 14 osôb pre FSVaZ",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Univerzita Konštantína Filozofa v Nitre",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564680?cHash=7d2e8eaa77b5d88a9494e3c684a85675",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Druh",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-nakup, upgrade, predlzenie licencii a vendor ",
    "source": "uvo",
    "title": "Nákup, upgrade, predľženie licencií a vendor support pre IKT infraštruktúru – Cohesity",
@@ -6981,7 +6611,7 @@
    "meta": "Obstarávateľ: Ministerstvo hospodárstva Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566868?cHash=a35ced68f03219c8307ad845a6044b26",
    "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -7038,128 +6668,6 @@
    "druh": "Tovary",
    "cpv": "Vojenské helmy 35815100-1 Nepriestrelné vesty",
    "fondy": "Nie"
-  },
-  {
-   "id": "m-PI/2026/218",
-   "source": "mpk",
-   "title": "Návrh vyhlášky Ministerstva spravodlivosti Slovenskej republiky, ktorou sa dopĺňa vyhláška Ministerstva spravodlivosti Slovenskej republiky č. 655/2004 Z. z. o odmenách a náhradách advokátov za poskytovanie právnych služieb v znení neskorších predpisov",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "PI/2026/218 · predkladateľ: MSSR (Ministerstvo spravodlivosti Slovenskej republiky)",
-   "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/218",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-18"
-  },
-  {
-   "id": "z-12782657",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo - Križovatka ciest Trnavská a Hlohovecká",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "101 475,00 €",
-   "dod": "iProdos s.r.o",
-   "overit": "iProdos s.r.o",
-   "meta": "Dodávateľ: iProdos s.r.o → Objednávateľ: Mesto Nitra · č. 1552/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12782657/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true,
-   "dod_vznik": "2017-04-12",
-   "dod_krajina": "Slovenská republika"
-  },
-  {
-   "id": "z-12784138",
-   "source": "zmluvy",
-   "title": "Rekonštrukcia mostov na ceste I/74  I/74-042 Ubľa most M5960  a I/74-043 Ubľa most M7607",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "2 182 864,19 €",
-   "dod": "SMS A EUROVIA SK - UBĽA, vedúci člen: SMS a.s.",
-   "overit": "SMS A EUROVIA SK - UBĽA, vedúci člen: SMS a.s.",
-   "meta": "Dodávateľ: SMS A EUROVIA SK - UBĽA, vedúci člen: SMS a.s. → Objednávateľ: Slovenská správa ciest, Bratislava · č. 1297/2410/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12784138/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12783355",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "122 629,77 €",
-   "dod": "Miroslav Kulík – MK tech",
-   "overit": "Miroslav Kulík – MK tech",
-   "meta": "Dodávateľ: Miroslav Kulík – MK tech → Objednávateľ: Ministerstvo životného prostredia SR · č. 129/2026/1.14.1",
-   "url": "https://www.crz.gov.sk/zmluva/12783355/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11"
-  },
-  {
-   "id": "z-12783705",
-   "source": "zmluvy",
-   "title": "ZMLUVA   O POSKYTNUTÍ   NENÁVRATNÉHO FINANČNÉHO   PRÍSPEVKU   kód projektu: 401501F525",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "1 200 000,00 €",
-   "dod": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Banskobystrický samosprávny kraj · č. 1217/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12783705/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-11"
-  },
-  {
-   "id": "z-12783357",
-   "source": "zmluvy",
-   "title": "Zmluva o úvere",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "suma": "267 400,00 €",
-   "dod": "Vlastníci bytov a nebytových priestorov v bytovom dome, adresa: Ružinovská 4814/1, 821 02 Bratislava, v zastúpení HomePro Správcovská, s.r.o.",
-   "overit": "Vlastníci bytov a nebytových priestorov v bytovom dome, adresa: Ružinovská 4814/1, 821 02 Bratislava, v zastúpení HomePro Správcovská, s.r.o.",
-   "meta": "Dodávateľ: Vlastníci bytov a nebytových priestorov v bytovom dome, adresa: Ružinovská 4814/1, 821 02 Bratislava, v zastúpení HomePro Správcovská, s.r.o. → Objednávateľ: Štátny fond rozvoja bývania · č. 102/468/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12783357/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12784330",
-   "source": "zmluvy",
-   "title": "Dodatok č. 1 k Zmluve o poskytnutí prostriedkov mechanizmu na podporu obnovy a odolnosti č. 230/2025/7.2.5 \"Revitalizácia vybraných úsekov vodných tokov Dunaj, Hron, Ipeľ, Váh, Slaná, Bodrog, Bodva, Morava z Plánu obnovy a odolnosti SR\"",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "5 645 000,00 €",
-   "dod": "Ministerstvo životného prostredia Slovenskej republiky",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo životného prostredia Slovenskej republiky → Objednávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik · č. 1010/2026-PR",
-   "url": "https://www.crz.gov.sk/zmluva/12784330/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10"
-  },
-  {
-   "id": "z-12784213",
-   "source": "zmluvy",
-   "title": "Dodatok č. 1 k Zmluve o poskytnutí prostriedkov mechanizmu na podporu obnovy a odolnosti č. 344/2023/1.8 \"Revitalizácia vodného toku Morava v úseku rkm 69,00 - 52,01 z Plánu obnovy a odolnosti SR\"",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "24 153 999,37 €",
-   "dod": "Ministerstvo životného prostredia Slovenskej republiky",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo životného prostredia Slovenskej republiky → Objednávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik · č. 1009/2026-PR",
-   "url": "https://www.crz.gov.sk/zmluva/12784213/",
-   "first_seen": "2026-09-10T08:50:11.819888+00:00",
-   "last_seen": "2026-09-10"
   },
   {
    "id": "u-stavebne prace na stavbe: malcov – lenartov –",
@@ -7432,91 +6940,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-dns uniformy",
-   "source": "uvo",
-   "title": "DNS Uniformy",
-   "date": "2026-09-10",
-   "category": "Doprava a výstavba",
-   "blok": "",
-   "meta": "Obstarávateľ: Dopravný podnik Bratislava, akciová spoločnosť",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/554472?cHash=6acdc068521e0ac3118e0f150f0a1223",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Firemné odevy 18420000-9 Odevné doplnky 18300000-2 Odevy 18443000-6 Po",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-scov zilina – obnova aeracnych elementov.",
-   "source": "uvo",
-   "title": "SČOV Žilina – obnova aeračných elementov.",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Severoslovenské vodárne a kanalizácie, a.s.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/554945?cHash=f1ffdcb7ce327d65ba4e780cedfde63d",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Zariadenie čistiarní odpadových vôd 45255400-3 Montážne práce",
-   "fondy": "Áno"
-  },
-  {
-   "id": "u-dns_zastavkovy mobiliar",
-   "source": "uvo",
-   "title": "DNS_Zastávkový mobiliár",
-   "date": "2026-09-10",
-   "category": "Doprava a výstavba",
-   "blok": "",
-   "meta": "Obstarávateľ: Dopravný podnik Bratislava, akciová spoločnosť",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562084?cHash=0acef549aef56a2e1599b33b1986a0f0",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Cestné príslušenstvo 45340000-2 Inštalovanie oplotenia, zábradlí a bez",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-likvidacia odvodnenych stabilizovanych kalov",
-   "source": "uvo",
-   "title": "Likvidácia odvodnených stabilizovaných kalov",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Považská vodárenská spoločnosť, a.s.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561270?cHash=9ca06772a07569569e2b73eaad6ee7f6",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Služby",
-   "cpv": "Kanalizačné služby, služby na odstraňovanie odpadu, čistenie a environ",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-\"znizenie energetickej narocnosti strednej od",
-   "source": "uvo",
-   "title": "\"Zníženie energetickej náročnosti Strednej odbornej školy obchodu a služieb\"-Stredná odborná škola obchodu a služieb, Ul. SNP 5, Zlaté Moravce",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Nitriansky samosprávny kraj",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/526152?cHash=1112f603d20b89c2099ea79e014e60c3",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce 45214220-8 Stavebné práce na objektoch stredných škôl",
-   "fondy": "Áno"
-  },
-  {
    "id": "u-vystavba atletickeho stadiona vo svite",
    "source": "uvo",
    "title": "Výstavba atletického štadióna vo Svite",
@@ -7531,40 +6954,6 @@
    "stav": "Aktívna",
    "druh": "Práce",
    "cpv": "Stavebné práce súvisiace so stavbami na športoviskách",
-   "fondy": "Áno"
-  },
-  {
-   "id": "u-dodanie ct pristrojov vratane poskytnutia zar",
-   "source": "uvo",
-   "title": "Dodanie CT prístrojov vrátane poskytnutia záručného servisu",
-   "date": "2026-09-10",
-   "category": "Obrana",
-   "blok": "",
-   "meta": "Obstarávateľ: Ústredná vojenská nemocnica SNP Ružomberok - fakultná nemocnica",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564651?cHash=372f8d69d611bb0b6db562bd189ca9f0",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Tomografické prístroje",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-zs s ms a. kubinu - modernizacia ucebni",
-   "source": "uvo",
-   "title": "ZŠ s MŠ A. Kubinu - modernizácia učební",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "meta": "Obstarávateľ: Mesto Trnava",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/552018?cHash=e3fa0918b2b1ded93abf8f4c096bd7d6",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Počítačové zariadenia a spotrebný materiál 39000000-2 Nábytok (vrátane",
    "fondy": "Áno"
   },
   {
@@ -7585,23 +6974,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-oprava lc syrovy potok konus",
-   "source": "uvo",
-   "title": "Oprava LC Syrový potok Koňuš",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "meta": "Obstarávateľ: LESY Slovenskej republiky, štátny podnik",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558844?cHash=4038f973356c69234618f0faecd350ba",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Stavebné práce",
-   "fondy": "Nie"
-  },
-  {
    "id": "u-imunoglobuliny",
    "source": "uvo",
    "title": "Imunoglobulíny",
@@ -7611,7 +6983,7 @@
    "meta": "Obstarávateľ: Nemocnica Poprad, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556880?cHash=56b609e22e4259d3795897f3eced0298",
    "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -7636,23 +7008,6 @@
    "fondy": "Nie"
   },
   {
-   "id": "u-zsr, elektrifikacia trate banovce nad ondavou",
-   "source": "uvo",
-   "title": "ŽSR, Elektrifikácia trate Bánovce nad Ondavou - Humenné projektová dokumentácia",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "meta": "Obstarávateľ: Železnice Slovenskej republiky",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/125459?cHash=c8c15816cb3680f983f9446bfa6ececd",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Služby",
-   "cpv": "Inžinierske štúdie 71311230-2 Inžinierske služby pre oblasť železníc 7",
-   "fondy": "Áno"
-  },
-  {
    "id": "u-strazna sluzba",
    "source": "uvo",
    "title": "Strážna služba",
@@ -7667,22 +7022,6 @@
    "stav": "Aktívna",
    "druh": "Služby",
    "cpv": "Strážne služby",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-kupa a dodanie metalickych farieb, uni farieb",
-   "source": "uvo",
-   "title": "Kúpa a dodanie metalických farieb, UNI farieb, lakov, plničov a ostatného lakovacieho materiálu",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "meta": "Obstarávateľ: Automobilové opravovne Ministerstva vnútra Slovenskej republiky, a. s.",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563275?cHash=4bca06cd1f8af5f8d8b2cc4ebb7bbf14",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Druh",
    "fondy": "Nie"
   },
   {
@@ -7701,40 +7040,6 @@
    "druh": "Práce",
    "cpv": "Stavebné práce 45214220-8 Stavebné práce na objektoch stredných škôl",
    "fondy": "Áno"
-  },
-  {
-   "id": "u-nakup prepinacov a nevyhnutneho prislusenstva",
-   "source": "uvo",
-   "title": "Nákup prepínačov a nevyhnutného príslušenstva, vrátane súvisiacich licencií",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "meta": "Obstarávateľ: Finančné riaditeľstvo Slovenskej republiky",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/546425?cHash=461c541fb8b1b593b708fd2494a70201",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Tovary",
-   "cpv": "Sieťové komponenty",
-   "fondy": "Nie"
-  },
-  {
-   "id": "u-vymena dveri",
-   "source": "uvo",
-   "title": "Výmena dverí",
-   "date": "2026-09-10",
-   "category": "Sociálne veci a rodina",
-   "blok": "",
-   "meta": "Obstarávateľ: Centrum sociálnych služieb - SLOVEN",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562426?cHash=73be6cd8088054cc60f3d82ef69f2728",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_uvo_done": true,
-   "stav": "Aktívna",
-   "druh": "Práce",
-   "cpv": "Montáž dverí a okien a súvisiacich súčastí",
-   "fondy": "Nie"
   },
   {
    "id": "u-dns - leso-ochranarske sluzby pre spravu tana",
@@ -7794,121 +7099,6 @@
    "last_seen": "2026-09-21"
   },
   {
-   "id": "z-12787395",
-   "source": "zmluvy",
-   "title": "DODATOK č. 1 k zmluve o dielo",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "197 921,43 €",
-   "dod": "Dopravné staviteľstvo Bardejov s. r. o.",
-   "overit": "Dopravné staviteľstvo Bardejov s. r. o.",
-   "meta": "Dodávateľ: Dopravné staviteľstvo Bardejov s. r. o. → Objednávateľ: Obec Zlaté · č. 196/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12787395/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true,
-   "dod_vznik": "2010-09-03",
-   "dod_krajina": "Slovenská republika"
-  },
-  {
-   "id": "z-12785711",
-   "source": "zmluvy",
-   "title": "Dodatok č.1",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "635 005,69 €",
-   "dod": "Ministerstvo životného prostredia SR",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo životného prostredia SR → Objednávateľ: Obec Muránska Huta · č. 190/2026/7.1.2",
-   "url": "https://www.crz.gov.sk/zmluva/12785711/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11"
-  },
-  {
-   "id": "z-12788061",
-   "source": "zmluvy",
-   "title": "Dodatok č. 2 k zmluve č. 1726/2026 o poskytovaní finančného príspevku na prevádzku",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "245 834,40 €",
-   "dod": "Prosocia",
-   "overit": "Prosocia",
-   "meta": "Dodávateľ: Prosocia → Objednávateľ: Nitriansky samosprávny kraj · č. 1758/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12788061/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11"
-  },
-  {
-   "id": "z-12785193",
-   "source": "zmluvy",
-   "title": "Kúpna zmluva č. 88/2026",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "suma": "344 000,00 €",
-   "dod": "Mesto Trenčín",
-   "overit": "2MV stav, spol. s r.o",
-   "meta": "Dodávateľ: Mesto Trenčín → Objednávateľ: 2MV stav, spol. s r.o · č. 1678/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12785193/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true,
-   "dod_vznik": "2014-11-21",
-   "dod_krajina": "Slovenská republika"
-  },
-  {
-   "id": "z-12787269",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "461 908,69 €",
-   "dod": "ELMS, s.r.o.",
-   "overit": "ELMS, s.r.o.",
-   "meta": "Dodávateľ: ELMS, s.r.o. → Objednávateľ: Obec Vysoká nad Kysucou · č. 163/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12787269/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12786416",
-   "source": "zmluvy",
-   "title": "Dodatok č. 1 k Zmluve o poskytnutí prostriedkov mechanizmu na podporu obnovy a odolnosti 100/2025-2060-4236-00047",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "183 317,24 €",
-   "dod": "Ministerstvo hospodárstva SR",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo hospodárstva SR → Objednávateľ: Mesto Trenčín · č. 1616/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12786416/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11"
-  },
-  {
-   "id": "z-12786917",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "8 847 298,98 €",
-   "dod": "Alanata a. s.",
-   "overit": "Alanata a. s.",
-   "meta": "Dodávateľ: Alanata a. s. → Objednávateľ: Železnice Slovenskej republiky · č. 15149/2025/5400/333",
-   "url": "https://www.crz.gov.sk/zmluva/12786917/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true,
-   "dod_vznik": "2022-06-02",
-   "dod_krajina": "Slovenská republika"
-  },
-  {
    "id": "z-12789604",
    "source": "zmluvy",
    "title": "zmluva o poskytnutí NFP",
@@ -7922,22 +7112,6 @@
    "url": "https://www.crz.gov.sk/zmluva/12789604/",
    "first_seen": "2026-09-11T08:47:38.313995+00:00",
    "last_seen": "2026-09-12"
-  },
-  {
-   "id": "z-12788080",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo",
-   "date": "2026-09-10",
-   "category": "Štát a štátne podniky",
-   "blok": "",
-   "suma": "241 922,51 €",
-   "dod": "Davatec s.r.o.",
-   "overit": "Davatec s.r.o.",
-   "meta": "Dodávateľ: Davatec s.r.o. → Objednávateľ: Ministerstvo životného prostredia SR · č. 148/2025/1.14.1",
-   "url": "https://www.crz.gov.sk/zmluva/12788080/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
   },
   {
    "id": "z-12789350",
@@ -7970,69 +7144,6 @@
    "first_seen": "2026-09-11T08:47:38.313995+00:00",
    "last_seen": "2026-09-12",
    "_overit_checked": true
-  },
-  {
-   "id": "z-12786290",
-   "source": "zmluvy",
-   "title": "Rámcová zmluva o poskytovaní služieb",
-   "date": "2026-09-10",
-   "category": "Ostatné",
-   "blok": "",
-   "suma": "105 347,04 €",
-   "dod": "FAMOOS s.r.o.",
-   "overit": "FAMOOS s.r.o.",
-   "meta": "Dodávateľ: FAMOOS s.r.o. → Objednávateľ: Odvoz a likvidácia odpadu a.s. · č. 141-12-26",
-   "url": "https://www.crz.gov.sk/zmluva/12786290/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12785466",
-   "source": "zmluvy",
-   "title": "ZMLUVA O DIELO : Zníženie energetickej náročnosti a rekonštrukcia budovy dielní – SC ŽSK Závod Horné Považie – stredisko Žilina",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "970 391,58 €",
-   "dod": "Montagne, a.s.",
-   "overit": "Montagne, a.s.",
-   "meta": "Dodávateľ: Montagne, a.s. → Objednávateľ: Správa ciest Žilinského samosprávneho kraja · č. 140/SCŽSK/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12785466/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12786594",
-   "source": "zmluvy",
-   "title": "Zmluva o dielo č. 815/2026 - ,,Zelený park na Bajzovej ulici v Žiline“",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "589 222,03 €",
-   "dod": "STRABAG s. r.o.",
-   "overit": "STRABAG s. r.o.",
-   "meta": "Dodávateľ: STRABAG s. r.o. → Objednávateľ: Mesto Žilina · č. 1381/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12786594/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11",
-   "_overit_checked": true
-  },
-  {
-   "id": "z-12784659",
-   "source": "zmluvy",
-   "title": "ZMLUVA   O POSKYTNUTÍ   NENÁVRATNÉHO FINANČNÉHO   PRÍSPEVKU   kód projektu: 401501G934",
-   "date": "2026-09-10",
-   "category": "Samospráva",
-   "blok": "",
-   "suma": "283 175,84 €",
-   "dod": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
-   "overit": "",
-   "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Obec Vidiná · č. 1267/2026",
-   "url": "https://www.crz.gov.sk/zmluva/12784659/",
-   "first_seen": "2026-09-11T08:47:38.313995+00:00",
-   "last_seen": "2026-09-11"
   },
   {
    "id": "z-12789770",
@@ -8127,7 +7238,7 @@
    "meta": "Obstarávateľ: Vojenské lesy a majetky SR - štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564057?cHash=2fb3560a02cfcfd31eaa5dd882a0c71f",
    "first_seen": "2026-09-12T08:31:19.157561+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -8390,13 +7501,13 @@
    "id": "u-iii. kralov brod – protipovodnova ochrana obc",
    "source": "uvo",
    "title": "III. Kráľov Brod – protipovodňová ochrana obce, zátvorný objekt; stavebné práce",
-   "date": "2026-10-06",
+   "date": "2026-10-10",
    "category": "Štát a štátne podniky",
    "blok": "",
    "meta": "Obstarávateľ: SLOVENSKÝ VODOHOSPODÁRSKY PODNIK, štátny podnik",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565101?cHash=8eb25ffaff1ae7d136b0de73cf926270",
    "first_seen": "2026-09-12T08:31:19.157561+00:00",
-   "last_seen": "2026-10-06",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -8430,7 +7541,7 @@
    "meta": "Obstarávateľ: Štátny geologický ústav Dionýza Štúra",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565130?cHash=48722adb75568f8249b8f089b13d6aa3",
    "first_seen": "2026-09-12T08:31:19.157561+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -9833,7 +8944,7 @@
    "meta": "Obstarávateľ: Mesto Brezová pod Bradlom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565281?cHash=3e6db2e6b9e78bd09af523df12a95507",
    "first_seen": "2026-09-14T09:42:25.929827+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -10730,7 +9841,7 @@
    "meta": "Obstarávateľ: Mestská časť Bratislava - Petržalka",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562632?cHash=2fd85c7dac35a2e1cdc41ede3d5eed8b",
    "first_seen": "2026-09-16T09:11:02.122924+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -10809,13 +9920,13 @@
    "id": "u-rekonstrukcia viacucelovej sportovej haly v d",
    "source": "uvo",
    "title": "Rekonštrukcia viacúčelovej športovej haly v Dubnici nad Váhom",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Mesto Dubnica nad Váhom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565515?cHash=4e3f47f902cb34a07ea20d44e69ae21c",
    "first_seen": "2026-09-16T09:11:02.122924+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -11081,7 +10192,7 @@
    "meta": "Obstarávateľ: Obec Červená Voda",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565509?cHash=ceaaae3d6364ab054b4b453e889d9177",
    "first_seen": "2026-09-16T09:11:02.122924+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -11655,7 +10766,7 @@
    "meta": "Obstarávateľ: Národný ústav srdcových a cievnych chorôb, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558093?cHash=79a28681ea1581bd72ac08a4546f205f",
    "first_seen": "2026-09-17T09:19:16.695277+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -12647,7 +11758,7 @@
    "meta": "Obstarávateľ: Trnavská univerzita v Trnave - Rektorát",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565406?cHash=f0151041f38e3a9911a9f9301859b20b",
    "first_seen": "2026-09-18T08:54:30.225407+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -12737,13 +11848,13 @@
    "id": "u-lieciva pre srdcovocievny system , lieciva pr",
    "source": "uvo",
    "title": "Liečivá pre srdcovocievny systém , Liečivá pre močovopohlavný systém a pohlavné hormóny",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Ostatné",
    "blok": "",
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558210?cHash=5e44c6be8b9e559a0036960371da0a62",
    "first_seen": "2026-09-18T08:54:30.225407+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -12972,7 +12083,7 @@
    "meta": "Obstarávateľ: VODOHOSPODÁRSKA VÝSTAVBA, ŠTÁTNY PODNIK",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563048?cHash=7baea70e84a522c01c6dc776325eb5d5",
    "first_seen": "2026-09-18T08:54:30.225407+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -13123,7 +12234,7 @@
    "meta": "Obstarávateľ: Obec Leles",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565568?cHash=93c62124b0389467ed9c89060b7a4e25",
    "first_seen": "2026-09-18T08:54:30.225407+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -15183,7 +14294,7 @@
    "meta": "Obstarávateľ: Sociálna poisťovňa, ústredie",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565580?cHash=18df18eae84280592f0c036cf5593e5f",
    "first_seen": "2026-09-21T09:46:48.969171+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -15401,7 +14512,7 @@
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565750?cHash=e38a009251bb063ac68ebb725b823b8a",
    "first_seen": "2026-09-21T09:46:48.969171+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -16086,7 +15197,7 @@
    "meta": "Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky · minister investícií, regionálneho rozvoja a informatizácie",
    "url": "https://rokovania.gov.sk/RVL/Material/32239/3",
    "first_seen": "2026-09-23T09:11:31.026450+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "v-UV-25616/2026",
@@ -16098,7 +15209,7 @@
    "meta": "Najvyšší kontrolný úrad Slovenskej republiky · predseda Najvyššieho kontrolného úradu SR",
    "url": "https://rokovania.gov.sk/RVL/Material/32225/2",
    "first_seen": "2026-09-23T09:11:31.026450+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-dns na nakup a podporu softverovych produktov",
@@ -19581,13 +18692,13 @@
    "id": "u-zasobovanie pitnou vodou  regionu novohrad, p",
    "source": "uvo",
    "title": "Zásobovanie pitnou vodou  regiónu Novohrad, Panické Dravce   - verejný vodovod",
-   "date": "2026-10-03",
+   "date": "2026-10-11",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Obec Panické Dravce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566127?cHash=d20030da8d62950f349094347ad3434c",
    "first_seen": "2026-09-26T09:14:30.263184+00:00",
-   "last_seen": "2026-10-04",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -19621,7 +18732,7 @@
    "meta": "Obstarávateľ: Mesto Sabinov",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565958?cHash=11a09b3a6d7aef864822e8715861d931",
    "first_seen": "2026-09-26T09:14:30.263184+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -19638,7 +18749,7 @@
    "meta": "Obstarávateľ: Generálna prokuratúra SR",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566125?cHash=52e30f28d72232cf6b407d03ab5f8531",
    "first_seen": "2026-09-26T09:14:30.263184+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -19655,7 +18766,7 @@
    "meta": "Obstarávateľ: Vzdelávacie a doškoľovacie zariadenie VS-Financie Tatranská Lomnica",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565782?cHash=3007acd0c3f5d241a8aefe0454dbf489",
    "first_seen": "2026-09-26T09:14:30.263184+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -20987,7 +20098,7 @@
    "meta": "Obstarávateľ: Obec Kosihy nad Ipľom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565975?cHash=609d3bbe612fa5eb69fd6fc887ea8b46",
    "first_seen": "2026-09-28T10:43:22.698606+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -21119,7 +20230,7 @@
    "meta": "Obstarávateľ: Obec Vidiná",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566156?cHash=b4933ad7c58ca96a5ed5bfac134786f6",
    "first_seen": "2026-09-29T10:31:02.316146+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -21253,7 +20364,7 @@
    "meta": "Obstarávateľ: Hlavné mesto SR Bratislava",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556819?cHash=cb75a4b451b764751655567561ad7590",
    "first_seen": "2026-09-29T10:31:02.316146+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -21421,7 +20532,7 @@
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565902?cHash=35da573fbe6749949fb1126c23b2335c",
    "first_seen": "2026-09-29T10:31:02.316146+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -23493,7 +22604,7 @@
    "meta": "Obstarávateľ: Národné rehabilitačné centrum",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/533977?cHash=cc67a2ae2141b1ca6c941e6d8606afa0",
    "first_seen": "2026-10-01T10:48:50.879001+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -23626,7 +22737,7 @@
    "meta": "Obstarávateľ: Mestská časť Bratislava - Karlova Ves",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566006?cHash=ff2328cf8fe0747939197bdc0db8602b",
    "first_seen": "2026-10-01T10:48:50.879001+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -23828,7 +22939,7 @@
    "meta": "Obstarávateľ: Mesto Trenčianske Teplice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566374?cHash=62ef06d91c95724ffefe19d1b3df5d18",
    "first_seen": "2026-10-01T10:48:50.879001+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -24470,7 +23581,7 @@
    "meta": "Obstarávateľ: Obec Vojčice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566416?cHash=b9f4659414db69439087933257f98f2d",
    "first_seen": "2026-10-02T10:23:02.736000+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -25365,7 +24476,7 @@
    "meta": "ČPT 1548 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=11015",
    "first_seen": "2026-10-03T09:45:06.430787+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "p-1547",
@@ -25378,7 +24489,7 @@
    "meta": "ČPT 1547 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=11014",
    "first_seen": "2026-10-03T09:45:06.430787+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-rozsirenie priestorov",
@@ -25440,7 +24551,7 @@
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566515?cHash=665aa55e66284d6dd3de8f445382053c",
    "first_seen": "2026-10-03T09:45:06.430787+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -25542,7 +24653,7 @@
    "meta": "Obstarávateľ: Východoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566476?cHash=ec3a28dc967782c0ba94ac380f4c4d34",
    "first_seen": "2026-10-03T09:45:06.430787+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -26095,7 +25206,7 @@
    "meta": "Obstarávateľ: Stredná opdborná škola strojnícka, Partizánska cesta 76 , Bánovce nad Bebravou",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566352?cHash=db2375c25528b2c48f5e5799e30a7de0",
    "first_seen": "2026-10-05T11:18:13.474814+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -26147,7 +25258,7 @@
    "meta": "Obstarávateľ: Ministerstvo kultúry Slovenskej republiky\n                  \n                    (+1 ďalší)",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566383?cHash=7074d6b37110c0c6bbbc60677f52138a",
    "first_seen": "2026-10-05T11:18:13.474814+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -26704,7 +25815,7 @@
    "meta": "ČPT 1555 · Vládny · predkladateľ: Vláda SR",
    "url": "https://www.nrsr.sk/web/Default.aspx?sid=zakony/zakon&MasterID=11020",
    "first_seen": "2026-10-06T11:07:27.361792+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "u-pd - komplexna rekonstrukcia skolskeho intern",
@@ -27634,7 +26745,7 @@
    "meta": "LP/2026/516 · predkladateľ: MFSR (Ministerstvo financií Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/516",
    "first_seen": "2026-10-06T11:07:27.361792+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "z-12894069",
@@ -27867,7 +26978,7 @@
    "meta": "Obstarávateľ: Hlavné mesto SR Bratislava",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551918?cHash=060f5f33564295cbd8f5f1abc7f4371f",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -28185,7 +27296,7 @@
    "meta": "Obstarávateľ: Technická univerzita vo Zvolene",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564250?cHash=81e3f9ae18c269774aafbadc9e3de355",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -28764,7 +27875,7 @@
    "meta": "PI/2026/234 · predkladateľ: MZSR (Ministerstvo zdravotníctva Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/234",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/518",
@@ -28776,7 +27887,7 @@
    "meta": "LP/2026/518 · predkladateľ: MIRRI SR (Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/518",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/517",
@@ -28788,7 +27899,7 @@
    "meta": "LP/2026/517 · predkladateľ: MSSR (Ministerstvo spravodlivosti Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/517",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/233",
@@ -28800,7 +27911,7 @@
    "meta": "PI/2026/233 · predkladateľ: MSSR (Ministerstvo spravodlivosti Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/233",
    "first_seen": "2026-10-07T10:56:00.890183+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "z-12904122",
@@ -29200,13 +28311,13 @@
    "id": "u-puste ulany - rekonstrukcia splaskovej cerpac",
    "source": "uvo",
    "title": "Pusté Úľany - Rekonštrukcia splaškovej čerpacej stanice ČS2",
-   "date": "2026-10-08",
+   "date": "2026-10-10",
    "category": "Samospráva",
    "blok": "",
    "meta": "Obstarávateľ: Obec Pusté Úľany",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565455?cHash=fb926a71883e1e6a6e4990077d5b48d3",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-08",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -29238,7 +28349,7 @@
    "meta": "Obstarávateľ: MH Teplárenský holding, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566614?cHash=fba96c8129f18b8919fe9f5f32169696",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -29255,7 +28366,7 @@
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566767?cHash=f0d8866a6a2be38ed2df35f1a0c35eb6",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -29367,13 +28478,13 @@
    "id": "u-kompletna rekonstrukcia budovy a znizenie ene",
    "source": "uvo",
    "title": "Kompletná rekonštrukcia budovy a zníženie energetickej náročnosti – Dom umenia Piešťany",
-   "date": "2026-10-09",
+   "date": "2026-10-10",
    "category": "Štát a štátne podniky",
    "blok": "",
    "meta": "Obstarávateľ: Ministerstvo kultúry Slovenskej republiky\n                  \n                    (+1 ďalší)",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566381?cHash=89336c2f0ce7c3123fbb12a0ba83e2bf",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -29841,7 +28952,7 @@
    "meta": "LP/2026/520 · predkladateľ: MSSR (Ministerstvo spravodlivosti Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/520",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/240",
@@ -29853,7 +28964,7 @@
    "meta": "PI/2026/240 · predkladateľ: MPSVRSR (Ministerstvo práce, sociálnych vecí a rodiny Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/240",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/521",
@@ -29865,7 +28976,7 @@
    "meta": "LP/2026/521 · predkladateľ: MDSR (Ministerstvo dopravy Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/521",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/522",
@@ -29877,7 +28988,7 @@
    "meta": "LP/2026/522 · predkladateľ: MZSR (Ministerstvo zdravotníctva Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/522",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/236",
@@ -29889,7 +29000,7 @@
    "meta": "PI/2026/236 · predkladateľ: MFSR (Ministerstvo financií Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/236",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/235",
@@ -29901,7 +29012,7 @@
    "meta": "PI/2026/235 · predkladateľ: MSSR (Ministerstvo spravodlivosti Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/235",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/237",
@@ -29913,7 +29024,7 @@
    "meta": "PI/2026/237 · predkladateľ: MVSR (Ministerstvo vnútra Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/237",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/519",
@@ -29925,7 +29036,7 @@
    "meta": "LP/2026/519 · predkladateľ: ÚPVSR (Úrad priemyselného vlastníctva Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/519",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "z-12910328",
@@ -30155,7 +29266,7 @@
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/535109?cHash=9318a5c0a091a5e98495a7cdf88723b9",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -30172,7 +29283,7 @@
    "meta": "Obstarávateľ: Mesto Galanta",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/552071?cHash=8123b044f3a9d66c7e489341a285bded",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30185,7 +29296,7 @@
    "meta": "Obstarávateľ: Mesto Prešov",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566645?cHash=5196d1aa7cdd03a8896016902af257dd",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30198,7 +29309,7 @@
    "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/544759?cHash=8bf9063b6ce3691f78527e396bbbe19c",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30211,7 +29322,7 @@
    "meta": "Obstarávateľ: Univerzita Komenského v Bratislave",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565444?cHash=67ae5f362b9a3d67673b1a694c5c760b",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30224,7 +29335,7 @@
    "meta": "Obstarávateľ: Obec Veľké Úľany",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566004?cHash=792f46e455b506a35c0d355719baf0c9",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30237,7 +29348,7 @@
    "meta": "Obstarávateľ: Košický samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549600?cHash=c30288e97ffa9b106b0dab015fcc2b4e",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30250,7 +29361,7 @@
    "meta": "Obstarávateľ: Košický samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/535060?cHash=a5d9c0f19974ef119deba18250449af5",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30263,7 +29374,7 @@
    "meta": "Obstarávateľ: STREDNÁ ODBORNÁ ŠKOLA DREVÁRSKA",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561052?cHash=24fa82bcc875db7d4b3a719227a37723",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -30280,20 +29391,20 @@
    "meta": "Obstarávateľ: Mesto Košice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565677?cHash=2adfee8ff2f47b46865158b7d90a5b6b",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
    "id": "u-vinicky - kralovsky chlmec - intenzifikacia z",
    "source": "uvo",
    "title": "Viničky - Kráľovský Chlmec - Intenzifikácia zásobného potrubia II. etapa",
-   "date": "2026-10-10",
+   "date": "2026-10-11",
    "category": "Ostatné",
    "blok": "",
    "meta": "Obstarávateľ: Východoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/562062?cHash=63aeabcbb67517c2f77553e9db3f7840",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30306,7 +29417,7 @@
    "meta": "Obstarávateľ: Obec Rozhanovce",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566787?cHash=58026c02fc5c1ea68526173da5c1a8f3",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30319,7 +29430,7 @@
    "meta": "Obstarávateľ: Správa ciest Žilinského samosprávneho kraja",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561471?cHash=8d42aeabc8a42e7544525518984d53ad",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -30336,7 +29447,7 @@
    "meta": "Obstarávateľ: Mesto Nováky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561957?cHash=1cf866068765d09092389207b7acdf1b",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30349,7 +29460,7 @@
    "meta": "Obstarávateľ: Slovenské elektrárne, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566860?cHash=5c458fc333bd027d795dd1c6f50fdf06",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30362,7 +29473,7 @@
    "meta": "Obstarávateľ: Správa a údržba ciest Prešovského samosprávneho kraja",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566901?cHash=5681e61aa59bd6064f2ee4e62cee46a7",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30375,7 +29486,7 @@
    "meta": "Obstarávateľ: Bratislavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/558800?cHash=a60f6c76edc036552d3fcf88e5aed38e",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30388,7 +29499,7 @@
    "meta": "Obstarávateľ: Správa ciest Trenčianskeho samosprávneho kraja (SC TSK)",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560217?cHash=5978bfe9ad3525a2d38924832354d520",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30401,7 +29512,7 @@
    "meta": "Obstarávateľ: Obec Lipovec",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559848?cHash=d6d04f77b6b1d5ab0f21adc79642484f",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30414,7 +29525,7 @@
    "meta": "Obstarávateľ: Dopravný podnik Bratislava, akciová spoločnosť",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/549932?cHash=05779f42f884dc19a00e8fd5982582e3",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -30431,7 +29542,7 @@
    "meta": "Obstarávateľ: Mesto Nitra",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566863?cHash=c2fafe2c55094358bf3aaa0ffdac02e9",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -30448,7 +29559,7 @@
    "meta": "Obstarávateľ: Slovenská elektrizačná prenosová sústava, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560611?cHash=e43be02df7c0a5de5a8e9f4603332855",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -30465,7 +29576,7 @@
    "meta": "Obstarávateľ: Železnice Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/538515?cHash=efb1a74bbfaf710fd9c830cfc2957c75",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -30482,7 +29593,7 @@
    "meta": "Obstarávateľ: Žilinský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565675?cHash=adda437062f8dac5ecc4a524465ef755",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30495,7 +29606,7 @@
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Žilina",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566551?cHash=daf969f91a42403049bffe34eb947543",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -30512,7 +29623,7 @@
    "meta": "Obstarávateľ: Košický samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/556994?cHash=ccf104d08c32fe1b24b71ab96d2bfd3a",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -30529,7 +29640,7 @@
    "meta": "Obstarávateľ: Východoslovenský ústav srdcových a cievnych chorôb, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/559987?cHash=ee2e01a85912838ba3d8aff5a0dec63b",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -30545,7 +29656,7 @@
    "meta": "Obstarávateľ: Mesto Stará Turá",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565875?cHash=769296b7936a6bbb132a2c10fd720fb3",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -30561,7 +29672,7 @@
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563506?cHash=acb0b1f61208c9a3cfee98c99ac463ad",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -30577,7 +29688,7 @@
    "meta": "Obstarávateľ: Mestská časť Bratislava - Staré Mesto",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566216?cHash=af1a05b9368a8d85e5afb22144e7e29a",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30590,7 +29701,7 @@
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563465?cHash=ceb36826200eb657de096fc030b3b48b",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30603,7 +29714,7 @@
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561994?cHash=8885b2126856271fe7a4ca534fb1de0a",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -30619,7 +29730,7 @@
    "meta": "Obstarávateľ: Správa ciest Žilinského samosprávneho kraja",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566020?cHash=7f2c3c4f155f2a5732b4b6ca32456b89",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30632,7 +29743,7 @@
    "meta": "Obstarávateľ: Trnavský samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563572?cHash=3cf580c47f6e16772a124a6353ba4aea",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true
   },
   {
@@ -30645,7 +29756,7 @@
    "meta": "Obstarávateľ: Stredná odborná škola elektrotechnická, Sibírska 1, Trnava",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563494?cHash=2847c84dcb09f79cddc6669350bd81ca",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -30812,7 +29923,7 @@
    "meta": "PI/2026/242 · predkladateľ: MDSR (Ministerstvo dopravy Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/242",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/243",
@@ -30824,7 +29935,7 @@
    "meta": "PI/2026/243 · predkladateľ: MDSR (Ministerstvo dopravy Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/243",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/523",
@@ -30836,7 +29947,7 @@
    "meta": "LP/2026/523 · predkladateľ: MZSR (Ministerstvo zdravotníctva Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/523",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-PI/2026/241",
@@ -30848,7 +29959,7 @@
    "meta": "PI/2026/241 · predkladateľ: MZSR (Ministerstvo zdravotníctva Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/241",
    "first_seen": "2026-10-09T11:12:22.344541+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "z-12917933",
@@ -31078,7 +30189,7 @@
    "meta": "Obstarávateľ: DataCentrum",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565910?cHash=c98ae3942cf0625f68a07562b455fec8",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -31095,7 +30206,7 @@
    "meta": "Obstarávateľ: Národná agentúra pre sieťové a elektronické služby",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/555803?cHash=8dc2608774bb97dca4ded60b97e1fe18",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -31112,7 +30223,7 @@
    "meta": "Obstarávateľ: Národná diaľničná spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566923?cHash=9799d6d726e8a7d3f0a1ff9ca63adf02",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31129,7 +30240,7 @@
    "meta": "Obstarávateľ: Mesto Lučenec",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561385?cHash=6dfc64e27856cb012e65566487db0124",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -31146,7 +30257,7 @@
    "meta": "Obstarávateľ: Národná diaľničná spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/527795?cHash=521618bae87b32c7769eec5ac41dc05f",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31163,7 +30274,7 @@
    "meta": "Obstarávateľ: Trenčiansky samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/560515?cHash=caa5e5522ad8690dd647913b48491f38",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31180,7 +30291,7 @@
    "meta": "Obstarávateľ: Fakultná nemocnica s poliklinikou Nové Zámky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566741?cHash=b02873f8377097238c24d3de84347ef6",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -31197,7 +30308,7 @@
    "meta": "Obstarávateľ: Mesto Liptovský Mikuláš",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566791?cHash=f4191337628f985cfe680283f0e71b04",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31214,7 +30325,7 @@
    "meta": "Obstarávateľ: Mesto Malacky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566204?cHash=cde5a124108809fe25d88e0046e562e3",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -31231,7 +30342,7 @@
    "meta": "Obstarávateľ: Trenčiansky samosprávny kraj",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566839?cHash=9b25c501872e8ff57b2719ab38e18931",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -31248,7 +30359,7 @@
    "meta": "Obstarávateľ: Národná diaľničná spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/137201?cHash=e06fe731cc115987f7963410800284ab",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Služby",
@@ -31265,7 +30376,7 @@
    "meta": "Obstarávateľ: Technická univerzita vo Zvolene",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566308?cHash=7554c3e4332d1543e8b7b0f95f6067f5",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -31281,7 +30392,7 @@
    "meta": "Obstarávateľ: Národný ústav srdcových a cievnych chorôb, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/563183?cHash=a7e0b02b94848efe2c8bee082a8fe23d",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31298,7 +30409,7 @@
    "meta": "Obstarávateľ: Univerzita sv. Cyrila a Metoda v Trnave",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/565591?cHash=12b3a648e4f602c88f2288e074602f90",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -31314,7 +30425,7 @@
    "meta": "Obstarávateľ: Obec Rakovice",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561611?cHash=a58558fc612562926d33444b5b17e389",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Druh",
@@ -31330,7 +30441,7 @@
    "meta": "Obstarávateľ: Národná diaľničná spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/561849?cHash=9e9716e44af68375a0c4d74e48618c3b",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -31347,7 +30458,7 @@
    "meta": "Obstarávateľ: Mesto Dubnica nad Váhom",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/528865?cHash=644ed77502187406f353ed0214443338",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -31364,7 +30475,7 @@
    "meta": "Obstarávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/452708?cHash=bfabe92c180b6ede571ae7ae18e4610f",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31381,7 +30492,7 @@
    "meta": "Obstarávateľ: Slovenské elektrárne, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/532354?cHash=0b796042a49806db573ce8e3b05658b3",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31398,7 +30509,7 @@
    "meta": "Obstarávateľ: Centrum sociálnych služieb - SLOVEN",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566906?cHash=b7e522a8a1b33f2f00e4be4c5b70c86a",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -31415,7 +30526,7 @@
    "meta": "Obstarávateľ: Železničná spoločnosť Slovensko, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/564737?cHash=f5ca6b99507e279481020096a155814c",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10",
+   "last_seen": "2026-10-11",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Tovary",
@@ -31432,7 +30543,7 @@
    "meta": "PI/2026/244 · predkladateľ: UpREKaPŠ (Úrad pre reguláciu elektronických komunikácií a poštových služieb)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/PI/2026/244",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/503",
@@ -31444,7 +30555,7 @@
    "meta": "LP/2026/503 · predkladateľ: MKSR (Ministerstvo kultúry Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/503",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "m-LP/2026/525",
@@ -31456,7 +30567,7 @@
    "meta": "LP/2026/525 · predkladateľ: MVSR (Ministerstvo vnútra Slovenskej republiky)",
    "url": "https://www.slov-lex.sk/elegislativa/legislativne-procesy/SK/LP/2026/525",
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
-   "last_seen": "2026-10-10"
+   "last_seen": "2026-10-11"
   },
   {
    "id": "z-12918869",
@@ -31566,9 +30677,26 @@
    "first_seen": "2026-10-10T10:29:19.573260+00:00",
    "last_seen": "2026-10-10",
    "_overit_checked": true
+  },
+  {
+   "id": "u-cerstva zelenina a ovocie",
+   "source": "uvo",
+   "title": "Čerstvá zelenina a ovocie",
+   "date": "2026-10-11",
+   "category": "Ostatné",
+   "blok": "",
+   "meta": "Obstarávateľ: Stredná odborná škola obchodu a služieb, Ul. P. Jilemnického 24, Trenčín",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566591?cHash=c47b110397f8b3b3d75519fb39b7c1b6",
+   "first_seen": "2026-10-11T10:41:31.258561+00:00",
+   "last_seen": "2026-10-11",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Tovary",
+   "cpv": "Zelenina, ovocie a orechy 03212100-1 Zemiaky",
+   "fondy": "Nie"
   }
  ],
- "updated": "2026-10-10",
+ "updated": "2026-10-11",
  "firmy": {
   "cncteam s r o": {
    "vznik": ""
