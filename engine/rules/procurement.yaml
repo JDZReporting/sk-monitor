@@ -1,0 +1,232 @@
+# =====================================================================
+# SK monitor — katalóg investigatívnych indikátorov: VEREJNÉ OBSTARÁVANIE A ZMLUVY
+# Verzia: 0.1 (prvá dávka, 2026-11-25)
+# Zdroj metodiky: Open Contracting Partnership — Red Flags in Public
+#   Procurement (2024), 73 indikátorov mapovaných na OCDS (CC-BY 4.0),
+#   adaptované na reálne dostupné slovenské dáta (ÚVO + CRZ + RPO).
+#
+# FILOZOFIA: radšej málo OVERENÝCH a funkčných indikátorov než veľa
+#   teoretických. Každý indikátor má pole `realizovatelnost` a `test`.
+#
+# Polia (podľa zadania §27):
+#   id, nazov, kategoria, zdovodnenie, zdroj_metodiky, potrebne_data,
+#   definicia, porovnavacia_zakladna, min_vzorka, aktivacia_ak,
+#   nepouzivat_ak, legitimne_vysvetlenia, riziko_fp (falošný poplach),
+#   istota, kalibracia, zobrazenie, odporucany_postup,
+#   realizovatelnost, sk_zdroj, sk_pole, dostupnost, test
+#
+# realizovatelnost: HNED | PO_DOPLNENI | EXTERNY_NASTROJ | NEREALIZOVATELNE
+# =====================================================================
+
+meta:
+  verzia: "0.1"
+  datum: "2026-11-25"
+  pocet_indikatorov: 6
+  pocet_hned_realizovatelnych: 3
+  poznamka: >
+    Prvá dávka stavia len na poliach, ktoré SK monitor DNES reálne má:
+    source, category, suma, dod (dodávateľ), overit (súkromná strana),
+    druh, cpv, fondy, dod_vznik (RPO), dod_krajina (RPO), objednávateľ (z meta).
+    Indikátory vyžadujúce počet uchádzačov, ceny ponúk, dátumy lehôt,
+    dodatky a konečných užívateľov výhod sú vedené v data_matrix ako
+    PO_DOPLNENI / NEREALIZOVATELNE — budujeme ich postupne.
+
+# ---------------------------------------------------------------------
+# DÁTOVÁ MATICA — čo z OCP metodiky vieme a čo nie na SK dátach
+# ---------------------------------------------------------------------
+data_matrix:
+  mame_dnes:
+    - "Dodávateľ (názov) — zmluvy CRZ (pole dod)"
+    - "Objednávateľ (názov) — z pola meta (treba parsovať)"
+    - "Suma zmluvy v € — CRZ (pole suma), prah 100 000 €"
+    - "Druh zákazky / postup — ÚVO detail (pole druh)"
+    - "CPV kód — ÚVO (pole cpv)"
+    - "EÚ fondy áno/nie — ÚVO (pole fondy)"
+    - "Dátum vzniku firmy + krajina sídla — RPO (dod_vznik, dod_krajina)"
+    - "Kategória/rezort — kategoria; prvé zachytenie — first_seen"
+  chyba_nam:
+    - "Počet uchádzačov / jediná ponuka (R018, R019) — ÚVO detail to nemá"
+    - "Ceny jednotlivých ponúk (R022, R028, Benford R029) — nie sú v dátach"
+    - "Predpokladaná hodnota zákazky (R016, R031) — je vo Vestníku, nie u nás"
+    - "Dátumy: zverejnenie, lehota na ponuky, otváranie (R003, R014) — chýbajú"
+    - "Dodatky k zmluvám a ich sumy (R064–R069) — zatiaľ neťaháme"
+    - "Koneční užívatelia výhod / vlastníci (R032, R033) — RPVS bez API"
+  dosledok: >
+    Z 73 OCP indikátorov je na súčasných SK dátach priamo realizovateľných
+    ~6–10. Ďalšie sa odomknú po doplnení zberu (počet uchádzačov z Vestníka,
+    dodatky z CRZ, prepojenie ÚVO↔CRZ). Toto je zámerné: staviame overené jadro.
+
+# ---------------------------------------------------------------------
+# INDIKÁTORY
+# ---------------------------------------------------------------------
+indikatory:
+
+  - id: SK-SUP-NEW
+    nazov: "Nová firma ako dodávateľ (mladšia ako 1 rok)"
+    kategoria: "Rizikový dodávateľ"
+    zdovodnenie: >
+      Firmy založené krátko pred získaním verejnej zákazky sú v investigatíve
+      klasický signál účelovo zriadeného subjektu (shell / nastrčená firma).
+    zdroj_metodiky: "OCP R045/R047 (traceability dodávateľa); prax OCCRP."
+    potrebne_data: ["dátum vzniku dodávateľa", "dátum zmluvy/zákazky"]
+    definicia: "vek_firmy = date(zmluva) - vznik_firmy; flag ak vek_firmy < 365 dní"
+    porovnavacia_zakladna: "absolútny prah (1 rok); voliteľne percentil veku firiem v kategórii"
+    min_vzorka: "nie je potrebná (per-subjekt)"
+    aktivacia_ak: "dod_vznik je známy A vek < 365 dní"
+    nepouzivat_ak: "dod_vznik chýba (RPO nenašlo subjekt) — nehádať"
+    legitimne_vysvetlenia:
+      - "Nová firma vznikla legitímne (napr. nástupca, spin-off)"
+      - "Malá zákazka, bežný trh"
+    riziko_fp: "stredné — veľa nových malých firiem je legitímnych"
+    istota: "stredná (signál, nie dôkaz)"
+    kalibracia: "sledovať podiel potvrdených vs FP; prah veku vieme sprísniť na 180 dní pri veľkých sumách"
+    zobrazenie: "štítok '⚠️ nová firma' pri položke (už existuje vo frontende)"
+    odporucany_postup: "overiť v ORSR/FinStat konateľov a historiu; porovnať so sumou zmluvy"
+    realizovatelnost: "HNED"
+    sk_zdroj: "RPO (Register právnických osôb)"
+    sk_pole: ["dod_vznik", "date", "overit"]
+    dostupnost: "čiastočná — RPO nenájde každý subjekt (štátne úrady, s.r.o. so zmenou názvu)"
+    test: "NEOTESTOVANÉ — čaká na beh na reálnom store.json"
+
+  - id: SK-SUP-FOREIGN
+    nazov: "Dodávateľ so sídlom mimo SR"
+    kategoria: "Rizikový dodávateľ"
+    zdovodnenie: >
+      Zahraničné sídlo súkromného dodávateľa verejných peňazí sťažuje overenie
+      vlastníkov a je kontextový signál (najmä pri jurisdikciách s nízkou transparentnosťou).
+    zdroj_metodiky: "OCP (beneficial ownership opacity); Open Ownership."
+    potrebne_data: ["krajina sídla dodávateľa"]
+    definicia: "flag ak dod_krajina not in ['SK','Slovensko','']"
+    porovnavacia_zakladna: "absolútne (krajina != SK)"
+    min_vzorka: "nie je potrebná"
+    aktivacia_ak: "dod_krajina známa A != SK"
+    nepouzivat_ak: "dod_krajina chýba"
+    legitimne_vysvetlenia:
+      - "Legitímny medzinárodný dodávateľ (IT, zdravotníctvo, stavebníctvo)"
+      - "Pobočka nadnárodnej firmy"
+    riziko_fp: "vysoké ak sa berie izolovane — preto len kontext / kombinácia"
+    istota: "nízka samostatne, vyššia v kombinácii"
+    kalibracia: "zvýšiť váhu pri offshore jurisdikciách (zoznam), znížiť pri EÚ"
+    zobrazenie: "štítok '🌍 sídlo mimo SR' (existuje)"
+    odporucany_postup: "pozrieť RPVS (koneční užívatelia výhod); kombinovať so SK-SUP-NEW a sumou"
+    realizovatelnost: "HNED"
+    sk_zdroj: "RPO"
+    sk_pole: ["dod_krajina", "overit"]
+    dostupnost: "čiastočná (podľa pokrytia RPO)"
+    test: "NEOTESTOVANÉ"
+
+  - id: SK-PROC-DIRECT
+    nazov: "Nesúťažný / priamy postup zadania"
+    kategoria: "Nízka súťaž"
+    zdovodnenie: >
+      Priame rokovacie konanie bez zverejnenia a podobné nesúťažné postupy
+      obchádzajú súťaž a sú najčastejším kanálom zvýhodnenia dodávateľa.
+    zdroj_metodiky: "OCP R010/R013 (unjustified use of non-competitive procedure)."
+    potrebne_data: ["druh/typ postupu zákazky"]
+    definicia: >
+      flag ak druh ∈ {priame rokovacie konanie, rokovacie konanie bez
+      zverejnenia, PRKBZ, ...} — treba zostaviť mapovací zoznam SK názvov postupov
+    porovnavacia_zakladna: "podiel nesúťažných postupov na obstarávateľa vs priemer"
+    min_vzorka: "pre podiel: aspoň 5 zákaziek obstarávateľa"
+    aktivacia_ak: "druh je známy A patrí do nesúťažnej množiny"
+    nepouzivat_ak: "druh chýba alebo nejednoznačný"
+    legitimne_vysvetlenia:
+      - "Zákonná výnimka (jediný dodávateľ, krajná núdza, autorské práva)"
+      - "Nadväzujúca zákazka"
+    riziko_fp: "stredné — časť priamych zadaní je zákonná"
+    istota: "stredná"
+    kalibracia: "kalibrovať mapovací zoznam postupov; sledovať FP"
+    zobrazenie: "štítok 'nesúťažný postup' + v detaile druh"
+    odporucany_postup: "overiť zdôvodnenie výnimky vo Vestníku/ÚVO; pozrieť opakovanie u dodávateľa"
+    realizovatelnost: "NEREALIZOVATELNE (zatiaľ)"
+    sk_zdroj: "ÚVO detail — ale typ POSTUPU nemáme"
+    sk_pole: ["druh — POZOR: v realite = Tovary/Práce/Služby, NIE typ postupu"]
+    dostupnost: "typ postupu (priame/rokovacie konanie) sa v našich dátach NEzbiera"
+    test: >
+      OTESTOVANÉ na reálnej vzorke 94 ÚVO zákaziek (2026-11-25): pole druh
+      obsahuje len {Tovary:41, Práce:41, Služby:8} + 3 chybné "Druh" (bug parsera).
+      Predpoklad, že druh = typ postupu, bol NESPRÁVNY. Indikátor sa odomkne
+      až po doplnení zberu typu postupu z Vestníka VO (nový scraper)."
+
+  - id: SK-BUYER-CONC
+    nazov: "Vysoký podiel jedného dodávateľa u jedného obstarávateľa"
+    kategoria: "Nízka súťaž / opakovaný víťaz"
+    zdovodnenie: >
+      Ak jeden dodávateľ dostáva opakovane zákazky/zmluvy od toho istého
+      obstarávateľa, môže ísť o vzťahovú väzbu alebo zabehnutú súťažnú výhodu.
+    zdroj_metodiky: "OCP R040 (high share of buyer's contracts)."
+    potrebne_data: ["obstarávateľ", "dodávateľ", "suma", "obdobie"]
+    definicia: >
+      pre dvojicu (obstarávateľ, dodávateľ): podiel = Σ súm(dvojica) /
+      Σ súm(obstarávateľ); flag ak podiel > 0.5 a počet zmlúv ≥ 3
+    porovnavacia_zakladna: "podiel na celkových výdavkoch obstarávateľa"
+    min_vzorka: "aspoň 3 zmluvy a aspoň 2 dodávatelia u obstarávateľa"
+    aktivacia_ak: "dostatok dát o obstarávateľovi za okno"
+    nepouzivat_ak: "málo dát / jediný dodávateľ na trhu (prirodzený monopol)"
+    legitimne_vysvetlenia:
+      - "Špecializovaný trh s jedným reálnym dodávateľom"
+      - "Rámcová dohoda"
+    riziko_fp: "stredné"
+    istota: "stredná až vyššia pri dlhom okne"
+    kalibracia: "prah podielu a min. počet zmlúv ladiť podľa FP"
+    zobrazenie: "v profile obstarávateľa/dodávateľa (budúci modul) + štítok"
+    odporucany_postup: "pozrieť históriu dvojice, typy postupov, časovú súslednosť"
+    realizovatelnost: "PO_DOPLNENI"
+    sk_zdroj: "CRZ (+ parsovanie objednávateľa z meta)"
+    sk_pole: ["dod", "meta", "suma"]
+    dostupnost: "dobrá pre CRZ nad 100k; treba spoľahlivý parser objednávateľa"
+    test: "NEOTESTOVANÉ"
+
+  - id: SK-MARKET-HHI
+    nazov: "Vysoká koncentrácia trhu v kategórii (HHI)"
+    kategoria: "Nízka súťaž"
+    zdovodnenie: >
+      Herfindahl–Hirschmanov index meria koncentráciu: ak v danej kategórii
+      berie málo dodávateľov väčšinu peňazí, trh je uzavretý.
+    zdroj_metodiky: "OCP R050/R051 (market share / concentration); OECD."
+    potrebne_data: ["kategória", "dodávateľ", "suma"]
+    definicia: "HHI = Σ (podiel_dodávateľa_i)^2 ; flag ak HHI > 0.25 (silná koncentrácia)"
+    porovnavacia_zakladna: "HHI naprieč kategóriami / v čase"
+    min_vzorka: "aspoň 5 zmlúv a 3 dodávatelia v kategórii"
+    aktivacia_ak: "dostatok zmlúv v kategórii za okno"
+    nepouzivat_ak: "málo dát; prirodzene koncentrovaný segment"
+    legitimne_vysvetlenia:
+      - "Málo reálnych dodávateľov na špecifickom trhu"
+    riziko_fp: "stredné"
+    istota: "stredná (štrukturálny ukazovateľ, nie dôkaz)"
+    kalibracia: "prah HHI podľa segmentu; porovnávať medziročne"
+    zobrazenie: "prehľad kategórií + trend (budúci dashboard modul)"
+    odporucany_postup: "rozmeniť koncentráciu na konkrétnych dodávateľov; prepojiť s SK-BUYER-CONC"
+    realizovatelnost: "PO_DOPLNENI"
+    sk_zdroj: "CRZ"
+    sk_pole: ["category", "dod", "suma"]
+    dostupnost: "dobrá; limit = len zmluvy nad 100k (skresľuje malý trh)"
+    test: "NEOTESTOVANÉ"
+
+  - id: SK-COMBO-HIGHVALUE-RISKSUP
+    nazov: "Vysoká suma + riziková firma (nová alebo zahraničná)"
+    kategoria: "Kombinovaný signál"
+    zdovodnenie: >
+      Samostatná 'nová firma' či 'zahraničné sídlo' má veľa falošných poplachov.
+      V kombinácii s vysokou sumou je signál oveľa relevantnejší — toto je
+      základ budúceho rizikového skóre.
+    zdroj_metodiky: "Princíp kombinácie nezávislých indikátorov (OCP, OCCRP)."
+    potrebne_data: ["suma", "dod_vznik alebo dod_krajina"]
+    definicia: >
+      flag ak suma ≥ P90(suma v kategórii) A (SK-SUP-NEW alebo SK-SUP-FOREIGN)
+    porovnavacia_zakladna: "90. percentil súm v danej kategórii"
+    min_vzorka: "pre percentil: aspoň 10 zmlúv v kategórii"
+    aktivacia_ak: "suma známa A aspoň jeden rizikový pod-signál"
+    nepouzivat_ak: "chýba suma alebo oba pod-signály"
+    legitimne_vysvetlenia:
+      - "Veľký legitímny medzinárodný kontrakt (napr. IT systém)"
+    riziko_fp: "nižšie než jednotlivé signály (preto kombinácia)"
+    istota: "vyššia (dva nezávislé signály)"
+    kalibracia: "ladiť percentil a váhy; NEzdvojovať korelované signály"
+    zobrazenie: "zaradiť do pohľadu 'Podozrivé' + rizikové skóre"
+    odporucany_postup: "prioritne preveriť: RPVS, história firmy, postup zadania"
+    realizovatelnost: "HNED"
+    sk_zdroj: "CRZ + RPO"
+    sk_pole: ["suma", "category", "dod_vznik", "dod_krajina"]
+    dostupnost: "dobrá pre zmluvy s RPO zhodou"
+    test: "NEOTESTOVANÉ — toto je kandidát na prvý prototyp skóre"

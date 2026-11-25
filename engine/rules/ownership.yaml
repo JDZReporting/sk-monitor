@@ -1,0 +1,81 @@
+# =====================================================================
+# SK monitor — katalóg indikátorov: VLASTNÍCTVO A KONFLIKT ZÁUJMOV
+# Verzia 0.1 (2026-11-25). Zdroj dát: RPVS OData API (rpvs.gov.sk/opendatav2).
+# Realizovateľnosť závisí od pridania RPVS integrácie (engine/rpvs.py) a IČO
+# dodávateľa (z RPO) do collect.py. Preto PO_DOPLNENI (API aj logika sú hotové).
+# =====================================================================
+meta:
+  verzia: "0.1"
+  datum: "2026-11-25"
+  zdroj_dat: "RPVS OData v4 — rpvs.gov.sk/opendatav2 (oficiálne, MS SR)"
+  zavislost: "collect.py musí uložiť IČO dodávateľa (z RPO) → join na RPVS"
+
+indikatory:
+  - id: SK-OWN-PUBOFFICIAL
+    nazov: "Konečný užívateľ výhod dodávateľa je verejný činiteľ"
+    kategoria: "Konflikt záujmov"
+    zdovodnenie: >
+      Ak je skutočným vlastníkom firmy, ktorá berie verejné peniaze, verejný
+      činiteľ, ide o priamy signál konfliktu záujmov. RPVS to priamo označuje
+      poľom JeVerejnyCinitel.
+    zdroj_metodiky: "OCP (conflict of interest); zákon o RPVS 315/2016."
+    potrebne_data: ["IČO dodávateľa", "RPVS KÚV.JeVerejnyCinitel"]
+    definicia: "flag ak niektorý aktívny KÚV partnera má JeVerejnyCinitel=true"
+    riziko_fp: "nízke — RPVS to deklaruje priamo"
+    istota: "vysoká (oficiálny údaj), ale treba ľudské posúdenie kontextu"
+    legitimne_vysvetlenia: ["Verejný činiteľ v nesúvisiacej funkcii; historická väzba"]
+    zobrazenie: "SÚKROMNÝ režim (menuje osobu) — verejne až po ľudskom overení"
+    odporucany_postup: "overiť funkciu činiteľa vs predmet zákazky; časová súslednosť"
+    realizovatelnost: "PO_DOPLNENI (RPVS klient hotový, treba IČO join)"
+    test: "logika overená 2026-11-25 (derive_flags)"
+
+  - id: SK-OWN-FOREIGN-KUV
+    nazov: "Konečný užívateľ výhod so zahraničnou štátnou príslušnosťou"
+    kategoria: "Netransparentné vlastníctvo"
+    zdovodnenie: "Zahraničný skutočný vlastník sťažuje dohľadateľnosť; kontextový signál."
+    potrebne_data: ["RPVS KÚV.StatnaPrislusnost"]
+    definicia: "flag ak aktívny KÚV má StatnaPrislusnost != SR"
+    riziko_fp: "vysoké izolovane -> len kontext/kombinácia"
+    istota: "nízka samostatne"
+    realizovatelnost: "PO_DOPLNENI"
+    test: "logika overená 2026-11-25"
+
+  - id: SK-OWN-CHALLENGED
+    nazov: "Priznané vlastníctvo napadnuté kvalifikovaným podnetom"
+    kategoria: "Netransparentné vlastníctvo"
+    zdovodnenie: >
+      Kvalifikovaný podnet v RPVS znamená, že niekto spochybnil deklarovaných
+      konečných užívateľov výhod — silný signál na preverenie.
+    potrebne_data: ["RPVS KvalifikovanePodnety"]
+    definicia: "flag ak partner má aspoň 1 kvalifikovaný podnet"
+    riziko_fp: "nízke"
+    istota: "stredná až vysoká"
+    realizovatelnost: "PO_DOPLNENI"
+    test: "logika overená 2026-11-25"
+
+  - id: SK-OWN-NO-KUV
+    nazov: "Dodávateľ bez aktívneho konečného užívateľa výhod v RPVS"
+    kategoria: "Netransparentné vlastníctvo"
+    zdovodnenie: "Chýbajúci aktívny KÚV môže znamenať medzeru alebo neúplný zápis."
+    definicia: "flag ak partner existuje, ale nemá aktívny KÚV"
+    riziko_fp: "stredné (môže byť po výmaze/aktualizácii)"
+    istota: "nízka"
+    realizovatelnost: "PO_DOPLNENI"
+    test: "logika overená 2026-11-25"
+
+  - id: SK-OWN-SHARED
+    nazov: "Dvaja dodávatelia zdieľajú rovnakého konečného užívateľa výhod"
+    kategoria: "Kolúzia / prepojenie"
+    zdovodnenie: >
+      Ak dvaja formálne nezávislí dodávatelia (najmä súperi v tej istej súťaži
+      alebo u toho istého obstarávateľa) majú spoločného skutočného vlastníka,
+      je to klasický znak kartelu/nastrčenia (OCP R032/R033).
+    potrebne_data: ["RPVS KÚV pre viacerých dodávateľov"]
+    definicia: "prienik kuv_key(A) ∩ kuv_key(B) neprázdny pre dvojicu dodávateľov"
+    porovnavacia_zakladna: "dvojice dodávateľov u toho istého obstarávateľa / v tej istej súťaži"
+    riziko_fp: "nízke pri zhode dátumu narodenia; menu samotné môže byť zhoda mien"
+    istota: "vysoká pri zhode meno+priezvisko+dátum narodenia"
+    zobrazenie: "SÚKROMNÝ režim — prepojenie konkrétnych firiem/osôb"
+    odporucany_postup: "overiť, či boli uchádzači v tej istej súťaži; história"
+    realizovatelnost: "PO_DOPLNENI (treba RPVS pre viac dodávateľov + agregácia)"
+    test: "kuv_key() overené 2026-11-25"
