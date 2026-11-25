@@ -32,19 +32,32 @@ Stav zdrojov je strojovo sledovaný v `data/health.json` (stavy: `ok_fresh`, `ok
 - **Problém:** okolo júla 2026 pribudol na `nrsr.sk` **WAF**, ktorý blokuje automatizované requesty
   (prehliadač dáta vidí, serverový fetch dostane 4xx). Ostatné vládne weby (rokovania, ÚVO, Slov-Lex,
   CRZ) fungujú — blok je špecifický pre nrsr.sk.
-- **Rozhodnutie:** WAF **neobchádzame** (odporuje zásade projektu aj pravidlám). Hľadáme legitímne
-  strojovo-čitateľné alternatívy.
-- **Preskúmané alternatívy:**
-  - `api.parldata.eu/sk/nrsr` (KohoVolit.eu) — **mŕtve** (error page).
-  - `data.slovensko.sk` (Národný katalóg otvorených dát) — má JSON API (`POST /datasets/search`);
-    NR SR ako poskytovateľ zatiaľ nepotvrdený, treba hlbší prieskum facetov/poskytovateľov.
-  - Slov-Lex — funguje, pokrýva legislatívny proces a dokumenty (nie hlasovania poslancov ani výbory).
-- **Navrhovaná kombinácia (v riešení):** Slov-Lex (návrhy zákonov + proces + dokumenty + stav)
-  + rokovania.gov.sk (vládne návrhy) pre obnoviteľné jadro. Hlasovania poslancov, pozmeňujúce návrhy,
-  programy schôdzí a výbory nemajú zatiaľ otvorené rozhranie → (a) pokračovať v prieskume
-  data.slovensko.sk, (b) požiadať Kanceláriu NR SR o strojovo-čitateľný export/API.
+- **Potvrdená príčina (diagnostika z runnera 25.11.2026):** nrsr.sk vráti HTTP **200** so stránkou
+  `title = "Bot Detection"` (challenge, 0× odkaz na zákon). Teda nejde o IP-blok ani parser-bug, ale
+  o **systém detekcie botov**. Prekonať ho = obchádzanie detekcie botov → **nerobíme**. Dôsledok:
+  ani VPS (datacentrová IP) spoľahlivo nepomôže.
+- **Zaznamenané v health-checku:** `parlament.reason = "bot_detection"`, `expected_gap = true`;
+  pole `unexpected_down` ho nezahŕňa, takže platforma nehlási falošné „nezdravie", ale medzera je viditeľná.
+
+### Preskúmané alternatívy (stav k 25.11.2026)
+| # | Alternatíva | Pokrytie | Náklad/Autonómia | Stav | Záver |
+|---|---|---|---|---|---|
+| A | Priamy scrape nrsr.sk z Actions | úplné | zadarmo/plná | **bot-detection** | zamietnuté (obchádzanie) |
+| B | VPS / non-datacentrum | úplné | €/mes., réžia | datacentrová IP → tá istá detekcia; **neoverené** | neodporúčané |
+| C | Dátová spolupráca s parlamentsr.sk (base44) | úplné (vrátane hlasovaní) | zadarmo, závisí od súhlasu | SSR stránky čitateľné; **nescrapujeme bez dohody** | možné po dohode |
+| D | Slov-Lex — sledovanie legislatívnych procesov | čiastočné (návrhy+stav, bez hlasovaní) | zadarmo/plná | funguje z Actions | **použiteľné teraz (čiastočne)** |
+| E | rokovania.gov.sk (vládne návrhy) | čiastočné (vládna časť) | zadarmo/plná | funguje (zdroj `vlada`) | **už máme** |
+| F | Oficiálna žiadosť Kancelárii NR SR | úplné | zadarmo, závisí od úradu | pripravený návrh `NRSR_ziadost_o_data.md` | rezerva (user odložil) |
+| G | KohoVolit `scraper-sk_nrsr` | úplné kedysi | — | cieľ (parldata) mŕtvy; scraper narazí na tú istú detekciu | dead-end |
+
+- **Čo vieme získať hneď (autonómne, legitímne):** predparlamentná legislatíva (`mpk`/Slov-Lex),
+  vládne návrhy (`vlada`/rokovania). Rozšíriteľné o Slov-Lex sledovanie procesu (D) pre stav návrhov.
+- **Čo zatiaľ nevieme autonómne:** hlasovania jednotlivých poslancov, pozmeňujúce návrhy, výbory,
+  programy schôdzí — vyžadujú C (dohoda) alebo F (žiadosť).
 - **Odolnosť:** počas výpadku sa posledné platné parlamentné položky **nemažú** (prune sa pre
   degradovaný zdroj preskakuje) a stav je označený v health-checku.
+- **Roadmap:** parlamentné hlasovania/výbory = blokované detekciou botov na nrsr.sk; odomkne ich len
+  dohoda s držiteľom dát (C) alebo oficiálny prístup (F). Priebežne skúmať D (Slov-Lex proces).
 
 ## Monitoring funkčnosti
 - `data/health.json` sa generuje každým behom; hodnotí zdravie podľa **úspešnosti zberu** (počet

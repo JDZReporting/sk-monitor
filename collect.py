@@ -654,12 +654,18 @@ def main():
                           "newest_item": newest, "last_success": last_success,
                           "days_since_success": (days_old(last_success) if last_success else None),
                           "http": http, "reason": reason}
+        # parlament: nrsr.sk servíruje bot-detection challenge (nedá sa získať bez obchádzania) → dokumentovaná externá prekážka
+        if "parlament" in sources and PARL_DEBUG.get("challenge"):
+            sources["parlament"]["reason"] = "bot_detection"
+            sources["parlament"]["expected_gap"] = True
         bad = [s for s, v in sources.items() if v["status"] in ("down", "stale", "partial")]
+        unexpected = [s for s in bad if not sources[s].get("expected_gap")]
         health = {"generated": ISO, "sources": sources,
                   "degraded": sorted(list(degraded)),
                   "warnings": [s + "=" + sources[s]["status"] for s in bad],
+                  "unexpected_down": unexpected,
                   "parlament_debug": PARL_DEBUG,
-                  "ok": not bad}
+                  "ok": not unexpected}
         json.dump(health, open(os.path.join(DATA, "health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         json.dump({"generated": ISO, "sources": sources},
                   open(os.path.join(DATA, "source_health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
