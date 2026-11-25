@@ -1,0 +1,65 @@
+{
+ "generated": "2026-11-25",
+ "sources": {
+  "parlament": {
+   "status": "down",
+   "fetched": 0,
+   "in_store": 0,
+   "newest_item": "",
+   "last_success": "",
+   "days_since_success": null,
+   "http": 200,
+   "reason": "empty_or_parse"
+  },
+  "vlada": {
+   "status": "ok_no_new",
+   "fetched": 8,
+   "in_store": 15,
+   "newest_item": "2026-10-29",
+   "last_success": "2026-11-25",
+   "days_since_success": 0,
+   "http": 200,
+   "reason": ""
+  },
+  "uvo": {
+   "status": "ok_fresh",
+   "fetched": 120,
+   "in_store": 1790,
+   "newest_item": "2027-01-01",
+   "last_success": "2026-11-25",
+   "days_since_success": 0,
+   "http": 200,
+   "reason": ""
+  },
+  "mpk": {
+   "status": "ok_fresh",
+   "fetched": 20,
+   "in_store": 101,
+   "newest_item": "2026-11-24",
+   "last_success": "2026-11-25",
+   "days_since_success": 0,
+   "http": 200,
+   "reason": ""
+  },
+  "zmluvy": {
+   "status": "ok_fresh",
+   "fetched": 20,
+   "in_store": 303,
+   "newest_item": "2026-11-25",
+   "last_success": "2026-11-25",
+   "days_since_success": 0,
+   "http": 200,
+   "reason": ""
+  },
+  "kontrolne": {
+   "status": "down",
+   "fetched": 0,
+   "in_store": 0,
+   "newest_item": "",
+   "last_success": "",
+   "days_since_success": null,
+   "http": 200,
+   "reason": "empty_or_parse"
+  }
+ }
+}
