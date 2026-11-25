@@ -69,7 +69,10 @@ def run(store):
                               "dod": it.get("dod", ""), "suma": v, "date": it.get("date"),
                               "url": it.get("url", "")})
         contracts.sort(key=lambda c: c["suma"], reverse=True)
+        uniq_ka = {a.get("ka") for a in info["audity"] if a.get("ka")}
         links.append({"subjekt": info["nazov"], "pocet_auditov": len(info["audity"]),
+                      "pocet_unikatnych_kontrol": len(uniq_ka),           # SK-AUDIT-REPEAT
+                      "opakovana_kontrola": len(uniq_ka) >= 2,
                       "pocet_kontraktov": len(sp), "suma_spolu": round(total, 2),
                       "audity": info["audity"][:5], "kontrakty": contracts[:10]})
     links.sort(key=lambda x: (x["suma_spolu"], x["pocet_kontraktov"]), reverse=True)
@@ -85,8 +88,10 @@ def render_md(links):
         return "\n".join(out)
     out.append(f"**Nájdených prepojení: {len(links)}**\n")
     for L in links[:40]:
-        out.append(f"## {L['subjekt']}")
-        out.append(f"- Auditov NKÚ: {L['pocet_auditov']} · Kontraktov: {L['pocet_kontraktov']} · "
+        rep = " · 🔁 opakovaná kontrola" if L.get("opakovana_kontrola") else ""
+        out.append(f"## {L['subjekt']}{rep}")
+        out.append(f"- Kontrol NKÚ: {L.get('pocet_unikatnych_kontrol', L['pocet_auditov'])} · "
+                   f"Kontraktov: {L['pocet_kontraktov']} · "
                    f"Suma spolu: {L['suma_spolu']:,.0f} €".replace(",", " "))
         if L["audity"]:
             a = L["audity"][0]

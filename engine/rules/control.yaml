@@ -1,0 +1,133 @@
+# =====================================================================
+# SK monitor — katalóg investigatívnych indikátorov: KONTROLNÉ ZISTENIA (NKÚ)
+# Verzia: 0.1 (2026-11-25)
+# Zdroj dát: NKÚ oficiálne otvorené datasety (zoznam výsledkov kontrol,
+#   kontrolné zistenia, kontrolovateľné subjekty) — CC-BY, bez WAF.
+# Metodika: OECD/SAI integrity analytics; prepojenie kontrola → výdavky je
+#   vlastná adaptácia (links.py) na reálne SK dáta (NKÚ × CRZ × ÚVO).
+#
+# FILOZOFIA: ako pri obstarávaní — radšej málo OVERENÝCH indikátorov.
+# Polia podľa §27 (rovnaké ako procurement.yaml).
+# realizovatelnost: HNED | PO_DOPLNENI | EXTERNY_NASTROJ | NEREALIZOVATELNE
+# =====================================================================
+
+meta:
+  verzia: "0.1"
+  datum: "2026-11-25"
+  pocet_indikatorov: 3
+  pocet_realizovanych: 2
+  poznamka: >
+    Kontrolné zistenia sú pomalý/archívny zdroj (NKÚ dataset je kvartálny),
+    preto tieto indikátory nie sú o "čerstvosti", ale o PREPOJENÍ kontrol na
+    tok verejných peňazí. Prvý z nich (SK-AUDIT-SPENDER) je už REALIZOVANÝ a
+    otestovaný v engine/links.py.
+
+data_matrix:
+  mame_dnes:
+    - "Kontrolovaný subjekt (NKÚ) — pole overit/meta zdroja kontrolne"
+    - "Názov a číslo kontroly (KA-...) + dátum zverejnenia — title/meta/date"
+    - "Zmluvy subjektu ako objednávateľa — CRZ (meta: Objednávateľ)"
+    - "Zákazky subjektu ako obstarávateľa — ÚVO (meta: Obstarávateľ)"
+    - "Sumy zmlúv — CRZ (suma)"
+  chyba_nam:
+    - "Konkrétne sumy pokút/nápravných opatrení z kontrolného protokolu (sú v PDF, nie štruktúrovane)"
+    - "Prepojenie zistenia na KONKRÉTNU zmluvu (dataset uvádza subjekt, nie zmluvu)"
+    - "Koneční užívatelia výhod dodávateľov (RPVS — doskočí po doplnení dod_ico)"
+  dosledok: >
+    Vieme spoľahlivo spojiť KONTROLOVANÝ SUBJEKT s jeho verejnými výdavkami a
+    dodávateľmi (SK-AUDIT-SPENDER). Prepojenie na konkrétne zistenie v protokole
+    si vyžaduje spracovanie PDF (budúci Document modul).
+
+indikatory:
+
+  - id: SK-AUDIT-SPENDER
+    nazov: "Kontrolovaný subjekt (NKÚ), ktorý zároveň míňa verejné peniaze"
+    kategoria: "Kontrola × výdavky"
+    zdovodnenie: >
+      Subjekt, ktorý NKÚ zaradil do kontroly A zároveň uzatvára zmluvy /
+      vypisuje zákazky, spája dva nezávislé verejné signály: kontrolný záujem
+      štátu a reálny tok peňazí. Prioritizuje, kam sa investigatívne pozrieť.
+    zdroj_metodiky: "Vlastná adaptácia (NKÚ × CRZ/ÚVO); princíp krížového prepojenia zdrojov (OCCRP/ICIJ)."
+    potrebne_data: ["kontrolovaný subjekt", "objednávateľ/obstarávateľ", "suma"]
+    definicia: >
+      normalizuj názov subjektu; ak sa kontrolovaný subjekt (NKÚ) zhoduje s
+      objednávateľom (CRZ) alebo obstarávateľom (ÚVO), vytvor prepojenie so
+      zoznamom kontraktov, dodávateľov a sumou spolu.
+    porovnavacia_zakladna: "absolútne (existencia prekryvu); priorita podľa sumy spolu"
+    min_vzorka: "nie je potrebná (per-subjekt)"
+    aktivacia_ak: "subjekt má aspoň 1 NKÚ kontrolu A aspoň 1 zmluvu/zákazku ako kupujúci"
+    nepouzivat_ak: "nejednoznačná zhoda názvu (rôzne subjekty rovnakého mena) — označiť na overenie"
+    legitimne_vysvetlenia:
+      - "Bežná prevádzka — kontrolované subjekty (obce, kraje, ministerstvá) štandardne obstarávajú"
+      - "Kontrola nesúvisí s danými zmluvami"
+    riziko_fp: "nízke pre samotné PREPOJENIE (je to fakt), vysoké pre akýkoľvek záver — nutné ľudské posúdenie"
+    istota: "vysoká pre fakt prepojenia; žiadna pre vinu"
+    kalibracia: "sledovať chybné zhody názvov; sprísniť normalizáciu (právne formy, pobočky)"
+    zobrazenie: "súkromný digest findings/kontrolne_vydavky.md (sentinel); NEpublikovať tvrdenia bez overenia"
+    odporucany_postup: "otvoriť kontrolný protokol (PDF), porovnať so zmluvami daného obdobia, preveriť dodávateľov v RPVS"
+    realizovatelnost: "REALIZOVANÉ (engine/links.py)"
+    sk_zdroj: "NKÚ dataset + CRZ + ÚVO"
+    sk_pole: ["overit", "meta", "suma", "dod", "source"]
+    dostupnost: "dobrá (127 kontrol × 303 zmlúv × 1794 zákaziek v aktuálnom okne)"
+    test: >
+      OTESTOVANÉ 2026-11-25 na reálnom store.json: 56 prepojení. Napr.
+      Ministerstvo hospodárstva SR (kontrola EXPO 2025 Osaka, KA-016/2026) ×
+      21,96 M€ zmlúv; samosprávne kraje (Prešovský, Nitriansky, Košický).
+
+  - id: SK-AUDIT-REPEAT
+    nazov: "Opakovane kontrolovaný subjekt"
+    kategoria: "Kontrola × výdavky"
+    zdovodnenie: >
+      Subjekt s viacerými NKÚ kontrolami v krátkom čase môže signalizovať
+      pretrvávajúce problémy s hospodárením; v kombinácii s výdavkami zvyšuje prioritu.
+    zdroj_metodiky: "SAI integrity (opakované pochybenia); OECD."
+    potrebne_data: ["kontrolovaný subjekt", "počet kontrol", "dátumy"]
+    definicia: "flag ak počet rôznych kontrol (KA-...) pre subjekt ≥ 2 v okne"
+    porovnavacia_zakladna: "počet kontrol per subjekt vs medián"
+    min_vzorka: "nie je potrebná"
+    aktivacia_ak: "subjekt má ≥2 rôzne čísla kontroly"
+    nepouzivat_ak: "jedna kontrola rozdelená na viac dokumentov (deduplikovať podľa KA)"
+    legitimne_vysvetlenia:
+      - "Veľký subjekt štandardne podlieha viacerým kontrolám"
+      - "Plánované tematické kontroly, nie podozrenie"
+    riziko_fp: "stredné"
+    istota: "nízka až stredná (kontextový signál)"
+    kalibracia: "deduplikovať podľa čísla KA; normalizovať názov"
+    zobrazenie: "súkromný digest + profil subjektu"
+    odporucany_postup: "pozrieť, či kontroly smerujú k rovnakej oblasti (napr. verejné obstarávanie)"
+    realizovatelnost: "REALIZOVANÉ (engine/links.py — pocet_unikatnych_kontrol, opakovana_kontrola)"
+    sk_zdroj: "NKÚ dataset"
+    sk_pole: ["overit", "meta (KA číslo)", "date"]
+    dostupnost: "dobrá"
+    test: >
+      OTESTOVANÉ 2026-11-25 na reálnom store.json: 4 opakovane kontrolované
+      subjekty, napr. Nitriansky samosprávny kraj (2 kontroly, 7,1 M€ zmlúv)."
+
+  - id: SK-AUDIT-SUPPLIER-RISK
+    nazov: "Kontrolovaný subjekt platí rizikového dodávateľa"
+    kategoria: "Kontrola × riziko dodávateľa"
+    zdovodnenie: >
+      Najsilnejší kombinovaný signál: subjekt pod kontrolou NKÚ posiela verejné
+      peniaze dodávateľovi, ktorý je nová firma, má zahraničné sídlo, alebo (po
+      doplnení RPVS) má medzi konečnými užívateľmi výhod verejného činiteľa.
+    zdroj_metodiky: "Kombinácia nezávislých indikátorov (OCP, OCCRP); RPVS pre KÚV."
+    potrebne_data: ["prepojenie SK-AUDIT-SPENDER", "dod_vznik/dod_krajina alebo RPVS KÚV"]
+    definicia: >
+      pre prepojenie SK-AUDIT-SPENDER: flag dodávateľov, ktorí sú SK-SUP-NEW
+      alebo SK-SUP-FOREIGN (alebo KÚV = verejný činiteľ, keď bude RPVS napojené)
+    porovnavacia_zakladna: "per-dodávateľ rizikové príznaky"
+    min_vzorka: "nie je potrebná"
+    aktivacia_ak: "existuje prepojenie A dodávateľ má aspoň jeden rizikový príznak"
+    nepouzivat_ak: "chýbajú RPO/RPVS dáta o dodávateľovi — nehádať"
+    legitimne_vysvetlenia:
+      - "Rizikový príznak má legitímne vysvetlenie (pozri SK-SUP-NEW/FOREIGN)"
+    riziko_fp: "nižšie (viac nezávislých signálov), ale stále nutné overenie"
+    istota: "stredná až vyššia (3 nezávislé signály); nikdy nie dôkaz"
+    kalibracia: "ladiť váhy; nezdvojovať korelované signály; RPVS KÚV má najvyššiu váhu"
+    zobrazenie: "súkromné rizikové skóre + case file (sentinel), len po ľudskom overení do verejnej vrstvy"
+    odporucany_postup: "RPVS KÚV dodávateľa, história firmy, protokol NKÚ, časová súslednosť zmlúv"
+    realizovatelnost: "PO_DOPLNENI (potrebuje dod_ico → RPVS; backfill prebieha)"
+    sk_zdroj: "NKÚ + CRZ/ÚVO + RPO + RPVS"
+    sk_pole: ["overit", "dod", "dod_vznik", "dod_krajina", "dod_ico"]
+    dostupnost: "čiastočná teraz (RPO príznaky), plná po naplnení dod_ico a RPVS vrstve"
+    test: "NEOTESTOVANÉ — závisí od RPVS vrstvy (dod_ico backfill)"
