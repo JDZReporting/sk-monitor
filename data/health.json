@@ -24,7 +24,7 @@
   "uvo": {
    "status": "ok_fresh",
    "fetched": 120,
-   "in_store": 1790,
+   "in_store": 1791,
    "newest_item": "2027-01-01",
    "last_success": "2026-11-25",
    "days_since_success": 0,
@@ -52,23 +52,21 @@
    "reason": ""
   },
   "kontrolne": {
-   "status": "down",
-   "fetched": 0,
-   "in_store": 0,
-   "newest_item": "",
-   "last_success": "",
-   "days_since_success": null,
+   "status": "ok_no_new",
+   "fetched": 131,
+   "in_store": 127,
+   "newest_item": "2026-09-25",
+   "last_success": "2026-11-25",
+   "days_since_success": 0,
    "http": 200,
-   "reason": "empty_or_parse"
+   "reason": ""
   }
  },
  "degraded": [
-  "kontrolne",
   "parlament"
  ],
  "warnings": [
-  "parlament=down",
-  "kontrolne=down"
+  "parlament=down"
  ],
  "ok": false
 }
