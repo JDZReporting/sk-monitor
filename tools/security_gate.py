@@ -19,7 +19,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ALLOWED_PATH_GLOBS = [
     "CLAUDE.md", "PROGRAM.md", "SETUP.md", "README.md", ".gitignore",
     "requirements.txt", "daily.yml", "config.json", "feeds.json", "collect.py",
-    "DEV_ENVIRONMENT.md",
+    "DEV_ENVIRONMENT.md", "DATA_SOURCES.md",
     ".github/workflows/*.yml",
     "tools/*.py", "tools/*.sh",
     "engine/*.py", "engine/**/*.py", "engine/**/*.yaml", "engine/**/*.yml",

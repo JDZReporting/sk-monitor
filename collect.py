@@ -33,9 +33,20 @@ def norm(s):
     s = unicodedata.normalize("NFKD", (s or "").lower())
     return "".join(c for c in s if not unicodedata.combining(c))
 
+LAST_STATUS = {}   # netloc -> posledný HTTP status (diagnostika zdravia zdrojov)
+_SRC_HOST = {"parlament": "www.nrsr.sk", "vlada": "rokovania.gov.sk", "uvo": "www.uvo.gov.sk",
+             "mpk": "vyhladavanie.slov-lex.sk", "zmluvy": "www.crz.gov.sk", "kontrolne": "www.nku.gov.sk"}
+
 def get(url):
-    try: return requests.get(url, headers=UA, timeout=45).text
-    except Exception: return ""
+    try:
+        r = requests.get(url, headers=UA, timeout=45)
+        try: LAST_STATUS[urllib.parse.urlparse(url).netloc] = r.status_code
+        except Exception: pass
+        return r.text
+    except Exception:
+        try: LAST_STATUS[urllib.parse.urlparse(url).netloc] = "ERR"
+        except Exception: pass
+        return ""
 
 def kategoria(text):
     n = norm(text)
@@ -369,14 +380,58 @@ def collect_mpk():
                     "url": link})
     return out
 
-def collect_kontrolne(days=None):
-    """Kontrolné/dozorné úrady — OFICIÁLNE RSS feedy (NKÚ, PMÚ…) z ich webov. Žiadne médiá."""
-    days = ARCHIV_DNI if days is None else days
+def _kontrolne_nku(days):
+    """NKÚ — OFICIÁLNY otvorený dataset 'Zoznam výsledkov kontrol' (JSON, bez WAF) z nku.gov.sk/datasety.
+    Pole: Subjekt (kontrolovaný), Popis, CisloKA, Zverejneny (DD.MM.YYYY), LinkaURLNaDokument."""
     out = []
+    page = get("https://www.nku.gov.sk/datasety")
+    if not page:
+        return out
+    # nájdi najnovší odkaz na JSON 'zoznam_vysledkov_kontrol_YYYYMMDD'
+    cands = re.findall(r'href="([^"]*zoznam_vysledkov_kontrol[^"]*\.json[^"]*)"', page)
+    if not cands:
+        return out
+    def _snap(u):
+        m = re.search(r"zoznam_vysledkov_kontrol_(\d{8})", u); return m.group(1) if m else "0"
+    url = html.unescape(sorted(cands, key=_snap, reverse=True)[0])
+    if url.startswith("/"):
+        url = "https://www.nku.gov.sk" + url
+    raw = get(url)
+    if not raw:
+        return out
+    try:
+        data = json.loads(raw)
+    except Exception:
+        return out
+    recs = data.get("items") if isinstance(data, dict) else (data if isinstance(data, list) else [])
+    for r in recs or []:
+        subj = (r.get("Subjekt") or "").strip()
+        popis = (r.get("Popis") or "").strip()
+        cislo = (r.get("CisloKA") or "").strip()
+        dz = parse_sk_date((r.get("Zverejneny") or "").strip())
+        link = (r.get("LinkaURLNaDokument") or "").strip()
+        if not (subj or popis):
+            continue
+        if dz and days_old(dz) > days:
+            continue
+        title = (popis or ("Kontrola NKÚ: " + subj))[:300]
+        out.append({"id": "k-nku-" + hashlib.md5((cislo + "|" + subj + "|" + popis).encode()).hexdigest()[:12],
+                    "source": "kontrolne", "title": title, "date": dz,
+                    "category": kategoria(popis + " " + subj), "blok": "",
+                    "meta": "NKÚ · kontrolovaný subjekt: " + subj + (" · " + cislo if cislo else ""),
+                    "overit": subj,
+                    "url": link or "https://www.nku.gov.sk/informovanie-sa-o-kontrolnych-zisteniach"})
+    return out
+
+def collect_kontrolne(days=None):
+    """Kontrolné/dozorné úrady — OFICIÁLNE OTVORENÉ DÁTA.
+    Primár: NKÚ dataset 'výsledky kontrol' (nku.gov.sk/datasety). Doplnok: RSS feedy z feeds.json (ak fungujú). Žiadne médiá."""
+    days = ARCHIV_DNI if days is None else days
+    out = list(_kontrolne_nku(days))
     try:
         feeds = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
     except Exception:
-        return out
+        feeds = []
     for f in feeds:
         rss = f.get("rss")
         if not rss:
@@ -446,11 +501,19 @@ def main():
     by_id = {it["id"]: it for it in store.get("items", [])}
     firmy = store.get("firmy", {})   # cache: normalizovaný názov firmy -> {'vznik': dátum}
     fetched = []
-    try: fetched += collect_nrsr()
-    except Exception as e: print("WARN nrsr", e)
-    for fn in (collect_vlada, collect_uvo, collect_mpk, collect_crz, collect_kontrolne):
-        try: fetched += fn()
-        except Exception as e: print("WARN", fn.__name__, e)
+    src_counts = {}   # počet položiek vrátených ZBEROM tento beh (zdravie podľa zberu, nie podľa store.json)
+    def _run(name, fn):
+        try:
+            got = fn() or []
+        except Exception as e:
+            print("WARN", name, e); got = []
+        src_counts[name] = src_counts.get(name, 0) + len(got)
+        return got
+    fetched += _run("parlament", collect_nrsr)
+    for nm, fn in (("vlada", collect_vlada), ("uvo", collect_uvo), ("mpk", collect_mpk),
+                   ("zmluvy", collect_crz), ("kontrolne", collect_kontrolne)):
+        fetched += _run(nm, fn)
+    degraded = {s for s in ("parlament", "vlada", "uvo", "mpk", "zmluvy", "kontrolne") if src_counts.get(s, 0) == 0}
     new = 0
     for it in fetched:
         if it["id"] in by_id:
@@ -464,18 +527,21 @@ def main():
     ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "mpk", "kontrolne")
     items = [it for it in items if it["source"] in ZNAME]
     # prune: ÚVO + zmluvy + MPK + kontrolné staršie ako archív (30 dní) zmazať
-    items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy", "kontrolne") and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
-    # kontrolné: ponechaj len položky z OFICIÁLNYCH domén (feeds.json) — vyčisti staré mediálne (Google News) zvyšky
+    # ODOLNOSŤ: zdroj, ktorý tento beh nič nevrátil (degraded), NEprunujeme — zachováme posledné platné dáta
+    items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy", "kontrolne")
+             and it["source"] not in degraded and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
+    # kontrolné: ponechaj len položky z OFICIÁLNYCH domén (NKÚ dataset + feeds.json) — vyčisti staré mediálne zvyšky
     try:
         _kf = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
         _kdoms = [urllib.parse.urlparse(f.get("rss", "")).netloc for f in _kf if f.get("rss")]
     except Exception:
         _kdoms = []
-    if _kdoms:
-        items = [it for it in items if it["source"] != "kontrolne" or any(d and d in it.get("url", "") for d in _kdoms)]
+    _kdoms = [d for d in _kdoms if d] + ["nku.gov.sk"]
+    items = [it for it in items if it["source"] != "kontrolne" or any(d in it.get("url", "") for d in _kdoms)]
     # prune: parlament/vláda, ktoré už vypadli z aktuálneho zoznamu (naposledy videné pred >slow_keep dňami)
     slow_keep = int(CFG.get("slow_keep_dni", 21))
-    items = [it for it in items if not (it["source"] in ("parlament", "vlada") and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
+    items = [it for it in items if not (it["source"] in ("parlament", "vlada") and it["source"] not in degraded
+             and days_old(it.get("last_seen") or it.get("first_seen") or ISO) > slow_keep)]
     # migrácia: starý názov kategórie -> nové (Samospráva / Verejná správa) podľa titulku
     for it in items:
         if it.get("category") == "Verejná správa a samospráva":
@@ -530,15 +596,54 @@ def main():
     store = {"items": items, "updated": ISO, "firmy": firmy}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
-    # HEALTH-CHECK: zviditeľní tichý výpadok zdroja (napr. parlament=0)
-    hc = {}
-    for it in items:
-        hc[it["source"]] = hc.get(it["source"], 0) + 1
-    hc_expected = ["parlament", "vlada", "uvo", "mpk", "zmluvy", "kontrolne"]
-    hc_warn = [s + "=0 (mozny vypadok zdroja)" for s in hc_expected if hc.get(s, 0) == 0]
-    json.dump({"generated": ISO, "counts": hc, "warnings": hc_warn},
-              open(os.path.join(DATA, "health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
-    print(("HEALTH VAROVANIE: " + "; ".join(hc_warn)) if hc_warn else ("HEALTH OK: " + str(hc)))
+    # HEALTH-CHECK v2: stav zdroja podľa ZBERU (nie podľa počtu v store.json).
+    # Stavy: ok_fresh (funkčný+aktuálny), ok_no_new (funkčný bez nových), partial (čiastočný),
+    #        down (nefunkčný – nedávny výpadok), stale (dlhodobo neaktuálny). Perzistuje last_success.
+    try:
+        FRESH_DNI = int(CFG.get("fresh_dni", 14))
+        STALE_DNI = int(CFG.get("stale_dni", 45))
+        try:
+            prev_h = json.load(open(os.path.join(DATA, "source_health.json"), encoding="utf-8")).get("sources", {})
+        except Exception:
+            prev_h = {}
+        sources = {}
+        for s in ("parlament", "vlada", "uvo", "mpk", "zmluvy", "kontrolne"):
+            got = src_counts.get(s, 0)
+            in_store = sum(1 for it in items if it.get("source") == s)
+            dates = [it.get("date") for it in items if it.get("source") == s and it.get("date")]
+            newest = max(dates) if dates else ""
+            prev = prev_h.get(s, {})
+            prev_got = int(prev.get("fetched", 0) or 0)
+            http = LAST_STATUS.get(_SRC_HOST.get(s, ""))
+            if got > 0:
+                if prev_got >= 10 and got < max(3, int(0.3 * prev_got)):
+                    status = "partial"
+                elif newest and days_old(newest) <= FRESH_DNI:
+                    status = "ok_fresh"
+                else:
+                    status = "ok_no_new"
+                last_success = ISO
+                reason = ""
+            else:
+                last_success = prev.get("last_success", "") or ""
+                dss = days_old(last_success) if last_success else None
+                status = "stale" if (dss is not None and dss > STALE_DNI) else "down"
+                reason = ("http_%s" % http) if (http not in (None, 200)) else "empty_or_parse"
+            sources[s] = {"status": status, "fetched": got, "in_store": in_store,
+                          "newest_item": newest, "last_success": last_success,
+                          "days_since_success": (days_old(last_success) if last_success else None),
+                          "http": http, "reason": reason}
+        bad = [s for s, v in sources.items() if v["status"] in ("down", "stale", "partial")]
+        health = {"generated": ISO, "sources": sources,
+                  "degraded": sorted(list(degraded)),
+                  "warnings": [s + "=" + sources[s]["status"] for s in bad],
+                  "ok": not bad}
+        json.dump(health, open(os.path.join(DATA, "health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        json.dump({"generated": ISO, "sources": sources},
+                  open(os.path.join(DATA, "source_health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        print("HEALTH:", {s: sources[s]["status"] for s in sources})
+    except Exception as e:
+        print("WARN health-check", e)
 
     # panel: všetky zdroje jednotne za posledných PANEL_DNI dní (7)
     def _age(it): return days_old(it.get("date") or it.get("first_seen") or ISO)
