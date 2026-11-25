@@ -19,7 +19,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(ROOT, "data"); DOCS = os.path.join(ROOT, "docs")
 os.makedirs(DATA, exist_ok=True); os.makedirs(DOCS, exist_ok=True)
 CFG = json.load(open(os.path.join(ROOT, "config.json"), encoding="utf-8"))
-UA = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36", "Accept-Language": "sk"}
+UA = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36",
+      "Accept-Language": "sk,en;q=0.8",
+      "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
+      "Accept-Encoding": "gzip, deflate"}
 TODAY = datetime.date.today()
 ISO = TODAY.isoformat()
 NOW_TS = datetime.datetime.now(datetime.timezone.utc).isoformat()
@@ -526,6 +529,16 @@ def main():
     print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY, "| RPO firiem overených:", rpo_done)
     store = {"items": items, "updated": ISO, "firmy": firmy}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+
+    # HEALTH-CHECK: zviditeľní tichý výpadok zdroja (napr. parlament=0)
+    hc = {}
+    for it in items:
+        hc[it["source"]] = hc.get(it["source"], 0) + 1
+    hc_expected = ["parlament", "vlada", "uvo", "mpk", "zmluvy", "kontrolne"]
+    hc_warn = [s + "=0 (mozny vypadok zdroja)" for s in hc_expected if hc.get(s, 0) == 0]
+    json.dump({"generated": ISO, "counts": hc, "warnings": hc_warn},
+              open(os.path.join(DATA, "health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+    print(("HEALTH VAROVANIE: " + "; ".join(hc_warn)) if hc_warn else ("HEALTH OK: " + str(hc)))
 
     # panel: všetky zdroje jednotne za posledných PANEL_DNI dní (7)
     def _age(it): return days_old(it.get("date") or it.get("first_seen") or ISO)
