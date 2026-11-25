@@ -76,7 +76,7 @@ def _je_firma(name):
     return any(x in ln for x in (" s r o", " a s", "spol", "druzstv", " k s", " v o s", "nadacia", "obcianske zdruz", " n o"))
 
 def rpo_info(name):
-    """Z RPO (Štatistický úrad SR): {'vznik': dátum, 'krajina': krajina sídla} pre jednoznačnú AKTÍVNu firmu; {} inak."""
+    """Z RPO (Štatistický úrad SR): {'vznik': dátum, 'krajina': krajina sídla, 'ico': IČO} pre jednoznačnú AKTÍVNu firmu; {} inak."""
     try:
         r = requests.get("https://api.statistics.sk/rpo/v1/search", params={"fullName": name}, headers=UA, timeout=30)
         data = r.json()
@@ -94,6 +94,10 @@ def rpo_info(name):
             addr = next((a for a in addrs if not a.get("validTo")), (addrs[0] if addrs else None))
             if addr and isinstance(addr.get("country"), dict):
                 out["krajina"] = addr["country"].get("value", "")
+            ids = e.get("identifiers", [])
+            ident = next((i for i in ids if not i.get("validTo")), (ids[0] if ids else None))
+            if ident and ident.get("value"):
+                out["ico"] = re.sub(r"\s", "", str(ident["value"]))  # spojka na RPVS/OData
             return out
     return {}
 
@@ -241,7 +245,7 @@ def fetch_uvo_detail(url):
     def g(p):
         m = re.search(p, txt); return m.group(1).strip() if m else ""
     out["stav"] = g(r"Stav zákazky:\s*(\S+)")
-    out["druh"] = g(r"Druh zákazky:\s*(\S+)")
+    out["druh"] = g(r"Druh zákazky:\s*(Tovary|Pr[áa]ce|Slu[žz]by)")  # len reálne hodnoty (fix: predtým chytalo label 'Druh')
     out["fondy"] = g(r"fondov E[ÚU]:\s*(\S+)")
     m = re.search(r"CPV zákazky:\s*[0-9-]+\s+(.+?)\s+NUTS", txt)
     if m: out["cpv"] = m.group(1).strip()[:70]
@@ -500,6 +504,8 @@ def main():
                 it["dod_vznik"] = info["vznik"]
             if info.get("krajina"):
                 it["dod_krajina"] = info["krajina"]
+            if info.get("ico"):
+                it["dod_ico"] = info["ico"]  # spojka na RPVS (súkromný engine)
         if s == "parlament" and it.get("url"):
             ns = fetch_stav(it["url"])
             if ns and ns != it.get("stav"):

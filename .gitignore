@@ -1,0 +1,15 @@
+# === SK monitor — oddelenie verejného a súkromného ===
+# docs/ je verejný GitHub Pages priečinok. Interné podklady doň nepatria:
+/docs/sources/
+/docs/research/
+/docs/private/
+
+# Interné investigatívne materiály (mimo Pages) — necommitovať do verejného repa:
+/research/
+/private/
+/engine/_work/
+
+# Python / OS
+__pycache__/
+*.pyc
+.DS_Store
