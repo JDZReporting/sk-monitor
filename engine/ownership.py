@@ -51,13 +51,25 @@ def _recent(dstr, months=12):
     d = _d(dstr)
     return bool(d and (TODAY - d).days <= months * 31)
 
+def _rpo_query(session, name):
+    r = session.get(RPO, params={"fullName": name}, headers=UA, timeout=25)
+    return r.status_code, r.json()
+
 def rpo_full(session, name):
-    """RPO: {ico, vznik, krajina, mena[], sidla[], current_name} pre jednoznačnú aktívnu firmu; {} inak."""
-    try:
-        r = session.get(RPO, params={"fullName": name}, headers=UA, timeout=25)
-        data = r.json()
-    except Exception:
-        return {}
+    """RPO: {ico, vznik, krajina, mena[], sidla[], current_name} pre jednoznačnú aktívnu firmu; {} inak.
+    Skúsi plný názov, potom očistený variant (bez právnej formy) — RPO fullName je prísny."""
+    data, status = {}, None
+    variants = [name, re.sub(r",?\s*(k\.?\s?s\.?|a\.?\s?s\.?|s\.?\s?r\.?\s?o\.?|spol\.?\s*s\s*r\.?\s?o\.?)\s*$", "", name, flags=re.I).strip()]
+    for v in [x for i, x in enumerate(variants) if x and x not in variants[:i]]:
+        try:
+            status, data = _rpo_query(session, v)
+        except Exception as e:
+            data = {"_err": str(e)[:60]}; continue
+        if data.get("results"):
+            break
+        time.sleep(0.2)
+    if not isinstance(data, dict) or not data.get("results"):
+        return {"_status": status} if status else (data if data.get("_err") else {})
     for e in data.get("results", []):
         if e.get("termination"):
             continue
@@ -139,6 +151,7 @@ def run(store, max_firiem=30, sleep=0.35):
                                 "verejny_cinitel": bool(k.get("JeVerejnyCinitel")),
                                 "od": (k.get("PlatnostOd") or "")[:10]})
         flags = rflags + oflags
+        print(f"DBG {name[:36]:36} | ico={ico or '-':>9} | pvs={'A' if partner else '-'} | rpo_status={rpo.get('_status', rpo.get('_err',''))} | {flags}")
         out.append({"subjekt": name, "ico": ico, "suma_zmluv": round(a["suma"], 2),
                     "pocet_zmluv": a["n"], "najnovsia_zmluva": a["newest"],
                     "krajina": rpo.get("krajina", ""), "vznik": rpo.get("vznik", ""),
