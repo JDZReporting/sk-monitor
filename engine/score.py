@@ -36,7 +36,7 @@ def parse_suma(s):
     except ValueError: return None
 
 _STATE_SUPPLIER = ("\u0161t\u00e1tny fond", "fond rozvoja b\u00fdvania", "slovensk\u00e1 z\u00e1ru\u010dn\u00e1",
-                  "environment\u00e1lny fond", "slovensk\u00fd pozemkov\u00fd fond")
+                  "environment\u00e1lny fond", "slovensk\u00fd pozemkov\u00fd fond", "ministerstvo", "\u00farad vl\u00e1dy", "slovensk\u00e1 inova\u010dn\u00e1")
 def is_state_supplier(name):
     n = (name or "").lower()
     return any(k in n for k in _STATE_SUPPLIER)

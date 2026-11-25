@@ -627,6 +627,7 @@ details.cats{margin-top:2px}details.cats summary{cursor:pointer;font-size:12px;c
     <button class="mini" onclick="preset('samo')">🏘️ Samospráva</button>
     <button class="mini" onclick="preset('hival')">💶 Nad 1 mil. €</button>
     <button class="mini" onclick="preset('dnes')">📅 Dnes</button>
+    <button class="mini" onclick="preset('susp')">⚠️ Podozrivé</button>
     <button class="mini" onclick="preset('reset')">↺ Zrušiť filtre</button>
   </div>
   <div class="row"><span class="small">Pohľad:</span>
@@ -679,7 +680,7 @@ function watchSummary(){
  return rows?`<div class="wbox"><div class="wsum-h">Prepojenia sledovaných (za posledných 7 dní):</div>${rows}</div>`:'';
 }
 function saveState(){try{localStorage.setItem('skmon',JSON.stringify({w:document.getElementById('watch').value,o:document.getElementById('onlywatch').checked,t:TAB}));}catch(e){}}
-let HIVAL=false, DNES=false;
+let HIVAL=false, DNES=false, SUSP=false;
 function sumaNum(s){const m=(s||'').replace(/\s/g,'').match(/([0-9]+(?:[.,][0-9]+)?)/);return m?parseFloat(m[1].replace(',','.')):0;}
 function preset(p){
  const cb=[...document.querySelectorAll('#cats input')];
@@ -687,7 +688,8 @@ function preset(p){
  else if(p==='samo'){cb.forEach(e=>e.checked=(e.value==='Samospráva'));}
  else if(p==='hival'){HIVAL=!HIVAL;}
  else if(p==='dnes'){DNES=!DNES;}
- else if(p==='reset'){cb.forEach(e=>e.checked=true);HIVAL=false;DNES=false;document.getElementById('onlywatch').checked=false;document.getElementById('q').value='';}
+ else if(p==='susp'){SUSP=!SUSP;}
+ else if(p==='reset'){cb.forEach(e=>e.checked=true);HIVAL=false;DNES=false;SUSP=false;document.getElementById('onlywatch').checked=false;document.getElementById('q').value='';}
  saveState();render();
 }
 function toast(msg){const el=document.getElementById('toast');el.textContent=msg;el.style.opacity='1';clearTimeout(el._t);el._t=setTimeout(()=>{el.style.opacity='0';},2600);}
@@ -698,7 +700,7 @@ function shareView(){
  if(document.getElementById('onlywatch').checked)p.set('o','1');
  const q=document.getElementById('q').value.trim(); if(q)p.set('q',q);
  if(TAB&&TAB!=='novinky')p.set('tab',TAB);
- if(HIVAL)p.set('hv','1'); if(DNES)p.set('dn','1');
+ if(HIVAL)p.set('hv','1'); if(DNES)p.set('dn','1'); if(SUSP)p.set('su','1');
  if(off.length)p.set('off',off.join('~'));
  location.hash=p.toString();
  const url=location.href;
@@ -722,7 +724,7 @@ function applyHash(){
  document.getElementById('onlywatch').checked=(p.get('o')==='1');
  if(p.has('q'))document.getElementById('q').value=p.get('q');
  if(p.has('tab'))TAB=p.get('tab');
- HIVAL=(p.get('hv')==='1'); DNES=(p.get('dn')==='1');
+ HIVAL=(p.get('hv')==='1'); DNES=(p.get('dn')==='1'); SUSP=(p.get('su')==='1');
  if(p.has('off')){const off=p.get('off').split('~');[...document.querySelectorAll('#cats input')].forEach(e=>{e.checked=!off.includes(e.value);});}
  return true;
 }
@@ -731,6 +733,7 @@ function hoursSince(ts){if(!ts)return 1e9;const t=new Date(ts);if(isNaN(t))retur
 function relDate(d){const dd=ageDays(d);if(dd<=0)return'dnes';if(dd===1)return'včera';if(dd<7)return'pred '+dd+' dňami';return d;}
 function isNew(it){return hoursSince(it.fs)<=12;}
 function isNova(it){if(!it.vznik)return false;const d=(Date.now()-new Date(it.vznik).getTime())/86400000;return d>=0 && d<365;}
+function isSusp(it){return isNova(it)||(it.krajina && it.krajina!=='Slovenská republika');}
 function dayLabel(d){const dd=ageDays(d);if(dd<=0)return'Dnes';if(dd===1)return'Včera';const D=new Date(d);return D.toLocaleDateString('sk-SK',{weekday:'long',day:'numeric',month:'long'});}
 function card(it){
  const w=isWatched(it);
@@ -756,6 +759,7 @@ function baseFilter(){
   if(only && !isWatched(it))return false;
   if(HIVAL && sumaNum(it.suma) < 1000000)return false;
   if(DNES && ageDays(it.date) > 0)return false;
+  if(SUSP && !isSusp(it))return false;
   if(q){const txt=((it.h||'')+' '+(it.full||'')+' '+(it.info||'')+' '+it.category).toLowerCase();if(!txt.includes(q))return false;}
   return true;
  });
