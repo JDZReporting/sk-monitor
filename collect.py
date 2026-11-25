@@ -34,6 +34,7 @@ def norm(s):
     return "".join(c for c in s if not unicodedata.combining(c))
 
 LAST_STATUS = {}   # netloc -> posledný HTTP status (diagnostika zdravia zdrojov)
+PARL_DEBUG = {}    # jednorazová diagnostika: čo runner reálne dostane z nrsr.sk
 _SRC_HOST = {"parlament": "www.nrsr.sk", "vlada": "rokovania.gov.sk", "uvo": "www.uvo.gov.sk",
              "mpk": "vyhladavanie.slov-lex.sk", "zmluvy": "www.crz.gov.sk", "kontrolne": "www.nku.gov.sk"}
 
@@ -303,7 +304,21 @@ def days_old(iso):
 def collect_nrsr(mp=None):
     mp = mp or {}
     out = []
-    soup = BeautifulSoup(get("https://www.nrsr.sk/web/Default.aspx?sid=zakony/prehlad/predlozene"), "html.parser")
+    _html = get("https://www.nrsr.sk/web/Default.aspx?sid=zakony/prehlad/predlozene")
+    try:
+        low = (_html or "").lower()
+        _soup0 = BeautifulSoup(_html or "", "html.parser")
+        PARL_DEBUG.update({
+            "len": len(_html or ""),
+            "title": (_soup0.title.get_text(strip=True)[:80] if _soup0.title else ""),
+            "masterid_count": (_html or "").count("MasterID"),
+            "has_predlozene": "predlo" in low,
+            "challenge": any(t in low for t in ("incapsula", "imperva", "captcha", "are you human",
+                             "enable javascript", "cf-chl", "cloudflare", "access denied", "request unsuccessful", "_incap_")),
+        })
+    except Exception as e:
+        PARL_DEBUG.update({"err": str(e)[:80]})
+    soup = BeautifulSoup(_html or "", "html.parser")
     for a in soup.select('a[href*="MasterID"]'):
         title = a.get_text(" ", strip=True)
         if len(title) < 8: continue
@@ -643,6 +658,7 @@ def main():
         health = {"generated": ISO, "sources": sources,
                   "degraded": sorted(list(degraded)),
                   "warnings": [s + "=" + sources[s]["status"] for s in bad],
+                  "parlament_debug": PARL_DEBUG,
                   "ok": not bad}
         json.dump(health, open(os.path.join(DATA, "health.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
         json.dump({"generated": ISO, "sources": sources},
