@@ -29,7 +29,7 @@ ALLOWED_PATH_GLOBS = [
     "data/*.json", "data/**/*.json", "data/*.md",
 ]
 # Adresáre, ktoré preskakujeme pri obsahu (nie sú súčasťou uploadu):
-SKIP_DIRS = {".git", "__pycache__", "node_modules"}
+SKIP_DIRS = {".git", ".gittrash", "__pycache__", "node_modules"}
 
 # ---- 2) ALLOWLIST dátových polí vo verejných data/*.json ----
 ALLOWED_TOP = {"items", "updated", "firmy"}

@@ -408,11 +408,11 @@ def _kontrolne_nku(days):
         subj = (r.get("Subjekt") or "").strip()
         popis = (r.get("Popis") or "").strip()
         cislo = (r.get("CisloKA") or "").strip()
-        dz = parse_sk_date((r.get("Zverejneny") or "").strip())
+        dz = parse_date((r.get("Zverejneny") or "").strip())   # NKÚ: číselný formát DD.MM.YYYY
         link = (r.get("LinkaURLNaDokument") or "").strip()
         if not (subj or popis):
             continue
-        if dz and days_old(dz) > days:
+        if not dz or days_old(dz) > days:   # len datované záznamy v okne (inak flood archívu)
             continue
         title = (popis or ("Kontrola NKÚ: " + subj))[:300]
         out.append({"id": "k-nku-" + hashlib.md5((cislo + "|" + subj + "|" + popis).encode()).hexdigest()[:12],
@@ -425,9 +425,11 @@ def _kontrolne_nku(days):
 
 def collect_kontrolne(days=None):
     """Kontrolné/dozorné úrady — OFICIÁLNE OTVORENÉ DÁTA.
-    Primár: NKÚ dataset 'výsledky kontrol' (nku.gov.sk/datasety). Doplnok: RSS feedy z feeds.json (ak fungujú). Žiadne médiá."""
+    Primár: NKÚ dataset 'výsledky kontrol' (nku.gov.sk/datasety). Doplnok: RSS feedy z feeds.json (ak fungujú). Žiadne médiá.
+    POZN.: NKÚ dataset je kvartálny a kontroly sú zriedkavé → používame dlhšie okno (pomalý/archívny zdroj)."""
     days = ARCHIV_DNI if days is None else days
-    out = list(_kontrolne_nku(days))
+    knku = int(CFG.get("kontrolne_dni", 365))   # NKÚ: dlhé okno (kvartálny zdroj, najnovšie záznamy aj >30 dní)
+    out = list(_kontrolne_nku(knku))
     try:
         feeds = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
     except Exception:
@@ -528,8 +530,12 @@ def main():
     items = [it for it in items if it["source"] in ZNAME]
     # prune: ÚVO + zmluvy + MPK + kontrolné staršie ako archív (30 dní) zmazať
     # ODOLNOSŤ: zdroj, ktorý tento beh nič nevrátil (degraded), NEprunujeme — zachováme posledné platné dáta
-    items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy", "kontrolne")
+    items = [it for it in items if not (it["source"] in ("uvo", "mpk", "zmluvy")
              and it["source"] not in degraded and days_old(it.get("date") or it.get("first_seen", ISO)) > ARCHIV_DNI)]
+    # kontrolné (NKÚ) = pomalý/archívny zdroj: dlhé okno retencie
+    _kdni = int(CFG.get("kontrolne_dni", 365))
+    items = [it for it in items if not (it["source"] == "kontrolne" and "kontrolne" not in degraded
+             and days_old(it.get("date") or it.get("first_seen", ISO)) > _kdni)]
     # kontrolné: ponechaj len položky z OFICIÁLNYCH domén (NKÚ dataset + feeds.json) — vyčisti staré mediálne zvyšky
     try:
         _kf = json.load(open(os.path.join(ROOT, "feeds.json"), encoding="utf-8")).get("kontrolne", [])
@@ -763,8 +769,8 @@ const TABS=[['novinky','Novinky'],['parlament','Parlament'],['mpk','MPK'],['vlad
 const SRCL={parlament:'Parlament',mpk:'MPK',vlada:'Vláda',uvo:'Zákazky',zmluvy:'Zmluva',kontrolne:'Kontrola'};
 let TAB='novinky';
 const LOAD={};  // tab -> počet dní zobrazeného okna
-const MAXW={parlament:7,mpk:7,vlada:7,uvo:7,zmluvy:7,kontrolne:7,vsetko:7};
-function defWin(t){return 2;}
+const MAXW={parlament:7,mpk:7,vlada:7,uvo:7,zmluvy:7,kontrolne:400,vsetko:7};
+function defWin(t){return t==='kontrolne'?400:2;}
 function sel(cls){return [...document.querySelectorAll('.'+cls+':checked')].map(e=>e.value)}
 function allCats(v){document.querySelectorAll('#cats input').forEach(e=>e.checked=v);render()}
 function esc(s){return (s||'').replace(/"/g,'&quot;')}
