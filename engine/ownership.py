@@ -57,15 +57,20 @@ def _rpo_query(session, name):
 
 def rpo_full(session, name):
     """RPO: {ico, vznik, krajina, mena[], sidla[], current_name} pre jednoznačnú aktívnu firmu; {} inak.
-    Skúsi plný názov, potom očistený variant (bez právnej formy) — RPO fullName je prísny."""
+    Skúsi plný názov, potom očistený variant (bez právnej formy) — RPO fullName je prísny.
+    Odolnosť voči throttlingu: na non-200 krátky backoff a 1 retry."""
     data, status = {}, None
     variants = [name, re.sub(r",?\s*(k\.?\s?s\.?|a\.?\s?s\.?|s\.?\s?r\.?\s?o\.?|spol\.?\s*s\s*r\.?\s?o\.?)\s*$", "", name, flags=re.I).strip()]
     for v in [x for i, x in enumerate(variants) if x and x not in variants[:i]]:
-        try:
-            status, data = _rpo_query(session, v)
-        except Exception as e:
-            data = {"_err": str(e)[:60]}; continue
-        if data.get("results"):
+        for attempt in (1, 2):
+            try:
+                status, data = _rpo_query(session, v)
+            except Exception as e:
+                data = {"_err": str(e)[:60]}; status = None
+            if status == 200:
+                break
+            time.sleep(1.5)   # backoff pri throttlingu / chybe
+        if isinstance(data, dict) and data.get("results"):
             break
         time.sleep(0.2)
     if not isinstance(data, dict) or not data.get("results"):
@@ -110,7 +115,7 @@ def rpo_flags(rpo, newest_contract_date):
         flags.append("SK-OWN-SEATCHANGE"); ev["sidla"] = [s["obec"] for s in sidla][-3:]
     return flags, ev
 
-def run(store, max_firiem=30, sleep=0.35):
+def run(store, max_firiem=30, sleep=0.6):
     try:
         import requests
     except ImportError:
