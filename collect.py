@@ -583,13 +583,16 @@ def main():
     rpo_cap, rpo_done = int(CFG.get("rpo_max_per_run", 40)), 0
     for it in items:
         s = it.get("source")
-        if s == "zmluvy" and not it.get("_overit_checked") and it.get("overit") and _je_firma(it["overit"]) and rpo_done < rpo_cap:
+        if s == "zmluvy" and it.get("overit") and _je_firma(it["overit"]):
             key = _cn(it["overit"])
-            if key in firmy:
-                info = firmy[key]
+            cached = firmy.get(key)
+            # refresh starých cache položiek bez IČO (verzia != 2) — sticky cache inak IČO nikdy nedoplní
+            if (cached is None or cached.get("_v") != 2) and rpo_done < rpo_cap:
+                info = rpo_info(it["overit"]); info["_v"] = 2; firmy[key] = info; rpo_done += 1
             else:
-                info = rpo_info(it["overit"]); firmy[key] = info; rpo_done += 1
+                info = cached or {}
             it["_overit_checked"] = True
+            # re-aplikuj cache hodnoty na položku KAŽDÝ beh (lacné, bez siete) — aby dod_ico doskočilo spätne
             if info.get("vznik"):
                 it["dod_vznik"] = info["vznik"]
             if info.get("krajina"):
