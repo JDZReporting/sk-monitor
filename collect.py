@@ -513,6 +513,34 @@ def load_store():
     p = os.path.join(DATA, "store.json")
     return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {"items": []}
 
+# ---------------- HISTORICKÁ PAMÄŤ (append-only, nikdy neprunujeme) ----------------
+def update_history(items):
+    """Dlhodobá pamäť štátu: každú položku zapíše RAZ (pri prvom videní) do
+    data/history/<YYYY-MM>.jsonl (podľa first_seen). Index v data/archive_ids.json.
+    store.json ostáva 30-dňové okno; tu sa NIČ nemaže — základ pre viacročnú analýzu.
+    Git-friendly: každý beh pridá len zopár nových riadkov do mesačného súboru."""
+    hdir = os.path.join(DATA, "history"); os.makedirs(hdir, exist_ok=True)
+    idx_path = os.path.join(DATA, "archive_ids.json")
+    try:
+        known = set(json.load(open(idx_path, encoding="utf-8"))) if os.path.exists(idx_path) else set()
+    except Exception:
+        known = set()
+    buckets = {}
+    for it in items:
+        iid = it.get("id")
+        if not iid or iid in known:
+            continue
+        ym = (it.get("first_seen") or NOW_TS)[:7]   # YYYY-MM podľa prvého videnia
+        buckets.setdefault(ym, []).append(it)
+        known.add(iid)
+    added = 0
+    for ym, its in buckets.items():
+        with open(os.path.join(hdir, ym + ".jsonl"), "a", encoding="utf-8") as f:
+            for it in its:
+                f.write(json.dumps(it, ensure_ascii=False) + "\n"); added += 1
+    json.dump(sorted(known), open(idx_path, "w", encoding="utf-8"), ensure_ascii=False)
+    return added, len(known)
+
 def main():
     store = load_store()
     by_id = {it["id"]: it for it in store.get("items", [])}
@@ -540,6 +568,12 @@ def main():
             by_id[it["id"]] = it; new += 1
         by_id[it["id"]]["last_seen"] = ISO  # naposledy videné v zdroji (pre agendu parlament/vláda)
     items = list(by_id.values())
+    # HISTORICKÁ PAMÄŤ: archivuj PRED pruningom (nič sa nestratí) — dlhodobá pamäť štátu
+    try:
+        _h_added, _h_total = update_history(items)
+        print(f"ARCHÍV: +{_h_added} nových (dlhodobá pamäť spolu: {_h_total})")
+    except Exception as e:
+        print("WARN archív", e)
     # auto-čistenie: zahoď staré/neznáme zdroje (napr. legacy 'aktuality')
     ZNAME = ("parlament", "vlada", "uvo", "zmluvy", "mpk", "kontrolne")
     items = [it for it in items if it["source"] in ZNAME]

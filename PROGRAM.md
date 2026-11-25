@@ -91,3 +91,16 @@ súkromne. Dovtedy engine beží na vyžiadanie lokálne/manuálne.
 
 Nenasadené lokálne zmeny (čakajú na dávkový deploy cez prehliadač): collect.py (druh fix,
 dod_ico), tools/security_gate.py, .github/workflows/daily.yml, engine/*, docs.
+
+## Aktualizácia 2026-11-25 — kritický audit + Historical Intelligence
+- **Retencia:** store.json bol 30-dňové okno (prune). Doplnená **DLHODOBÁ PAMÄŤ**:
+  append-only `data/history/YYYY-MM.jsonl` (+ index `data/archive_ids.json`), nič sa nemaže.
+  Otestované na 2340 položkách (first_seen 2026-07..11). store.json ostáva 30-dňové okno pre panel.
+  Spätný backfill (1/3/5/10 r.) per zdroj = roadmap.
+- **RPVS OData OVERENÉ naživo:** Partneri→KonecniUzivateliaVyhod (polia JeVerejnyCinitel,
+  PlatnostOd/PlatnostDo = aktuálne vs historické). UNIPHARMA IČO 31625657 → 3 KÚV. Spojka
+  `dod_ico` sa dopĺňa po oprave sticky RPO cache (_v=2).
+- **Engine linking:** `links.py` — SK-AUDIT-SPENDER (56 prepojení) + SK-AUDIT-REPEAT (4) otestované.
+- **Katalóg:** `engine/rules/control.yaml` (kontrolné indikátory, §27).
+- **Ďalej (roadmap, podľa priority):** scoring v2 (viacrozmerné, kalibrované), Ownership profil,
+  Temporal, Document Intelligence (PDF), Evidence/Verification 2.0, privátny terminál, benchmark 15.

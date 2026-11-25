@@ -139,3 +139,10 @@ OVERENÉ: aktuálny stav remote nemá únik. NEOVEROVAL som diff všetkých 187 
 investigatívnu vrstvu (skutočné serverové oddelenie namiesto len lokálneho priečinka), keď
 súkromná vrstva začne produkovať subjektové dáta. Dovtedy sa citlivé hypotézy NEukladajú do
 verejného repa ani jeho publikačných priečinkov.
+
+## 2026-11-25 — retencia, história a RPVS (dôležité pre prácu s dátami)
+- `data/store.json` = 30-dňové okno (panel). **Dlhodobá pamäť** je v `data/history/*.jsonl`
+  (append-only, NIKDY neprunovať). Pri viacročnej/historickej analýze čítať `history/`, nie store.json.
+- RPVS OData overené naživo: `Partneri`→`KonecniUzivateliaVyhod` (JeVerejnyCinitel, PlatnostOd/Do).
+  `dod_ico` sa dopĺňa z RPO (cache verzia `_v=2`). Pri osobách: **zhoda mena != dôkaz totožnosti**;
+  čiastočné údaje zobrazovať ako neistotu, nie potvrdené prepojenie.
