@@ -1,0 +1,13 @@
+{
+ "generated": "2026-11-25",
+ "counts": {
+  "vlada": 15,
+  "uvo": 1782,
+  "mpk": 101,
+  "zmluvy": 303
+ },
+ "warnings": [
+  "parlament=0 (mozny vypadok zdroja)",
+  "kontrolne=0 (mozny vypadok zdroja)"
+ ]
+}
