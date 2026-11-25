@@ -35,12 +35,11 @@ def lookup_by_ico(session, ico):
     ico = str(ico).strip()
     if not ico:
         return None
+    # POZOR (overené naživo 2026-11-25): $top spolu s $expand+$filter/any vracia na RPVS OData 400.
+    # StatnaPrislusnost nie je navigačná vlastnosť KÚV. Expandujeme len platné entity, bez $top.
     params = {
         "$filter": f"PartneriVerejnehoSektora/any(p: p/Ico eq '{ico}')",
-        "$expand": ("PartneriVerejnehoSektora,"
-                    "KonecniUzivateliaVyhod($expand=StatnaPrislusnost),"
-                    "VerejniFunkcionari,KvalifikovanePodnety,OverenieIdentifikacieKUV"),
-        "$top": "1",
+        "$expand": "PartneriVerejnehoSektora,KonecniUzivateliaVyhod,KvalifikovanePodnety",
     }
     data = _get(session, "Partneri", params)
     vals = data.get("value", [])
