@@ -35,6 +35,12 @@ def parse_suma(s):
     try: return float(t)
     except ValueError: return None
 
+_STATE_SUPPLIER = ("\u0161t\u00e1tny fond", "fond rozvoja b\u00fdvania", "slovensk\u00e1 z\u00e1ru\u010dn\u00e1",
+                  "environment\u00e1lny fond", "slovensk\u00fd pozemkov\u00fd fond")
+def is_state_supplier(name):
+    n = (name or "").lower()
+    return any(k in n for k in _STATE_SUPPLIER)
+
 def is_foreign(k):
     return bool(k) and k.strip().lower() not in ("sk","slovensko","slovenská republika","slovenska republika","")
 
@@ -55,6 +61,7 @@ def base_flags(items):
             v = sorted(vals); p90[cat] = v[int(0.9*(len(v)-1))]
     out = []
     for it in items:
+        if is_state_supplier(it.get("overit") or it.get("dod")): continue
         flags, score, ev = [], 0, {}
         vznik, dt = parse_date(it.get("dod_vznik")), (parse_date(it.get("date")) or parse_date(it.get("first_seen")))
         suma, cat = parse_suma(it.get("suma")), it.get("category","Ostatné")
@@ -127,11 +134,12 @@ def aggregate(items):
         if it.get("source")!="zmluvy": continue
         v=parse_suma(it.get("suma"))
         if not v or v<=0: continue
-        dod=it.get("overit") or it.get("dod") or ""
+        dod=it.get("overit") or ""   # len súkromná strana (štátne subjekty majú overit prázdne)
+        if not dod or is_state_supplier(dod): continue
         buyer=parse_buyer(it.get("meta")); cat=it.get("category","Ostatn\u00e9")
         if buyer and dod:
             buyer_total[buyer]+=v; pair_total[(buyer,dod)]+=v; pair_count[(buyer,dod)]+=1
-        if dod: cat_sup[cat][dod]+=v
+        cat_sup[cat][dod]+=v
     hhi={}
     for cat,sup in cat_sup.items():
         tot=sum(sup.values())
@@ -140,7 +148,8 @@ def aggregate(items):
     extra=defaultdict(list); ev=defaultdict(dict)
     for it in items:
         if it.get("source")!="zmluvy": continue
-        dod=it.get("overit") or it.get("dod") or ""
+        dod=it.get("overit") or ""
+        if not dod or is_state_supplier(dod): continue
         buyer=parse_buyer(it.get("meta")); cat=it.get("category","Ostatn\u00e9")
         if buyer and dod and buyer_total[buyer]>0:
             share=pair_total[(buyer,dod)]/buyer_total[buyer]

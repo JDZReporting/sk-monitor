@@ -55,7 +55,7 @@ _STAT_KW = ("ministerstvo", "narodna dialnicna", "slovenska posta", "zeleznice s
             "financne riaditelstvo", "financna sprava", "statna pokladnica", "urad vlady",
             "slovenska konsolidacna", "narodna banka slovenska", "slovensky pozemkovy fond",
             "environmentalny fond", "mh manazment", "transpetrol", "letove prevadzkove",
-            "vojenske", "slovensky vodohospodarsky", "narodny bezpecnostny", "sprava statnych hmotnych rezerv")
+            "vojenske", "slovensky vodohospodarsky", "narodny bezpecnostny", "sprava statnych hmotnych rezerv", "statny fond", "fond rozvoja byvania", "slovenska zarucna")
 def _is_stat(text):
     """Je obstarávateľ/objednávateľ štát? Ministerstvo, štátny podnik (š. p.) alebo veľká štátna firma/inštitúcia."""
     ob = norm(text or "")
