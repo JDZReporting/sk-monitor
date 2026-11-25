@@ -185,7 +185,7 @@ indikatory:
       berie málo dodávateľov väčšinu peňazí, trh je uzavretý.
     zdroj_metodiky: "OCP R050/R051 (market share / concentration); OECD."
     potrebne_data: ["kategória", "dodávateľ", "suma"]
-    definicia: "HHI = Σ (podiel_dodávateľa_i)^2 ; flag ak HHI > 0.25 (silná koncentrácia)"
+    definicia: "HHI = Σ (podiel_i)^2; flag ak HHI>0.25 A podiel dodávateľa v kategórii >15% (len dominantný hráč — kalibrované 2026-11-25, 100→17 nálezov)"
     porovnavacia_zakladna: "HHI naprieč kategóriami / v čase"
     min_vzorka: "aspoň 5 zmlúv a 3 dodávatelia v kategórii"
     aktivacia_ak: "dostatok zmlúv v kategórii za okno"

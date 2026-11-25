@@ -150,8 +150,12 @@ def aggregate(items):
                 ev[it["id"]]["pocet_zmluv_dvojice"]=pair_count[(buyer,dod)]
                 ev[it["id"]]["obstaravatel"]=buyer
         if cat in hhi and hhi[cat]>0.25:
-            extra[it["id"]].append("SK-MARKET-HHI")
-            ev[it["id"]]["hhi_kategorie"]=round(hhi[cat],3)
+            _tot = sum(cat_sup[cat].values())
+            _share = cat_sup[cat].get(dod,0)/_tot if _tot else 0
+            if _share > 0.15:   # len dominantný dodávateľ v koncentrovanej kategórii (menej šumu)
+                extra[it["id"]].append("SK-MARKET-HHI")
+                ev[it["id"]]["hhi_kategorie"]=round(hhi[cat],3)
+                ev[it["id"]]["podiel_dodavatela_v_kategorii"]=round(_share,2)
     return extra, ev
 
 def run(store, rpvs_lookup=None, rpvs_cap=60):
