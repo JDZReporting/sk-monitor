@@ -40,7 +40,8 @@ def is_foreign(k):
 
 # váhy indikátorov
 W = {"SK-SUP-NEW":2,"SK-SUP-FOREIGN":1,"SK-HIGHVALUE":1,"SK-COMBO":2,
-     "SK-OWN-PUBOFFICIAL":3,"SK-OWN-CHALLENGED":2,"SK-OWN-FOREIGN-KUV":1,"SK-OWN-NO-KUV":1,"SK-OWN-SHARED":3}
+     "SK-OWN-PUBOFFICIAL":3,"SK-OWN-CHALLENGED":2,"SK-OWN-FOREIGN-KUV":1,"SK-OWN-NO-KUV":1,"SK-OWN-SHARED":3,
+     "SK-BUYER-CONC":2,"SK-MARKET-HHI":1}
 
 # ---------- základné príznaky ----------
 def base_flags(items):
@@ -111,9 +112,65 @@ def finalize(results):
     results.sort(key=lambda r: r["skore"], reverse=True)
     return results
 
+def parse_buyer(meta):
+    import re as _re
+    m = _re.search(r"Objedn[a\u00e1]vate[\u013el]:\s*(.+?)(?:\s*\u00b7|$)", meta or "")
+    if m: return m.group(1).strip()
+    m = _re.search(r"Obstar[a\u00e1]vate[\u013el]:\s*(.+?)(?:\s*\u00b7|$)", meta or "")
+    return m.group(1).strip() if m else ""
+
+def aggregate(items):
+    """Koncentrácia: opakovaný dodávateľ u obstarávateľa (SK-BUYER-CONC) a HHI kategórie (SK-MARKET-HHI)."""
+    buyer_total=defaultdict(float); pair_total=defaultdict(float); pair_count=defaultdict(int)
+    cat_sup=defaultdict(lambda: defaultdict(float))
+    for it in items:
+        if it.get("source")!="zmluvy": continue
+        v=parse_suma(it.get("suma"))
+        if not v or v<=0: continue
+        dod=it.get("overit") or it.get("dod") or ""
+        buyer=parse_buyer(it.get("meta")); cat=it.get("category","Ostatn\u00e9")
+        if buyer and dod:
+            buyer_total[buyer]+=v; pair_total[(buyer,dod)]+=v; pair_count[(buyer,dod)]+=1
+        if dod: cat_sup[cat][dod]+=v
+    hhi={}
+    for cat,sup in cat_sup.items():
+        tot=sum(sup.values())
+        if tot>0 and len(sup)>=3:
+            hhi[cat]=sum((x/tot)**2 for x in sup.values())
+    extra=defaultdict(list); ev=defaultdict(dict)
+    for it in items:
+        if it.get("source")!="zmluvy": continue
+        dod=it.get("overit") or it.get("dod") or ""
+        buyer=parse_buyer(it.get("meta")); cat=it.get("category","Ostatn\u00e9")
+        if buyer and dod and buyer_total[buyer]>0:
+            share=pair_total[(buyer,dod)]/buyer_total[buyer]
+            if share>0.5 and pair_count[(buyer,dod)]>=3:
+                extra[it["id"]].append("SK-BUYER-CONC")
+                ev[it["id"]]["podiel_u_obstaravatela"]=round(share,2)
+                ev[it["id"]]["pocet_zmluv_dvojice"]=pair_count[(buyer,dod)]
+                ev[it["id"]]["obstaravatel"]=buyer
+        if cat in hhi and hhi[cat]>0.25:
+            extra[it["id"]].append("SK-MARKET-HHI")
+            ev[it["id"]]["hhi_kategorie"]=round(hhi[cat],3)
+    return extra, ev
+
 def run(store, rpvs_lookup=None, rpvs_cap=60):
     items = store.get("items", [])
     results, p90 = base_flags(items)
+    # agregačné (štrukturálne) príznaky — môžu označiť aj položky bez základného príznaku
+    extra, agg_ev = aggregate(items)
+    by_id = {r["id"]: r for r in results}
+    for it in items:
+        iid = it.get("id")
+        if iid in extra:
+            if iid in by_id:
+                r = by_id[iid]; r["flags"] += extra[iid]; r["dokaz"].update(agg_ev[iid])
+            else:
+                r = {"id": iid, "dod": it.get("overit") or it.get("dod"),
+                     "ico": it.get("dod_ico",""), "objednavatel_meta": it.get("meta",""),
+                     "kategoria": it.get("category","Ostatn\u00e9"), "date": it.get("date"),
+                     "url": it.get("url",""), "flags": list(extra[iid]), "dokaz": dict(agg_ev[iid])}
+                results.append(r); by_id[iid] = r
     rinfo = enrich_rpvs(results, rpvs_lookup, rpvs_cap)
     finalize(results)
     summary = {"polozky":len(items),"kategorii_s_p90":len(p90),"oznacenych":len(results)}

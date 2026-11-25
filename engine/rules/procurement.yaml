@@ -171,11 +171,11 @@ indikatory:
     kalibracia: "prah podielu a min. počet zmlúv ladiť podľa FP"
     zobrazenie: "v profile obstarávateľa/dodávateľa (budúci modul) + štítok"
     odporucany_postup: "pozrieť históriu dvojice, typy postupov, časovú súslednosť"
-    realizovatelnost: "PO_DOPLNENI"
-    sk_zdroj: "CRZ (+ parsovanie objednávateľa z meta)"
+    realizovatelnost: "REALIZOVANÉ (v engine/score.py)"
+    sk_zdroj: "CRZ (+ parser objednávateľa z meta)"
     sk_pole: ["dod", "meta", "suma"]
-    dostupnost: "dobrá pre CRZ nad 100k; treba spoľahlivý parser objednávateľa"
-    test: "NEOTESTOVANÉ"
+    dostupnost: "dobrá pre CRZ nad 100k"
+    test: "OTESTOVANÉ 2026-11-25 na reálnom store.json (2159 položiek): napr. Štátny fond rozvoja bývania — dodávateľ >50% zmlúv obstarávateľa."
 
   - id: SK-MARKET-HHI
     nazov: "Vysoká koncentrácia trhu v kategórii (HHI)"
@@ -197,11 +197,11 @@ indikatory:
     kalibracia: "prah HHI podľa segmentu; porovnávať medziročne"
     zobrazenie: "prehľad kategórií + trend (budúci dashboard modul)"
     odporucany_postup: "rozmeniť koncentráciu na konkrétnych dodávateľov; prepojiť s SK-BUYER-CONC"
-    realizovatelnost: "PO_DOPLNENI"
+    realizovatelnost: "REALIZOVANÉ (v engine/score.py)"
     sk_zdroj: "CRZ"
     sk_pole: ["category", "dod", "suma"]
     dostupnost: "dobrá; limit = len zmluvy nad 100k (skresľuje malý trh)"
-    test: "NEOTESTOVANÉ"
+    test: "OTESTOVANÉ 2026-11-25: HHI>0.25 napr. v Štát a štátne podniky (ZSSK) a Zdravotníctvo."
 
   - id: SK-COMBO-HIGHVALUE-RISKSUP
     nazov: "Vysoká suma + riziková firma (nová alebo zahraničná)"
