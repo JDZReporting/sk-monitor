@@ -3361,13 +3361,13 @@
    "id": "u-trebisov - ulica tabakova, sturova, kollarova",
    "source": "uvo",
    "title": "Trebišov - ulica Tabaková, Štúrova, Kollárova, Bottova, Jablonková, Tichá - stavebné úpravy vodovodu",
-   "date": "2026-11-06",
+   "date": "2026-11-26",
    "category": "Ostatné",
    "blok": "",
    "meta": "Obstarávateľ: Východoslovenská vodárenská spoločnosť, a.s.",
    "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/566585?cHash=b635b64f029cf14d230ff6ba5d692501",
    "first_seen": "2026-10-08T11:13:25.059799+00:00",
-   "last_seen": "2026-11-08",
+   "last_seen": "2026-11-26",
    "_uvo_done": true,
    "stav": "Aktívna",
    "druh": "Práce",
@@ -24107,7 +24107,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Nitriansky samosprávny kraj · č. 1894/2026",
    "url": "https://www.crz.gov.sk/zmluva/13065012/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
-   "last_seen": "2026-11-13"
+   "last_seen": "2026-11-13",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37861298",
+   "suma_zmluvna": 605995.25
   },
   {
    "id": "z-13064882",
@@ -24123,7 +24127,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13064882/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "51629828",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00316938",
+   "suma_zmluvna": 335751.61
   },
   {
    "id": "z-13064935",
@@ -24138,7 +24146,11 @@
    "meta": "Dodávateľ: Viliam Horváth → Objednávateľ: Obec Jakubov · č. 182/2026",
    "url": "https://www.crz.gov.sk/zmluva/13064935/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
-   "last_seen": "2026-11-13"
+   "last_seen": "2026-11-13",
+   "dod_ico": "35306840",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00304816",
+   "suma_zmluvna": 142702.0
   },
   {
    "id": "z-13065475",
@@ -24154,7 +24166,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13065475/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46854550",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00681300",
+   "suma_zmluvna": 100894.19
   },
   {
    "id": "z-13060459",
@@ -24170,7 +24186,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13060459/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "00151653",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00681300",
+   "suma_zmluvna": 266000.0
   },
   {
    "id": "z-13060413",
@@ -24186,7 +24206,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13060413/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "00151653",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00681300",
+   "suma_zmluvna": 266000.0
   },
   {
    "id": "z-13059887",
@@ -24201,7 +24225,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Ministerstvo pôdohospodárstva a rozvoja vidieka SR · č. 17/2026/MPRVSR-270",
    "url": "https://www.crz.gov.sk/zmluva/13059887/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
-   "last_seen": "2026-11-12"
+   "last_seen": "2026-11-12",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00156621",
+   "suma_zmluvna": 2975347.8
   },
   {
    "id": "z-13059770",
@@ -24217,7 +24245,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13059770/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "17317282",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 911844.01
   },
   {
    "id": "z-13060613",
@@ -24233,7 +24265,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13060613/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36260231",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "165336",
+   "suma_zmluvna": 203565.0
   },
   {
    "id": "z-13060255",
@@ -24248,7 +24284,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Obec Oponice · č. 1565/2026",
    "url": "https://www.crz.gov.sk/zmluva/13060255/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
-   "last_seen": "2026-11-12"
+   "last_seen": "2026-11-12",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00310875",
+   "suma_zmluvna": 244785.29
   },
   {
    "id": "z-13063198",
@@ -24264,7 +24304,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13063198/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36283576",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31813861",
+   "suma_zmluvna": 198464.84
   },
   {
    "id": "z-13063536",
@@ -24280,7 +24324,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13063536/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "50085891",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30416094",
+   "suma_zmluvna": 17338274.96
   },
   {
    "id": "z-13064433",
@@ -24295,7 +24343,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Správa ciest Košického samosprávneho kraja · č. 1279/2026",
    "url": "https://www.crz.gov.sk/zmluva/13064433/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
-   "last_seen": "2026-11-12"
+   "last_seen": "2026-11-12",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35555777",
+   "suma_zmluvna": 1112777.11
   },
   {
    "id": "z-13061561",
@@ -24311,7 +24363,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13061561/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "52302555",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00316962",
+   "suma_zmluvna": 117677.67
   },
   {
    "id": "z-13059751",
@@ -24327,7 +24383,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13059751/",
    "first_seen": "2026-11-12T12:22:58.923588+00:00",
    "last_seen": "2026-11-12",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "52720560",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30844185",
+   "suma_zmluvna": 168508.77
   },
   {
    "id": "u-historia sucian pod jednou strechou – stavebn",
@@ -25425,7 +25485,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13074259/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35810408",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00682420",
+   "suma_zmluvna": 163682.71
   },
   {
    "id": "z-13074451",
@@ -25440,7 +25504,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Košice · č. 1965/2026",
    "url": "https://www.crz.gov.sk/zmluva/13074451/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00691135",
+   "suma_zmluvna": 212870.81
   },
   {
    "id": "z-13068139",
@@ -25456,7 +25524,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13068139/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "43989861",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00304786",
+   "suma_zmluvna": 555300.72
   },
   {
    "id": "z-13074545",
@@ -25472,7 +25544,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13074545/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "34153004",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00398144",
+   "suma_zmluvna": 149085.24
   },
   {
    "id": "z-13074263",
@@ -25488,7 +25564,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13074263/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "45573735",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00398144",
+   "suma_zmluvna": 232081.46
   },
   {
    "id": "z-13074141",
@@ -25503,7 +25583,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Nitriansky samosprávny kraj · č. 1596/2026",
    "url": "https://www.crz.gov.sk/zmluva/13074141/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37861298",
+   "suma_zmluvna": 1300465.47
   },
   {
    "id": "z-13073430",
@@ -25518,7 +25602,11 @@
    "meta": "Dodávateľ: Obecný podnik Zbehy, s.r.o., r.s.p. → Objednávateľ: Obec Zbehy · č. 1552026",
    "url": "https://www.crz.gov.sk/zmluva/13073430/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "56265310",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00308668",
+   "suma_zmluvna": 281744.86
   },
   {
    "id": "z-13074399",
@@ -25533,7 +25621,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mestská časť Košice-Západ · č. 1551/2026",
    "url": "https://www.crz.gov.sk/zmluva/13074399/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00690970",
+   "suma_zmluvna": 800673.93
   },
   {
    "id": "z-13067012",
@@ -25549,7 +25641,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13067012/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-13",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "55000282",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31819559",
+   "suma_zmluvna": 227400.0
   },
   {
    "id": "z-13075114",
@@ -25564,7 +25660,11 @@
    "meta": "Dodávateľ: Mesto Nové Zámky → Objednávateľ: Ministerstvo dopravy SR · č. 1519/CC00/2026",
    "url": "https://www.crz.gov.sk/zmluva/13075114/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "00309150",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30416094",
+   "suma_zmluvna": 6201743.67
   },
   {
    "id": "z-13075469",
@@ -25580,7 +25680,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13075469/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31598536",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00317209",
+   "suma_zmluvna": 164610.9
   },
   {
    "id": "z-13068177",
@@ -25595,7 +25699,11 @@
    "meta": "Dodávateľ: Fond na podporu športu → Objednávateľ: Obec Teplička nad Váhom · č. 141/2026",
    "url": "https://www.crz.gov.sk/zmluva/13068177/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
-   "last_seen": "2026-11-13"
+   "last_seen": "2026-11-13",
+   "dod_ico": "52846059",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00648264",
+   "suma_zmluvna": 282814.11
   },
   {
    "id": "z-13075159",
@@ -25611,7 +25719,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13075159/",
    "first_seen": "2026-11-13T11:58:49.546904+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "51697017",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00332291",
+   "suma_zmluvna": 129998.97
   },
   {
    "id": "u-rozsirenie existujucej stokovej siete v obci ",
@@ -26273,7 +26385,11 @@
    "meta": "Dodávateľ: Agentúra na podporu výskumu a vývoja → Objednávateľ: Ústredný kontrolný a skúšobný ústav poľnohospodársky v Bratislave · č. 192/2026/ÚKSÚP",
    "url": "https://www.crz.gov.sk/zmluva/13076408/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "30797764",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00156582",
+   "suma_zmluvna": 301800.0
   },
   {
    "id": "z-13077384",
@@ -26289,7 +26405,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13077384/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "53340671",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00305065",
+   "suma_zmluvna": 239485.87
   },
   {
    "id": "z-13077129",
@@ -26305,7 +26425,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13077129/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "50700308",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "50349287",
+   "suma_zmluvna": 170779.35
   },
   {
    "id": "z-13077152",
@@ -26321,7 +26445,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13077152/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35720191",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31819559",
+   "suma_zmluvna": 152397.0
   },
   {
    "id": "z-13076535",
@@ -26337,7 +26465,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13076535/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31721079",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37936859",
+   "suma_zmluvna": 179061.33
   },
   {
    "id": "z-13077287",
@@ -26353,7 +26485,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13077287/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47171791",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37888625",
+   "suma_zmluvna": 121835.48
   },
   {
    "id": "z-13076218",
@@ -26369,7 +26505,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13076218/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47158972",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37831771",
+   "suma_zmluvna": 121699.79
   },
   {
    "id": "z-13075060",
@@ -26385,7 +26525,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13075060/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36835463",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00314285",
+   "suma_zmluvna": 115751.5
   },
   {
    "id": "z-13075041",
@@ -26400,7 +26544,11 @@
    "meta": "Dodávateľ: Slovenská poľnohospodárska a potravinárska komora → Objednávateľ: Ministerstvo pôdohospodárstva a rozvoja vidieka SR · č. 1078/2026/MPRVSR-370",
    "url": "https://www.crz.gov.sk/zmluva/13075041/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
-   "last_seen": "2026-11-14"
+   "last_seen": "2026-11-14",
+   "dod_ico": "31826253",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00156621",
+   "suma_zmluvna": 160000.0
   },
   {
    "id": "z-13076930",
@@ -26416,7 +26564,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13076930/",
    "first_seen": "2026-11-14T11:17:11.892619+00:00",
    "last_seen": "2026-11-14",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46120602",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00320714",
+   "suma_zmluvna": 352231.84
   },
   {
    "id": "u-\"bistro+infoppoint\" – klastorska ulica, nitra",
@@ -27467,7 +27619,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13081058/",
    "first_seen": "2026-11-16T12:32:12.909619+00:00",
    "last_seen": "2026-11-17",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36379221",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00686832",
+   "suma_zmluvna": 1561456.5
   },
   {
    "id": "z-13079338",
@@ -27482,7 +27638,9 @@
    "meta": "Dodávateľ: Agentúra na podporu výskumu a vývoja → Objednávateľ: Fyzikálny ústav Slovenská akadémia vied, v. v. i. · č. 125/2026/FUSAVvvi",
    "url": "https://www.crz.gov.sk/zmluva/13079338/",
    "first_seen": "2026-11-16T12:32:12.909619+00:00",
-   "last_seen": "2026-11-17"
+   "last_seen": "2026-11-17",
+   "obj_ico": "00166537",
+   "suma_zmluvna": 255825.0
   },
   {
    "id": "z-13080862",
@@ -27498,7 +27656,9 @@
    "url": "https://www.crz.gov.sk/zmluva/13080862/",
    "first_seen": "2026-11-16T12:32:12.909619+00:00",
    "last_seen": "2026-11-17",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "obj_ico": "31749542",
+   "suma_zmluvna": 179500.0
   },
   {
    "id": "v-UV-30196/2026",
@@ -28309,7 +28469,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13080921/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-17",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31572316",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "42054575",
+   "suma_zmluvna": 1911420.0
   },
   {
    "id": "z-13087929",
@@ -28325,7 +28489,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13087929/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46078258",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00681300",
+   "suma_zmluvna": 525456.0
   },
   {
    "id": "z-13085913",
@@ -28341,7 +28509,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13085913/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "34113924",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00606715",
+   "suma_zmluvna": 1047716.28
   },
   {
    "id": "z-13086962",
@@ -28357,7 +28529,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13086962/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "53528654",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35540435",
+   "suma_zmluvna": 131397.29
   },
   {
    "id": "z-13085517",
@@ -28373,7 +28549,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13085517/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "51231069",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00686832",
+   "suma_zmluvna": 1996561.65
   },
   {
    "id": "z-13082336",
@@ -28389,7 +28569,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13082336/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-17",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35743468",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00686832",
+   "suma_zmluvna": 936709.13
   },
   {
    "id": "z-13087101",
@@ -28404,7 +28588,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Trenčín · č. 1407/2026",
    "url": "https://www.crz.gov.sk/zmluva/13087101/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
-   "last_seen": "2026-11-18"
+   "last_seen": "2026-11-18",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00312037",
+   "suma_zmluvna": 200000.0
   },
   {
    "id": "z-13087613",
@@ -28420,7 +28608,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13087613/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47414863",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "36672441",
+   "suma_zmluvna": 254980.0
   },
   {
    "id": "z-13087057",
@@ -28435,7 +28627,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Senica · č. 1240/2026",
    "url": "https://www.crz.gov.sk/zmluva/13087057/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
-   "last_seen": "2026-11-18"
+   "last_seen": "2026-11-18",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00309974",
+   "suma_zmluvna": 943332.47
   },
   {
    "id": "z-13087616",
@@ -28451,7 +28647,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13087616/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47414863",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "36672441",
+   "suma_zmluvna": 187506.97
   },
   {
    "id": "z-13082988",
@@ -28467,7 +28667,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13082988/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-17",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46190597",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00326330",
+   "suma_zmluvna": 149998.5
   },
   {
    "id": "z-13086362",
@@ -28483,7 +28687,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13086362/",
    "first_seen": "2026-11-17T12:55:51.533252+00:00",
    "last_seen": "2026-11-18",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35887117",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "17335825",
+   "suma_zmluvna": 263851.2
   },
   {
    "id": "u-budovanie cyklo infrastruktury v meste hlohov",
@@ -29507,7 +29715,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13090328/",
    "first_seen": "2026-11-18T12:49:13.163467+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "52713725",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00320439",
+   "suma_zmluvna": 527553.43
   },
   {
    "id": "z-13093216",
@@ -29523,7 +29735,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13093216/",
    "first_seen": "2026-11-18T12:49:13.163467+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36837075",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00603201",
+   "suma_zmluvna": 1865684.91
   },
   {
    "id": "u-vybavenie kancelarie, zasadacky a kniznice",
@@ -30395,7 +30611,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13095733/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "43995772",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00318744",
+   "suma_zmluvna": 429953.74
   },
   {
    "id": "z-13098247",
@@ -30411,7 +30631,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13098247/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "44690321",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31813861",
+   "suma_zmluvna": 114161.4
   },
   {
    "id": "z-13095141",
@@ -30426,7 +30650,9 @@
    "meta": "Dodávateľ: NEC Deutschland GmbH → Objednávateľ: Slovenský hydrometeorologický ústav · č. 161-400-2026",
    "url": "https://www.crz.gov.sk/zmluva/13095141/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-19",
+   "obj_ico": "00156884",
+   "suma_zmluvna": 196000.0
   },
   {
    "id": "z-13099654",
@@ -30441,7 +30667,11 @@
    "meta": "Dodávateľ: Jozef Sommer → Objednávateľ: Ministerstvo dopravy SR · č. 1530/DI00/2026",
    "url": "https://www.crz.gov.sk/zmluva/13099654/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "00000000",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30416094",
+   "suma_zmluvna": 1870700.0
   },
   {
    "id": "z-13098401",
@@ -30456,7 +30686,11 @@
    "meta": "Dodávateľ: Národná diaľničná spoločnosť, a. s. → Objednávateľ: Ministerstvo dopravy SR · č. 1529/CC00/2026",
    "url": "https://www.crz.gov.sk/zmluva/13098401/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "35919001",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30416094",
+   "suma_zmluvna": 121784984.6
   },
   {
    "id": "z-13096942",
@@ -30471,7 +30705,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Martin · č. 1511/2026",
    "url": "https://www.crz.gov.sk/zmluva/13096942/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00316792",
+   "suma_zmluvna": 610434.85
   },
   {
    "id": "z-13097786",
@@ -30487,7 +30725,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13097786/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36248070",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00686832",
+   "suma_zmluvna": 1946074.68
   },
   {
    "id": "z-13097101",
@@ -30503,7 +30745,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13097101/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46939849",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00686832",
+   "suma_zmluvna": 1990298.11
   },
   {
    "id": "z-13097034",
@@ -30519,7 +30765,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13097034/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36356794",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "30796482",
+   "suma_zmluvna": 160515.0
   },
   {
    "id": "z-13093770",
@@ -30535,7 +30785,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13093770/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "44020848",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37936859",
+   "suma_zmluvna": 158969.89
   },
   {
    "id": "z-13095170",
@@ -30551,7 +30805,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13095170/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46167447",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37873601",
+   "suma_zmluvna": 180070.92
   },
   {
    "id": "z-13094147",
@@ -30567,7 +30825,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13094147/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47144190",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00330027",
+   "suma_zmluvna": 8914912.56
   },
   {
    "id": "z-13099279",
@@ -30582,7 +30844,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Liptovský Mikuláš · č. 1032/2026",
    "url": "https://www.crz.gov.sk/zmluva/13099279/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
-   "last_seen": "2026-11-19"
+   "last_seen": "2026-11-19",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00315524",
+   "suma_zmluvna": 447194.72
   },
   {
    "id": "z-13094016",
@@ -30598,7 +30864,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13094016/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "56191588",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00307190",
+   "suma_zmluvna": 525334.08
   },
   {
    "id": "z-13094489",
@@ -30614,7 +30884,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13094489/",
    "first_seen": "2026-11-19T12:39:14.608287+00:00",
    "last_seen": "2026-11-19",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35954612",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00166260",
+   "suma_zmluvna": 126325.24
   },
   {
    "id": "u-vytvorenie centralnej datovej platformy a trv",
@@ -31742,7 +32016,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13097769/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35720905",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 51368047.0
   },
   {
    "id": "z-13103580",
@@ -31757,7 +32035,11 @@
    "meta": "Dodávateľ: Veritelia v zastúpení: Dentons Europe CS LLP, org. zložka → Objednávateľ: Univerzitná nemocnica Bratislava · č. 1660/UNB/2026",
    "url": "https://www.crz.gov.sk/zmluva/13103580/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
-   "last_seen": "2026-11-21"
+   "last_seen": "2026-11-21",
+   "dod_ico": "36861391",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31813861",
+   "suma_zmluvna": 147626.2
   },
   {
    "id": "z-13100822",
@@ -31773,7 +32055,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13100822/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31348653",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "50349287",
+   "suma_zmluvna": 348667.46
   },
   {
    "id": "z-13101546",
@@ -31788,7 +32074,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Chi3, o. z. · č. 1568/2026",
    "url": "https://www.crz.gov.sk/zmluva/13101546/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "37884174",
+   "suma_zmluvna": 6300000.0
   },
   {
    "id": "z-13101635",
@@ -31803,7 +32093,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Trnava · č. 1510/2026",
    "url": "https://www.crz.gov.sk/zmluva/13101635/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00313114",
+   "suma_zmluvna": 1417252.67
   },
   {
    "id": "z-13101649",
@@ -31819,7 +32113,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13101649/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "03921921",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00320439",
+   "suma_zmluvna": 415837.21
   },
   {
    "id": "z-13101420",
@@ -31834,7 +32132,11 @@
    "meta": "Dodávateľ: Univerzitná nemocnica Bratislava → Objednávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky · č. 1484/2026",
    "url": "https://www.crz.gov.sk/zmluva/13101420/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
-   "last_seen": "2026-11-20"
+   "last_seen": "2026-11-20",
+   "dod_ico": "31813861",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "50349287",
+   "suma_zmluvna": 294396.43
   },
   {
    "id": "z-13102332",
@@ -31852,7 +32154,11 @@
    "last_seen": "2026-11-20",
    "_overit_checked": true,
    "dod_vznik": "2020-10-21",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "53349369",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "36076643",
+   "suma_zmluvna": 165508.8
   },
   {
    "id": "z-13102317",
@@ -31870,7 +32176,11 @@
    "last_seen": "2026-11-20",
    "_overit_checked": true,
    "dod_vznik": "2021-06-05",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "53830385",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "36076643",
+   "suma_zmluvna": 1368523.2
   },
   {
    "id": "z-13105376",
@@ -31888,7 +32198,11 @@
    "last_seen": "2026-11-21",
    "_overit_checked": true,
    "dod_vznik": "1999-11-05",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "36194522",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31364501",
+   "suma_zmluvna": 3606692.1
   },
   {
    "id": "z-13101992",
@@ -31904,7 +32218,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13101992/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-20",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35805609",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00397610",
+   "suma_zmluvna": 100000.0
   },
   {
    "id": "z-13105485",
@@ -31920,7 +32238,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13105485/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-21",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "46926992",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35541016",
+   "suma_zmluvna": 190000.0
   },
   {
    "id": "z-13106463",
@@ -31936,7 +32258,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13106463/",
    "first_seen": "2026-11-20T12:38:41.847893+00:00",
    "last_seen": "2026-11-21",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "00151653",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00328995",
+   "suma_zmluvna": 130000.0
   },
   {
    "id": "u-kosenie verejnej zelene mc kosice – nad jazer",
@@ -32613,7 +32939,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mestská časť Bratislava - Ružinov · č. 1602/2026",
    "url": "https://www.crz.gov.sk/zmluva/13107938/",
    "first_seen": "2026-11-21T12:19:13.114084+00:00",
-   "last_seen": "2026-11-21"
+   "last_seen": "2026-11-21",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00603155",
+   "suma_zmluvna": 1575199.0
   },
   {
    "id": "z-13107554",
@@ -32628,7 +32958,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Banská Bystrica · č. 1593/2026",
    "url": "https://www.crz.gov.sk/zmluva/13107554/",
    "first_seen": "2026-11-21T12:19:13.114084+00:00",
-   "last_seen": "2026-11-21"
+   "last_seen": "2026-11-21",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00313271",
+   "suma_zmluvna": 1137748.92
   },
   {
    "id": "z-13107094",
@@ -32644,7 +32978,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13107094/",
    "first_seen": "2026-11-21T12:19:13.114084+00:00",
    "last_seen": "2026-11-21",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "17317282",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00316792",
+   "suma_zmluvna": 2646754.87
   },
   {
    "id": "z-13103278",
@@ -32660,7 +32998,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13103278/",
    "first_seen": "2026-11-21T12:19:13.114084+00:00",
    "last_seen": "2026-11-21",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "51765195",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "17335825",
+   "suma_zmluvna": 174461.71
   },
   {
    "id": "u-znizenie energetickej narocnosti administrati",
@@ -32692,7 +33034,9 @@
    "meta": "Dodávateľ: ETO HOTEL Kft. → Objednávateľ: Oblastná organizácia cestovného ruchu Žitný ostrov – Csallóköz · č. 10/2/2026",
    "url": "https://www.crz.gov.sk/zmluva/13108606/",
    "first_seen": "2026-11-22T12:22:42.446545+00:00",
-   "last_seen": "2026-11-22"
+   "last_seen": "2026-11-22",
+   "obj_ico": "42288967",
+   "suma_zmluvna": 2829900.0
   },
   {
    "id": "u-marketingova kampan regionu tatry - liptov na",
@@ -33536,7 +33880,9 @@
    "last_seen": "2026-11-24",
    "_overit_checked": true,
    "dod_vznik": "2023-05-25",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "55492355",
+   "dod_ico_zdroj": "rpo"
   },
   {
    "id": "z-13110681",
@@ -33554,7 +33900,9 @@
    "last_seen": "2026-11-24",
    "_overit_checked": true,
    "dod_vznik": "1995-09-25",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "31747493",
+   "dod_ico_zdroj": "rpo"
   },
   {
    "id": "z-13113688",
@@ -33572,7 +33920,9 @@
    "last_seen": "2026-11-24",
    "_overit_checked": true,
    "dod_vznik": "2009-06-01",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "dod_ico": "36863360",
+   "dod_ico_zdroj": "rpo"
   },
   {
    "id": "z-13113086",
@@ -33588,7 +33938,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13113086/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
    "last_seen": "2026-11-24",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31428819",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "31813861",
+   "suma_zmluvna": 368557.33
   },
   {
    "id": "z-13110221",
@@ -33603,7 +33957,11 @@
    "meta": "Dodávateľ: Slovenská sporiteľňa → Objednávateľ: Obec Štiavnik · č. 1197/CC/26",
    "url": "https://www.crz.gov.sk/zmluva/13110221/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
-   "last_seen": "2026-11-23"
+   "last_seen": "2026-11-23",
+   "dod_ico": "00151653",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00321672",
+   "suma_zmluvna": 100000.0
   },
   {
    "id": "z-13112928",
@@ -33618,7 +33976,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Mesto Poprad · č. 1149/2026",
    "url": "https://www.crz.gov.sk/zmluva/13112928/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
-   "last_seen": "2026-11-23"
+   "last_seen": "2026-11-23",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00326470",
+   "suma_zmluvna": 7770029.97
   },
   {
    "id": "z-13112536",
@@ -33634,7 +33996,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13112536/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
    "last_seen": "2026-11-23",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "50452622",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00315524",
+   "suma_zmluvna": 152598.56
   },
   {
    "id": "z-13110192",
@@ -33650,7 +34016,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13110192/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
    "last_seen": "2026-11-23",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35954612",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00166260",
+   "suma_zmluvna": 232369.75
   },
   {
    "id": "z-13112668",
@@ -33665,7 +34035,11 @@
    "meta": "Dodávateľ: Environmentálny fond → Objednávateľ: Obec Huty · č. 1",
    "url": "https://www.crz.gov.sk/zmluva/13112668/",
    "first_seen": "2026-11-23T14:13:50.787196+00:00",
-   "last_seen": "2026-11-23"
+   "last_seen": "2026-11-23",
+   "dod_ico": "30796491",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00315222",
+   "suma_zmluvna": 534986.04
   },
   {
    "id": "u-stavebny dozor pre stavbu: okruzna krizovatka",
@@ -34677,7 +35051,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13113709/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-24",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35708182",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "50349287",
+   "suma_zmluvna": 157384.43
   },
   {
    "id": "z-13120808",
@@ -34692,7 +35070,11 @@
    "meta": "Dodávateľ: Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky → Objednávateľ: Obec Hôrky · č. 1960/2026",
    "url": "https://www.crz.gov.sk/zmluva/13120808/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-25",
+   "dod_ico": "50349287",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00321303",
+   "suma_zmluvna": 387485.71
   },
   {
    "id": "z-13114185",
@@ -34708,7 +35090,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13114185/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-24",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36836907",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00332356",
+   "suma_zmluvna": 863952.0
   },
   {
    "id": "z-13120095",
@@ -34724,7 +35110,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13120095/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "53882679",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00311227",
+   "suma_zmluvna": 172587.89
   },
   {
    "id": "z-13118835",
@@ -34740,7 +35130,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13118835/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31427855",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00681300",
+   "suma_zmluvna": 119764.49
   },
   {
    "id": "z-13114512",
@@ -34756,7 +35150,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13114512/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "00684422",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 1743168.3
   },
   {
    "id": "z-13114516",
@@ -34772,7 +35170,9 @@
    "url": "https://www.crz.gov.sk/zmluva/13114516/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "obj_ico": "00003328",
+   "suma_zmluvna": 1763328.0
   },
   {
    "id": "z-13114518",
@@ -34790,7 +35190,9 @@
    "last_seen": "2026-11-25",
    "_overit_checked": true,
    "dod_vznik": "1992-02-25",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 1214684.04
   },
   {
    "id": "z-13114514",
@@ -34808,7 +35210,9 @@
    "last_seen": "2026-11-25",
    "_overit_checked": true,
    "dod_vznik": "1992-02-25",
-   "dod_krajina": "Slovenská republika"
+   "dod_krajina": "Slovenská republika",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 1206842.79
   },
   {
    "id": "z-13120435",
@@ -34823,7 +35227,9 @@
    "meta": "Dodávateľ: Miklošík Petr Mgr. rod. Miklošík → Objednávateľ: Slovenská správa ciest, Bratislava · č. 1568/3320-ZA/2026",
    "url": "https://www.crz.gov.sk/zmluva/13120435/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-25",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 122366.4
   },
   {
    "id": "z-13114920",
@@ -34839,7 +35245,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13114920/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-24",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31651402",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00320439",
+   "suma_zmluvna": 106017.61
   },
   {
    "id": "z-13118221",
@@ -34855,7 +35265,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13118221/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47076950",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "50349287",
+   "suma_zmluvna": 148122.14
   },
   {
    "id": "z-13114423",
@@ -34871,7 +35285,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13114423/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-24",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36854140",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00330027",
+   "suma_zmluvna": 448000.0
   },
   {
    "id": "z-13118269",
@@ -34886,7 +35304,11 @@
    "meta": "Dodávateľ: Národné poľnohospodárske a potravinárske centrum Lužianky → Objednávateľ: Ministerstvo pôdohospodárstva a rozvoja vidieka SR · č. 1299/2025/MPRVSR-930/D1",
    "url": "https://www.crz.gov.sk/zmluva/13118269/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-25",
+   "dod_ico": "42337402",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00156621",
+   "suma_zmluvna": 8472555.4
   },
   {
    "id": "z-13109478",
@@ -34901,7 +35323,9 @@
    "meta": "Dodávateľ: Prešovský samosprávny kraj → Objednávateľ: Slovenská správa ciest, Bratislava · č. 1292/3310/DoU-2026-KE",
    "url": "https://www.crz.gov.sk/zmluva/13109478/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
-   "last_seen": "2026-11-25"
+   "last_seen": "2026-11-25",
+   "obj_ico": "00003328",
+   "suma_zmluvna": 119696.26
   },
   {
    "id": "z-13120788",
@@ -34917,7 +35341,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13120788/",
    "first_seen": "2026-11-24T14:40:11.331399+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35681918",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00305235",
+   "suma_zmluvna": 221963.97
   },
   {
    "id": "u-ivanka pri nitre – park stastia a radosti",
@@ -35794,7 +36222,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13125668/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-26",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "45965838",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "17070775",
+   "suma_zmluvna": 297942.73
   },
   {
    "id": "z-13121939",
@@ -35810,7 +36242,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13121939/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "35871113",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00320439",
+   "suma_zmluvna": 267901.38
   },
   {
    "id": "z-13121889",
@@ -35826,7 +36262,8 @@
    "url": "https://www.crz.gov.sk/zmluva/13121889/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "suma_zmluvna": 18000000.0
   },
   {
    "id": "z-13121651",
@@ -35842,7 +36279,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13121651/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "31633765",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00318426",
+   "suma_zmluvna": 125790.0
   },
   {
    "id": "z-13124895",
@@ -35858,7 +36299,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13124895/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-26",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36531774",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35971126",
+   "suma_zmluvna": 243533.85
   },
   {
    "id": "z-13120019",
@@ -35874,7 +36319,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13120019/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36440591",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35593008",
+   "suma_zmluvna": 589764.94
   },
   {
    "id": "z-13118090",
@@ -35890,7 +36339,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13118090/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "47043024",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "35971126",
+   "suma_zmluvna": 317215.77
   },
   {
    "id": "z-13121569",
@@ -35906,7 +36359,11 @@
    "url": "https://www.crz.gov.sk/zmluva/13121569/",
    "first_seen": "2026-11-25T11:39:01.699953+00:00",
    "last_seen": "2026-11-25",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_ico": "36205214",
+   "dod_ico_zdroj": "crz",
+   "obj_ico": "00324868",
+   "suma_zmluvna": 199484.89
   },
   {
    "id": "u-maso a masove vyrobky",
@@ -38218,8 +38675,8 @@
    "date": "2026-11-26",
    "category": "Pôdohospodárstvo a potraviny",
    "blok": "",
-   "meta": "Obstarávateľ: Základná škola Staničná 13, Košice",
-   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/498174?cHash=8465a89d5893cb4130ed3dc4996e56b2",
+   "meta": "Obstarávateľ: Školská jedáleň Bernolákova 16, Košice",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/495121?cHash=d651c4c74376f6fefe9a937ad695f338",
    "first_seen": "2026-11-26T14:56:20.792409+00:00",
    "last_seen": "2026-11-26",
    "_uvo_done": true,
@@ -39032,7 +39489,9 @@
    "suma_zmluvna": 167280.0,
    "first_seen": "2026-11-26T14:56:20.792409+00:00",
    "last_seen": "2026-11-26",
-   "_overit_checked": true
+   "_overit_checked": true,
+   "dod_vznik": "2013-08-16",
+   "dod_krajina": "Slovenská republika"
   },
   {
    "id": "u-stavebny dozor na stavbu „zachovanie nkp pust",
@@ -39050,6 +39509,23 @@
    "druh": "Služby",
    "cpv": "Dohľad nad stavebnými prácami",
    "fondy": "Áno"
+  },
+  {
+   "id": "u-opravy a osetrovanie autobusov - dns",
+   "source": "uvo",
+   "title": "Opravy a ošetrovanie autobusov - DNS",
+   "date": "2026-11-26",
+   "category": "Štát a štátne podniky",
+   "blok": "",
+   "meta": "Obstarávateľ: Ministerstvo obrany Slovenskej republiky",
+   "url": "https://www.uvo.gov.sk/vyhladavanie/vyhladavanie-zakaziek/detail/551971?cHash=18d6b7fa4686b7e96c9ad80e109953db",
+   "first_seen": "2026-11-26T15:20:21.420691+00:00",
+   "last_seen": "2026-11-26",
+   "_uvo_done": true,
+   "stav": "Aktívna",
+   "druh": "Služby",
+   "cpv": "Oprava autobusov 50113200-2 Údržba autobusov",
+   "fondy": "Nie"
   }
  ],
  "updated": "2026-11-26",
@@ -39193,11 +39669,15 @@
   "sagasta sk s r o": {},
   "banskobystricka regionalna sprava ciest a s": {},
   "primachlad a s": {},
-  "metrostav slovakia a s": {},
+  "metrostav slovakia a s": {
+   "_v": 2
+  },
   "stanislav horvath a spol": {},
   "stonefell sk s r o": {},
   "pittel + brausewetter s r o": {},
-  "medis nitra spol s r o": {},
+  "medis nitra spol s r o": {
+   "_v": 2
+  },
   "photomap s r o": {},
   "inmedia spol s r o": {},
   "dicit spol s r o": {
@@ -39619,7 +40099,9 @@
   "hlm group s r o": {},
   "hanes slovakia s r o": {},
   "chrien s r o": {},
-  "mabonex slovakia spol s r o": {},
+  "mabonex slovakia spol s r o": {
+   "_v": 2
+  },
   "hc kosice s r o": {},
   "michal krcmery a spol": {},
   "profi real estate s r o": {},
@@ -40119,56 +40601,143 @@
   "ustav technologii a inovacii s r o": {
    "_v": 2
   },
-  "m r center s r o": {},
-  "gospace labs s r o": {},
-  "process management s r o": {},
-  "pavlicko s r o": {},
-  "bauteka s r o": {},
-  "pohori s r o": {},
-  "spinet a s": {},
-  "auto rotos s r o": {},
-  "vykrut zahradni sluzby a s": {},
+  "m r center s r o": {
+   "_v": 2
+  },
+  "gospace labs s r o": {
+   "_v": 2
+  },
+  "process management s r o": {
+   "_v": 2
+  },
+  "pavlicko s r o": {
+   "_v": 2
+  },
+  "bauteka s r o": {
+   "_v": 2
+  },
+  "pohori s r o": {
+   "_v": 2
+  },
+  "spinet a s": {
+   "_v": 2
+  },
+  "auto rotos s r o": {
+   "_v": 2
+  },
+  "vykrut zahradni sluzby a s": {
+   "_v": 2
+  },
   "data tailors s r o": {
    "vznik": "2020-10-21",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "53349369",
+   "_v": 2
   },
   "nitra park s r o": {
    "vznik": "2021-06-05",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "53830385",
+   "_v": 2
   },
   "azd slovakia a s": {
    "vznik": "1999-11-05",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "36194522",
+   "_v": 2
   },
-  "prva zvaracska a s": {},
-  "ventklima s r o": {},
+  "prva zvaracska a s": {
+   "_v": 2
+  },
+  "ventklima s r o": {
+   "_v": 2
+  },
   "reflexgroup rimavska sobota k s": {
    "vznik": "2023-05-25",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "55492355",
+   "_v": 2
   },
   "nadacia integra": {
    "vznik": "1995-09-25",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "31747493",
+   "_v": 2
   },
   "ruzicka and partners s r o": {
    "vznik": "2009-06-01",
-   "krajina": "Slovenská republika"
+   "krajina": "Slovenská republika",
+   "ico": "36863360",
+   "_v": 2
   },
-  "m t m slovakia centrum s r o": {},
-  "ccs slovenska spolocnost pre platobne karty s r o": {},
-  "constructor-eu s r o": {},
-  "riego s r o": {},
-  "dexis slovakia s r o": {},
-  "dopra-via a s ba": {},
-  "digitwin s r o": {},
-  "ceskoslovenska obchodna banka a s": {},
-  "comfing spol s r o": {},
-  "mp kanal service s r o": {},
-  "eei s r o": {},
-  "regionalna sprava a udrzba ciest nitra a s": {},
-  "hater-handlova spol s r o": {},
-  "fudo s r o": {},
-  "elmed s r o": {},
-  "kosit a s": {}
+  "m t m slovakia centrum s r o": {
+   "_v": 2
+  },
+  "ccs slovenska spolocnost pre platobne karty s r o": {
+   "_v": 2
+  },
+  "constructor-eu s r o": {
+   "_v": 2
+  },
+  "riego s r o": {
+   "_v": 2
+  },
+  "dexis slovakia s r o": {
+   "_v": 2
+  },
+  "dopra-via a s ba": {
+   "_v": 2
+  },
+  "digitwin s r o": {
+   "_v": 2
+  },
+  "ceskoslovenska obchodna banka a s": {
+   "_v": 2
+  },
+  "comfing spol s r o": {
+   "_v": 2
+  },
+  "mp kanal service s r o": {
+   "_v": 2
+  },
+  "eei s r o": {
+   "_v": 2
+  },
+  "regionalna sprava a udrzba ciest nitra a s": {
+   "_v": 2
+  },
+  "hater-handlova spol s r o": {
+   "_v": 2
+  },
+  "fudo s r o": {
+   "_v": 2
+  },
+  "elmed s r o": {
+   "_v": 2
+  },
+  "kosit a s": {
+   "_v": 2
+  },
+  "id est s r o": {
+   "_v": 2
+  },
+  "peter s one s r o": {
+   "_v": 2
+  },
+  "zdruzenie agropodnikatelov druzstvo": {
+   "_v": 2
+  },
+  "vlastnici bytov a nebytovych priestorov v bytovom dome adresa: sevcenkova 1060/6 851 01 bratislava v zastupeni bytove druzstvo petrzalka": {
+   "_v": 2
+  },
+  "zjedene s r o": {
+   "_v": 2
+  },
+  "growmind a s": {
+   "vznik": "2013-08-16",
+   "krajina": "Slovenská republika",
+   "ico": "47367873",
+   "_v": 2
+  }
  }
 }
