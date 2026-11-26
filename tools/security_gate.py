@@ -45,7 +45,7 @@ ALLOWED_ITEM_FIELDS = {
     # interné príznaky spracovania — TODO (#8): stripovať pred publikovaním store.json
     "_uvo_done", "_ai_tried", "_overit_checked",
 }
-ALLOWED_FIRMA_FIELDS = {"vznik", "krajina", "ico", "zdroj"}
+ALLOWED_FIRMA_FIELDS = {"vznik", "krajina", "ico", "zdroj", "_v"}  # _v = interný marker verzie cache (neškodný)
 
 # ---- 3) Blocklist (druhá vrstva): tajomstvá + súkromný sentinel ----
 PRIVATE_SENTINEL = "SKMON-PRIVATE-DO-NOT-PUBLISH"
