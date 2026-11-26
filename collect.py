@@ -535,17 +535,20 @@ def _save_crz_cache():
 
 def parse_crz_detail_text(text):
     """Z textu detailu zmluvy vytiahni IČO oboch strán + zmluvnú sumu. PRIMÁRNE dáta (bez fuzzy).
-    Štruktúra: 'Objednávateľ: … IČO: <obj> … Dodávateľ: … IČO: <dod> …'."""
+    Pozor: stránka má hore vyhľadávací formulár s labelmi 'Dodávateľ:'/'Objednávateľ:' (bez hodnôt
+    'IČO:'), reálny detail je NIŽŠIE. Preto kotvíme na POSLEDNÝ výskyt labelu + okno s najbližším 'IČO:'.
+    Labely formulára 'IČO dodávateľa:'/'IČO objednávateľa:' sa nematchujú (regex žiada 'IČO:' + číslo)."""
     out = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None}
-    di = text.find("Dodávateľ")
-    icos = [(m.start(), re.sub(r"\s", "", m.group(1))) for m in re.finditer(r"I[ČC]O:\s*\**\s*(\d[\d\s]{4,9}\d)", text)]
-    if di >= 0:
-        after = [v for p, v in icos if p > di]
-        before = [v for p, v in icos if p < di]
-        if after: out["dod_ico"] = after[0]
-        if before: out["obj_ico"] = before[-1]
-    elif icos:
-        out["dod_ico"] = icos[-1][1]
+    ico_re = re.compile(r"I[ČC]O:\s*\**\s*(\d[\d\s]{4,9}\d)")
+    def ico_after(label):
+        pos = text.rfind(label)          # posledný výskyt = detailová sekcia (nie formulár hore)
+        if pos < 0: return None
+        m = ico_re.search(text, pos, pos + 500)
+        return re.sub(r"\s", "", m.group(1)) if m else None
+    out["dod_ico"] = ico_after("Dodávateľ")
+    out["obj_ico"] = ico_after("Objednávateľ")
+    if out["dod_ico"] and out["dod_ico"] == out["obj_ico"]:
+        out["dod_ico"] = None             # ak okno nechtiac zachytilo to isté IČO, radšej nič (presnosť>pokrytie)
     m = re.search(r"Celková čiastka:\s*\**\s*([\d  \s]+,\d{2})", text)
     if not m: m = re.search(r"Zmluvne dohodnutá čiastka:\s*([\d  \s]+,\d{2})", text)
     if m:
@@ -554,15 +557,18 @@ def parse_crz_detail_text(text):
         except Exception: pass
     return out
 
+CRZ_PARSER_VER = 2   # bump pri zmene parsera -> staré cache záznamy sa znova stiahnu/preparsujú
+
 def crz_detail(url, use_cache=True):
     """Fetch + parse detail jednej zmluvy; vracia {dod_ico, obj_ico, suma_zmluvna, _ico_zdroj:'crz'}."""
     key = re.search(r"/zmluva/(\d+)", url)
     key = key.group(1) if key else url
     c = _crz_cache()
-    if use_cache and key in c:
-        return c[key]
+    cached = c.get(key)
+    if use_cache and cached and cached.get("_pv") == CRZ_PARSER_VER:
+        return cached
     html_txt = get(url)
-    res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "_ico_zdroj": None}
+    res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "_ico_zdroj": None, "_pv": CRZ_PARSER_VER}
     if html_txt:
         try:
             txt = BeautifulSoup(html_txt, "html.parser").get_text("\n")
@@ -571,6 +577,9 @@ def crz_detail(url, use_cache=True):
         p = parse_crz_detail_text(txt)
         res.update(p)
         if res.get("dod_ico"): res["_ico_zdroj"] = "crz"
+    else:
+        # fetch zlyhal — nekešuj ako finálne, nech sa nabudúce skúsi znova
+        if cached: return cached
     c[key] = res
     return res
 
@@ -681,8 +690,19 @@ def main():
     HAS_KEY = bool(os.environ.get("ANTHROPIC_API_KEY"))
     ai_cap, ai_done, uvo_done = int(CFG.get("ai_max_per_run", 120)), 0, 0
     rpo_cap, rpo_done = int(CFG.get("rpo_max_per_run", 40)), 0
+    crz_cap, crz_done = int(CFG.get("crz_detail_max_per_run", 80)), 0
     for it in items:
         s = it.get("source")
+        # BACK-FILL IČO z CRZ detailu pre staršie zmluvy bez IČO (primárny zdroj, cache, cap)
+        if s == "zmluvy" and not it.get("dod_ico") and it.get("url") and crz_done < crz_cap:
+            key = re.search(r"/zmluva/(\d+)", it["url"])
+            _ce = _crz_cache().get(key.group(1)) if key else None
+            uncached = not (_ce and _ce.get("_pv") == CRZ_PARSER_VER)   # stiahne sa, ak chýba al. je starý parser
+            det = crz_detail(it["url"])
+            if uncached: crz_done += 1
+            if det.get("dod_ico"): it["dod_ico"] = det["dod_ico"]; it["dod_ico_zdroj"] = "crz"
+            if det.get("obj_ico"): it["obj_ico"] = det["obj_ico"]
+            if det.get("suma_zmluvna") is not None: it["suma_zmluvna"] = det["suma_zmluvna"]
         if s == "zmluvy" and it.get("overit") and _je_firma(it["overit"]):
             key = _cn(it["overit"])
             cached = firmy.get(key)
@@ -718,7 +738,8 @@ def main():
             if p:
                 it["popis"] = p
             ai_done += 1
-    print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY, "| RPO firiem overených:", rpo_done)
+    _save_crz_cache()   # ulož doplnené CRZ detaily (back-fill IČO) pre ďalšie behy
+    print("AI popisov (tento beh):", ai_done, "| kľúč prítomný:", HAS_KEY, "| RPO firiem overených:", rpo_done, "| CRZ detailov (nových):", crz_done)
     store = {"items": items, "updated": ISO, "firmy": firmy}
     json.dump(store, open(os.path.join(DATA, "store.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 
