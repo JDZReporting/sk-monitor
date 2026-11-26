@@ -209,6 +209,17 @@ Schválené korekcie stratégie zapracované. Scenár A (0 €).
 - **Ďalej:** napojiť TEXTY dodatkov (document.py extrahuje PDF) → presná sémantika namiesto „neurčené";
   predĺženie trvania, zmena predmetu/jednotkových cien zo štruktúrovaných polí; dôvody zmien z textu.
 
+## Aktualizácia 2026-11-26 (noc, pokr. 4) — Investigatívne spisy (P3, case management)
+- **`engine/cases.py`** — trvalé spisy (SPIS-xxxxxx, stabilné ID). Z radaru sa auto-vytvárajú/aktualizujú
+  spisy pre relevantné subjekty (prioritné/na preverenie/vysoká významnosť), spájané podľa IČO.
+- **KRITICKÉ (overené selftestom cez 3 behy):** engine prepisuje LEN auto polia (signály, skóre, návrhy krokov,
+  súvisiace zmluvy); **ručné polia sa NIKDY neprepíšu** — stav, moje_poznamky, dokazy, protidokazy,
+  rucne_rozhodnutia, manualne_prepojenia. Uzavreté spisy (vyriešený/vyvrátený/archivovaný) engine znovu neotvára.
+- Auto návrhy ďalších krokov podľa signálov (deterministicky, bez LLM). Prepojenie na životný cyklus (dodatky).
+- Stav je PERZISTENTNÝ v `findings/cases.json` (súkromný repo, commitovaný). Zapojené: intelligence.yml,
+  build_db (`spisy`), terminál **⑱**, data_quality (`spisy_celkom`, `spisy_otvorene`). Gate OK, selftest PASS.
+- Spisy sa editujú priamo v `cases.json` (poznámky, dôkazy, stav) — engine ich pri ďalšom behu zachová.
+
 ### Ďalej (P1 zvyšok → P4)
 - **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
 - **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).

@@ -112,6 +112,14 @@ def compute(store, findings_dir=None, health=None):
         metr["zaznamy_bez_financii"] = M(miss, num=miss, den=len(fin["firmy"]),
             method="firmy bez dostupného obratu (RÚZ) / analyzované firmy")
 
+    # Investigatívne spisy (engine/cases.py)
+    cs = fload("cases.json")
+    if cs and ("cases" in cs):
+        cc = cs["cases"]
+        otv = sum(1 for c in cc.values() if c.get("stav") not in ("vyrieseny", "vyvrateny", "archivovany"))
+        metr["spisy_celkom"] = M(len(cc), num=len(cc), method="počet investigatívnych spisov (cases.json)")
+        metr["spisy_otvorene"] = M(otv, num=otv, den=len(cc), method="spisy, ktoré nie sú vyriešené/vyvrátené/archivované")
+
     # Životný cyklus / dodatky (engine/contract_lifecycle.py)
     lc = fload("contract_lifecycle.json")
     if lc and ("pocet_cyklov" in lc):
