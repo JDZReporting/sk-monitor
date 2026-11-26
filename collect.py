@@ -512,6 +512,9 @@ def collect_crz():
             if det.get("dod_ico"): it["dod_ico"] = det["dod_ico"]; it["dod_ico_zdroj"] = "crz"
             if det.get("obj_ico"): it["obj_ico"] = det["obj_ico"]
             if det.get("suma_zmluvna") is not None: it["suma_zmluvna"] = det["suma_zmluvna"]
+            if det.get("typ"): it["zml_typ"] = det["typ"]
+            if det.get("cislo"): it["zml_cislo"] = det["cislo"]
+            if det.get("cislo_ref"): it["zml_cislo_ref"] = det["cislo_ref"]
         except Exception:
             pass
         out.append(it)
@@ -555,9 +558,17 @@ def parse_crz_detail_text(text):
         t = re.sub(r"[^\d,]", "", m.group(1)).replace(",", ".")
         try: out["suma_zmluvna"] = float(t)
         except Exception: pass
+    # typ záznamu (Zmluva / Dodatok / Dohoda ...) a číslo zmluvy — pre rekonštrukciu životného cyklu
+    mt = re.search(r"\bTyp:\s*\**\s*([A-Za-zÀ-ž]+)", text)
+    if mt: out["typ"] = mt.group(1).strip()
+    mc = re.search(r"Č\.\s*(?:zmluvy|dodatku):\s*\**\s*([^\n*]{1,80})", text)
+    if mc: out["cislo"] = re.sub(r"\s+", " ", mc.group(1)).strip()
+    # referencia na pôvodnú zmluvu (pri dodatku): "k zmluve č. X" / "dodatok k ..."
+    mr = re.search(r"k\s+zmluve\s*(?:č\.?|číslo)?\s*([A-Za-z0-9/\-_. ]{3,60})", text, re.IGNORECASE)
+    if mr: out["cislo_ref"] = re.sub(r"\s+", " ", mr.group(1)).strip()
     return out
 
-CRZ_PARSER_VER = 2   # bump pri zmene parsera -> staré cache záznamy sa znova stiahnu/preparsujú
+CRZ_PARSER_VER = 3   # bump pri zmene parsera -> staré cache záznamy sa znova stiahnu/preparsujú
 
 def crz_detail(url, use_cache=True):
     """Fetch + parse detail jednej zmluvy; vracia {dod_ico, obj_ico, suma_zmluvna, _ico_zdroj:'crz'}."""
@@ -568,7 +579,8 @@ def crz_detail(url, use_cache=True):
     if use_cache and cached and cached.get("_pv") == CRZ_PARSER_VER:
         return cached
     html_txt = get(url)
-    res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "_ico_zdroj": None, "_pv": CRZ_PARSER_VER}
+    res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "typ": None, "cislo": None,
+           "cislo_ref": None, "_ico_zdroj": None, "_pv": CRZ_PARSER_VER}
     if html_txt:
         try:
             txt = BeautifulSoup(html_txt, "html.parser").get_text("\n")
@@ -703,6 +715,9 @@ def main():
             if det.get("dod_ico"): it["dod_ico"] = det["dod_ico"]; it["dod_ico_zdroj"] = "crz"
             if det.get("obj_ico"): it["obj_ico"] = det["obj_ico"]
             if det.get("suma_zmluvna") is not None: it["suma_zmluvna"] = det["suma_zmluvna"]
+            if det.get("typ"): it["zml_typ"] = det["typ"]
+            if det.get("cislo"): it["zml_cislo"] = det["cislo"]
+            if det.get("cislo_ref"): it["zml_cislo_ref"] = det["cislo_ref"]
         if s == "zmluvy" and it.get("overit") and _je_firma(it["overit"]):
             key = _cn(it["overit"])
             cached = firmy.get(key)

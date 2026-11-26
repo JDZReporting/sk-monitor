@@ -185,6 +185,30 @@ Schválené korekcie stratégie zapracované. Scenár A (0 €).
   Z nej postavím ÚVO klienta SPRÁVNE (bez hádania polí). Zapojené do intelligence.yml (nekritický krok).
 - Oba nové súbory v gate whiteliste. Terminál má teraz dotazy ①–⑮.
 
+## Aktualizácia 2026-11-26 (noc, pokr. 2) — živá validácia + kalibrácia radaru
+- **Živý engine beh prešiel.** Reálne čísla: **IČO 90,7 %** (273/301; 267 crz + 6 rpo, 0 fuzzy chýb),
+  dodávatelia identif. **90,3 %**, **RÚZ 96 %** (štrukt. výkazy 92 %), RPVS 60 %, 0 duplicít, ÚVO↔CRZ 17, radar 124 leadov.
+- **Opravené pri čítaní ostrých dát:** financial.py None-guard (rok bez výkazu); radar **dedup** príznakov
+  (Slovanet riziko 100→36); data_quality source_health vnorenie; engine kroky **nekritické** (|| echo).
+- **ÚVO sonda:** `opendata.uvo.gov.sk` NEEXISTUJE (DNS). Noví kandidáti (www.uvo.gov.sk/openDataIdx,
+  data.slovensko.sk CKAN, TED) — budúci beh overí.
+- **Kalibrácia radaru:** koncentračné/objemové príznaky (SK-HIGHVALUE/MARKET-HHI/BUYER-CONC) presunuté
+  k **VÝZNAMNOSTI** (ekonomická štruktúra, nie podozrenie); na rizikovej osi ostávajú len skutočné proxy
+  (SK-OWN-SHARED, audit, FIN). Selftest PASS. Prejaví sa pri ďalšom engine behu (beží z verejného repa).
+
+## Aktualizácia 2026-11-26 (noc, pokr. 3) — CRZ dodatky: životný cyklus kontraktu
+- **`engine/contract_lifecycle.py`** — rekonštrukcia cyklu z CRZ záznamov zoskupených podľa čísla zmluvy
+  (dodatok → rodič cez `zml_cislo_ref`). Časová os (zmluva + dodatky), **3 sémantiky súm** (delta / nová
+  celková cena / neurčené) → kumulatív LEN pri jednoznačnej sémantike, inak sa **neskladá** (bez dvojitého
+  započítania). Navýšenie abs/%, **>50 % = upozornenie preveriť voči zákonu o VO** (nie tvrdenie o nezákonnosti),
+  dni medzi podpisom a dodatkami, počet dodatkov. Selftest PASS (delta/nová cena/neurčené).
+- **collect.py**: `parse_crz_detail_text` parsuje `typ` (Zmluva/Dodatok), `cislo`, `cislo_ref` (k zmluve č.);
+  položky dostanú `zml_typ`/`zml_cislo`/`zml_cislo_ref`. `CRZ_PARSER_VER=3` (cache sa preparsuje). Gate allowlist doplnený.
+- Zapojené: intelligence.yml (nekritický krok), build_db (`zmluvy_cyklus`, `zmluvy_cyklus_timeline`),
+  terminál **⑯ cyklus / ⑰ časová os**, data_quality (`zmluvy_s_dodatkami`, `cykly_nejednoznacna_suma`).
+- **Ďalej:** napojiť TEXTY dodatkov (document.py extrahuje PDF) → presná sémantika namiesto „neurčené";
+  predĺženie trvania, zmena predmetu/jednotkových cien zo štruktúrovaných polí; dôvody zmien z textu.
+
 ### Ďalej (P1 zvyšok → P4)
 - **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
 - **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).

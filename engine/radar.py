@@ -32,7 +32,10 @@ def _clamp(x): return max(0, min(100, int(round(x))))
 # váhy rizikových signálov (nízke — sú to proxy, nie dôkaz)
 RISK_W = {"SK-FIN-PUBRELIANCE": 18, "SK-FIN-YOUNGWIN": 22, "SK-FIN-THINCAP": 16, "SK-FIN-LOSSWIN": 12,
           "SK-FIN-STATEDEBT": 22, "SK-OWN-NAMECHANGE": 14, "SK-OWN-SEATCHANGE": 12, "SK-SUP-NEW": 10,
-          "SK-AUDIT-SPENDER": 20, "SK-AUDIT-REPEAT": 14, "SK-OWN-SHARED": 18, "SK-COMBO": 10, "SK-HIGHVALUE": 8}
+          "SK-AUDIT-SPENDER": 20, "SK-AUDIT-REPEAT": 14, "SK-OWN-SHARED": 18, "SK-COMBO": 10}
+# Príznaky ekonomickej ŠTRUKTÚRY → patria k VÝZNAMNOSTI, nie k rizikovej osi (kalibrácia 2026-11-26).
+# Koncentrácia/objem nie je podozrenie; je to ekonomický znak (môže byť legitímny aj zaujímavý).
+SIGNIF_W = {"SK-HIGHVALUE": 10, "SK-MARKET-HHI": 10, "SK-BUYER-CONC": 10, "SK-MARKET-CONC": 10}
 
 def compute(fin, risk=None, own=None, kontrola=None):
     leads = {}  # kľúč = ico alebo norm(nazov)
@@ -56,66 +59,60 @@ def compute(fin, risk=None, own=None, kontrola=None):
             vyz += 12; vyzp.append(f"{round(kon)} % objemu od jedného objednávateľa (koncentrácia)")
         if (v.get("crz_objem_eur") or 0) >= 5_000_000:
             vyzp.append(f"objem {round(v['crz_objem_eur']):,} €".replace(",", " "))
-        # --- os RIZIKO (z finančných signálov) ---
-        riz = 0.0; rizp = []
+        # --- os RIZIKO (z finančných signálov; koncentračné/objemové idú k VÝZNAMNOSTI) ---
+        rizp = []; sigp = []
         for s in (f.get("signaly") or []):
-            ind = s.get("indikator")
-            riz += RISK_W.get(ind, 10)
-            rizp.append({"indikator": ind, "preco": s.get("preco"), "obmedzenie": s.get("obmedzenie")})
+            ind = s.get("indikator"); e = {"indikator": ind, "preco": s.get("preco"), "obmedzenie": s.get("obmedzenie")}
+            (sigp if ind in SIGNIF_W else rizp).append(e)
         leads[k] = {"nazov": f.get("nazov"), "ico": f.get("ico"),
-                    "vyznam_skore": _clamp(vyz), "_vyzp": vyzp,
-                    "riziko_skore": _clamp(riz), "_rizp": rizp,
-                    "crz_objem_eur": v.get("crz_objem_eur")}
+                    "vyz_base": _clamp(vyz), "_vyzp": vyzp,
+                    "_rizp": rizp, "_sigp": sigp, "crz_objem_eur": v.get("crz_objem_eur")}
 
-    # augment riziko z ďalších zdrojov (flags)
-    def add_flags(rows, name_field, flags_field, ico_field=None):
-        for r in rows or []:
-            k = key(r.get(ico_field) if ico_field else None, r.get(name_field))
-            L = leads.get(k)
-            if not L:
-                L = leads[k] = {"nazov": r.get(name_field), "ico": r.get(ico_field) if ico_field else None,
-                                "vyznam_skore": 0, "_vyzp": [], "riziko_skore": 0, "_rizp": [], "crz_objem_eur": None}
-            for fl in (r.get(flags_field) or []):
-                L["riziko_skore"] = _clamp(L["riziko_skore"] + RISK_W.get(fl, 10))
-                L["_rizp"].append({"indikator": fl, "preco": "príznak z " + flags_field})
+    def _ensure(k, nazov, ico):
+        L = leads.get(k)
+        if not L:
+            L = leads[k] = {"nazov": nazov, "ico": ico, "vyz_base": 0, "_vyzp": [],
+                            "_rizp": [], "_sigp": [], "crz_objem_eur": None}
+        return L
 
-    if own: add_flags(own.get("rows"), "subjekt", "flags", "ico")
+    def route(L, fl, preco):
+        """Príznak ekonomickej štruktúry → významnosť; inak → riziko."""
+        (L["_sigp"] if fl in SIGNIF_W else L["_rizp"]).append({"indikator": fl, "preco": preco})
+
+    if own:
+        for r in own.get("rows") or []:
+            L = _ensure(key(r.get("ico"), r.get("subjekt")), r.get("subjekt"), r.get("ico"))
+            for fl in (r.get("flags") or []): route(L, fl, "príznak z ownership")
     if risk:
         for it in (risk.get("items") or []):
-            k = key(it.get("ico"), it.get("dod"))
-            L = leads.get(k)
-            if not L:
-                L = leads[k] = {"nazov": it.get("dod"), "ico": it.get("ico"), "vyznam_skore": 0,
-                                "_vyzp": [], "riziko_skore": 0, "_rizp": [], "crz_objem_eur": None}
-            for fl in (it.get("flags") or []):
-                L["riziko_skore"] = _clamp(L["riziko_skore"] + RISK_W.get(fl, 8))
-                L["_rizp"].append({"indikator": fl, "preco": "rizikový príznak (score)"})
+            L = _ensure(key(it.get("ico"), it.get("dod")), it.get("dod"), it.get("ico"))
+            for fl in (it.get("flags") or []): route(L, fl, "rizikový príznak (score)")
     if kontrola:
         for l in (kontrola.get("links") or []):
-            k = key(None, l.get("subjekt"))
-            L = leads.get(k)
-            if not L:
-                L = leads[k] = {"nazov": l.get("subjekt"), "ico": None, "vyznam_skore": 0,
-                                "_vyzp": [], "riziko_skore": 0, "_rizp": [], "crz_objem_eur": None}
-            L["riziko_skore"] = _clamp(L["riziko_skore"] + (20 if l.get("opakovana_kontrola") else 14))
+            L = _ensure(key(None, l.get("subjekt")), l.get("subjekt"), None)
             L["_rizp"].append({"indikator": "NKÚ-KONTROLA×VÝDAVKY",
                                "preco": f"pod kontrolou NKÚ a míňa ({round(l.get('suma_spolu') or 0)} €)"})
 
     out = []
     for L in leads.values():
-        # DEDUP rizikových príznakov na subjekt (ten istý indikátor sa nesmie počítať viackrát)
-        seen = {}
+        # DEDUP príznakov na subjekt (ten istý indikátor sa nesmie počítať viackrát)
+        seenr = {}
         for e in L["_rizp"]:
-            seen.setdefault(e.get("indikator"), e)
-        L["_rizp"] = list(seen.values())
-        L["riziko_skore"] = _clamp(sum(RISK_W.get(i, 10) for i in seen))
-        vyz, riz = L["vyznam_skore"], L["riziko_skore"]
+            seenr.setdefault(e.get("indikator"), e)
+        seens = {}
+        for e in L["_sigp"]:
+            seens.setdefault(e.get("indikator"), e)
+        riz = _clamp(sum(RISK_W.get(i, 10) for i in seenr))
+        vyz = _clamp(L["vyz_base"] + sum(SIGNIF_W.get(i, 8) for i in seens))
+        L["riziko_skore"] = riz; L["vyznam_skore"] = vyz; L.pop("vyz_base", None)
         if riz >= 30 and vyz >= 50: typ = "prioritné preverenie (významné + rizikové)"
         elif riz >= 30: typ = "na preverenie"
         elif vyz >= 50: typ = "ekonomická téma (významné, bez podozrenia)"
         elif riz > 0: typ = "sledovať"
         else: typ = "bežné"
-        preco = {"vyznamnost": L.pop("_vyzp"), "riziko": L.pop("_rizp")}
+        vyzp = L.pop("_vyzp") + [f"{e['indikator']}: {e['preco']}" for e in seens.values()]
+        preco = {"vyznamnost": vyzp, "riziko": list(seenr.values())}
+        L.pop("_rizp", None); L.pop("_sigp", None)
         L.update({"typ_temy": typ, "preco": preco,
                   "poznamka": "Dve osi oddelene; riziko = proxy na preverenie, nie dôkaz. Významnosť ≠ podozrenie."})
         out.append(L)

@@ -112,6 +112,17 @@ def compute(store, findings_dir=None, health=None):
         metr["zaznamy_bez_financii"] = M(miss, num=miss, den=len(fin["firmy"]),
             method="firmy bez dostupného obratu (RÚZ) / analyzované firmy")
 
+    # Životný cyklus / dodatky (engine/contract_lifecycle.py)
+    lc = fload("contract_lifecycle.json")
+    if lc and ("pocet_cyklov" in lc):
+        amb = sum(1 for c in (lc.get("cykly") or []) if c.get("sumy_nejednoznacne"))
+        metr["zmluvy_s_dodatkami"] = M(lc["pocet_cyklov"], num=lc["pocet_cyklov"], den=len(zm),
+            method="zmluvy s ≥1 dodatkom (podľa čísla zmluvy) / všetky zmluvy")
+        metr["cykly_nejednoznacna_suma"] = M(amb, num=amb, den=lc["pocet_cyklov"],
+            method="cykly, kde sa kumulatív nedá spočítať (chýba text dodatku) — konzervatívne, neskladá sa")
+    else:
+        metr["zmluvy_s_dodatkami"] = M("n/a", method="chýba findings/contract_lifecycle.json (vzniká v Actions)")
+
     # ÚVO↔CRZ prepojenie (engine/uvo_link.py)
     ul = fload("uvo_crz_links.json")
     if ul and ("pocet_prepojeni" in ul):

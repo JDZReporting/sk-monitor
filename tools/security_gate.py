@@ -42,6 +42,7 @@ ALLOWED_ITEM_FIELDS = {
     "first_seen", "last_seen", "dod_vznik", "dod_krajina", "_changed",
     "druh", "cpv", "fondy", "dod_ico",    # ÚVO detail + IČO dodávateľa (verejné)
     "dod_ico_zdroj", "obj_ico", "suma_zmluvna",   # provenancia IČO + IČO objednávateľa + zmluvná suma (CRZ detail, verejné)
+    "zml_typ", "zml_cislo", "zml_cislo_ref",       # typ záznamu (Zmluva/Dodatok), číslo zmluvy + ref na pôvodnú (životný cyklus)
     # interné príznaky spracovania — TODO (#8): stripovať pred publikovaním store.json
     "_uvo_done", "_ai_tried", "_overit_checked",
 }
@@ -59,7 +60,7 @@ SECRET_PATTERNS = [
 SKIP_EXT = {".pyc"}
 SELF = "tools/security_gate.py"
 # Súbory, ktoré smú sentinel SPOMÍNAŤ ako dokumentáciu (nie sú súkromný obsah):
-SENTINEL_DOC_WHITELIST = {"tools/security_gate.py", "tools/pre_upload_check.sh", "CLAUDE.md", "PROGRAM.md", "engine/score.py", "engine/links.py", "engine/ownership.py", "engine/score2.py", "engine/document.py", "engine/ruz.py", "engine/financial.py", "engine/uvo_link.py", "engine/radar.py", "tools/uvo_probe.py"}
+SENTINEL_DOC_WHITELIST = {"tools/security_gate.py", "tools/pre_upload_check.sh", "CLAUDE.md", "PROGRAM.md", "engine/score.py", "engine/links.py", "engine/ownership.py", "engine/score2.py", "engine/document.py", "engine/ruz.py", "engine/financial.py", "engine/uvo_link.py", "engine/radar.py", "tools/uvo_probe.py", "engine/contract_lifecycle.py"}
 
 violations = []
 def rel(p): return os.path.relpath(p, ROOT).replace(os.sep, "/")
