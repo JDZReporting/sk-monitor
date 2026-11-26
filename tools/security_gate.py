@@ -59,7 +59,7 @@ SECRET_PATTERNS = [
 SKIP_EXT = {".pyc"}
 SELF = "tools/security_gate.py"
 # Súbory, ktoré smú sentinel SPOMÍNAŤ ako dokumentáciu (nie sú súkromný obsah):
-SENTINEL_DOC_WHITELIST = {"tools/security_gate.py", "tools/pre_upload_check.sh", "CLAUDE.md", "PROGRAM.md", "engine/score.py", "engine/links.py", "engine/ownership.py", "engine/score2.py", "engine/document.py", "engine/ruz.py", "engine/financial.py", "engine/uvo_link.py"}
+SENTINEL_DOC_WHITELIST = {"tools/security_gate.py", "tools/pre_upload_check.sh", "CLAUDE.md", "PROGRAM.md", "engine/score.py", "engine/links.py", "engine/ownership.py", "engine/score2.py", "engine/document.py", "engine/ruz.py", "engine/financial.py", "engine/uvo_link.py", "engine/radar.py", "tools/uvo_probe.py"}
 
 violations = []
 def rel(p): return os.path.relpath(p, ROOT).replace(os.sep, "/")

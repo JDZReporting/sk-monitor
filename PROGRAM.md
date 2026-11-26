@@ -175,6 +175,16 @@ Schválené korekcie stratégie zapracované. Scenár A (0 €).
   (predtým `[rejected] fetch first`). collect.py + gate predtým prešli; padal len push.
 - **Validácia IČO (živá):** po 2 behoch 5,6 %→**29,9 %** zmlúv s IČO (87 crz + 3 rpo, 0 fuzzy chýb); rastie ~80/beh.
 
+## Aktualizácia 2026-11-26 (noc, pokr.) — Radar (P2) + ÚVO OpenData sonda
+- **`engine/radar.py`** (P2) — spája financial/risk/ownership/NKÚ do leadov s **DVOMA nezávislými osami**:
+  `vyznam_skore` (ekonomická významnosť) a `riziko_skore` (proxy na preverenie). Typ témy: ekonomická téma
+  (významné, bez podozrenia) / na preverenie / prioritné / sledovať. Nekolabuje do „pravdepodobnosti korupcie".
+  Vysvetlenie oboch osí pri každom leade. Selftest PASS. Zapojené: intelligence.yml, build_db (`radar`), terminál ⑮.
+- **`tools/uvo_probe.py`** — sonda schémy **ÚVO OpenData** (opendata.uvo.gov.sk). ÚVO je blokované pre web_fetch
+  aj sandbox → sonda beží v Actions (otvorená sieť), uloží reálnu schému do `findings/_uvo_probe.json`.
+  Z nej postavím ÚVO klienta SPRÁVNE (bez hádania polí). Zapojené do intelligence.yml (nekritický krok).
+- Oba nové súbory v gate whiteliste. Terminál má teraz dotazy ①–⑮.
+
 ### Ďalej (P1 zvyšok → P4)
 - **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
 - **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).
