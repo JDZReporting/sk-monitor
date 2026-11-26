@@ -78,7 +78,7 @@ def analyze_firm(ico, prof, objem, objem_rok, first, buyers, nazov, pct):
         "crz_objem_eur": round(crz),
         "crz_percentil": pct(crz),
         "obrat_posledny": posledny_obrat,
-        "aktiva": (fin.get("casovy_rad") or [{}])[0].get("financie", {}).get("aktiva_spolu") if fin.get("casovy_rad") else None,
+        "aktiva": (((fin.get("casovy_rad") or [{}])[0].get("financie")) or {}).get("aktiva_spolu"),
         "sk_nace": fin.get("sk_nace"),
         "pocet_objednavatelov": len(buyers.get(ico, {})),
         "top_objednavatel_podiel": None,
