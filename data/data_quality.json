@@ -1,0 +1,125 @@
+{
+ "generated": "2026-11-26T14:58:18",
+ "store_items": 2379,
+ "metriky": {
+  "zaznamy_podla_zdroja": {
+   "hodnota": {
+    "vlada": 15,
+    "uvo": 1839,
+    "zmluvy": 301,
+    "mpk": 97,
+    "kontrolne": 127
+   },
+   "method": "count(items) group by source (aktuálny store.json)",
+   "numerator": 2379,
+   "denominator": 2379
+  },
+  "historicke_pokrytie": {
+   "hodnota": {
+    "vlada": {
+     "od": "2025-04-17",
+     "do": "2026-10-29",
+     "zaznamov_s_datumom": 15
+    },
+    "uvo": {
+     "od": "2026-10-27",
+     "do": "2027-01-01",
+     "zaznamov_s_datumom": 1839
+    },
+    "zmluvy": {
+     "od": "2026-10-27",
+     "do": "2026-11-26",
+     "zaznamov_s_datumom": 301
+    },
+    "mpk": {
+     "od": "2026-10-27",
+     "do": "2026-11-26",
+     "zaznamov_s_datumom": 97
+    },
+    "kontrolne": {
+     "od": "2025-12-12",
+     "do": "2026-09-25",
+     "zaznamov_s_datumom": 127
+    }
+   },
+   "method": "min/max(date) per source; len=počet s platným dátumom. POZN: store = 30-dňové okno; viacročná história je v data/history/*.jsonl (nie tu)."
+  },
+  "zmluvy_s_validnym_ico": {
+   "hodnota": 5.6,
+   "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
+   "numerator": 17,
+   "denominator": 301
+  },
+  "ico_provenancia": {
+   "hodnota": {
+    "crz": 17
+   },
+   "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
+   "numerator": 17,
+   "denominator": 17
+  },
+  "dodavatelia_identifikovani": {
+   "hodnota": 6.9,
+   "method": "unikátni dodávatelia (podľa názvu) s prideleným IČO / všetci unikátni dodávatelia",
+   "numerator": 15,
+   "denominator": 217
+  },
+  "dodavatelia_neidentifikovani": {
+   "hodnota": 202,
+   "method": "unikátni dodávatelia bez IČO (CRZ detail zlyhal / nejednoznačná RPO zhoda / zahr. subjekt)",
+   "numerator": 202,
+   "denominator": 217
+  },
+  "duplicitne_zaznamy": {
+   "hodnota": 0,
+   "method": "count(id) - count(distinct id) v store.json",
+   "numerator": 0,
+   "denominator": 2379
+  },
+  "ruz_pokrytie": {
+   "hodnota": "n/a",
+   "method": "chýba findings/ruz_profily.json (vzniká v Actions)"
+  },
+  "rpvs_pokrytie": {
+   "hodnota": "n/a",
+   "method": "chýba findings/ownership.json (vzniká v Actions)"
+  },
+  "dokumenty_extrakcia": {
+   "hodnota": "n/a",
+   "method": "chýba výstup document.py (vzniká v Actions)"
+  },
+  "uvo_crz_prepojenie": {
+   "hodnota": "n/a",
+   "method": "ÚVO↔CRZ linking je P1 (zatiaľ neimplementované)"
+  },
+  "posledna_aktualizacia_zdrojov": {
+   "hodnota": {
+    "parlament": {
+     "stav": "down",
+     "aktualizovane": null
+    },
+    "vlada": {
+     "stav": "ok_no_new",
+     "aktualizovane": null
+    },
+    "uvo": {
+     "stav": "ok_fresh",
+     "aktualizovane": null
+    },
+    "mpk": {
+     "stav": "ok_fresh",
+     "aktualizovane": null
+    },
+    "zmluvy": {
+     "stav": "ok_fresh",
+     "aktualizovane": null
+    },
+    "kontrolne": {
+     "stav": "ok_no_new",
+     "aktualizovane": null
+    }
+   },
+   "method": "z data/source_health.json"
+  }
+ }
+}
