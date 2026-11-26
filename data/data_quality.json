@@ -1,18 +1,18 @@
 {
- "generated": "2026-11-26T15:10:27",
- "store_items": 2380,
+ "generated": "2026-11-26T15:21:35",
+ "store_items": 2381,
  "metriky": {
   "zaznamy_podla_zdroja": {
    "hodnota": {
     "vlada": 15,
-    "uvo": 1840,
+    "uvo": 1841,
     "zmluvy": 301,
     "mpk": 97,
     "kontrolne": 127
    },
    "method": "count(items) group by source (aktuálny store.json)",
-   "numerator": 2380,
-   "denominator": 2380
+   "numerator": 2381,
+   "denominator": 2381
   },
   "historicke_pokrytie": {
    "hodnota": {
@@ -24,7 +24,7 @@
     "uvo": {
      "od": "2026-10-27",
      "do": "2027-01-01",
-     "zaznamov_s_datumom": 1840
+     "zaznamov_s_datumom": 1841
     },
     "zmluvy": {
      "od": "2026-10-27",
@@ -45,37 +45,37 @@
    "method": "min/max(date) per source; len=počet s platným dátumom. POZN: store = 30-dňové okno; viacročná história je v data/history/*.jsonl (nie tu)."
   },
   "zmluvy_s_validnym_ico": {
-   "hodnota": 53.8,
+   "hodnota": 80.4,
    "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
-   "numerator": 162,
+   "numerator": 242,
    "denominator": 301
   },
   "ico_provenancia": {
    "hodnota": {
-    "crz": 159,
-    "rpo": 3
+    "crz": 236,
+    "rpo": 6
    },
    "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
-   "numerator": 162,
-   "denominator": 162
+   "numerator": 242,
+   "denominator": 242
   },
   "dodavatelia_identifikovani": {
-   "hodnota": 52.1,
+   "hodnota": 79.3,
    "method": "unikátni dodávatelia (podľa názvu) s prideleným IČO / všetci unikátni dodávatelia",
-   "numerator": 113,
+   "numerator": 172,
    "denominator": 217
   },
   "dodavatelia_neidentifikovani": {
-   "hodnota": 104,
+   "hodnota": 45,
    "method": "unikátni dodávatelia bez IČO (CRZ detail zlyhal / nejednoznačná RPO zhoda / zahr. subjekt)",
-   "numerator": 104,
+   "numerator": 45,
    "denominator": 217
   },
   "duplicitne_zaznamy": {
    "hodnota": 0,
    "method": "count(id) - count(distinct id) v store.json",
    "numerator": 0,
-   "denominator": 2380
+   "denominator": 2381
   },
   "ruz_pokrytie": {
    "hodnota": "n/a",
@@ -91,7 +91,7 @@
   },
   "uvo_crz_prepojenie": {
    "hodnota": "n/a",
-   "method": "ÚVO↔CRZ linking je P1 (zatiaľ neimplementované)"
+   "method": "chýba findings/uvo_crz_links.json (vzniká v Actions)"
   },
   "posledna_aktualizacia_zdrojov": {
    "hodnota": {
