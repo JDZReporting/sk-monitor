@@ -146,3 +146,31 @@ verejného repa ani jeho publikačných priečinkov.
 - RPVS OData overené naživo: `Partneri`→`KonecniUzivateliaVyhod` (JeVerejnyCinitel, PlatnostOd/Do).
   `dod_ico` sa dopĺňa z RPO (cache verzia `_v=2`). Pri osobách: **zhoda mena != dôkaz totožnosti**;
   čiastočné údaje zobrazovať ako neistotu, nie potvrdené prepojenie.
+
+## 2026-11-26 — STRATEGICKÝ POSUN (dôležité, mení smerovanie) — viď `sk-monitor-intelligence/research/STRATEGICKE_PREHODNOTENIE.md`
+- **Zistenie:** verejnú dátovú vrstvu už robí **verejnystat.sk** (CRZ 2011–2026, RPVS, RPO, funkcionári,
+  dlžníci, rozpočet, ÚVO, účtovné závierky, ceny po dodatkoch) — zadarmo, CC BY 4.0, nočne. Pod ním
+  **slovensko.digital DataHub** (sync API, ~60/min zadarmo: CRZ, RPO V2 so štatutármi, RÚZ, OV, dlžníci)
+  a **RÚZ Open API** (registeruz.sk, **CC0**, plné účtovné závierky podľa IČO).
+- **Dôsledok:** NEreplikovať dátový portál. verejnystat.sk ZÁMERNE nerobí hodnotenia/skóre/hypotézy —
+  **to je naša jediná unikátna hodnota.** SK monitor = **úsudková/investigatívna vrstva NAD cudzími dátami**,
+  nie ďalší dátový portál.
+- **Zdroje – jadro:** CRZ (cez slovensko.digital, nie vlastný scraping), RPVS, **RÚZ (nové)**, RPO (DataHub), NKÚ (vlastné).
+  **Nerobiť:** plný parlament scraping (bot-detection, nízka hodnota/náklad), vlastný CRZ/RPO scraping, vlastný backfill zberom.
+- **5 pilierov → 3 osi:** (1) Kam tečú peniaze (CRZ+ÚVO), (2) Kto profituje (RPVS+RPO), (3) Čo to skrýva (RÚZ+dlhy+NKÚ).
+- **Ďalší krok:** `engine/ruz.py` + `engine/rules/financial.yaml` (SK-FIN-DEPENDENCY/YOUNGWIN/SHELL); adaptér na DataHub.
+  Všetko scenár A (0 €). Zhoda IČO spoľahlivá; zhoda mena osoby NIE.
+
+## 2026-11-26 — P0 audit zdrojov + RÚZ integrácia (hotové, viď research/P0_audit_zdrojov.md)
+- **KOREKCIA:** slovensko.digital **DataHub NIE je bezpodmienečne zadarmo** — vyžaduje registráciu,
+  platené po 1. mesiaci, zdarma len po schválení pre výskum. → **nová registrácia = konzultovať s Jurajom.**
+  Jadro staviame na PRIAMYCH primárnych registroch (RÚZ/CRZ/RPVS/RPO) = autonómne, zadarmo, nezávislá pamäť.
+- **RÚZ (registeruz.sk) OVERENÉ naživo, CC0, bez kľúča.** `engine/ruz.py` (reťazec ico→UJ→závierka→výkaz,
+  template cache, parser kotvený na text riadkov — selftest PASS na reálnych číslach Slovanet).
+  Pozor: **IFRS/konsolidované a 2009–2012 = len PDF** (štruktúrované dáta chýbajú → financie=None, nie nuly).
+  **Počet zamestnancov nie je** v štrukt. dátach → proxy = osobné/mzdové náklady.
+- **DVE ODDELENÉ dimenzie** (`engine/financial.py` + `financial.yaml`): (A) **ekonomická významnosť**
+  (deskriptívna, bez podozrenia) a (B) **rizikové PROXY signály** (s obmedzeniami + legit. vysvetleniami).
+  METODIKA: obrat = účtovne vykázané tržby, NIE platby od štátu; zmluva = záväzok (často viacročný/rámcový).
+  Nízke aktíva/strata/krátka história **NEoznačujú** schránku automaticky (zohľadniť NACE a model). selftest PASS.
+- Zapojené do `sk-monitor-intelligence/.github/workflows/intelligence.yml` (kroky RÚZ + financial).

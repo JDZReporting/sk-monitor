@@ -502,11 +502,77 @@ def collect_crz():
         cat = "Samospráva" if _is_muni(obj) else ("Štát a štátne podniky" if _is_stat(obj) else kategoria(nazov + " " + obj + " " + dod))
         # strana na preverenie = tá, čo nie je štát ani samospráva (súkromná firma/osoba)
         overit = next((c for c in (dod, obj) if c and not _is_stat(c) and not _is_muni(c)), "")
-        out.append({"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
-                    "category": cat, "blok": "", "suma": cena, "dod": dod, "overit": overit,
-                    "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
-                    "url": "https://www.crz.gov.sk" + a["href"]})
+        it = {"id": "z-" + mid.group(1), "source": "zmluvy", "title": nazov, "date": datum,
+              "category": cat, "blok": "", "suma": cena, "dod": dod, "overit": overit,
+              "meta": "Dodávateľ: " + dod + " → Objednávateľ: " + obj + (" · č. " + cislo if cislo else ""),
+              "url": "https://www.crz.gov.sk" + a["href"]}
+        # PRIMÁRNE IČO z detailu zmluvy (CRZ) — presné, bez fuzzy
+        try:
+            det = crz_detail(it["url"])
+            if det.get("dod_ico"): it["dod_ico"] = det["dod_ico"]; it["dod_ico_zdroj"] = "crz"
+            if det.get("obj_ico"): it["obj_ico"] = det["obj_ico"]
+            if det.get("suma_zmluvna") is not None: it["suma_zmluvna"] = det["suma_zmluvna"]
+        except Exception:
+            pass
+        out.append(it)
+    _save_crz_cache()
     return out
+
+# ---- CRZ detail: PRIMÁRNY zdroj IČO (z detailu zmluvy, nie fuzzy) ----
+_CRZ_DETAIL_CACHE = None
+_CRZ_CACHE_PATH = os.path.join(os.path.dirname(__file__), "data", "crz_detail_cache.json")
+
+def _crz_cache():
+    global _CRZ_DETAIL_CACHE
+    if _CRZ_DETAIL_CACHE is None:
+        try: _CRZ_DETAIL_CACHE = json.load(open(_CRZ_CACHE_PATH, encoding="utf-8"))
+        except Exception: _CRZ_DETAIL_CACHE = {}
+    return _CRZ_DETAIL_CACHE
+
+def _save_crz_cache():
+    try: json.dump(_crz_cache(), open(_CRZ_CACHE_PATH, "w", encoding="utf-8"), ensure_ascii=False)
+    except Exception: pass
+
+def parse_crz_detail_text(text):
+    """Z textu detailu zmluvy vytiahni IČO oboch strán + zmluvnú sumu. PRIMÁRNE dáta (bez fuzzy).
+    Štruktúra: 'Objednávateľ: … IČO: <obj> … Dodávateľ: … IČO: <dod> …'."""
+    out = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None}
+    di = text.find("Dodávateľ")
+    icos = [(m.start(), re.sub(r"\s", "", m.group(1))) for m in re.finditer(r"I[ČC]O:\s*\**\s*(\d[\d\s]{4,9}\d)", text)]
+    if di >= 0:
+        after = [v for p, v in icos if p > di]
+        before = [v for p, v in icos if p < di]
+        if after: out["dod_ico"] = after[0]
+        if before: out["obj_ico"] = before[-1]
+    elif icos:
+        out["dod_ico"] = icos[-1][1]
+    m = re.search(r"Celková čiastka:\s*\**\s*([\d  \s]+,\d{2})", text)
+    if not m: m = re.search(r"Zmluvne dohodnutá čiastka:\s*([\d  \s]+,\d{2})", text)
+    if m:
+        t = re.sub(r"[^\d,]", "", m.group(1)).replace(",", ".")
+        try: out["suma_zmluvna"] = float(t)
+        except Exception: pass
+    return out
+
+def crz_detail(url, use_cache=True):
+    """Fetch + parse detail jednej zmluvy; vracia {dod_ico, obj_ico, suma_zmluvna, _ico_zdroj:'crz'}."""
+    key = re.search(r"/zmluva/(\d+)", url)
+    key = key.group(1) if key else url
+    c = _crz_cache()
+    if use_cache and key in c:
+        return c[key]
+    html_txt = get(url)
+    res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "_ico_zdroj": None}
+    if html_txt:
+        try:
+            txt = BeautifulSoup(html_txt, "html.parser").get_text("\n")
+        except Exception:
+            txt = html_txt
+        p = parse_crz_detail_text(txt)
+        res.update(p)
+        if res.get("dod_ico"): res["_ico_zdroj"] = "crz"
+    c[key] = res
+    return res
 
 # ---------------- STORE (rolujúci archív) ----------------
 def load_store():
@@ -631,8 +697,10 @@ def main():
                 it["dod_vznik"] = info["vznik"]
             if info.get("krajina"):
                 it["dod_krajina"] = info["krajina"]
-            if info.get("ico"):
-                it["dod_ico"] = info["ico"]  # spojka na RPVS (súkromný engine)
+            # IČO: PRIMÁRNE z CRZ detailu (dod_ico_zdroj='crz'). RPO len SEKUNDÁRNE, keď CRZ nedal.
+            if info.get("ico") and not it.get("dod_ico"):
+                it["dod_ico"] = info["ico"]
+                it["dod_ico_zdroj"] = "rpo"   # sekundárne: zhoda mena v RPO (jednoznačná aktívna firma)
         if s == "parlament" and it.get("url"):
             ns = fetch_stav(it["url"])
             if ns and ns != it.get("stav"):
@@ -709,6 +777,20 @@ def main():
         print("HEALTH:", {s: sources[s]["status"] for s in sources})
     except Exception as e:
         print("WARN health-check", e)
+
+    # --- Data Quality Dashboard (verejné agregátne metriky) ---
+    try:
+        import importlib.util as _ilu
+        _dq = _ilu.module_from_spec(_ilu.spec_from_file_location(
+            "data_quality", os.path.join(os.path.dirname(__file__), "tools", "data_quality.py")))
+        _ilu.spec_from_file_location("data_quality", os.path.join(os.path.dirname(__file__), "tools", "data_quality.py")).loader.exec_module(_dq)
+        health_obj = {"generated": ISO, "sources": sources} if 'sources' in dir() else None
+        rep = _dq.compute(store, findings_dir=None, health=(health_obj or {}).get("sources"))
+        json.dump(rep, open(os.path.join(DATA, "data_quality.json"), "w", encoding="utf-8"), ensure_ascii=False, indent=1)
+        _dqm = rep["metriky"]["zmluvy_s_validnym_ico"]
+        print("DATA QUALITY: zmluvy s IČO", _dqm.get("numerator"), "/", _dqm.get("denominator"))
+    except Exception as e:
+        print("WARN data-quality", e)
 
     # panel: všetky zdroje jednotne za posledných PANEL_DNI dní (7)
     def _age(it): return days_old(it.get("date") or it.get("first_seen") or ISO)

@@ -1,0 +1,113 @@
+# engine/rules/financial.yaml
+# Finančné ukazovatele nad RÚZ (CC0) + CRZ. Dve ODDELENÉ dimenzie:
+#   (A) EKONOMICKÁ VÝZNAMNOSŤ  — ako veľký/dôležitý je jav. Žiadne podozrenie.
+#   (B) RIZIKOVÉ PROXY SIGNÁLY  — len námety na preverenie, s obmedzeniami a legitímnymi vysvetleniami.
+# METODIKA: obrat z RÚZ = účtovne vykázané tržby; hodnota CRZ zmluvy = zmluvný záväzok (často
+# viacročný/rámcový), NIE ročná platba. Žiadny proxy nenahrádza dáta o skutočných platbách.
+version: 1
+dimenzie:
+  - id: vyznam
+    nazov: Ekonomická významnosť
+    popis: Deskriptívna os. Veľkosť subjektu a jeho verejných príjmov. Nie je to riziko.
+  - id: riziko
+    nazov: Investigatívne riziko (proxy)
+    popis: Námety na ľudské preverenie. Každý signál má legitímne vysvetlenia a obmedzenia.
+
+# ---------------- (A) EKONOMICKÁ VÝZNAMNOSŤ ----------------
+vyznam_ukazovatele:
+  - id: SK-ECON-VOLUME
+    nazov: Objem verejných zmlúv
+    dimenzia: vyznam
+    data: [crz.suma]
+    popis: Súčet hodnoty zmlúv subjektu s verejným sektorom (zmluvný záväzok, nie platby).
+    vyznamnost: absolútna € hodnota; percentil v rámci všetkých dodávateľov
+  - id: SK-ECON-SIZE
+    nazov: Veľkosť firmy (obrat/aktíva)
+    dimenzia: vyznam
+    data: [ruz.cisty_obrat, ruz.aktiva_spolu]
+    popis: Účtovná veľkosť subjektu. Kontext pre všetky ostatné ukazovatele.
+  - id: SK-ECON-GROWTH
+    nazov: Dynamika obratu
+    dimenzia: vyznam
+    data: [ruz.obrat_rad]
+    popis: Medziročná zmena obratu (časový rad). Rast aj pokles je ekonomicky zaujímavý.
+    pozn: Trend != príčina. Rast môže byť akvizícia, inflácia, nový trh — nie nutne štát.
+  - id: SK-ECON-NEWBIG
+    nazov: Nový významný dodávateľ
+    dimenzia: vyznam
+    data: [crz.first_seen, crz.suma]
+    popis: Subjekt, ktorý sa po prvýkrát objavuje s veľkým objemom verejných zmlúv.
+    pozn: Novinársky zaujímavé samo o sebe; nie je to obvinenie.
+  - id: SK-ECON-CONCENTRATION
+    nazov: Koncentrácia trhu / dodávateľa
+    dimenzia: vyznam
+    data: [crz.objednavatel, crz.dodavatel, crz.suma]
+    popis: Podiel jedného dodávateľa na výdavkoch inštitúcie, resp. inštitúcie na príjmoch dodávateľa (HHI/podiel).
+  - id: SK-ECON-SECTOR
+    nazov: Sektorový trend (SK NACE)
+    dimenzia: vyznam
+    data: [ruz.sk_nace, crz.suma]
+    popis: Agregácia objemu a dynamiky podľa odvetvia — kam sa presúvajú verejné peniaze.
+
+# ---------------- (B) RIZIKOVÉ PROXY SIGNÁLY ----------------
+riziko_ukazovatele:
+  - id: SK-FIN-PUBRELIANCE
+    nazov: Proxy závislosti od verejných peňazí
+    dimenzia: riziko
+    istota: nizka
+    data: [crz.suma_rok, ruz.cisty_obrat_rok]
+    vzorec: "podiel ~= objem_CRZ_v_roku / cisty_obrat_v_roku (ak sú roky porovnateľné)"
+    co_meria: >
+      Hrubý PROXY: ako veľký je objem verejných zmlúv voči účtovnému obratu. Vysoká hodnota =
+      firma pravdepodobne výrazne závisí od verejného sektora.
+    obmedzenia: >
+      NIE je to podiel príjmov od štátu. Zmluva je záväzok, nie platba; môže byť viacročná/rámcová,
+      nemusí sa čerpať, alebo sa prekrýva s inými rokmi. Obrat je účtovný, nie cash od štátu.
+      Pri rámcových dohodách môže proxy >100 %. Vždy uvádzať ako proxy, nie ako fakt.
+    legitimne_vysvetlenia: [rámcová dohoda bez plného čerpania, viacročný kontrakt, subdodávky, dodávateľ je sám verejná inštitúcia]
+    riziko_fp: vysoke
+    postup_overenia: porovnať s faktúrami/platbami (ak dostupné), rozpísať zmluvu na roky, overiť čerpanie
+  - id: SK-FIN-YOUNGWIN
+    nazov: Mladá firma s veľkou zákazkou
+    dimenzia: riziko
+    istota: nizka
+    data: [ruz.datum_zalozenia, crz.first_seen, crz.suma]
+    co_meria: Firma získala veľký kontrakt krátko po vzniku.
+    obmedzenia: Vek firmy nič nedokazuje. Noví seriózni hráči, spin-offy, reorganizácie sú bežné.
+    legitimne_vysvetlenia: [nová dcéra zavedenej skupiny, spin-off, špecializovaný nový hráč, reštart IČO]
+    riziko_fp: vysoke
+    postup_overenia: pozri vlastníkov (RPVS/RPO), históriu konateľov, referencie, priebeh obstarávania
+  - id: SK-FIN-THINCAP
+    nazov: Nízka kapitalizácia vs. objem zmlúv
+    dimenzia: riziko
+    istota: nizka
+    data: [ruz.vlastne_imanie, ruz.aktiva_spolu, ruz.osobne_naklady, crz.suma]
+    co_meria: Veľmi nízke aktíva/vlastné imanie/osobné náklady oproti objemu verejných zmlúv.
+    obmedzenia: >
+      NEOZNAČOVAŤ automaticky ako schránku. Mnohé legitímne modely majú nízke aktíva:
+      sprostredkovanie, služby bez majetku, subdodávateľské reťazce, čerstvý rok po vzniku,
+      holding fakturujúci cez dcéry. Zohľadni SK NACE (odvetvie) a model.
+    legitimne_vysvetlenia: [sprostredkovateľ/obchodník, služby bez kapitálu, subdodávky, holdingová štruktúra]
+    riziko_fp: velmi_vysoke
+    postup_overenia: odvetvie (NACE), počet rokov, osobné náklady, vlastnícka štruktúra, reálna prevádzka
+  - id: SK-FIN-LOSSWIN
+    nazov: Stratová firma s rastúcimi zákazkami
+    dimenzia: riziko
+    istota: nizka
+    data: [ruz.vysledok_po_dani, crz.suma_rad]
+    co_meria: Opakovaná strata pri súčasnom raste objemu verejných zmlúv.
+    obmedzenia: Strata je bežná (investície, cyklus, odpisy). Sama osebe nič neznamená.
+    legitimne_vysvetlenia: [investičná fáza, odpisy, jednorazové náklady, sezónnosť]
+    riziko_fp: vysoke
+    postup_overenia: viacročný trend, cash-flow, dôvod straty z poznámok
+  - id: SK-FIN-STATEDEBT
+    nazov: Dodávateľ štátu s dlhom voči štátu
+    dimenzia: riziko
+    istota: stredna
+    data: [dlznici.socpoist, dlznici.zdravpoist, crz.suma]
+    co_meria: Subjekt má verejné zmluvy a zároveň eviduje dlh voči Sociálnej/zdravotnej poisťovni.
+    obmedzenia: Dlh môže byť v splátkach/spore; dátumy sa nemusia prekrývať s plnením zmluvy.
+    legitimne_vysvetlenia: [splátkový kalendár, spor o výšku, administratívna chyba, časový nesúlad]
+    riziko_fp: stredne
+    postup_overenia: dátum a stav dlhu vs obdobie zmluvy, overiť u zdroja (zoznamy dlžníkov)
+    pozn: Zdroj dlžníkov je zatiaľ cez slovensko.digital (platené/po registrácii) — doplnkové.

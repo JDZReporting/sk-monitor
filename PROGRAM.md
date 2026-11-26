@@ -104,3 +104,69 @@ dod_ico), tools/security_gate.py, .github/workflows/daily.yml, engine/*, docs.
 - **Katalóg:** `engine/rules/control.yaml` (kontrolné indikátory, §27).
 - **Ďalej (roadmap, podľa priority):** scoring v2 (viacrozmerné, kalibrované), Ownership profil,
   Temporal, Document Intelligence (PDF), Evidence/Verification 2.0, privátny terminál, benchmark 15.
+
+## Aktualizácia 2026-11-26 — STRATEGICKÉ PREHODNOTENIE (mení roadmapu)
+Plný dokument: `sk-monitor-intelligence/research/STRATEGICKE_PREHODNOTENIE.md`.
+
+**Kľúčové zistenie:** verejnú dátovú vrstvu (CRZ/RPVS/RPO/funkcionári/dlžníci/rozpočet/ÚVO/účtovné
+závierky, 2011–2026) **už poskytuje verejnystat.sk** zadarmo (CC BY), nočne, vrátane extrakcie cien
+po dodatkoch. Pod ním **slovensko.digital DataHub** (sync API zadarmo) a **RÚZ Open API (CC0)**.
+→ ~80 % pôvodného 5-pilierového plánu je už hotové inde. **Nереplikovať.**
+
+**Nová téza:** SK monitor = **investigatívna ÚSUDKOVÁ vrstva** nad existujúcimi dátami.
+verejnystat.sk zámerne NErobí skóre/hypotézy/hodnotenia → to je naše jediné unikum.
+
+**Revidovaná roadmapa:**
+- IMPLEMENTOVAŤ: RÚZ integrácia (`engine/ruz.py` + `financial.yaml`, SK-FIN-*), prechod zberu na
+  slovensko.digital DataHub, finančné kombinácie v termináli (DuckDB beží).
+- ZJEDNODUŠIŤ: collect.py (len NKÚ + adaptér DataHub); 5 pilierov → 3 osi; 9 modulov → 4 (Rule/Relationship/Financial/Document).
+- ODLOŽIŤ: FtM+NetworkX graf, Splink, OCR, always-on cloud terminál, NL/MCP asistent.
+- ZRUŠIŤ: plný parlament scraping (§5 dokumentu), vlastný dátový portál ako cieľ, backfill zberom.
+
+**Verdikt parlament:** NIE plný monitoring. Bot-detection neprekonateľné legitímne; nízka hodnota/náklad.
+Nechať na legitímnu cestu (Slov-Lex / NR SR open data / oficiálna žiadosť) až keď bude reálne treba.
+
+**Najhodnotnejšie kombinácie (= produkty enginu):** CRZ×RÚZ (závislosť od štátu, schránky),
+CRZ×RPVS×RÚZ (kto profituje cez akú firmu), NKÚ×CRZ (kontrolovaný míňač), RPO×CRZ (firma šitá na zákazku),
+dlžníci×CRZ (dodávateľ čo dlhuje štátu).
+
+## Aktualizácia 2026-11-26 (večer) — P0/P1 implementácia (HOTOVÉ, otestované)
+Schválené korekcie stratégie zapracované. Scenár A (0 €).
+- **P0 audit zdrojov** (`sk-monitor-intelligence/research/P0_audit_zdrojov.md`): RÚZ=CC0 autonómne;
+  **KOREKCIA: DataHub je platený/po registrácii** (zdarma len po schválení pre výskum) → jadro na priamych
+  primárnych registroch, nezávislá pamäť. nrsr=mimo jadra. ÚVO/TED=jadro (P1, ďalej).
+- **RÚZ klient** `engine/ruz.py` — CC0, bez kľúča, parser kotvený na text riadkov výkazu, template cache;
+  **selftest PASS na reálnych číslach (Slovanet)**. Ošetrené: IFRS/konsolidované/2009–2012 = len PDF → financie=None.
+- **Finančná analytika** `engine/financial.py` + `engine/rules/financial.yaml` — **DVE oddelené dimenzie**:
+  ekonomická významnosť (deskriptívna) vs rizikové proxy signály (SK-FIN-PUBRELIANCE/YOUNGWIN/THINCAP/LOSSWIN),
+  každý s obmedzeniami + legit. vysvetleniami. Metodika: obrat ≠ platby od štátu; nízke aktíva ≠ schránka. selftest PASS.
+- **DuckDB + terminál**: nové tabuľky `financie_firma/financne_signaly/financie_rad`, views + **dotazy ⑩⑪⑫**.
+  Overené end-to-end na reálnych dátach RÚZ (Slovanet 2024→2025: obrat 51,1→70,0 mil., rast 37 %).
+- Zapojené do `intelligence.yml` (RÚZ + financial kroky). Security gate: OK (nové súbory v allowliste/whiteliste).
+- **Zistenie:** `dod_ico` v commitnutom store.json je prázdne (0/2340) — IČO sa dopĺňa až v živom Actions behu
+  (collect.py RPO). Preto plný CRZ×RÚZ join beží až v pipeline, nie na lokálnej snapshotke.
+
+## Aktualizácia 2026-11-26 (neskoro večer) — validácia pipeline + kvalita dát
+- **Hranica prostredia (dôležité):** živý produkčný beh (collect.py CRZ/RPO/RPVS, engine RÚZ) beží LEN
+  v GitHub Actions — Cowork sandbox má obmedzenú sieť (len web_fetch na vybrané hosty) a nevie pushovať.
+  Preto: kód + unit-testy lokálne, **živá validácia na najbližšom riadnom Actions behu** (alebo workflow_dispatch).
+- **IČO — PRIMÁRNA oprava (P0):** príčina prázdneho `dod_ico` = RPO enrichment beží len v Actions a CRZ listing
+  IČO nemá. **Riešenie: `crz_detail()` v collect.py ťahá IČO z DETAILU zmluvy (/zmluva/<id>) = primárny zdroj,
+  presné, bez fuzzy.** Overené: detail Valbek SK → dod_ico 17314569, obj_ico 31364501, zmluvná suma 527 670 €
+  (parser selftest PASS). Reťazec CRZ→IČO→RÚZ overený naživo (17314569 → RÚZ UJ 303574).
+  RPO zostáva SEKUNDÁRNE (len keď CRZ detail nedá IČO); provenancia v poli `dod_ico_zdroj` (crz/rpo).
+  Nové polia (obj_ico, suma_zmluvna, dod_ico_zdroj) pridané do security_gate allowlistu. Cache: data/crz_detail_cache.json.
+- **Rozlíšenie súm (metodika):** `suma_zmluvna` = zmluvne dohodnutá čiastka z CRZ detailu (NIE skutočná platba).
+- **Data Quality Dashboard (P0):** `tools/data_quality.py` — trvalý prehľad po každom zbere. Metriky s
+  menovateľom + spôsobom výpočtu: záznamy/zdroj, historické pokrytie, % validných IČO, identifikovaní dodávatelia,
+  provenancia IČO, duplicity, RÚZ/RPVS pokrytie, štrukt. výkazy, chýbajúce financie, ÚVO↔CRZ (n/a=P1),
+  posledná aktualizácia zdrojov. Spúšťa sa v collect.py (verejné) aj intelligence.yml (+findings). Terminál dotaz ⑬.
+  **Baseline PRED behom: 0/303 zmluvy s IČO** — po novom behu má byť ~100 % z CRZ detailu (to je test úspechu).
+
+### Ďalej (P1 zvyšok → P4)
+- **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
+- **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).
+- **P3:** terminál (hotový základ), správa prípadov, graf vzťahov (FtM/NetworkX).
+- **P4:** read-only MCP server nad DuckDB (architektúra: čistá SQL vrstva `skmonitor.duckdb` + views = pripravená),
+  NL/text-to-SQL asistent.
+- Parlament (#11): kód NEMAZAŤ; Slov-Lex/vláda len ako lacný doplnkový kontext, ak dostupné.
