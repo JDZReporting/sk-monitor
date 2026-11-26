@@ -103,6 +103,12 @@ def compute(fin, risk=None, own=None, kontrola=None):
 
     out = []
     for L in leads.values():
+        # DEDUP rizikových príznakov na subjekt (ten istý indikátor sa nesmie počítať viackrát)
+        seen = {}
+        for e in L["_rizp"]:
+            seen.setdefault(e.get("indikator"), e)
+        L["_rizp"] = list(seen.values())
+        L["riziko_skore"] = _clamp(sum(RISK_W.get(i, 10) for i in seen))
         vyz, riz = L["vyznam_skore"], L["riziko_skore"]
         if riz >= 30 and vyz >= 50: typ = "prioritné preverenie (významné + rizikové)"
         elif riz >= 30: typ = "na preverenie"

@@ -123,6 +123,8 @@ def compute(store, findings_dir=None, health=None):
 
     # posledná aktualizácia zdrojov
     if health:
+        if isinstance(health, dict) and isinstance(health.get("sources"), dict):
+            health = health["sources"]   # source_health.json má tvar {generated, sources:{...}}
         la = {}
         for k, v in (health.items() if isinstance(health, dict) else []):
             if isinstance(v, dict):

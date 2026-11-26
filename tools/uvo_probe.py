@@ -9,12 +9,14 @@ Použitie (v Actions):  python3 tools/uvo_probe.py findings/_uvo_probe.json
 """
 import json, sys, urllib.request, urllib.error
 
+# opendata.uvo.gov.sk neexistuje (DNS zlyhal). Kandidáti na reálny zdroj — sonda zistí, čo žije:
 CANDIDATES = [
-    "https://opendata.uvo.gov.sk/api/v2/zakazky?limit=1",
-    "https://opendata.uvo.gov.sk/api/v2/zmluvy?limit=1",
-    "https://opendata.uvo.gov.sk/api/v2/dokumenty?limit=1",
-    "https://opendata.uvo.gov.sk/info",
-    "https://opendata.uvo.gov.sk/",
+    "https://www.uvo.gov.sk/openDataIdx",
+    "https://www.uvo.gov.sk/OpenData",
+    "https://www.uvo.gov.sk/openData",
+    "https://data.slovensko.sk/api/3/action/package_search?q=verejn%C3%A9%20obstar%C3%A1vanie&rows=5",
+    "https://data.slovensko.sk/api/3/action/organization_list",
+    "https://ted.europa.eu/api/v3.0/notices/search?q=SK&pageSize=1",
 ]
 UA = {"User-Agent": "sk-monitor/uvo-probe (public-interest research)"}
 
