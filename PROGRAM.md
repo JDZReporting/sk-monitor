@@ -163,6 +163,18 @@ Schválené korekcie stratégie zapracované. Scenár A (0 €).
   posledná aktualizácia zdrojov. Spúšťa sa v collect.py (verejné) aj intelligence.yml (+findings). Terminál dotaz ⑬.
   **Baseline PRED behom: 0/303 zmluvy s IČO** — po novom behu má byť ~100 % z CRZ detailu (to je test úspechu).
 
+## Aktualizácia 2026-11-26 (noc) — ÚVO↔CRZ prepojenie (P1) + odolný push
+- **`engine/uvo_link.py`** — prepojenie ÚVO zákazka → CRZ zmluva. **TRI oddelené sumy**: predpokladaná (ÚVO),
+  zmluvná (CRZ), zaplatené (n/a — CRZ platby nemá). Rozdiel zmluvná−predpokladaná = signál navýšenia.
+  Join podľa obstarávateľa+názvu+času = **nízka istota** (nie cez ID/IČO) → `uroven_istoty`, „OVERIŤ".
+  Selftest PASS; na reálnych dátach **17 prepojení/301 zmlúv** (napr. Cesta II/563 → 1,40 mil. €).
+  Zapojené: intelligence.yml, build_db (tabuľka `uvo_crz`), terminál ⑭, metrika `uvo_crz_prepojenie`, gate whitelist.
+- **Zdroje na migráciu** (research/P1_uvo_ted.md): ÚVO OpenData (opendata.uvo.gov.sk — stabilné ID+IČO víťaza),
+  TED eForms, OCDS. ÚVO hosty blokujú robots pre web_fetch → živé overenie z Actions runnera / pastnutej vzorky.
+- **Oprava CI:** `daily.yml` commit krok — odolný push (rebase + 5 pokusov) proti súbehu/ručnému pushu
+  (predtým `[rejected] fetch first`). collect.py + gate predtým prešli; padal len push.
+- **Validácia IČO (živá):** po 2 behoch 5,6 %→**29,9 %** zmlúv s IČO (87 crz + 3 rpo, 0 fuzzy chýb); rastie ~80/beh.
+
 ### Ďalej (P1 zvyšok → P4)
 - **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
 - **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).

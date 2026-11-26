@@ -33,5 +33,12 @@ jobs:
           git config user.name "sk-monitor-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data docs
-          git commit -m "SK monitor ${{ github.run_id }}" || echo "Nič nové na commit."
-          git push
+          git commit -m "SK monitor ${{ github.run_id }}" || { echo "Nič nové na commit."; exit 0; }
+          # odolné pushovanie: ak remote medzitým napredoval (súbeh behov / ručný push), rebasuj a skús znova
+          for i in 1 2 3 4 5; do
+            if git push; then echo "push OK (pokus $i)"; exit 0; fi
+            echo "push odmietnutý, rebasujem na origin/main (pokus $i)…"
+            git pull --rebase --autostash origin main || true
+            sleep $((RANDOM % 5 + 2))
+          done
+          echo "push zlyhal po 5 pokusoch"; exit 1

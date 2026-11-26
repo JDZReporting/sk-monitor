@@ -112,8 +112,14 @@ def compute(store, findings_dir=None, health=None):
         metr["zaznamy_bez_financii"] = M(miss, num=miss, den=len(fin["firmy"]),
             method="firmy bez dostupného obratu (RÚZ) / analyzované firmy")
 
-    # ÚVO↔CRZ prepojenie (P1 — zatiaľ neimplementované)
-    metr["uvo_crz_prepojenie"] = M("n/a", method="ÚVO↔CRZ linking je P1 (zatiaľ neimplementované)")
+    # ÚVO↔CRZ prepojenie (engine/uvo_link.py)
+    ul = fload("uvo_crz_links.json")
+    if ul and ("pocet_prepojeni" in ul):
+        den = ul.get("pocet_zmluv") or 0
+        metr["uvo_crz_prepojenie"] = M(ul["pocet_prepojeni"], num=ul["pocet_prepojeni"], den=den,
+            method="prepojené zmluvy↔zákazky / všetky zmluvy. Join názov+obstarávateľ (nízka istota), nie cez ID/IČO.")
+    else:
+        metr["uvo_crz_prepojenie"] = M("n/a", method="chýba findings/uvo_crz_links.json (vzniká v Actions)")
 
     # posledná aktualizácia zdrojov
     if health:
