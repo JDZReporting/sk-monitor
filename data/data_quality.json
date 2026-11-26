@@ -1,18 +1,18 @@
 {
- "generated": "2026-11-26T15:25:31",
- "store_items": 2381,
+ "generated": "2026-11-26T15:52:26",
+ "store_items": 2384,
  "metriky": {
   "zaznamy_podla_zdroja": {
    "hodnota": {
     "vlada": 15,
-    "uvo": 1841,
-    "zmluvy": 301,
+    "uvo": 1843,
+    "zmluvy": 302,
     "mpk": 97,
     "kontrolne": 127
    },
    "method": "count(items) group by source (aktuálny store.json)",
-   "numerator": 2381,
-   "denominator": 2381
+   "numerator": 2384,
+   "denominator": 2384
   },
   "historicke_pokrytie": {
    "hodnota": {
@@ -24,12 +24,12 @@
     "uvo": {
      "od": "2026-10-27",
      "do": "2027-01-01",
-     "zaznamov_s_datumom": 1841
+     "zaznamov_s_datumom": 1843
     },
     "zmluvy": {
      "od": "2026-10-27",
      "do": "2026-11-26",
-     "zaznamov_s_datumom": 301
+     "zaznamov_s_datumom": 302
     },
     "mpk": {
      "od": "2026-10-27",
@@ -47,35 +47,35 @@
   "zmluvy_s_validnym_ico": {
    "hodnota": 90.7,
    "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
-   "numerator": 273,
-   "denominator": 301
+   "numerator": 274,
+   "denominator": 302
   },
   "ico_provenancia": {
    "hodnota": {
-    "crz": 267,
+    "crz": 268,
     "rpo": 6
    },
    "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
-   "numerator": 273,
-   "denominator": 273
+   "numerator": 274,
+   "denominator": 274
   },
   "dodavatelia_identifikovani": {
-   "hodnota": 90.3,
+   "hodnota": 90.4,
    "method": "unikátni dodávatelia (podľa názvu) s prideleným IČO / všetci unikátni dodávatelia",
-   "numerator": 196,
-   "denominator": 217
+   "numerator": 197,
+   "denominator": 218
   },
   "dodavatelia_neidentifikovani": {
    "hodnota": 21,
    "method": "unikátni dodávatelia bez IČO (CRZ detail zlyhal / nejednoznačná RPO zhoda / zahr. subjekt)",
    "numerator": 21,
-   "denominator": 217
+   "denominator": 218
   },
   "duplicitne_zaznamy": {
    "hodnota": 0,
    "method": "count(id) - count(distinct id) v store.json",
    "numerator": 0,
-   "denominator": 2381
+   "denominator": 2384
   },
   "ruz_pokrytie": {
    "hodnota": "n/a",
