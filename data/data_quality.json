@@ -1,18 +1,18 @@
 {
- "generated": "2026-11-26T14:58:18",
- "store_items": 2379,
+ "generated": "2026-11-26T15:10:27",
+ "store_items": 2380,
  "metriky": {
   "zaznamy_podla_zdroja": {
    "hodnota": {
     "vlada": 15,
-    "uvo": 1839,
+    "uvo": 1840,
     "zmluvy": 301,
     "mpk": 97,
     "kontrolne": 127
    },
    "method": "count(items) group by source (aktuálny store.json)",
-   "numerator": 2379,
-   "denominator": 2379
+   "numerator": 2380,
+   "denominator": 2380
   },
   "historicke_pokrytie": {
    "hodnota": {
@@ -24,7 +24,7 @@
     "uvo": {
      "od": "2026-10-27",
      "do": "2027-01-01",
-     "zaznamov_s_datumom": 1839
+     "zaznamov_s_datumom": 1840
     },
     "zmluvy": {
      "od": "2026-10-27",
@@ -45,36 +45,37 @@
    "method": "min/max(date) per source; len=počet s platným dátumom. POZN: store = 30-dňové okno; viacročná história je v data/history/*.jsonl (nie tu)."
   },
   "zmluvy_s_validnym_ico": {
-   "hodnota": 5.6,
+   "hodnota": 53.8,
    "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
-   "numerator": 17,
+   "numerator": 162,
    "denominator": 301
   },
   "ico_provenancia": {
    "hodnota": {
-    "crz": 17
+    "crz": 159,
+    "rpo": 3
    },
    "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
-   "numerator": 17,
-   "denominator": 17
+   "numerator": 162,
+   "denominator": 162
   },
   "dodavatelia_identifikovani": {
-   "hodnota": 6.9,
+   "hodnota": 52.1,
    "method": "unikátni dodávatelia (podľa názvu) s prideleným IČO / všetci unikátni dodávatelia",
-   "numerator": 15,
+   "numerator": 113,
    "denominator": 217
   },
   "dodavatelia_neidentifikovani": {
-   "hodnota": 202,
+   "hodnota": 104,
    "method": "unikátni dodávatelia bez IČO (CRZ detail zlyhal / nejednoznačná RPO zhoda / zahr. subjekt)",
-   "numerator": 202,
+   "numerator": 104,
    "denominator": 217
   },
   "duplicitne_zaznamy": {
    "hodnota": 0,
    "method": "count(id) - count(distinct id) v store.json",
    "numerator": 0,
-   "denominator": 2379
+   "denominator": 2380
   },
   "ruz_pokrytie": {
    "hodnota": "n/a",
