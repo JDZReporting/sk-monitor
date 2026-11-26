@@ -9,21 +9,33 @@ Použitie (v Actions):  python3 tools/uvo_probe.py findings/_uvo_probe.json
 """
 import json, sys, urllib.request, urllib.error
 
-# opendata.uvo.gov.sk neexistuje (DNS zlyhal). Kandidáti na reálny zdroj — sonda zistí, čo žije:
+# Overené sondou: www.uvo.gov.sk/openDataIdx žije (200, HTML index datasetov); TED API 202 (reachable).
+# Teraz z HTML indexu extrahujeme odkazy na reálne datasety (bulk súbory / GetFile / sub-API).
 CANDIDATES = [
     "https://www.uvo.gov.sk/openDataIdx",
-    "https://www.uvo.gov.sk/OpenData",
-    "https://www.uvo.gov.sk/openData",
-    "https://data.slovensko.sk/api/3/action/package_search?q=verejn%C3%A9%20obstar%C3%A1vanie&rows=5",
-    "https://data.slovensko.sk/api/3/action/organization_list",
-    "https://ted.europa.eu/api/v3.0/notices/search?q=SK&pageSize=1",
+    "https://www.uvo.gov.sk/opendata-zakazky",
+    "https://www.uvo.gov.sk/bulk-downloads",
+    "https://data.slovensko.sk/api/action/package_search?q=obstar%C3%A1vanie",
+    "https://ted.europa.eu/api/v3.0/notices/search",
 ]
+
+def _extract_links(html):
+    """Z HTML indexu vytiahni zaujímavé odkazy (datasety/bulk/API)."""
+    import re
+    hrefs = re.findall(r'href=["\']([^"\']+)["\']', html or "")
+    pat = re.compile(r'(opendata|getfile|dataset|\.xml|\.csv|\.zip|\.json|download|export|/od/|rest|api)', re.I)
+    out, seen = [], set()
+    for h in hrefs:
+        if pat.search(h) and h not in seen:
+            seen.add(h); out.append(h)
+        if len(out) >= 40: break
+    return out
 UA = {"User-Agent": "sk-monitor/uvo-probe (public-interest research)"}
 
 def probe(url):
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
-            raw = r.read(20000)
+            raw = r.read(120000)   # väčší náhľad, aby sme zachytili odkazy na datasety v HTML indexe
             out = {"url": url, "status": r.status, "ctype": r.headers.get("Content-Type")}
             try:
                 d = json.loads(raw.decode("utf-8", "ignore"))
@@ -40,7 +52,10 @@ def probe(url):
                     out["record_keys"] = list(rec.keys())[:40]
                     out["record_sample"] = {k: rec[k] for k in list(rec.keys())[:12]}
             except Exception:
-                out["text_head"] = raw[:400].decode("utf-8", "ignore")
+                txt = raw.decode("utf-8", "ignore")
+                out["text_head"] = txt[:200]
+                links = _extract_links(txt)
+                if links: out["links"] = links
             return out
     except urllib.error.HTTPError as e:
         return {"url": url, "http_error": e.code, "msg": str(e)[:160]}
