@@ -12,10 +12,10 @@ import json, sys, os, re, urllib.request
 UA = {"User-Agent": "sk-monitor/crz-dodatky-probe (public-interest research)"}
 BASE = "https://www.crz.gov.sk"
 
-def _get(url):
+def _get(url, cap=500000):
     try:
-        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=40) as r:
-            return r.read().decode("utf-8", "ignore")
+        with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=90) as r:
+            return r.read(cap).decode("utf-8", "ignore")   # limit čítania — veľký listing inak vyprší
     except Exception as e:
         return f"__ERR__ {type(e).__name__}: {e}"
 

@@ -112,6 +112,17 @@ def compute(store, findings_dir=None, health=None):
         metr["zaznamy_bez_financii"] = M(miss, num=miss, den=len(fin["firmy"]),
             method="firmy bez dostupného obratu (RÚZ) / analyzované firmy")
 
+    # TED pokrytie (engine/ted.py) — rozlíš získanie vs chyba
+    ted = fload("ted_notices.json")
+    if ted and ("pocet" in ted):
+        if ted.get("chyba"):
+            metr["ted_pokrytie"] = M("chyba", method=f"TED vrátil chybu: {ted['chyba']} (POST schéma/pole treba doladiť podľa ted_raw.json)")
+        else:
+            metr["ted_pokrytie"] = M(ted["pocet"], num=ted["pocet"],
+                method="počet získaných SK oznámení z TED (reálne stiahnuté+sparsované, nie len HTTP 200)")
+    else:
+        metr["ted_pokrytie"] = M("n/a", method="chýba findings/ted_notices.json (vzniká v Actions)")
+
     # Investigatívne spisy (engine/cases.py)
     cs = fload("cases.json")
     if cs and ("cases" in cs):

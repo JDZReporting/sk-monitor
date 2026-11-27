@@ -35,7 +35,7 @@ UA = {"User-Agent": "sk-monitor/uvo-probe (public-interest research)"}
 def probe(url):
     try:
         with urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=25) as r:
-            raw = r.read(120000)   # väčší náhľad, aby sme zachytili odkazy na datasety v HTML indexe
+            raw = r.read(500000)   # väčší náhľad, aby sme zachytili odkazy na datasety v HTML indexe (ak sú hlbšie)
             out = {"url": url, "status": r.status, "ctype": r.headers.get("Content-Type")}
             try:
                 d = json.loads(raw.decode("utf-8", "ignore"))

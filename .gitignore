@@ -17,3 +17,4 @@ __pycache__/
 # Git lock odkladisko (Cowork sandbox — neodstrániteľné zámky, nikdy necommitovať)
 .gittrash/
 engine/.cache_ruz/
+*.bak
