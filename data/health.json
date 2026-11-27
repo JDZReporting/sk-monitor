@@ -25,7 +25,7 @@
   "uvo": {
    "status": "ok_fresh",
    "fetched": 120,
-   "in_store": 1847,
+   "in_store": 1866,
    "newest_item": "2027-01-01",
    "last_success": "2026-11-27",
    "days_since_success": 0,
@@ -35,7 +35,7 @@
   "mpk": {
    "status": "ok_fresh",
    "fetched": 20,
-   "in_store": 98,
+   "in_store": 99,
    "newest_item": "2026-11-27",
    "last_success": "2026-11-27",
    "days_since_success": 0,
@@ -45,7 +45,7 @@
   "zmluvy": {
    "status": "ok_fresh",
    "fetched": 20,
-   "in_store": 294,
+   "in_store": 295,
    "newest_item": "2026-11-27",
    "last_success": "2026-11-27",
    "days_since_success": 0,

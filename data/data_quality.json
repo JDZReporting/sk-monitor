@@ -1,18 +1,18 @@
 {
- "generated": "2026-11-27T11:30:29",
- "store_items": 2376,
+ "generated": "2026-11-27T12:53:15",
+ "store_items": 2397,
  "metriky": {
   "zaznamy_podla_zdroja": {
    "hodnota": {
     "vlada": 10,
-    "uvo": 1847,
-    "zmluvy": 294,
-    "mpk": 98,
+    "uvo": 1866,
+    "zmluvy": 295,
+    "mpk": 99,
     "kontrolne": 127
    },
    "method": "count(items) group by source (aktuálny store.json)",
-   "numerator": 2376,
-   "denominator": 2376
+   "numerator": 2397,
+   "denominator": 2397
   },
   "historicke_pokrytie": {
    "hodnota": {
@@ -24,17 +24,17 @@
     "uvo": {
      "od": "2026-10-28",
      "do": "2027-01-01",
-     "zaznamov_s_datumom": 1847
+     "zaznamov_s_datumom": 1866
     },
     "zmluvy": {
      "od": "2026-10-28",
      "do": "2026-11-27",
-     "zaznamov_s_datumom": 294
+     "zaznamov_s_datumom": 295
     },
     "mpk": {
      "od": "2026-10-28",
      "do": "2026-11-27",
-     "zaznamov_s_datumom": 98
+     "zaznamov_s_datumom": 99
     },
     "kontrolne": {
      "od": "2025-12-12",
@@ -47,17 +47,17 @@
   "zmluvy_s_validnym_ico": {
    "hodnota": 91.5,
    "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
-   "numerator": 269,
-   "denominator": 294
+   "numerator": 270,
+   "denominator": 295
   },
   "ico_provenancia": {
    "hodnota": {
-    "crz": 263,
+    "crz": 264,
     "rpo": 6
    },
    "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
-   "numerator": 269,
-   "denominator": 269
+   "numerator": 270,
+   "denominator": 270
   },
   "dodavatelia_identifikovani": {
    "hodnota": 91.2,
@@ -75,7 +75,7 @@
    "hodnota": 0,
    "method": "count(id) - count(distinct id) v store.json",
    "numerator": 0,
-   "denominator": 2376
+   "denominator": 2397
   },
   "ruz_pokrytie": {
    "hodnota": "n/a",
