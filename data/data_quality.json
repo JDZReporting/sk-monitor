@@ -1,18 +1,18 @@
 {
- "generated": "2026-11-27T12:53:15",
- "store_items": 2397,
+ "generated": "2026-11-27T20:23:23",
+ "store_items": 2417,
  "metriky": {
   "zaznamy_podla_zdroja": {
    "hodnota": {
     "vlada": 10,
-    "uvo": 1866,
-    "zmluvy": 295,
-    "mpk": 99,
+    "uvo": 1883,
+    "zmluvy": 297,
+    "mpk": 100,
     "kontrolne": 127
    },
    "method": "count(items) group by source (aktuálny store.json)",
-   "numerator": 2397,
-   "denominator": 2397
+   "numerator": 2417,
+   "denominator": 2417
   },
   "historicke_pokrytie": {
    "hodnota": {
@@ -24,17 +24,17 @@
     "uvo": {
      "od": "2026-10-28",
      "do": "2027-01-01",
-     "zaznamov_s_datumom": 1866
+     "zaznamov_s_datumom": 1883
     },
     "zmluvy": {
      "od": "2026-10-28",
      "do": "2026-11-27",
-     "zaznamov_s_datumom": 295
+     "zaznamov_s_datumom": 297
     },
     "mpk": {
      "od": "2026-10-28",
      "do": "2026-11-27",
-     "zaznamov_s_datumom": 99
+     "zaznamov_s_datumom": 100
     },
     "kontrolne": {
      "od": "2025-12-12",
@@ -45,37 +45,37 @@
    "method": "min/max(date) per source; len=počet s platným dátumom. POZN: store = 30-dňové okno; viacročná história je v data/history/*.jsonl (nie tu)."
   },
   "zmluvy_s_validnym_ico": {
-   "hodnota": 91.5,
+   "hodnota": 91.6,
    "method": "zmluvy s dod_ico vo formáte 6–8 číslic / všetky zmluvy",
-   "numerator": 270,
-   "denominator": 295
+   "numerator": 272,
+   "denominator": 297
   },
   "ico_provenancia": {
    "hodnota": {
-    "crz": 264,
+    "crz": 266,
     "rpo": 6
    },
    "method": "dod_ico_zdroj: 'crz'=primárne z detailu zmluvy (jednoznačné), 'rpo'=sekundárne zhoda mena (jednoznačná aktívna firma)",
-   "numerator": 270,
-   "denominator": 270
+   "numerator": 272,
+   "denominator": 272
   },
   "dodavatelia_identifikovani": {
    "hodnota": 91.2,
    "method": "unikátni dodávatelia (podľa názvu) s prideleným IČO / všetci unikátni dodávatelia",
-   "numerator": 196,
-   "denominator": 215
+   "numerator": 198,
+   "denominator": 217
   },
   "dodavatelia_neidentifikovani": {
    "hodnota": 19,
    "method": "unikátni dodávatelia bez IČO (CRZ detail zlyhal / nejednoznačná RPO zhoda / zahr. subjekt)",
    "numerator": 19,
-   "denominator": 215
+   "denominator": 217
   },
   "duplicitne_zaznamy": {
    "hodnota": 0,
    "method": "count(id) - count(distinct id) v store.json",
    "numerator": 0,
-   "denominator": 2397
+   "denominator": 2417
   },
   "ruz_pokrytie": {
    "hodnota": "n/a",
