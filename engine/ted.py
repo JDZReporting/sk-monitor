@@ -31,9 +31,14 @@ def _query_sk(since):
     # Expert query: SK oznámenia publikované od dátumu (RRRRMMDD). Country filter na úrovni kupujúceho.
     return f'buyer-country="SVK" AND publication-date>={since}'
 
+# TED `fields` je POVINNÉ a nesmie byť prázdne (overené: 400 "must not be empty").
+# Použijeme minimálne polia, ktoré sú v TED v3 platné; po úspechu z ted_raw.json doplníme ďalšie BT polia.
+MIN_FIELDS = ["publication-number", "notice-title", "notice-type", "place-of-performance",
+              "buyer-name", "buyer-country", "winner-name", "procedure-type"]
+
 def search(since="20260101", limit=50, page=1, fields=None):
-    payload = {"query": _query_sk(since), "page": page, "limit": limit, "scope": "ALL"}
-    if fields: payload["fields"] = fields
+    payload = {"query": _query_sk(since), "fields": fields or MIN_FIELDS,
+               "page": page, "limit": limit, "scope": "ALL"}
     body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(API, data=body, headers=UA, method="POST")
     with urllib.request.urlopen(req, timeout=60) as r:
@@ -75,7 +80,8 @@ def run(since="20260101", limit=50, max_pages=4):
             notices.extend(parse_notice(x) for x in items)
             if len(items) < limit: break
     except urllib.error.HTTPError as e:
-        try: err = {"http": e.code, "body": e.read()[:500].decode("utf-8", "ignore")}
+        # väčší náhľad tela — pri 400 TED vypíše ZOZNAM platných polí (potrebujeme ho na doladenie)
+        try: err = {"http": e.code, "body": e.read()[:6000].decode("utf-8", "ignore")}
         except Exception: err = {"http": e.code}
     except Exception as e:
         err = {"error": type(e).__name__, "msg": str(e)[:300]}
