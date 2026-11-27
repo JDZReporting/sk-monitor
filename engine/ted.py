@@ -24,18 +24,17 @@ import json, sys, os, datetime, urllib.request, urllib.error
 API = "https://api.ted.europa.eu/v3/notices/search"
 UA = {"User-Agent": "sk-monitor/ted (public-interest research)", "Content-Type": "application/json", "Accept": "application/json"}
 
-# Polia skúšame v dokumentovaných eForms business-term názvoch; parser potom berie, čo reálne príde.
-REQ_FIELDS = ["publication-number", "notice-title", "notice-type", "buyer-name", "buyer-country",
-              "winner-name", "organisation-identifier", "classification-cpv", "total-value",
-              "estimated-value", "received-tenders", "procedure-type", "publication-date", "links"]
-
+# POZN.: TED `fields` používa eForms BT kódy (napr. BT-821-Lot, organisation-email-tenderer) — náš
+# predošlý zoznam bol neplatný (HTTP 400). Preto `fields` NEPOSIELAME → TED vráti default projekciu;
+# reálnu schému zistíme z ted_raw.json a potom nastavíme správne BT polia. Query validáciou prešla.
 def _query_sk(since):
-    # Expert query: oznámenia s krajinou kupujúceho SK, publikované od dátumu.
-    return f'(buyer-country="SVK" OR organisation-country-buyer="SVK") AND publication-date>={since}'
+    # Expert query: SK oznámenia publikované od dátumu (RRRRMMDD). Country filter na úrovni kupujúceho.
+    return f'buyer-country="SVK" AND publication-date>={since}'
 
-def search(since="20260101", limit=50, page=1):
-    body = json.dumps({"query": _query_sk(since), "fields": REQ_FIELDS,
-                       "page": page, "limit": limit, "scope": "ALL"}).encode("utf-8")
+def search(since="20260101", limit=50, page=1, fields=None):
+    payload = {"query": _query_sk(since), "page": page, "limit": limit, "scope": "ALL"}
+    if fields: payload["fields"] = fields
+    body = json.dumps(payload).encode("utf-8")
     req = urllib.request.Request(API, data=body, headers=UA, method="POST")
     with urllib.request.urlopen(req, timeout=60) as r:
         return json.loads(r.read().decode("utf-8"))

@@ -109,11 +109,26 @@ def build_lifecycle(records, texts=None):
 
 def run(store, texts=None):
     items = store.get("items", store if isinstance(store, list) else [])
-    groups = defaultdict(list)
+    cykly = []
+    seen_keys = set()
+    # (A) PRIMÁRNE: dodatky vložené v detaile zmluvy (zml_dodatky) — rodič + jeho dodatky
     for it in items:
         if it.get("source") != "zmluvy": continue
-        # KĽÚČ = referencia na pôvodnú zmluvu (pri dodatku), inak vlastné číslo zmluvy.
-        # Tak sa dodatok (Č. dodatku = 1,2,…) zoskupí pod rodičovskú zmluvu, nie pod seba.
+        dod = it.get("zml_dodatky") or []
+        if not dod: continue
+        cislo = it.get("zml_cislo") or it.get("zml_cislo_ref") or it.get("id")
+        recs = [{"typ": "Zmluva", "datum": it.get("date"), "suma": it.get("suma_zmluvna"),
+                 "dod": it.get("dod"), "obj": None, "url": it.get("url"), "cislo": it.get("zml_cislo")}]
+        for d in dod:
+            recs.append({"typ": "Dodatok", "datum": d.get("datum"), "suma": d.get("cena"),
+                         "dod": it.get("dod"), "obj": None, "url": it.get("url"),
+                         "cislo": d.get("cislo") or it.get("zml_cislo")})
+        seen_keys.add(_norm_cislo(cislo))
+        cykly.append(build_lifecycle(recs, texts))
+    # (B) FALLBACK: dodatky ako samostatné záznamy zoskupené podľa čísla zmluvy
+    groups = defaultdict(list)
+    for it in items:
+        if it.get("source") != "zmluvy" or it.get("zml_dodatky"): continue
         parent = it.get("zml_cislo_ref") or it.get("zml_cislo")
         if not parent: continue
         groups[_norm_cislo(parent)].append({
@@ -121,8 +136,8 @@ def run(store, texts=None):
             "suma": it.get("suma_zmluvna"), "dod": it.get("dod"), "obj": None,
             "url": it.get("url"), "cislo": it.get("zml_cislo_ref") or it.get("zml_cislo"),
         })
-    cykly = []
     for k, recs in groups.items():
+        if k in seen_keys: continue
         has_dodatok = any((r.get("typ") or "").lower().startswith("dodatok") for r in recs)
         if len(recs) >= 2 or has_dodatok:
             cykly.append(build_lifecycle(recs, texts))

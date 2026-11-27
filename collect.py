@@ -515,6 +515,7 @@ def collect_crz():
             if det.get("typ"): it["zml_typ"] = det["typ"]
             if det.get("cislo"): it["zml_cislo"] = det["cislo"]
             if det.get("cislo_ref"): it["zml_cislo_ref"] = det["cislo_ref"]
+            if det.get("dodatky"): it["zml_dodatky"] = det["dodatky"]
         except Exception:
             pass
         out.append(it)
@@ -566,9 +567,45 @@ def parse_crz_detail_text(text):
     # referencia na pôvodnú zmluvu (pri dodatku): "k zmluve č. X" / "dodatok k ..."
     mr = re.search(r"k\s+zmluve\s*(?:č\.?|číslo)?\s*([A-Za-z0-9/\-_. ]{3,60})", text, re.IGNORECASE)
     if mr: out["cislo_ref"] = re.sub(r"\s+", " ", mr.group(1)).strip()
+    # DODATKY — inline tabuľka na detaile zmluvy: "Dodatky: Dátum | Názov/Číslo | Cena s DPH | Dodávateľ | Objednávateľ"
+    dod = parse_crz_dodatky(text)
+    if dod: out["dodatky"] = dod
     return out
 
-CRZ_PARSER_VER = 3   # bump pri zmene parsera -> staré cache záznamy sa znova stiahnu/preparsujú
+_SK_MES = {"januar":1,"februar":2,"marec":3,"april":4,"maj":5,"jun":6,"jul":7,"august":8,
+           "september":9,"oktober":10,"november":11,"december":12}
+def _sk_date_iso(s):
+    s2 = unicodedata.normalize("NFKD", s.lower()); s2 = "".join(c for c in s2 if not unicodedata.combining(c))
+    m = re.match(r"(\d{1,2})\.\s*([a-z]+)\s*(\d{4})", s2)
+    if not m: return None
+    mes = _SK_MES.get(m.group(2))
+    if not mes: return None
+    return f"{m.group(3)}-{mes:02d}-{int(m.group(1)):02d}"
+
+def parse_crz_dodatky(text):
+    """Z detailu zmluvy vytiahni zoznam dodatkov {datum, cislo, cena} z inline tabuľky 'Dodatky:'."""
+    out = []
+    m = re.search(r"Dodatky:(.*?)(?:Návrat späť|Vystavil:|$)", text, re.S)
+    if not m: return out
+    seg = re.sub(r"Dátum\s+Názov dodatku.*?Objednávateľ", " ", m.group(1), flags=re.S)
+    dre = re.compile(r"(\d{1,2}\.\s*(?:Janu[áa]r|Febru[áa]r|Marec|Apr[íi]l|M[áa]j|J[úu]n|J[úu]l|August|"
+                     r"September|Okt[óo]ber|November|December)\s*\d{4})")
+    parts = dre.split(seg)
+    for i in range(1, len(parts), 2):
+        d = parts[i]; chunk = parts[i+1] if i+1 < len(parts) else ""
+        cislo = None
+        mc = re.search(r"(Dodatok\s*č\.?\s*\d+|oprava|zmena)", chunk, re.I)
+        if mc: cislo = re.sub(r"\s+", " ", mc.group(1)).strip()
+        cena = None
+        # cena = číslo v tisícových skupinách tesne pred € (nezlievať s číslom dodatku „č.1")
+        mp = re.search(r"(\d{1,3}(?:[\s  ]\d{3})*,\d{2})\s*(?:€|&euro;|EUR)", chunk)
+        if mp:
+            try: cena = float(re.sub(r"[^\d,]", "", mp.group(1)).replace(",", "."))
+            except Exception: pass
+        out.append({"datum": _sk_date_iso(d), "cislo": cislo, "cena": cena})
+    return out
+
+CRZ_PARSER_VER = 4   # bump pri zmene parsera -> staré cache záznamy sa znova stiahnu/preparsujú
 
 def crz_detail(url, use_cache=True):
     """Fetch + parse detail jednej zmluvy; vracia {dod_ico, obj_ico, suma_zmluvna, _ico_zdroj:'crz'}."""
@@ -580,7 +617,7 @@ def crz_detail(url, use_cache=True):
         return cached
     html_txt = get(url)
     res = {"dod_ico": None, "obj_ico": None, "suma_zmluvna": None, "typ": None, "cislo": None,
-           "cislo_ref": None, "_ico_zdroj": None, "_pv": CRZ_PARSER_VER}
+           "cislo_ref": None, "dodatky": [], "_ico_zdroj": None, "_pv": CRZ_PARSER_VER}
     if html_txt:
         try:
             txt = BeautifulSoup(html_txt, "html.parser").get_text("\n")
@@ -718,6 +755,7 @@ def main():
             if det.get("typ"): it["zml_typ"] = det["typ"]
             if det.get("cislo"): it["zml_cislo"] = det["cislo"]
             if det.get("cislo_ref"): it["zml_cislo_ref"] = det["cislo_ref"]
+            if det.get("dodatky"): it["zml_dodatky"] = det["dodatky"]
         if s == "zmluvy" and it.get("overit") and _je_firma(it["overit"]):
             key = _cn(it["overit"])
             cached = firmy.get(key)

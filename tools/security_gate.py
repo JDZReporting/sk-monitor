@@ -42,7 +42,7 @@ ALLOWED_ITEM_FIELDS = {
     "first_seen", "last_seen", "dod_vznik", "dod_krajina", "_changed",
     "druh", "cpv", "fondy", "dod_ico",    # ÚVO detail + IČO dodávateľa (verejné)
     "dod_ico_zdroj", "obj_ico", "suma_zmluvna",   # provenancia IČO + IČO objednávateľa + zmluvná suma (CRZ detail, verejné)
-    "zml_typ", "zml_cislo", "zml_cislo_ref",       # typ záznamu (Zmluva/Dodatok), číslo zmluvy + ref na pôvodnú (životný cyklus)
+    "zml_typ", "zml_cislo", "zml_cislo_ref", "zml_dodatky",   # typ, číslo, ref + zoznam dodatkov (životný cyklus)
     # interné príznaky spracovania — TODO (#8): stripovať pred publikovaním store.json
     "_uvo_done", "_ai_tried", "_overit_checked",
 }
