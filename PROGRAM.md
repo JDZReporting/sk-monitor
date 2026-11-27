@@ -220,6 +220,20 @@ Schválené korekcie stratégie zapracované. Scenár A (0 €).
   build_db (`spisy`), terminál **⑱**, data_quality (`spisy_celkom`, `spisy_otvorene`). Gate OK, selftest PASS.
 - Spisy sa editujú priamo v `cases.json` (poznámky, dôkazy, stav) — engine ich pri ďalšom behu zachová.
 
+## Aktualizácia 2026-11-27 — TED klient, dodatky z detailu, graf vzťahov
+- **TED** (`engine/ted.py`): POST api.ted.europa.eu/v3/notices/search bez auth. Prvý beh dal HTTP 400
+  („fields unsupported" — eForms BT kódy) → oprava: `fields` sa nepošle (default projekcia), schému doladím
+  z `ted_raw.json`. SK query prešla validáciou. Terminál ⑲, data_quality ted_pokrytie.
+- **CRZ dodatky — štruktúra odhalená** (sonda): dodatky sú **inline tabuľka „Dodatky:"** na detaile zmluvy
+  (dátum · číslo · cena · dodávateľ). `collect.parse_crz_dodatky` ich parsuje → `zml_dodatky`;
+  `contract_lifecycle` z nich stavia časovú os (opravený bug zlievania ceny s číslom dodatku). CRZ_PARSER_VER=4.
+- **Graf vzťahov** (`engine/graph.py`, P3): firma↔objednávateľ (CRZ) + osoba(KÚV)→firma (RPVS/ownership) +
+  **firma—firma spoločný vlastník** (zhoda mena KÚV = NÁMET, nie dôkaz; hodnota pri súťaži v tom istom obstarávaní).
+  Čistý Python (bez NetworkX). Na reálnych dátach 390 uzlov/288 hrán. Výstup graph.json (nodes/edges pre Cytoscape.js).
+  Terminál ⑳ spoloční vlastníci, ㉑ huby. Zapojené do intelligence.yml.
+- **Zdroje obstarávania** (`research/P1_obstaravanie_zdroje.md`): TED (nadlimit), ÚVO cez data.slovensko.sk
+  eForms (ako SOFO), EKS, Josephine; hybridný model + dedup + meranie reálneho pokrytia.
+
 ### Ďalej (P1 zvyšok → P4)
 - **P1:** CRZ↔ÚVO prepojenie + ÚVO/TED ako jadro (celý proces obstarávanie→zmluva→dodatky→platby).
 - **P2:** kvalitné indikátory, vlastníctvo, dokumenty, investigatívny radar (významnosť+riziko spolu).
