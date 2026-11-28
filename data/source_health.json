@@ -1,5 +1,5 @@
 {
- "generated": "2026-11-27",
+ "generated": "2026-11-28",
  "sources": {
   "parlament": {
    "status": "down",
@@ -15,9 +15,9 @@
   "vlada": {
    "status": "ok_no_new",
    "fetched": 8,
-   "in_store": 10,
+   "in_store": 8,
    "newest_item": "2026-10-29",
-   "last_success": "2026-11-27",
+   "last_success": "2026-11-28",
    "days_since_success": 0,
    "http": 200,
    "reason": ""
@@ -25,9 +25,9 @@
   "uvo": {
    "status": "ok_fresh",
    "fetched": 120,
-   "in_store": 1883,
+   "in_store": 1822,
    "newest_item": "2027-01-01",
-   "last_success": "2026-11-27",
+   "last_success": "2026-11-28",
    "days_since_success": 0,
    "http": 200,
    "reason": ""
@@ -35,19 +35,19 @@
   "mpk": {
    "status": "ok_fresh",
    "fetched": 20,
-   "in_store": 100,
+   "in_store": 98,
    "newest_item": "2026-11-27",
-   "last_success": "2026-11-27",
+   "last_success": "2026-11-28",
    "days_since_success": 0,
    "http": 200,
    "reason": ""
   },
   "zmluvy": {
    "status": "ok_fresh",
-   "fetched": 20,
-   "in_store": 297,
+   "fetched": 13,
+   "in_store": 286,
    "newest_item": "2026-11-27",
-   "last_success": "2026-11-27",
+   "last_success": "2026-11-28",
    "days_since_success": 0,
    "http": 200,
    "reason": ""
@@ -57,7 +57,7 @@
    "fetched": 131,
    "in_store": 127,
    "newest_item": "2026-09-25",
-   "last_success": "2026-11-27",
+   "last_success": "2026-11-28",
    "days_since_success": 0,
    "http": 200,
    "reason": ""
